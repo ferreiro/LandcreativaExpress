@@ -27,6 +27,45 @@ app.use(app.router);
 app.get('/', routes.index);
 app.get('/users', users.list);
 
+
+app.get('/', function(req, res){
+  res.render('index', {
+    title: 'Home'
+  });
+});
+
+app.get('/nosotros', function(req, res){
+  res.render('nosotros', {
+    title: 'Nosotros - Landcreativa.com',
+    pageDescription : 'Somos expertos en diseño web'
+  });
+});
+app.get('/servicios', function(req, res){
+  res.render('servicios', {
+    title: 'Servicios',
+    pageDescription : 'Somos expertos en diseño web'
+  });
+});
+app.get('/servicios/empresas', function(req, res){
+  res.render('servicios-empresas', {
+    title: 'Servicios para empresas',
+    pageDescription : 'Somos expertos en diseño web'
+  });
+});
+app.get('/casos_exito', function(req, res){
+  res.render('casos_exito', {
+    title: 'About'
+  });
+});
+app.get('/contacta', function(req, res){
+  res.render('contacta', {
+    title: 'About'
+  });
+});
+
+
+
+
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
