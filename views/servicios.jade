@@ -1,0 +1,16 @@
+extends header
+
+
+block content
+
+	section.section.serviciosSection
+		.content
+			h1.commun-title #{title} 
+
+			script(type='text/javascript')
+				window.onload = function(){changeTab(1)};
+
+			include ./serviciosTab.jade
+
+	// Includes the footer
+	include ./footer.jade

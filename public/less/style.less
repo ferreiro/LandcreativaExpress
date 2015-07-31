@@ -1,0 +1,1395 @@
+
+// Responsive layout dimensions
+@mobile: 600px;
+@tablet: 999px;
+@desktop: 1000px;
+ 
+// Text  
+@paragraphSize: 16px;
+@textBlack: #222;
+@textBlue: #3695ed;
+@textBlue-hover: #226AAD;
+@lightGray: #f3f3f3;
+@lightGrayBorder: #dfdfdf;
+
+// Heights.
+@headerHeight: 70px;
+@productMargin : 1.5em;
+
+
+// ServicesColors
+@personal: #c75d29;
+@personal-Hover: #8a3911;
+@companies: #2a79c2;
+@companies-Hover: #11508a;
+@marketing: #bc9e26;
+@marketing-Hover: #8a7211;
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.box-shadow(@blur, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+}
+.box-shadow-inner(@blur, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+}
+.transition(@time) { 
+	-webkit-transition: all @time;
+	-moz-transition: all @time;
+	-o-transition: all @time;
+	-ms-transition: all @time;
+	transition: all @time;
+}
+.notransition {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+//------------------------------------
+// Fonts
+//------------------------------------
+
+@import "./fonts.less";
+
+//------------------------------------
+//------------------------------------ 
+// 			Commun elements
+//------------------------------------
+//------------------------------------
+body { 
+	background: #fff;
+	color: @textBlack;
+	font-size: @paragraphSize;
+	font-family: 'Lato', sans-serif;
+
+	p, h1, h2, h3, h4, ul, li, a {
+		margin: 0;
+		padding: 0;
+		color: #222; 
+	}
+	a  { 
+		color: @textBlue; 
+		.transition(0.3s);
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+	}
+	div {
+		.transition(0.3s); 
+	} 
+	&-overflow {
+		overflow: hidden;
+	}
+}
+
+// Mobile menu
+.mobileMenu {
+	width: 100%;
+	height: @headerHeight;
+	top: 0;
+	z-index: 100;
+	position: fixed; 
+	transition:0.3s; 
+	background: #f2f2f2;
+	background: #fff;
+
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+
+	&-int {
+		padding: @headerHeight/2.7 1em;
+
+		@media all and (min-width: @mobile) and (max-width:@tablet) {
+			padding-left:2em;
+			padding-right: 2em;
+		} 
+	}
+	&-logo {  
+		vertical-align: middle;
+		.iso {
+			width: 22px;
+			height: 22px; 
+			display: inline-block;
+			background: #3695ed;
+			background: url(../images/iso.png) 50% 50% no-repeat;
+			background-size: auto 100%; 
+		}
+		.text {
+			font-size: 1em;
+			margin-left: 10px;
+			display: inline-block;
+			margin-top: -4px;
+		}
+		.text h1 {
+			margin-top: 4px;
+			font-size: 1.2em;
+			line-height: 0.8em; 
+			color: @textBlue;
+		}
+	}
+	&-button {  
+		height: @headerHeight; 
+		padding: 0 2em;
+		outline: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 0;
+		background: transparent;			
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		&-selected {
+			background: @lightGray;
+			&:before {
+				position: absolute;
+				top: 100%;
+				left: 1px;
+				right: 1px;
+				width: 100%;
+				height: 12px;
+				margin-top: -10px;
+				background: @lightGray;  
+				content: '';
+				z-index: 1;
+			}
+		}
+		span:before {
+			font-size: 1.5em;
+			color: @textBlack;
+			margin-top: 10px;
+		}
+	}
+	&-navigation {
+		width: 220px;
+
+		min-height: 270px;
+		max-height: 100%;
+		padding: 0;
+		overflow-y: scroll;
+
+		padding: 0;
+		position: absolute;
+		display: none;
+		top: 100%;
+		right: 0;
+		text-align: right;
+		background: @lightGray; 
+		// border: 1px solid @lightGrayBorder;
+		border-top:0;
+		border-right: 0;
+				// @blur, @spread, @r, @g, @b, @opacity
+		.box-shadow(5px, 3px, 0, 0, 0, 0.1);
+		// .border-radius(4px);
+
+		&-socialNetwork {
+			background:lighten(@textBlue, 50%);
+			border-top:1px solid #fff; 
+		}
+		ul {
+			li:nth-last-child(-n-2) a {
+				border:0;
+			}
+
+			li {
+				a {
+					font-size: 1.3em;
+					display: block;
+					padding: .8em 1.5em;
+					color: @textBlack;
+					border-top: 1px solid @lightGrayBorder;
+					-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				}
+			}
+		}
+	}
+	 
+}
+
+.section {
+	// width: 100%;
+	margin-top: 0;
+	position: relative; 
+	.content {
+		margin-top: @headerHeight;  
+		padding:2.5em 1em; 
+		padding-bottom: 1.5em;
+
+		@media all and (max-width: @mobile) {
+	 	}
+		@media all and (min-width: @mobile) and (max-width:@tablet) {
+			padding:2em;
+		} 
+		@media(min-width: @desktop) { 
+			width: 1000px;
+			display: block; 
+			margin: 0 auto; 
+			margin-top: 80px; 
+			padding:3em 0;
+		}
+	} 
+}
+.commun {
+	&-guide {
+		// div id="" is assigned to guide in order to jump through different parts of the website.
+		width: 100%;
+		height: 1px; 
+		position: absolute;
+		top:0; 
+		@media (min-width: @desktop) {
+			margin-top: -80px;
+		}
+	}
+	&-title {
+		width: 100%;
+		margin:0 0 1.5em 0; // Top and bottom margin
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 29px;
+		font-style: normal; 
+		text-align: center; 
+		letter-spacing: 5px; 
+		text-transform: uppercase;
+		@media(min-width: @desktop) { 
+			margin:0 0 1.9em 0; // Top and bottom margin
+		}
+	}
+	&-subtitle {
+		width: 100%;		
+		padding: 0; 
+		margin:0.6em 0 1em 0; // Top and bottom margin
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 20px;
+		font-style: normal; 
+		text-align: left; 
+		letter-spacing: 3px; 
+		text-transform: uppercase;
+	}
+}
+
+.footer {
+	width: 100%; 
+	display: inline-block;
+	margin-top: 2em; 
+	&-top {
+		background:#f4f4f4;  
+		border-top: 3px solid #ededed;
+		padding: 1.5em 0;	
+
+		@media all and (max-width: @mobile) {
+			.footer-emptytitle {
+				display: none;
+			}
+			 
+	 	}
+		@media all and (min-width: @mobile) and (max-width:@tablet) {
+			 
+		} 
+	}
+	&-bottom { 
+		padding: 1em 0;	
+		background: #efefef; 
+		background: #F3F3F3;
+		border-top: 2px solid #ededed;
+		text-align: right; 
+
+		&-left {
+			float: left;
+			p {
+				opacity: .4;
+				// font-style: italic;
+				text-align: left;
+			}
+		}
+		&-right {
+			display: inline-block;
+			margin-top: 1em;
+			text-align: center;
+			width: 100%;
+			p {
+				opacity: .4;
+				text-align: center;
+				// font-style: italic;
+				a {
+					margin-left: 1em;
+				}
+			}
+
+			@media(min-width: @desktop) { 
+				width: auto;
+				margin-top: 0;
+				text-align: right; 
+			}
+		}
+	}
+	&-content {
+		@media all and (max-width: @mobile) {
+			padding: 0 2em;
+	 	}
+		@media all and (min-width: @mobile) and (max-width:@tablet) {
+			padding: 0 2em;
+		} 
+		@media(min-width: @desktop) { 
+			width: 1000px;
+			padding: 0;
+			margin: 0 auto; 
+		}
+	}
+	&-box {
+		width: 100%;
+		margin-right: 0;
+		display: inline-block; 
+		vertical-align: top;
+		margin-bottom: 2em;
+ 
+		@media all and (min-width: @mobile) and (max-width:@tablet) {
+			width: 49%;
+			margin-right: 1%;
+		} 
+		@media(min-width: @desktop) { 
+			width: 31.7%;
+			margin-right: 2%;
+			margin-bottom: 0;
+		}
+	}
+	&-nomargin {
+		margin-right: 0;
+	}
+	&-emptytitle {
+		width: 100%;
+		display: block;
+		height: 20px;
+	    margin-bottom: 1em;
+	}
+	&-title {
+		width: 100%;
+		height: 20px;
+		padding: 0;
+		margin: .6em 0 1em 0;
+		font-size: 1.2em;
+		font-weight: 500;
+		line-height: 20px;
+		font-style: normal;
+		text-align: left; 
+		letter-spacing: 0;
+	    margin: 0;
+	    margin-bottom: 1em;
+	    padding: 0;
+    	color: #0C59A0;
+    	opacity: .6;
+	}
+	&-text {
+		color: #222;
+    	opacity: .5;
+		a {
+			color: #222;
+			color: #0C59A0;
+		}
+	}
+	&-hotlinks {
+		width: 50%;
+		display: inline-block;
+		margin-right: -4px;
+		li a {
+			padding: .15em 0;
+			opacity: .6;
+			color: #222;
+			display: block;
+		}
+	}
+	&-form {
+		fieldset {
+			width: 100%; 
+			border: 0; 
+			margin: 0;
+			padding: 0;
+			position: relative;
+			p {
+				width: 100%;
+				float: left;
+				font-size:1em;
+				margin-bottom: 1em;
+			}
+		}
+		input,
+		textarea {
+			max-width: 100%;
+			width: 100%;
+			height: 40px;
+			border: 0;
+			float: left;
+			background: transparent;
+			margin: 0; 
+			padding: 0;
+			padding: 5px 0;
+			outline: 0;
+			letter-spacing: 1px;
+			text-align: center;
+			border:1px dotted rgba(204, 204, 204, 1);
+			// -webkit-box-shadow: inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+			// -moz-box-shadow:    inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+			// box-shadow:         inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+		}
+		input[type="submit"] { 
+			border: 0;
+			width:100%;
+			background-color: #0061c3;
+			background-color: #ECECEC;
+			border-radius: 3px; 
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 1;
+			color: rgba(34, 34, 34, 0.6);
+			text-decoration: none;
+			display: inline-block;
+			margin: 0 auto;
+			text-align: center;
+			border-radius: 3px;
+			-webkit-box-shadow: inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+			-moz-box-shadow:    inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+			box-shadow:         inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+			letter-spacing: 1.7px;
+			padding: 5px 0;
+
+			margin-top: 1em;
+
+			&:hover {
+				color: rgba(34, 34, 34, 0.8);
+				background: #EAEAEA;
+			}
+		}
+		fieldset textarea {
+			padding:1em 0;
+		}
+		.boton { 
+			height: 100%;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+	  
+} 
+
+//------------------------------------
+//------------------------------------ 
+// 			  About us
+//------------------------------------
+//------------------------------------
+
+.about {
+	width: 100%;
+}
+.about {
+	img {
+		width: 100%;
+	}
+	&-middle {
+		width: 100%;
+	}
+	&-separator {
+		margin-top:2.2em; 
+	}
+	&-subtitle {
+		letter-spacing: 0;
+   		text-transform: inherit;
+		margin: 0;
+		padding: 0;
+	}
+	&-image {
+		width:100%; 
+		height:220px; 
+		background-repeat:no-repeat; 
+		background-size:cover; 
+		display:block;  
+	}
+	&-text {
+		width: 100%;
+		margin: .5em 0;
+		margin-bottom: 1.2em;
+		letter-spacing: 0px;
+		line-height: 24px;
+		font-size: 18px;
+		text-align: left;
+		font-style: normal;
+		font-weight: 300;
+
+		&-nomargin {
+			margin-bottom: 0;
+		}
+	}
+	&-link {
+		width:300px; 
+		text-align:center; 
+		margin:0 auto; 
+		margin-top:4em;
+	}
+	@media all and (max-width: @mobile) {
+
+		&-image {
+			margin-bottom: 1.5em;
+		}
+		&-image-computer {
+			margin: 0 auto;
+			margin-top: 1em;
+			width: 300px;
+			height: 220px;
+		} 
+		
+	}
+	@media all and (min-width: @mobile) and (max-width:@tablet) {
+		
+		&-image-computer {
+			margin: 0 auto;
+			margin-top: 3em;
+			width: 440px;
+			height: 350px;
+		}
+		&-image {
+			height:320px;
+			margin-bottom: 1.5em;
+		} 
+
+	} 
+	@media(min-width: @desktop) { 
+
+		&-image {
+			height:350px; 
+		}
+
+		&-left,
+		&-right{
+			width: 48%;
+			display: inline-block;
+	    	vertical-align: middle; 
+		} 
+		&-left {
+			margin-right: 3.5%;
+		}
+
+		&-link {  
+			margin-top:5em;
+		}
+	}
+}
+
+//------------------------------------
+//------------------------------------ 
+// 			  Products
+//------------------------------------
+//------------------------------------
+
+.products {
+	min-height: 500px;
+	&-tab {
+		display: block;
+		// border:1px solid @lightGrayBorder; 
+		border-bottom:0;  
+
+		&-item {
+			width: 33.333%;
+			margin-right: -4px;
+			// background: #f3f3f3;
+			display: inline-block; 
+			position: relative;
+
+			a {
+				display: block;
+    			text-align: center;
+				padding: @productMargin/2 0;
+				@media all and (min-width: @desktop) {
+    				padding: @productMargin/2 @productMargin;
+				}
+			}
+			span {
+				width: 40px;
+				height: 36px;  
+				vertical-align: middle;
+				display: inline-block;
+				background: lighten(@textBlack, 40%);
+				.border-radius(100%);
+				text-align: center;
+				font-size: 1.6em;
+				padding-top: 4px;
+				color: #fff;
+				margin-bottom: 0.2em; 
+				@media all and (min-width: @desktop) {
+					margin-bottom: 0.3em; 
+				}
+			} 
+			&-personal span { 
+				background: @personal;
+			}
+			&-companies span {
+				background: @companies;
+			}
+			&-marketing span {
+				background: @marketing;
+			}
+			div {
+				width: 100%;
+				display: inline-block;
+				vertical-align: middle;
+				text-align: center;
+
+				p {
+					line-height: 10px;
+					margin-top: 7px;
+					color: #cecece;
+					display: none; 
+					@media(min-width: @desktop) { 
+						display: block; 
+						margin-top: 5px;
+						line-height: 10px;
+					} 
+				}
+				h3 {
+					font-size: 1em;
+					font-style: bold;
+					@media(min-width: @desktop) { 
+						font-size: 1.3em;
+					} 
+				}
+			} 
+			&:hover {
+				background: lighten(#f3f3f3, 1%);
+
+				
+			}
+			&-selected:hover,
+			&-selected {
+				background: #fff !important; 
+				/* border:1px solid;
+				border-color:@lightGrayBorder; */
+				border-top:0;
+				border-bottom: 0;   
+			}
+			&-selected a {
+			    border: 1px solid;
+			    border-color: #dfdfdf;  
+			} 
+			&-selected:before {
+				position: absolute;
+				width: 100%;
+				height: 3px;
+				background: @lightGrayBorder;
+				top: 0;
+				margin-top: 0px;
+				content: '';
+				z-index: 10;
+			}
+			&-selected:after {
+				position: absolute; 
+				height: 10px;
+				background: #fff;
+				bottom: 0;
+				margin-bottom: -5px;
+				content: '';
+				z-index: 10;
+				left: 1px;
+				right: 1px;
+			}
+			 
+		}
+	}	
+	&-content {
+		display:block;
+		position: relative;
+		text-align: center;
+		border:1px solid @lightGrayBorder;
+
+		&-box {
+			display: none;
+		}
+	}
+}  
+.product {
+	width:33.33%;
+	display:inline-block;
+	margin-right: -4px; 
+	vertical-align: top;
+	height: 100%;
+	position: relative;
+
+	@media all and (max-width: @mobile) {
+		width: 100%;
+	}
+	@media all and (min-width: @mobile) and (max-width:@tablet) {
+		width:50%;
+		&:nth-child(odd) .productBox {
+			padding-left:  @productMargin; 
+			padding-right: @productMargin / 2;
+		} 
+		&:nth-child(even) .productBox {
+			padding-left:  @productMargin / 2; 
+			padding-right: @productMargin;
+		} 
+	} 
+	@media(min-width: @desktop) { 
+		&:nth-child(1) .productBox:before {
+			display: none; 		// Hide left line on first module  
+		}
+	}
+
+	&Box {
+ 
+		position:relative; 
+		padding:@productMargin; // Padding for the inner layer  
+ 
+		@media(max-width: @desktop) { 
+			&:before {
+				display: none;
+			}
+		}
+
+		&:before {
+			width:2px;
+			margin-right:-1px;
+			height:100%; 
+			content: '';
+			position:absolute;
+			left:0;
+			top:0;
+
+			background: #dedede;
+			background: -moz-linear-gradient(top,  #ffffff 0%, #dedede 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dedede));
+			background: -webkit-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+			background: -o-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+			background: -ms-linear-gradient(top,  #ffffff 0%,#dedede 100%);
+			background: linear-gradient(to bottom,  #ffffff 0%,#dedede 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede',GradientType=0 );
+		
+			background: #ffffff;
+			background: -moz-linear-gradient(top,  #ffffff 0%, #dedede 59%, #ffffff 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(59%,#dedede), color-stop(100%,#ffffff));
+			background: -webkit-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
+			background: -o-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
+			background: -ms-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
+			background: linear-gradient(to bottom,  #ffffff 0%,#dedede 59%,#ffffff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+
+		}
+
+		p {
+			width: 100%;  
+			margin: .5em 0 1.2em 0; 
+			font-size: 18px;
+			font-weight: 300;
+			font-style: normal;
+			text-align: left;
+			letter-spacing: 0px;
+			line-height: 24px;
+		}
+		
+		// Elements for service Item
+
+		&-image {
+			width: 100%; 
+			height: 150px;
+			margin-bottom: @productMargin;
+			background: 50% 50% no-repeat;
+			background-size: auto 100%; 
+			 
+			&-noscale {
+				transform: scale(0);
+			}
+		} 
+		&-title {
+			width: 100%;  
+			margin: .5em 0;
+			margin-bottom: 0;
+			font-size: 32px;
+			font-weight: 300;
+			font-style: normal;
+			text-align: center;
+			text-transform: none;
+			letter-spacing: 0px;
+			line-height: 32px;
+		}
+		&-subtitle {
+			width: 100%;  
+			margin-bottom: 1em; 
+			font-size: 14px;
+			line-height: 16px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: 300;
+			font-style: normal;
+			margin: 1.2em 0;
+			text-align: center;
+		}
+		// Big button to buy a plan
+		&-button {
+			width: 100%;
+			height: auto;
+			padding: 1.3em 0;
+			display: block;
+			color: #fff; 
+			background: #4A4A4A;
+			border-bottom: 5px solid @textBlack;
+			font-size: 1em;
+			font-style: bold;
+			font-weight: 400;
+			text-align: center;
+			line-height: 16px;  
+			letter-spacing: 1px; 
+			text-transform: uppercase;	
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
+			.border-radius(5px);
+
+			&-personal {
+				// Button for personal websites
+				background:@personal;
+				border-bottom-color:@personal-Hover;
+				&:hover {
+					background: @personal-Hover;
+				}
+			}
+			&-companies {
+				// Button for Companies
+				background:@companies;
+				border-bottom-color:@companies-Hover;
+				&:hover {
+					background: @companies-Hover;
+				}
+			}
+			&-marketing {
+				// Button for Marketing and SEO
+				background:@marketing;
+				border-bottom-color:@marketing-Hover;
+				&:hover {
+					background: @marketing-Hover;
+				}
+			}
+		}
+
+  		// Show all the features for a given plan
+		&-featureList {
+			display: block;
+
+			li {
+				width: 100%;
+				display: inline-block;
+				list-style: none; 
+				margin-bottom: 0.5em;
+				font-size: 18px;
+				line-height: 24px;
+				letter-spacing: 0px;
+				font-weight: 300;
+				font-style: normal; 
+				text-align:left;
+			}
+		}
+	}
+}
+
+//------------------------------------
+//------------------------------------ 
+// 			  Portfolio
+//------------------------------------
+//------------------------------------
+ 
+.portfolio {
+	width: 100%;
+	&Box {
+		width: 100%;
+		position: relative;
+		margin-bottom: 1.5em;
+				 // @blur, @spread, @r, @g, @b, @opacity
+		.box-shadow-inner(30px, 5px, 50, 50, 50, 0.28);
+
+		&:hover .portfolioBox-options {
+			display: block; 
+		}
+
+		&-image {
+			width: 100%;
+			height: 200px; 
+			display: block;
+			background: @lightGray;
+			background-size:cover; 
+			position: relative;
+			@media all and (min-width:@mobile) and (max-width: @tablet) {
+				height: 300px;
+			}
+			@media all and (min-width:@desktop) {
+				height: 370px;
+			}
+		}
+		&:hover .portfolioBox-link a {
+			background: rgba(0, 0, 0, 0.5)
+		}
+		&-link {
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+		&-options { 
+			height: 60px;
+			display: block;
+   			position: relative;
+   			background: @lightGray;
+   			border: 1px solid @lightGrayBorder; 
+			.transition(0.3s); 
+ 
+   			@media all and (min-width:@mobile) and (max-width: @tablet) {
+   				 
+   			}
+   			@media all and (min-width:@desktop) {
+   				top: 50%;
+   				left: 50%;
+   				border: 0;
+   				width: 350px;
+   				height: 80px;
+   				position: absolute;
+   				background: transparent;
+   				margin: -40px 0 0 -175px; 
+   				display: none;
+   			}
+
+   			&-title {
+   				top: 0;
+   				left: 0;
+   				right: 120px;
+   				height: 100%; 
+   				position: absolute;
+   				display: inline-block;
+
+   				a {
+   					width: 100%;
+   					height: 100%;
+   					display: block; 
+   					vertical-align: top;
+   				}
+   				h4 {
+   					padding-top: 1.27em;
+   					padding-left: 1.27em;
+	   				@media all and (min-width:@desktop) {
+	   					color: #fff;  
+	   					padding: .8em 0;
+	   				}
+   				}
+   				@media all and (min-width:@desktop) {
+   					width: 100%;
+   					color: #fff;
+   					height: auto;
+   					font-size: 1.5em;
+   					text-align: center;
+   					position: relative;
+   					background: rgba(0, 0, 0, 0.6);
+   					margin-bottom: 1em;
+   					.border-radius(5px);
+   				}
+   				
+   			}
+   			&-buttons {
+   				right: 0;
+   				position: absolute;
+   				display: inline-block;
+   				@media all and (min-width:@desktop) { 
+   					width: 100%;
+   					left: 0;
+   					position: relative;
+   					margin: 0;
+   					text-align: center;
+   				}
+   				li {
+   					width: 60px;
+   					height: 60px; 
+   					display: inline-block;
+   					margin-right: -4px; 
+   					border-left: 1px solid @lightGrayBorder;
+   					text-align: center;
+
+   					a {
+   						width: 100%;
+   						height: 100%;
+   						display: block; 
+   					}
+   					span {
+   						&:before {
+   							padding-top: 21px;
+   							font-size: 24px;
+   							display: block;
+   							color: lighten(@textBlack, 50%);
+   						}
+   					}
+
+   					@media all and (min-width:@mobile) and (max-width: @tablet) {
+   						 
+   					}
+   					@media all and (min-width:@desktop) { 
+ 
+						background: #fff;
+						.border-radius(100%); 
+						margin-right: .5em;
+   					}
+   				}
+   			}
+		}
+	} 
+}
+
+//------------------------------------
+//------------------------------------ 
+// 			  Contacta
+//------------------------------------
+//------------------------------------
+
+.contact {
+    background: #F8F8F8;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-top:1.5em;
+
+	@media all and (min-width:@desktop) { 
+    	margin-top:1.5em;
+	}
+
+	// Contact bomttom banners.   
+    &-banner {
+
+    	width: 99%;
+    	padding: 1em 0;
+    	margin-top: 1.5em;
+    	border:1px solid @lightGrayBorder; 
+    	display: inline-block;
+    	vertical-align: top;
+    	position: relative;
+
+    	&:nth-child(2) {
+    		margin-top: 0;
+    	}
+
+		@media all and (min-width:@desktop) { 
+			width: 48.5%;
+			margin-right: 2%;   
+    		margin-top: 0; 
+		}
+
+    	&-image {
+    		width: 100px;
+    		height: 100px; 
+    		display: inline-block;
+    		background: no-repeat;
+    		background-size: auto 100%;
+    		background-image: none !important;
+    		background-position: 50% 0;
+    		vertical-align: middle;
+    		margin-left: 1em;
+    		text-align: center;
+    	}
+    	&-image span:before { 
+    		padding-top: 23px;
+    		display: block;
+    	}
+    	&-image span:before {
+    		font-size: 50px; 
+    		color: @textBlue; 
+   			color: rgba(34,34,34,.5);
+    	}
+    	&-info {
+    		display: inline-block;
+    		margin-left: 1.5em;
+    		vertical-align: middle;
+    		position: absolute;
+    		left: 100px;
+    		right: 1em;
+    		margin-top: 0.7em;
+    	}
+    	&-info h4 {
+    		font-size: 1.2em;
+    		color: rgba(34, 34, 34, 0.7);
+    		margin: 0;
+    		padding: 0;
+    		margin-bottom: 0.5em;
+    	}
+    	&-info p {
+    		margin-bottom: 0.2em; 
+    		color: rgba(34, 34, 34, 0.5);
+    	}
+    	img {
+    		width: 100%;
+    	}
+    } 
+    &-location {
+    	margin-right: 0% !important;   
+    	.contact-banner-info {
+    		margin-top: 0.3em;
+    	}
+    }
+}
+.contact-form { 
+
+	padding: 1em;
+	display: block;	
+	margin-bottom: 2em !important;
+ 
+	@media all and (min-width:600px) {
+		width: 560px;  
+		margin: 0 auto; 
+		margin-top: 2em;
+		padding: 3em 0;
+		display: block;
+	} 
+	@media all and (min-width:@desktop) {
+		width: auto;  
+		margin: 0 auto; 
+		margin: 0 2.5em;  
+		padding: 2em 0;
+    	display: inline-block;
+	} 
+
+	&-subtitle {
+		font-size: 1.2em;
+		margin-bottom: 1em;
+		opacity: .6;
+		text-align: center;
+    	// padding: 0 5%; 
+    	@media all and (min-width:600px) {
+    		margin-bottom: 1.5em;
+    	} 
+	} 
+	&-separator {
+		width: 100%;
+		display: block;
+	}
+	&-roundresponse {
+		/*
+		width: 50px;
+		height: 50px;
+		width: 70px;
+		height: 70px;
+		*/
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 2em; 
+		text-align: center;
+
+    	@media all and (max-width:@mobile) {
+			margin-top: 1.2em; 
+    	} 
+		span {
+			.border-radius(100%);
+			background: #f4f4f4;
+			font-size: 2.1em; 
+			display: inline-block; 
+			color: #fff;
+			padding: .8em; 
+		}
+
+		&-green span {
+			background: #61ed36;
+		}
+		&-red span {
+			background: #ed3636;
+		}
+	}
+	// Message when the form is sent
+
+	&-messagetitle {
+		font-size: 1.5em;
+		margin-bottom: 1em;
+		text-align: center; 
+	}
+	&-message {
+		font-size: 1.2em;
+		margin-bottom: 1.5em;
+		text-align: center; 
+		 
+		i {
+			margin-top: 0.5em;
+			font-size: .8em;
+			line-height: .8em;
+		}
+	}
+	// Form fields 
+	&-field { 
+
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    margin-bottom: 1em;
+	    text-align: center;
+	    display: block;
+
+    	@media all and (min-width:@desktop) {
+   			width: 32%;
+    		display: inline-block;
+    		margin-right: -4px;
+    		margin-left: 2%;
+    		vertical-align: middle;
+
+    		&:first-child {
+    			margin-left: 0;
+    		}
+
+    		&-subject,
+    		&-message,
+    		&-button {
+    			width: 100%;
+    			margin-left: 0;
+    		}
+
+    	} 
+
+	    &-text {
+	    	font-size: 1em;
+	    	margin-bottom: 0.5em;
+	    	text-align: left;
+	    	display: none;
+	    	span {
+	    		opacity: .5;
+	    		font-style: italic;
+	    	}
+	    }
+
+	    // Inside element we have inputs and textarea
+	    &-element {
+
+	    	width: 100%;
+	    	min-height: 50px;
+	    	position: relative;
+	    	display: block;
+	    	background: #fff;
+
+	    	&-input,
+	    	&-textarea,
+	    	&-select {  
+	    		width: 90%;
+	    		min-width: 90%;
+	    		max-width: 90%;
+	    		height: 50px;
+	    		padding:0 5%;
+	    		margin: 0; 
+	    		border: 0;  
+	    		outline: 0;
+	    		// Text style
+	    		text-align: left;
+	    		letter-spacing: 1px;
+ 	    		background: transparent;
+ 	    		-webkit-appearance:none;
+
+ 	    		-webkit-box-shadow: inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+ 	    		-moz-box-shadow:    inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+ 	    		box-shadow:         inset 0px 0px 0px 1px rgba(204, 204, 204, 1);	
+
+    		 	@media all and (min-width:@desktop) {
+    		 		width: 80%;
+    		 		min-width: 80%;
+    		 		max-width: 80%;
+    		 		padding:0 10%;
+    		 	} 
+
+	    	}
+	    	&-select {
+	    		width: 100% !important;
+	    		min-width: 100% !important;
+	    		max-width: 100% !important;
+	    		padding: 0; 
+	    		text-indent: 5%;
+	    		text-align: center !important;
+
+	    		@media all and (min-width:@desktop) {
+	    			text-indent: 3.3%;
+	    		} 
+
+	    		&-icon {
+	    			position: absolute;
+	    			top: 0.5em;
+	    			right: 1em;
+	    			font-size: 1.6em;
+	    			color: rgba(0, 0, 0, 0.5);
+	    			z-index: 2;
+	    		}
+	    	}  
+		    &-textarea { 
+		    	height: 90px;
+		    	min-height: 90px;
+		    	max-height: 90px;
+	    		padding: 1em 5%;
+
+	    		@media all and (min-width:@desktop) {
+	    			width: 100%;
+	    			min-width: 100%;
+	    			max-width: 100%;
+	    			padding:1.1em 0;
+	    			text-indent: 3.3%;
+	    		} 
+		    }
+	    	&-name {
+	    		text-transform: capitalize;
+	    	}
+	    	&-button {
+
+
+	    		text-align: center;
+	    		border: 0;
+
+	    		background-color: @textBlue;
+	    		background-color: darken(@textBlue, 10%);
+
+	    		border-radius: 3px;
+	    		padding: 18px 29px 18px;
+	    		font-size: 14px;
+	    		text-transform: uppercase;
+	    		letter-spacing: 3px;
+	    		font-weight: 400;
+	    		font-style: normal;
+	    		line-height: 1;
+	    		color: #fff;
+	    		text-decoration: none;
+	    		display: inline-block;
+	    		margin: 0 auto;
+	    		text-align: center;
+	    		border-radius: 3px;
+	    		-webkit-box-shadow: inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+	    		-moz-box-shadow:    inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+	    		box-shadow:         inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+	    		letter-spacing: 1.7px;
+
+	    		margin-top: .5em;
+
+
+    			@media all and (min-width:@desktop) {  
+	    			padding: 18px 20px;
+    		    	margin-top:1em;
+    		    	margin-bottom: -2em;
+    			}
+
+
+	    		.transition(0.2s);
+
+	    		&:hover {
+	    			background-color: @textBlue;
+	    		}
+
+	    	}
+	    }
+	}
+}
+
+

@@ -1,0 +1,105 @@
+doctype html
+html(lang="es")
+	head
+
+		title= title 
+
+		meta(charset='UTF-8') 
+		meta(name='HandheldFriendly', content='True') 
+		meta(name='apple-mobile-web-app-capable', content='yes')  
+
+		meta(name='viewport', content='width=device-width')  
+		meta(name='viewport', content='user-scalable=no')  
+		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0') 
+
+		meta(name='description', content= pageDescription)
+
+		meta(property='og:title' content='Landcreativa - Materializing your ideas')
+		meta(property='og:site_name' content='Landcreativa')
+		meta(property='og:url' content='http://www.landcreativa.com/')
+		meta(property='og:image' content='')
+
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
+		link(rel='stylesheet' type='text/css' href='/css/normalize.css')
+		link(rel='stylesheet' type='text/css' href='/style.css')
+		link(rel='stylesheet' type='text/css' href='/css/style_to_less.css')
+		link(rel='stylesheet' type='text/css' href='/css/style.css')
+     
+	body
+		
+		// Mobile menu
+
+		.mobileMenu
+			.mobileMenu-int
+
+				.mobileMenu-logo
+					a(href='/')
+						.iso
+						.text
+							h1 Landcreativa 
+
+				.mobileMenu-button
+					.icon-options 
+
+				.mobileMenu-navigation
+					ul
+						li 
+							a(href='/nosotros') Nosotros
+						li 
+							a(href='/servicios') Servicios
+						li 
+							a(href='/casos_exito') Casos de éxito
+						li 
+							a(href='/contacta') Contacta
+
+						li.mobileMenu-navigation-socialNetwork
+							a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
+
+						li.mobileMenu-navigation-socialNetwork
+							a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
+
+		// Desktop menu
+
+		header
+			nav.menu_desktop
+				.int
+
+					.logo
+						a(href='/')
+							.iso
+							.text
+								h1 Landcreativa 
+
+					.links
+						ul
+							li 
+								a(href='/nosotros') Nosotros
+							li 
+								a(href='/servicios') Servicios
+							li 
+								a(href='/casos_exito') Casos de éxito
+							li 
+								a(href='/contacta') Contacta
+
+					.socialNetworksTop
+						ul
+							li
+								a(href='http://www.facebook.com/landcreativa', target='_blank')
+									span.icon-facebook
+
+							li
+								a(href='http://www.twitter.com/landcreativa', target='_blank')
+									span.icon-twitter
+
+							li
+								a(href='http://blog.landcreativa.com/', target='_blank')
+									span.icon-blog
+
+							li
+								a(href='mailto:info@landcreativa.com')
+									span.icon-paperplane
+
+
+		// Starting the content
+
+		block content  

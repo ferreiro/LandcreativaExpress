@@ -1,0 +1,676 @@
+
+
+/**************
+	Slider
+***************/
+
+.slider
+{
+	width: 100%;
+	height: 100%; 
+	display: inline-block; 
+	position:relative;
+	height: 600px; 
+	display:block;
+	margin-top: 70px;
+}
+
+.slider:hover .sliderButtonPrev,
+.slider:hover .sliderButtonNext
+{
+	opacity: 1;
+}
+.sliderButtonPrev,
+.sliderButtonNext
+{
+	width: 70px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top:0; 
+	opacity: .6;   
+	position: absolute; 
+	cursor: pointer;
+	z-index: 3; 
+}
+
+.sliderButtonPrev:hover,
+.sliderButtonNext:hover
+{
+	background: #f9f9f9;
+}
+.sliderButtonNext
+{ 
+	left: inherit;
+	right: 0;
+}
+.sliderButtonNext:before
+{
+	margin-left: 0px !important;
+	right: 20px;
+}
+.sliderButtonPrev span:before,
+.sliderButtonNext span:before
+{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	top: 50%;
+	margin: 0;
+	margin-top: -15px;
+	position: absolute; 
+	padding: 0;  
+	float: left; 
+	font-size: 40px; 
+	color: rgba(0,0,0,.2);
+}
+
+.sliderSelector
+{
+	width: 200px;
+	margin:0 auto;  
+	margin-left: -100px;
+	z-index: 1;
+	position: absolute;
+	bottom: 1em;
+	left: 50%;
+}
+.sliderSelector ul
+{
+	margin: 0;
+	padding: 0;
+}
+.sliderSelector li:hover 
+{ 
+	background: rgba(0,0,0,0.35);
+}
+.sliderSelector li.current
+{
+	background: rgba(0,0,0,0.65);
+}
+.sliderSelector li:last-child
+{
+	margin-right: 0 !important;
+} 
+.sliderSelector li 
+{
+	width: 24.6%; 
+	height: 8px;
+	float: left;
+	cursor: pointer; 
+	bottom: 0;
+	padding: 0;
+	margin: 0; 
+	margin-right: 0.5%;
+	background: rgba(0,0,0,0.25);
+	transition:0.3s; 
+}
+.sliderDiapos 
+{ 
+	width: 100%;
+	height: 100%;
+	float: left; 
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}  
+.sliderDiapos li
+{
+	display: none;
+	float: left;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: 50% 50% no-repeat;
+	background-size: cover;
+ 
+	transition: background-color 0.5s ease;
+}  
+.sliderDiapos li.current
+{	
+	/* Don't edit this part */
+	display: block;
+	z-index: 2 !important;
+}
+.sliderDiapos li.next
+{	
+	/* Don't edit this part */
+	display: block;
+	z-index: 1 !important;
+}
+.sliderDiapos li ul li 
+{	
+	/* Don't edit this part - prevents inline lists from being hidden */
+	display: block !important;
+	position: relative !important;
+}
+.sliderDiapos:hover li .sliderDiaposInfo
+{ 
+	bottom: 0;
+	margin-bottom: 0; 
+}
+.slider 
+.sliderDiaposInfo h1
+{
+	width: 100%;
+	margin: 0;
+	padding: 0; 
+}
+.sliderDiaposInfo h1 a
+{ 
+	font-size: 22px;
+	line-height: 22px;
+	font-weight: 500;
+	color: rgba(255,255,255,0.9);
+}
+.sliderDiaposInfo h2
+{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 300;
+	color: rgba(255,255,255,0.6);
+}
+.sliderDiaposInfo p
+{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 300;
+	color: rgba(255,255,255,0.9);
+}
+.sliderDiaposInfo p a
+{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 300;
+}
+.sliderDiaposLink
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+.sliderDiaposLink a
+{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+
+
+
+.diapositiva {
+	width: auto;
+	height: auto;   
+	position: relative;  
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+1,ffffff+47,ffffff+47,f9f9f9+100 */
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #efefef 1%, #ffffff 47%, #ffffff 47%, #f9f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(1%,#efefef), color-stop(47%,#ffffff), color-stop(47%,#ffffff), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #efefef 1%,#ffffff 47%,#ffffff 47%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #efefef 1%,#ffffff 47%,#ffffff 47%,#f9f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #efefef 1%,#ffffff 47%,#ffffff 47%,#f9f9f9 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #efefef 1%,#ffffff 47%,#ffffff 47%,#f9f9f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+47,ffffff+47,f4f4f4+100 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 47%, #ffffff 47%, #f4f4f4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,#ffffff), color-stop(47%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 47%,#ffffff 47%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 47%,#ffffff 47%,#f4f4f4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 47%,#ffffff 47%,#f4f4f4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 47%,#ffffff 47%,#f4f4f4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+}	
+.diapositiva .content
+{ 
+	position: relative; 
+	margin: 0 auto;  
+	text-align: center;
+}
+.diapositiva .mini_logo
+{
+	width: 100%;
+	height: 70px;
+	float: left; 
+	margin-bottom: 1.5em; 
+}
+.diapositiva .mini_logo div
+{
+	width: 70px;
+	height: 70px;
+	margin: 0 auto; 
+	background: #3695ed;
+	background:url(images/iso.png) 50% 50% no-repeat;
+	background-size: auto 100%; 
+}
+.diapositiva .content h1
+{
+	text-align: center;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	color: #222;
+	font-weight: 300; 
+} 
+.diapositiva .content p
+{	  
+	width: 230px;
+	min-height: 50px;  
+	display: inline-block; 
+	margin-top: 2em;
+} 
+.diapositiva .content p a
+{ 
+	width: 100%;
+	float: left;
+	padding: 1.1em 0;
+	background: #f4f4f4;
+	color: #222;  
+	text-transform: uppercase;
+	letter-spacing: 1.7px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: rgba(255,255,255,0.3); 
+    border: 2px solid #E2E2E2;
+}  
+.diapositiva .content p a:hover
+{
+	background: rgba(34, 34, 34, 0.0980392); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********
+** Menu **
+**********/
+.menu_mobile {
+	width: 100%;
+	height: 60px;
+	top: 0;
+	z-index: 100;
+	background: #fff;
+	position: fixed;
+	display: block;
+	transition:0.3s;
+	display: none;
+	/* -webkit-box-shadow: 0px 2px 5px 0px rgba(211, 210, 210, 1);
+	-moz-box-shadow:    0px 2px 5px 0px rgba(211, 210, 210, 1);
+	box-shadow:         0px 2px 5px 0px rgba(211, 210, 210, 1);
+	*/
+}
+.menu_mobile .content
+{ 
+	padding: 1.3em 1em;
+}
+.menu_mobile .logo
+{
+	width: 150px;
+	float: left;
+}
+.menu_mobile .logo .iso
+{
+	display: none;
+}
+.menu_mobile .logo .text
+{
+	font-size: 1em;
+}
+.menu_mobile .logo .text h1
+{
+	font-size: 1.2em;
+	line-height: 0.8em; 
+}
+.menu_mobile .menu_btn
+{
+	width: 70px;
+	height: 100%;
+	float: right;
+	position: absolute;
+	border-left: 1px solid #e6e2e2;
+	top: 0;
+	right: 0;
+}
+.menu_mobile .menu_btn span
+{
+	width: 100%;
+	height: 100%;
+	float: left;
+	margin-top: 0.7em;
+}
+.menu_mobile .menu_btn span:before
+{
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 35px;
+}
+/*********
+** Menu **
+**********/
+.menu_desktop
+{
+	width: 100%;
+	height: 80px;
+	background: #f2f2f2;
+	background: #fff;
+	top: 0;
+	z-index: 100;
+	position: fixed; 
+	transition:0.3s;
+	display: none;
+	/*box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);*/
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+}
+.menu_desktop_fixed
+{
+	position: fixed;
+	top: 0;
+	bottom: inherit;
+}	
+.menu_desktop .int
+{ 
+	position: relative;
+}
+.menu_desktop .logo
+{	 
+	position: absolute;
+	top: 29px;  
+    left: 1.5em; 
+}
+.menu_desktop .logo .iso
+{
+	width: 22px;
+	height: 22px; 
+	float: left;
+	background: #3695ed;
+	background: url(images/iso.png) 50% 50% no-repeat;
+	background-size: auto 100%; 
+}
+.menu_desktop .logo .text
+{
+	float: left;
+}
+.menu_desktop .logo h1
+{
+	font-size: 1.2em;
+	float: left;
+	margin: 0.05em 0.8em; 
+	color: #3695ed;
+}
+.menu_desktop .links
+{
+	width: 590px;
+	height: 100%; 
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	border-right: 1px solid #f4f4f4;
+	border-left: 1px solid #f4f4f4;
+}
+.menu_desktop .links ul
+{
+	width: 100%;
+	height: 60px;
+	text-align: center;
+}
+.menu_desktop .links ul li
+{  
+	height: 100%; 
+	margin-top: 15px;  
+	padding-top: 5px;
+	display: inline-block;
+	margin-right: -4px; 
+	position: relative;
+} 
+.menu_desktop .links ul li.selected {
+	/* background: #f9f9f9; */
+}
+.menu_desktop .links ul li.selected a:after
+{
+	content: "";
+	left: 0;
+	width: 100%;
+	float: left;
+	bottom: 0;
+	position: absolute;
+	height: 20px;
+	border-bottom: 0 solid #cecece;
+}
+.menu_desktop .links ul li.selected a {
+	border-bottom: 3px solid #cecece;
+	line-height: 5px;
+	padding: 15px 0;
+	margin:0  13px;
+}
+.menu_desktop .links ul li a
+{   
+	display: block;
+	text-align: center;
+	font-size: 1em;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	color: #676767; 
+	font-weight: 300;
+	text-transform: uppercase; 
+	line-height: 20px; 
+	font-style: normal;
+	line-height: 1;
+	color: #222;
+	padding: 15px 13px;  
+} 
+.menu_desktop .links:hover ul li a
+{
+	color: rgba(34, 34, 34, 0.498039);
+}
+.menu_desktop .links:hover ul li a:hover
+{
+	color: rgba(34, 34, 34, 0.9);
+}
+.socialNetworksTop {
+	width: 180px;
+	height: 80px; 
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: right; 
+}
+.socialNetworksTop ul {
+	margin-top: 20px;
+}
+.socialNetworksTop ul li:first-child {
+	margin-left:0 !important;
+}
+.socialNetworksTop ul li {
+	display: inline-block;
+	margin-left: 2px;
+}
+.socialNetworksTop ul li a:hover {
+	background: #f4f4f4;
+}
+.socialNetworksTop ul li a {
+	width: 40px;
+	height: 30px; 
+	display: block;
+	font-size: 1.2em;
+    color: #676767;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: 10px;
+}  
+
+/********************
+** Social networks **
+*********************/
+.social_networks_desktop
+{
+	width: 200px;
+	height: 60px;
+	background: red;
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+/*********
+** Home **
+**********/
+
+ 
+@media all and (min-width: 600px) and (max-width: 999px) {
+
+	#home
+	{
+		width: auto;
+		height: auto;   
+		position: relative; 
+		padding: 12em 10em;
+	}
+	.diapositiva .content h1 { 
+	    font-size:2em;
+	    line-height: 1.3em; 
+	}
+ 
+	.diapositiva .content
+	{ 
+		padding: 1.3em 2em;
+	} 
+ 
+}
+
+@media all and (min-width: 1000px) {
+
+	.menu_mobile
+	{
+		display: none;
+	}
+	.menu_desktop
+	{
+		display: block;
+	}
+	.menu_desktop .int
+	{
+		width: 1000px; 
+		position: relative; 
+		height: 100%;	
+		margin: 0 auto;
+	}
+	.guide
+	{
+		margin-top: -80px;
+	}
+
+
+	#homeFooter {
+		display: none;
+	}
+	.slider {
+		height: auto;
+		margin-top: 0;
+		position: absolute;
+		display: inline-block;
+		top: 80px;
+		bottom: 0;
+	}
+
+
+	.diapositiva {
+		width: 100%;
+		height: 100vh;
+		margin: 0;
+		float: left;
+		position: relative;
+		padding: 0; 
+	}
+	.diapositiva .content 
+	{
+		width: 750px; 
+		height: 350px;   
+		position: absolute;
+		top:50%;
+		left: 50%;
+		padding: 0;
+		margin-top: -160px;
+		margin-left: -375px; 
+	}
+	.diapositiva .content h1
+	{
+		font-size: 44px;
+		line-height: 54px;
+		letter-spacing: -.3px;
+		font-weight: 300;
+		font-style: normal;
+		color: #222;
+	} 
+	.diapositiva .content p
+	{	  
+		width: 230px;
+		min-height: 50px; 
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -115px; 
+		float: left;
+	}  
+	.aboutSection { 
+		padding-bottom: 0;
+	}
+	.serviciosSection { 
+		padding-bottom: 0;
+	} 
+
+	.full_image
+	{
+		width: 100%;
+		float: left;
+		height: 460px; 
+	}  
+
+}
+
+
+
+
+ 
+
+
+
+
+
+
+
