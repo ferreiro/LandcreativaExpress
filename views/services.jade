@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+	section.section.serviciosSection
+		.content
+			h1.commun-title #{title} 
+
+			include ./services_communTab.jade
+
+			// Dar la posibilidad que en otros servicios puedan incluir código propio
+			block serviciosContent
+
