@@ -4,7 +4,11 @@ block content
 
 	section.section.serviciosSection
 		.content
-			h1.commun-title #{title} 
+
+			h1.commun-title #{title}
+
+			// Loading script depending the page we are.
+			script(type='text/javascript', src='/js/#{scriptName}.js')
 
 			include ./services_communTab.jade
 

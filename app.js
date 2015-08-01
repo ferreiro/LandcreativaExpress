@@ -29,12 +29,13 @@ app.use(app.router);
 app.get('/', routes.index);
 app.get('/users', users.list);
 
-
+/*
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Home'
   });
 });
+*/ 
 
 app.get('/nosotros', function(req, res){
   res.render('nosotros', {
@@ -43,32 +44,60 @@ app.get('/nosotros', function(req, res){
   });
 });
 
-app.get('/servicios', function(req, res){
-  res.render('services_personal', {
-    title: 'Servicios',
-    pageDescription : 'Somos expertos en diseño web'
-  });
+app.get('/servicios', function(req, res) {
+    var title, viewName, scriptName, description;  // View parameters
+
+    title       = 'Servicios';    // default title
+    viewName    = 'services';     // 'services' is the default view template
+    scriptName  = 'tab_personal'; // default script name
+    description = 'Expertos en Diseño web, diseño gráfico y marketing / SEO'; // default description
+
+    res.render(
+        viewName, {
+            title: title, // Title of the section
+            description: description,
+            scriptName: scriptName
+        }
+    );
 });
 
-app.get('/servicios/empresas', function(req, res){
-  res.render('services_companies', {
-    title: 'Servicios',
-    pageDescription : 'Somos expertos en diseño web'
-  });
-});
+// :routeURL - Código explicado en http://expressjs.com/4x/api.html#res.send
 
-app.get('/servicios/particulares', function(req, res){
-  res.render('services_personal', {
-    title: 'Servicios',
-    pageDescription : 'Somos expertos en diseño de páginas web personales'
-  });
-});
+app.get('/servicios/:routeURL', function(req, res) {
+    var title, viewName, scriptName, description;  // View parameters
+    var routeURL; 
 
-app.get('/servicios/marketing', function(req, res){
-  res.render('services_marketing', {
-    title: 'Servicios',
-    pageDescription : 'Somos expertos en marketing digital y SEO'
-  });
+    routeURL = req.params.routeURL; // Get the service routeURL
+
+    // Default values for View parameters
+
+    title       = 'Servicios';    // default title
+    viewName    = 'services';     // 'services' is the default view template
+    scriptName  = 'tab_personal'; // default script name
+    description = 'Expertos en Diseño web, diseño gráfico y marketing / SEO'; // default description
+
+    // Particular cases for specific routes
+   
+    if (routeURL == 'empresas') {
+        // /services/empresas
+        scriptName = 'tab_companies';
+    }
+    else if (routeURL == 'particulares') {
+        // /services/particulares
+        scriptName = 'tab_personal';
+    }
+    else if (routeURL == 'marketing') {
+        // /services/particulares
+        scriptName = 'tab_marketing';
+    }
+
+    res.render(
+        viewName, {
+            title: title, // Title of the section
+            description: description,
+            scriptName: scriptName
+        }
+    );
 });
 
 app.get('/casos_exito', function(req, res){
