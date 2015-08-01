@@ -1,5 +1,40 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+	.section.aboutSection
+		.content
+			
+			h1.commun-title #{title}
+
+			.about
+				.about-left
+					.about-image(style='background-image:url(/images/desktop2.jpg);')
+
+				.about-right
+					h2.commun-subtitle about-subtitle ¿Cómo nos definimos?
+
+					p.about-text Somos gente comprometida, dinámica y creativa. Siempre a la cabeza de la innovación y nuevas tecnologías, que implementamos en todos nuestros proyectos con resultados excepcionales.
+
+					p.about-text En Landcreativa escuchamos a nuestros clientes. Consideramos de vital importancia desarrollar un trabajo que adaptado a las necesidades específicas de cada proyecto, por lo que conseguimos la satisfacción de un trabajo bien hecho.
+					
+					p.about-text.about-text-nomargin Calidad, puntualidad y eficiencia, así es como trabajamos. De esta forma, siempre cumplimos con  las fechas acordadas, gracias al compromiso que adquirimos con nuestros clientes.
+					// Fin about right
+
+				.about-separator
+
+				.about-left
+					h2.commun-subtitle.about-subtitle ¿Por qué nosotros?
+					
+					p.about-text Disponemos de un excelente equipo de profesionales pertenecientes a diversos sectores que trabajan en equipo para lograr su completa satisfacción.
+					
+					p.about-text Además, nuestros clientes estarán informados constantemente del desarrollo de su trabajo y dispondrá en todo momento del mismo equipo que está desarrolando su proyecto. Por lo que nos aseguramos su máxima satisfacción.
+
+					p.about-text.about-text-nomargin Finalmente, gestionamos de la manera más eficiente los recursos disponibles de nuestros clientes para optimizar el retorno de la inversión.
+
+				.about-right
+					.about-image(style='background-image:url(images/info_ordenadores.png);')
+
+				.about-separator
+					.about-link
+						a(href='/servicios', style="width:300px; text-align:center; display:block;, float:inherit;").productBox-button.productBox-button-companies Ver nuestros servicios

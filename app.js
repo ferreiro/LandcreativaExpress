@@ -24,6 +24,8 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+// Routes
+
 app.get('/', routes.index);
 app.get('/users', users.list);
 
@@ -36,30 +38,48 @@ app.get('/', function(req, res){
 
 app.get('/nosotros', function(req, res){
   res.render('nosotros', {
-    title: 'Nosotros - Landcreativa.com',
+    title: 'Nosotros',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
+
 app.get('/servicios', function(req, res){
   res.render('servicios', {
     title: 'Servicios',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
+
 app.get('/servicios/empresas', function(req, res){
   res.render('servicios-empresas', {
     title: 'Servicios para empresas',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
-app.get('/casos_exito', function(req, res){
-  res.render('casos_exito', {
-    title: 'About'
+
+app.get('/servicios/particulares', function(req, res){
+  res.render('servicios-particulares', {
+    title: 'Servicios para particulares',
+    pageDescription : 'Somos expertos en diseño web'
   });
 });
+
+app.get('/servicios/marketing', function(req, res){
+  res.render('servicios-marketing', {
+    title: 'Servicios marketing',
+    pageDescription : 'Somos expertos en diseño web'
+  });
+});
+
+app.get('/casos_exito', function(req, res){
+  res.render('casos_exito', {
+    title: 'Casos de éxito'
+  });
+});
+
 app.get('/contacta', function(req, res){
   res.render('contacta', {
-    title: 'About'
+    title: 'Contacta'
   });
 });
 

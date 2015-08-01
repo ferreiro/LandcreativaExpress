@@ -3,7 +3,6 @@ var mobile = 600;
 var tablet = 999;
 var desktop = 1000;
  
-
 //----------------------------
 //-- MENU
 //----------------------------
@@ -97,7 +96,7 @@ function changeTabsColor(number) {
 	} 
 
 
-    $('.productBox-image').addClass("productBox-image-noscale").delay(470).queue(function(){
+    $('.productBox-image').addClass("productBox-image-noscale").delay(550).queue(function(){
     	$(this).removeClass("productBox-image-noscale").dequeue();
 	});
 

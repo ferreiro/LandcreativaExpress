@@ -1,5 +1,4 @@
-extends header
-
+extends layout
 
 block content
 
@@ -7,10 +6,9 @@ block content
 		.content
 			h1.commun-title #{title} 
 
-			script(type='text/javascript')
-				window.onload = function(){changeTab(1)};
+			//script(type='text/javascript')
+			//	window.onload = function(){
+			//		changeTab(1)
+			//	};
 
 			include ./serviciosTab.jade
-
-	// Includes the footer
-	include ./footer.jade
