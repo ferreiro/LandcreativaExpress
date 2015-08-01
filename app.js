@@ -44,28 +44,28 @@ app.get('/nosotros', function(req, res){
 });
 
 app.get('/servicios', function(req, res){
-  res.render('servicios', {
+  res.render('services_personal', {
     title: 'Servicios',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
 
 app.get('/servicios/empresas', function(req, res){
-  res.render('servicios-empresas', {
+  res.render('services_companies', {
     title: 'Servicios para empresas',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
 
 app.get('/servicios/particulares', function(req, res){
-  res.render('servicios-particulares', {
+  res.render('services_personal', {
     title: 'Servicios para particulares',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
 
 app.get('/servicios/marketing', function(req, res){
-  res.render('servicios-marketing', {
+  res.render('services_marketing', {
     title: 'Servicios marketing',
     pageDescription : 'Somos expertos en diseño web'
   });

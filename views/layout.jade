@@ -19,12 +19,11 @@ html(lang="es")
 		meta(property='og:url' content='http://www.landcreativa.com/')
 		meta(property='og:image' content='')
 
-		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
-		link(rel='stylesheet' type='text/css' href='/css/normalize.css')
-		link(rel='stylesheet' type='text/css' href='/style.css')
-		link(rel='stylesheet' type='text/css' href='/css/style_to_less.css')
-		link(rel='stylesheet' type='text/css' href='/css/style.css')
-     
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css') 		
+		link(href='/css/normalize.css', rel='stylesheet', type='text/css' )
+		link(rel='stylesheet', type='text/css', href='/css/style_to_less.css')
+		link(rel='stylesheet', type='text/css', href='/css/style.css')
+		
 	body
 		
 		// Mobile menu
@@ -38,7 +37,7 @@ html(lang="es")
 						.text
 							h1 Landcreativa 
 
-				.mobileMenu-button
+				button.mobileMenu-button
 					.icon-options 
 
 				.mobileMenu-navigation
@@ -72,14 +71,43 @@ html(lang="es")
 
 					.links
 						ul
-							li 
-								a(href='/nosotros') Nosotros
-							li 
-								a(href='/servicios') Servicios
-							li 
-								a(href='/casos_exito') Casos de éxito
-							li 
-								a(href='/contacta') Contacta
+
+							// Nosotros
+							
+							if title == "Nosotros"
+								li.selected
+									a(href='/nosotros') Nosotros
+							else
+								li
+									a(href='/nosotros') Nosotros
+
+							// Servicios
+							
+							if title == "Servicios"
+								li.selected
+									a(href='/servicios') Servicios
+							else
+								li
+									a(href='/servicios') Servicios
+
+							// casos_exito
+							
+							if title == "Casos de éxito"
+								li.selected
+									a(href='/casos_exito') Casos de éxito
+							else
+								li
+									a(href='/casos_exito') Casos de éxito
+
+							// Contacta
+							
+							if title == "Contacta"
+								li.selected
+									a(href='/contacta') Contacta
+							else
+								li
+									a(href='/contacta') Contacta
+  
 
 					.socialNetworksTop
 						ul
@@ -104,6 +132,5 @@ html(lang="es")
 
 		block content 
 
-		
 		// Includes the footer
-		include ./footer.jade 
+		include ./footer.jade
