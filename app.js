@@ -52,22 +52,22 @@ app.get('/servicios', function(req, res){
 
 app.get('/servicios/empresas', function(req, res){
   res.render('services_companies', {
-    title: 'Servicios para empresas',
+    title: 'Servicios',
     pageDescription : 'Somos expertos en diseño web'
   });
 });
 
 app.get('/servicios/particulares', function(req, res){
   res.render('services_personal', {
-    title: 'Servicios para particulares',
-    pageDescription : 'Somos expertos en diseño web'
+    title: 'Servicios',
+    pageDescription : 'Somos expertos en diseño de páginas web personales'
   });
 });
 
 app.get('/servicios/marketing', function(req, res){
   res.render('services_marketing', {
-    title: 'Servicios marketing',
-    pageDescription : 'Somos expertos en diseño web'
+    title: 'Servicios',
+    pageDescription : 'Somos expertos en marketing digital y SEO'
   });
 });
 
