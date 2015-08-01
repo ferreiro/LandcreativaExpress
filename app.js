@@ -11,6 +11,7 @@ var users = require('./routes/user');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -28,14 +29,15 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.get('/users', users.list);
-
+ 
+ 
 /*
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Home'
   });
-});
-*/ 
+}); 
+*/
 
 app.get('/nosotros', function(req, res){
   res.render('nosotros', {
@@ -43,6 +45,10 @@ app.get('/nosotros', function(req, res){
     pageDescription : 'Somos expertos en diseño web'
   });
 });
+
+//------------------------------
+//-- SERVICIOS ROUTES
+//------------------------------
 
 app.get('/servicios', function(req, res) {
     var title, viewName, scriptName, description;  // View parameters
@@ -67,7 +73,7 @@ app.get('/servicios/:routeURL', function(req, res) {
     var title, viewName, scriptName, description;  // View parameters
     var routeURL; 
 
-    routeURL = req.params.routeURL; // Get the service routeURL
+    routeURL = (req.params.routeURL).toUpperCase(); // Get the service routeURL
 
     // Default values for View parameters
 
@@ -78,15 +84,15 @@ app.get('/servicios/:routeURL', function(req, res) {
 
     // Particular cases for specific routes
    
-    if (routeURL == 'empresas') {
+    if (routeURL == 'EMPRESAS') {
         // /services/empresas
         scriptName = 'tab_companies';
     }
-    else if (routeURL == 'particulares') {
+    else if (routeURL == 'PARTICULARES') {
         // /services/particulares
         scriptName = 'tab_personal';
     }
-    else if (routeURL == 'marketing') {
+    else if (routeURL == 'MARKETING') {
         // /services/particulares
         scriptName = 'tab_marketing';
     }
@@ -101,15 +107,82 @@ app.get('/servicios/:routeURL', function(req, res) {
 });
 
 app.get('/casos_exito', function(req, res){
-  res.render('casos_exito', {
-    title: 'Casos de éxito'
-  });
+    var title = 'Casos de éxito';
+    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+
+    res.render('casos_exito', {
+        title: title, // Title of the section
+        description: description
+    })
 });
 
+//------------------------------
+//-- CONTACT ROUTES
+//------------------------------
+
+
 app.get('/contacta', function(req, res){
-  res.render('contacta', {
-    title: 'Contacta'
-  });
+    var title = 'Contacta';
+    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+    var contact = true; // The view use this to show contact or presupuesto
+
+    res.render('contact', {
+        title: title, // Title of the section
+        description: description,
+        contact: contact
+    })
+});
+
+app.get('/quiero/:contactType', function(req, res){
+    var title, description, contactType;
+    var headerImage, contact; // View parameters
+
+    contactType = (req.params.contactType).toLowerCase();   // Take the URL parameter in this variable
+    console.log('Contact type ' + contactType);
+
+    // Default content for the page
+    title = '¡Quiero el pack ' + contactType + '!';
+    description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+    headerImage = ''; 
+    contact = false;    // The view use this to show contact or presupuesto 
+
+    // Particular cases for the URL
+    // Particulares
+
+    if (contactType == "gold") {
+        headerImage = 'goldContact.png';
+    }
+    else if (contactType == "silver") {
+        headerImage = 'silverContact.png';
+    }
+    else if (contactType == "premium") {
+        headerImage = 'premiumContact.png';
+    } // Empresas
+    else if (contactType == "executive") {
+        headerImage = 'goldContact.png';
+    }
+    else if (contactType == "business") {
+        headerImage = 'silverContact.png';
+    }
+    else if (contactType == "first-class") {
+        headerImage = 'premiumContact.png';
+    } // Marketing
+    else if (contactType == "analitica") {
+        headerImage = 'analiticaContact.png';
+    }
+    else if (contactType == "seo") {
+        headerImage = 'seoContact.png';
+    }
+    else if (contactType == "marketing") {
+        headerImage = 'marketingContact.png';
+    }
+    
+    res.render('contact', {
+        title: title, // Title of the section
+        description: description,
+        headerImage: headerImage,
+        contact: contact
+    })
 });
 
 

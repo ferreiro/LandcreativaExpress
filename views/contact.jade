@@ -7,26 +7,40 @@ block content
 			
 			h1.commun-title #{title}
 
-			.contact-banner.contact-cafe
-				.contact-banner-image
-					span.icon-coffee
-				.contact-banner-info
-					h4 Tomemos un café.
-					p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
+			#{description}
 
-			.contact-banner.contact-location
-				.contact-banner-image
-					span.icon-map
-				.contact-banner-info
-					h4 ¿Dónde puedes encontrarnos?
-					p Estamos en <strong>Madrid</strong>
-					p (Contáctanos para otras ciudades y países)
+			if !contact
+				//- We use this for the budgeting contact form
+				//- Show header for packs 
+				
+				img(src="#{headerImage}")
+				a(href="/servicios") < Seleccionar otro pack
+
+			else 
+
+				//- Show header for contact
+
+				.contact-banner.contact-cafe
+					.contact-banner-image
+						span.icon-coffee
+					.contact-banner-info
+						h4 Tomemos un café.
+						p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
+
+				.contact-banner.contact-location
+					.contact-banner-image
+						span.icon-map
+					.contact-banner-info
+						h4 ¿Dónde puedes encontrarnos?
+						p Estamos en <strong>Madrid</strong>
+						p (Contáctanos para otras ciudades y países)
+			
 
 			.contact
 				.contact-form
 					.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
 
-					form(action='contacta.php', method='post')
+					form(action='/contacta', method='post')
 
 						fieldset.contact-form-field
 							p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
@@ -51,14 +65,26 @@ block content
 							p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
 
 							.contact-form-field-element
-								span.contact-form-field-element-select-icon.icon-angle-down
 
-								select(name="subject", required).contact-form-field-element-select
-									option(value="Particulares") Encargar página web personal
-									option(value="Empresas") Encargar página web empresa
-									option(value="Marketing") Encargar página web marketing
-									option(value="Asistencia tecnica") Asistencia técnica
-									option(value="Prensa") Prensa / Medios
+								//- If we're in contact
+								if contact
+
+									span.contact-form-field-element-select-icon.icon-angle-down
+
+									select(name="subject", required).contact-form-field-element-select
+ 
+										option(value="Particulares") Encargar página web personal
+										option(value="Empresas") Encargar página web empresa
+										option(value="Marketing") Encargar página web marketing
+										option(value="Asistencia tecnica") Asistencia técnica
+										option(value="Prensa") Prensa / Medios
+								else
+
+									//- Estamos en presupuesto
+
+									select(name="subject", disabled, required).contact-form-field-element-select
+										
+										option(value="#{title}") #{title}
 
 						fieldset.contact-form-field.contact-form-field-message
 							p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
