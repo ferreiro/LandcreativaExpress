@@ -133,6 +133,18 @@ app.get('/contacta', function(req, res){
     })
 });
 
+app.post('/contacta', function(req, res){
+    var title = 'Contacta posteadoooooo hahahahahahahhahaah';
+    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+    var contact = true; // The view use this to show contact or presupuesto
+
+    res.render('contact', {
+        title: title, // Title of the section
+        description: description,
+        contact: contact
+    })
+});
+
 app.get('/quiero/:contactType', function(req, res){
     var title, description, contactType;
     var headerImage, contact; // View parameters
