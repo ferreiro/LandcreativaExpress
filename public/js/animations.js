@@ -37,9 +37,17 @@ $(window).resize(function(){
 
 
 //----------------------------
-//-- SERVICES
+//-- HOME SLIDER
 //----------------------------
  
+$('.slider-slides').DDSlider({
+
+	prevSlide: '.slider-navigation-left',
+	nextSlide: '.slider-navigation-right',
+	selector: '.slider-selector'
+
+});
+
 
 //----------------------------
 //-- ABOUT US

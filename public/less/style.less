@@ -495,49 +495,184 @@ body {
 	position: relative;  		// Grap the content inside slider class
 
 	@media all and (min-width: @tablet) {
+		height: 450px;		 	// Ocupy all the window height on desktop
+	}
+	@media all and (min-width: 800px) {
 		height: 600px;		 	// Ocupy all the window height on desktop
 	}
 	@media all and (min-width: @desktop) {
 		height: 100vh;		 	// Ocupy all the window height on desktop
 		margin-top: 0;		 	// Restart margin to 0
-
 	}
 
 	// Buttons for select the slide number
 	ul.slider-selector {
-		width: 150px;
-		height: 30px;
 		left: 50%;				// Position on the middle
 		bottom: 5%;			// Bottom margin
-		position: absolute;		
-		background: #cecece;
-		margin-left: -75px;		// Divide width / 2
+		z-index: 2;
+		position: absolute;
+		.border-radius(5px);
 		text-align: center; 	// Center buttons here.
-	}
-	// Buttons to go previous and right on slide
-	ul.slider-navigation {
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
 
 		li {
+			width: 20px;
+			height: 20px;
+			background: rgba(255, 255, 255, 0.5);
+			display: inline-block;
+			// .border-radius(100%);
+			margin-right: 8px;
+			position: relative;
+			
+			&:last-child {
+				margin-right: 0;
+			} 
 
-			a {
-				
-				&:hover {
+			&.current {
+				background: rgba(255, 255, 255, 0.7);
+				&:before {
+					width: 8px;
+					height: 8px;
+					background: transparent;
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					-webkit-transform: translate(-50%,-50%);
+					-ms-transform: translate(-50%,-50%);
+					transform: translate(-50%,-50%);
+					//  .border-radius(100%);
 
 				}
 			} 
 		}
-		li.slider-navigation-left {
+	}
+	// Buttons to go previous and right on slide
+	ul.slider-navigation {
 
+
+		li {
+
+			width: 60px;		// Width for the 
+			background: transparent;	// No color	
+			position: absolute;	// Position aboluste to the slider
+			bottom: 0;			// Ocupy the whole height
+			top: 0;				// Ocupy the whole height
+			z-index: 3;			// Put it in front of all elements
+
+			@media all and (min-width: @desktop) {
+				width: 90px;
+			}
+
+			a {
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				display: block;
+
+
+				span {
+
+					width: 100%;
+					height: 100px;
+					position: absolute;
+					margin-top: -50px;
+					top: 50%;
+					text-align: center; 
+
+					// Prev/Next icon
+					&:before {
+						top: 50%;
+						color: #fff;
+						font-size: 50px;
+						position: absolute;
+						margin-right: -4px; 
+						left: 50%;
+						-webkit-transform: translate(-50%,-50%);
+						-ms-transform: translate(-50%,-50%);
+						transform: translate(-50%,-50%);  
+					}
+				}
+				&:hover {
+					background: rgba(0, 0, 0, 0.3)
+				}
+			} 
 		}
-		li.slider-navigation-right {
-
+		.slider-navigation-left {
+			left: 0;
+		}
+		.slider-navigation-right {
+			right: 0;
 		}
 	}
 	// Slides of the slider	
 	ul.slider-slides {
 
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		position: relative;
+		list-style: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		position: absolute; 
+ 	
+ 		// <li class="slider-slides-singleSlide fading">
+		.slider-slides-singleSlide {
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			top: 0;
+			margin-right: -4px;
+			// Don't edit this part - prevents inline lists from being hidden 
+			display: none;
+			position: absolute !important; 
 
-		li.slider-slides-singleSlide {
+			// Current slide
+			&.current { 
+				// Don't edit this part 
+				display: block !important;
+				z-index: 2 !important;
+			}
+			// Next slide
+			&.next { 
+				// Don't edit this part 
+				display: block; 
+				z-index: 1 !important;
+			}
+
+			// Styles for the slide
+			&-wallpaper {
+				
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				top: 0;
+
+				div {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					background-size: cover !important;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					top: 0;
+				}
+			}
 
 		}
 	}	
