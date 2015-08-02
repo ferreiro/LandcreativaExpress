@@ -1377,6 +1377,9 @@ body-overflow {
 .portfolioBox:hover .portfolioBox-options {
   display: block;
 }
+.portfolioBox:nth-child(even) .portfolioBox-image {
+  background-color: #222;
+}
 .portfolioBox-image {
   height: 200px;
   display: block;
@@ -1394,12 +1397,12 @@ body-overflow {
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
   .portfolioBox-image {
-    height: 300px;
+    height: 320px;
   }
 }
 @media all and (min-width: 1000px) {
   .portfolioBox-image {
-    height: 370px;
+    height: 500px;
   }
 }
 .portfolioBox:hover .portfolioBox-link a {
