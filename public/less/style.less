@@ -1,7 +1,7 @@
 
 // Responsive layout dimensions
-@mobile: 600px;
-@tablet: 999px;
+@mobile: 0px;
+@tablet: 600px;
 @desktop: 1000px;
  
 // Text  
@@ -112,7 +112,7 @@ body {
 	&-int {
 		padding: @headerHeight/2.7 1em;
 
-		@media all and (min-width: @mobile) and (max-width:@tablet) {
+		@media all and (min-width: @tablet) and (max-width:@desktop) {
 			padding-left:2em;
 			padding-right: 2em;
 		} 
@@ -227,9 +227,7 @@ body {
 		padding:2.5em 1em; 
 		padding-bottom: 1.5em;
 
-		@media all and (max-width: @mobile) {
-	 	}
-		@media all and (min-width: @mobile) and (max-width:@tablet) {
+		@media all and (min-width: @tablet) and (max-width:@desktop) {
 			padding:2em;
 		} 
 		@media(min-width: @desktop) { 
@@ -289,15 +287,11 @@ body {
 		border-top: 3px solid #ededed;
 		padding: 1.5em 0;	
 
-		@media all and (max-width: @mobile) {
+		@media all and (max-width: @desktop) {
 			.footer-emptytitle {
 				display: none;
 			}
-			 
-	 	}
-		@media all and (min-width: @mobile) and (max-width:@tablet) {
-			 
-		} 
+	 	} 
 	}
 	&-bottom { 
 		padding: 1em 0;	
@@ -336,10 +330,10 @@ body {
 		}
 	}
 	&-content {
-		@media all and (max-width: @mobile) {
+		@media all and (max-width: @tablet) {
 			padding: 0 2em;
 	 	}
-		@media all and (min-width: @mobile) and (max-width:@tablet) {
+		@media all and (min-width: @tablet) and (max-width:@desktop) {
 			padding: 0 2em;
 		} 
 		@media(min-width: @desktop) { 
@@ -355,7 +349,7 @@ body {
 		vertical-align: top;
 		margin-bottom: 2em;
  
-		@media all and (min-width: @mobile) and (max-width:@tablet) {
+		@media all and (min-width: @tablet) and (max-width:@desktop) {
 			width: 49%;
 			margin-right: 1%;
 		} 
@@ -488,6 +482,69 @@ body {
 
 //------------------------------------
 //------------------------------------ 
+// 			SLIDER
+//------------------------------------
+//------------------------------------
+.slider {
+
+	width: 100%;
+	height: 300px;
+	margin-top: 70px;
+	margin-bottom: -2em;	// No dejar espacio con el footer 
+	background: #f4f4f4; 		// Añadir spinner
+	position: relative;  		// Grap the content inside slider class
+
+	@media all and (min-width: @tablet) {
+		height: 600px;		 	// Ocupy all the window height on desktop
+	}
+	@media all and (min-width: @desktop) {
+		height: 100vh;		 	// Ocupy all the window height on desktop
+		margin-top: 0;		 	// Restart margin to 0
+
+	}
+
+	// Buttons for select the slide number
+	ul.slider-selector {
+		width: 150px;
+		height: 30px;
+		left: 50%;				// Position on the middle
+		bottom: 5%;			// Bottom margin
+		position: absolute;		
+		background: #cecece;
+		margin-left: -75px;		// Divide width / 2
+		text-align: center; 	// Center buttons here.
+	}
+	// Buttons to go previous and right on slide
+	ul.slider-navigation {
+
+		li {
+
+			a {
+				
+				&:hover {
+
+				}
+			} 
+		}
+		li.slider-navigation-left {
+
+		}
+		li.slider-navigation-right {
+
+		}
+	}
+	// Slides of the slider	
+	ul.slider-slides {
+
+
+		li.slider-slides-singleSlide {
+
+		}
+	}	
+}
+
+//------------------------------------
+//------------------------------------ 
 // 			  About us
 //------------------------------------
 //------------------------------------
@@ -539,7 +596,7 @@ body {
 		margin:0 auto; 
 		margin-top:4em;
 	}
-	@media all and (max-width: @mobile) {
+	@media all and (max-width: @tablet) {
 
 		&-image {
 			margin-bottom: 1.5em;
@@ -552,7 +609,7 @@ body {
 		} 
 		
 	}
-	@media all and (min-width: @mobile) and (max-width:@tablet) {
+	@media all and (min-width: @tablet) and (max-width:@desktop) {
 		
 		&-image-computer {
 			margin: 0 auto;
@@ -726,10 +783,10 @@ body {
 	height: 100%;
 	position: relative;
 
-	@media all and (max-width: @mobile) {
+	@media all and (max-width: @tablet) {
 		width: 100%;
 	}
-	@media all and (min-width: @mobile) and (max-width:@tablet) {
+	@media all and (min-width: @tablet) and (max-width:@desktop) {
 		width:50%;
 		&:nth-child(odd) .productBox {
 			padding-left:  @productMargin; 
@@ -926,7 +983,7 @@ body {
 			background: @lightGray;
 			background-size:cover; 
 			position: relative;
-			@media all and (min-width:@mobile) and (max-width: @tablet) {
+			@media all and (min-width:@tablet) and (max-width: @desktop) {
 				height: 300px;
 			}
 			@media all and (min-width:@desktop) {
@@ -954,9 +1011,6 @@ body {
    			border: 1px solid @lightGrayBorder; 
 			.transition(0.3s); 
  
-   			@media all and (min-width:@mobile) and (max-width: @tablet) {
-   				 
-   			}
    			@media all and (min-width:@desktop) {
    				top: 50%;
    				left: 50%;
@@ -1035,10 +1089,6 @@ body {
    							display: block;
    							color: lighten(@textBlack, 50%);
    						}
-   					}
-
-   					@media all and (min-width:@mobile) and (max-width: @tablet) {
-   						 
    					}
    					@media all and (min-width:@desktop) { 
  
@@ -1189,7 +1239,7 @@ body {
 		margin-bottom: 2em; 
 		text-align: center;
 
-    	@media all and (max-width:@mobile) {
+    	@media all and (max-width:@tablet) {
 			margin-top: 1.2em; 
     	} 
 		span {
