@@ -57,9 +57,9 @@ app.get('/', function(req, res){
 }); 
 */
 
-
 app.get('/nosotros', function(req, res){
-  res.render('nosotros', {
+  res.render('nosotros', {           
+    menu : 'nosotros',
     title: 'Nosotros',
     pageDescription : 'Somos expertos en diseño web'
   });
@@ -79,6 +79,7 @@ app.get('/servicios', function(req, res) {
 
     res.render(
         viewName, {
+            menu : 'servicios',
             title: title, // Title of the section
             description: description,
             scriptName: scriptName
@@ -118,6 +119,7 @@ app.get('/servicios/:routeURL', function(req, res) {
 
     res.render(
         viewName, {
+            menu : 'servicios',
             title: title, // Title of the section
             description: description,
             scriptName: scriptName
@@ -125,11 +127,73 @@ app.get('/servicios/:routeURL', function(req, res) {
     );
 });
 
+//------------------------------
+//-- QUIERO ROUTES
+//------------------------------
+
+app.get('/quiero/:contactType', function(req, res){
+    var title, description, contactType;
+    var headerImage, contact; // View parameters
+
+    contactType = (req.params.contactType).toLowerCase();   // Take the URL parameter in this variable
+
+    // Default content for the page
+    title = '¡Quiero el pack ' + contactType + '!';
+    description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+    headerImage = ''; 
+    contact = false;    // The view use this to show contact or presupuesto 
+
+    // Particular cases for the URL
+    // Particulares
+
+    if (contactType == "gold") {
+        headerImage = 'goldContact.png';
+    }
+    else if (contactType == "silver") {
+        headerImage = 'silverContact.png';
+    }
+    else if (contactType == "premium") {
+        headerImage = 'premiumContact.png';
+    } // Empresas
+    else if (contactType == "executive") {
+        headerImage = 'goldContact.png';
+    }
+    else if (contactType == "business") {
+        headerImage = 'silverContact.png';
+    }
+    else if (contactType == "first-class") {
+        headerImage = 'premiumContact.png';
+    } // Marketing
+    else if (contactType == "analitica") {
+        headerImage = 'analiticaContact.png';
+    }
+    else if (contactType == "seo") {
+        headerImage = 'seoContact.png';
+    }
+    else if (contactType == "marketing") {
+        headerImage = 'marketingContact.png';
+    }
+    
+    res.render('contact', {
+        menu : 'servicios',
+        title: title, // Title of the section
+        description: description,
+        headerImage: headerImage,
+        contact: contact,
+        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
+    })
+});
+  
+//------------------------------
+//-- CASOS DE ÉXITO
+//------------------------------
+
 app.get('/casos_exito', function(req, res){
     var title = 'Casos de éxito';
     var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
 
     res.render('casos_exito', {
+        menu : 'casos_exito',
         title: title, // Title of the section
         description: description
     })
@@ -146,7 +210,8 @@ app.get('/contacta', function(req,res) {
     var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
     var contact = true; // The view use this to show contact or presupuesto
 
-    res.render('contact', {
+    res.render('contact', {        
+        menu : 'contacta',
         title: title, // Title of the section
         description: description,
         contact: contact,
@@ -216,6 +281,7 @@ app.post('/contacta', function (req, res) {
         }
 
         res.render('contact', {
+            menu : 'contacta',
             title: viewTitle,   // Title of the page.
             err: err,           // There wasn't any error
             displayForm: false, // THe view uses this variable to show the contact "form" or "not"
@@ -227,65 +293,6 @@ app.post('/contacta', function (req, res) {
     // res.json(userDataObject); 
 
 });
-
-
-//------------------------------
-//-- QUIERO ROUTES
-//------------------------------
-
-app.get('/quiero/:contactType', function(req, res){
-    var title, description, contactType;
-    var headerImage, contact; // View parameters
-
-    contactType = (req.params.contactType).toLowerCase();   // Take the URL parameter in this variable
-    console.log('Contact type ' + contactType);
-
-    // Default content for the page
-    title = '¡Quiero el pack ' + contactType + '!';
-    description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
-    headerImage = ''; 
-    contact = false;    // The view use this to show contact or presupuesto 
-
-    // Particular cases for the URL
-    // Particulares
-
-    if (contactType == "gold") {
-        headerImage = 'goldContact.png';
-    }
-    else if (contactType == "silver") {
-        headerImage = 'silverContact.png';
-    }
-    else if (contactType == "premium") {
-        headerImage = 'premiumContact.png';
-    } // Empresas
-    else if (contactType == "executive") {
-        headerImage = 'goldContact.png';
-    }
-    else if (contactType == "business") {
-        headerImage = 'silverContact.png';
-    }
-    else if (contactType == "first-class") {
-        headerImage = 'premiumContact.png';
-    } // Marketing
-    else if (contactType == "analitica") {
-        headerImage = 'analiticaContact.png';
-    }
-    else if (contactType == "seo") {
-        headerImage = 'seoContact.png';
-    }
-    else if (contactType == "marketing") {
-        headerImage = 'marketingContact.png';
-    }
-    
-    res.render('contact', {
-        title: title, // Title of the section
-        description: description,
-        headerImage: headerImage,
-        contact: contact,
-        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
-    })
-});
-
 
 
 
