@@ -138,13 +138,13 @@ app.get('/contacta/procesar', function(req,res) {
     });
 });
 
-app.post('/contacta/procesar', function (req, res) {
+app.post('/contacta', function (req, res) {
 
     // create reusable transporter object using SMTP transport
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'landcreativaContactForm',
+            user: 'landcreativaContactForm@gmail.com',
             pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
         }
     });
@@ -152,12 +152,17 @@ app.post('/contacta/procesar', function (req, res) {
     // NB! No need to recreate the transporter object. You can use
     // the same transporter object for all e-mails
 
+    console.log('Name ' + req.body.name );
+    console.log('Subject ' + req.body.subject );
+    console.log('Message ' + req.body.message );
+    console.log('Email ' + req.body.email );
+
+
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: 'Jorge <landcreativa@gmail.com>', // sender address
         to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-        subject: req.body.subject + ' Hello ✔', // Subject line
-        text: 'Hello world ✔', // plaintext body
+        subject: 'Mensaje de ' + req.body.name + ' ✔ #' + req.body.subject, // Subject line
         html: '<b>Hello world ✔</b>' // html body
     };
 
@@ -169,11 +174,6 @@ app.post('/contacta/procesar', function (req, res) {
         console.log('Message sent: ' + info.response);
 
     });
-
-    console.log('Name ' + req.body.name );
-    console.log('Subject ' + req.body.subject );
-    console.log('Message ' + req.body.message );
-    console.log('Email ' + req.body.email );
 
 });
 
