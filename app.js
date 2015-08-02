@@ -9,6 +9,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var users = require('./routes/user');
 
+// Nodemailer es un módulo externo de node que nos permite mandar correos.
+var nodemailer = require('nodemailer');
+
+
 var app = express();
 
 
@@ -29,7 +33,7 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.get('/users', users.list);
- 
+app.get('/contacta', routes.contact);
  
 /*
 app.get('/', function(req, res){
@@ -120,30 +124,51 @@ app.get('/casos_exito', function(req, res){
 //-- CONTACT ROUTES
 //------------------------------
 
+// http://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer
 
-app.get('/contacta', function(req, res){
-    var title = 'Contacta';
-    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
-    var contact = true; // The view use this to show contact or presupuesto
+app.post('/contacta', function (req, res) {
 
-    res.render('contact', {
-        title: title, // Title of the section
-        description: description,
-        contact: contact
-    })
+    // create reusable transporter object using SMTP transport
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'landcreativaContactForm',
+            pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
+        }
+    });
+
+    // NB! No need to recreate the transporter object. You can use
+    // the same transporter object for all e-mails
+
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+        from: 'Jorge <landcreativa@gmail.com>', // sender address
+        to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
+        subject: req.body.subject + ' Hello ✔', // Subject line
+        text: 'Hello world ✔', // plaintext body
+        html: '<b>Hello world ✔</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+
+    });
+
+    console.log('Name ' + req.body.name );
+    console.log('Subject ' + req.body.subject );
+    console.log('Message ' + req.body.message );
+    console.log('Email ' + req.body.email );
+
 });
 
-app.post('/contacta', function(req, res){
-    var title = 'Contacta posteadoooooo hahahahahahahhahaah';
-    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
-    var contact = true; // The view use this to show contact or presupuesto
 
-    res.render('contact', {
-        title: title, // Title of the section
-        description: description,
-        contact: contact
-    })
-});
+//------------------------------
+//-- QUIERO ROUTES
+//------------------------------
 
 app.get('/quiero/:contactType', function(req, res){
     var title, description, contactType;
