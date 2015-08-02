@@ -1,5 +1,36 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
+
+	.slider
+		// Buttons for select the slide number
+		ul.slider-selector
+
+		// Buttons to go previous and right on slide
+		ul.slider-navigation
+
+			li.slider-navigation-left
+				a(href='#')
+					span.icon-angle-left
+			li.slider-navigation-right
+				a(href='#')
+					span.icon-angle-right
+
+		// Slides of the slider	
+		ul.slider-slides
+			//-- <li> last class is the effect (fading, barTop, square)
+			//-- Single Slide
+			li.slider-slides-singleSlide.fading
+				//- Content of one slide
+				img(url='http://www.wallpaperup.com/uploads/wallpapers/2014/10/21/489485/big_thumb_b807c2282ab0a491bd5c5c1051c6d312.jpg')
+
+			//- Single Slide
+			li.slider-slides-singleSlide.fading
+				//- Content of one slide
+				img(url='http://www.wallpaperup.com/uploads/wallpapers/2014/10/21/489485/big_thumb_b807c2282ab0a491bd5c5c1051c6d312.jpg')
+
+			//- Single Slide
+			li.slider-slides-singleSlide.fading
+				//- Content of one slide
+				img(url='http://www.wallpaperup.com/uploads/wallpapers/2014/10/21/489485/big_thumb_b807c2282ab0a491bd5c5c1051c6d312.jpg')
+
