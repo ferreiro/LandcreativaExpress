@@ -25,6 +25,12 @@
 @marketing: #bc9e26;
 @marketing-Hover: #8a7211;
 
+/***********************************/
+/***********************************/
+/************ FUNCTIONS *************/
+/***********************************/
+/***********************************/
+
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
@@ -54,18 +60,30 @@
 	-ms-transition: none !important;
 	transition: none !important;
 }
-
+.translate (@x, @y:0) {
+	-webkit-transform:       translate(@x, @y);
+	-moz-transform: 	 translate(@x, @y);
+	-ms-transform: 		 translate(@x, @y);
+	-o-transform: 		 translate(@x, @y);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+	-webkit-transform:       translate3d(@x, @y, @z);
+	-moz-transform: 	 translate3d(@x, @y, @z);
+	-ms-transform: 		 translate3d(@x, @y, @z);
+	-o-transform: 		 translate3d(@x, @y, @z);
+}
 //------------------------------------
 // Fonts
 //------------------------------------
 
 @import "./fonts.less";
 
-//------------------------------------
-//------------------------------------ 
+//------------------------------------//
+//------------------------------------//
 // 			Commun elements
-//------------------------------------
-//------------------------------------
+//------------------------------------//
+//------------------------------------//
+
 body { 
 	background: #fff;
 	color: @textBlack;
@@ -108,6 +126,10 @@ body {
 	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
 	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
 	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+
+	@media all and (min-width:@desktop) {
+		display: none !important;	// Hide on desktop
+	} 
 
 	&-int {
 		padding: @headerHeight/2.7 1em;
@@ -217,7 +239,178 @@ body {
 	}
 	 
 }
+// Desktop menu
 
+.desktopMenu {
+	width: 100%;
+	height: 80px;
+	display: none;
+	transition:0.3s;
+	position: fixed; 
+	background: #fff;
+	z-index: 100;
+	top: 0;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+
+	@media all and (min-width:@desktop) {
+		display: block;
+	} 
+
+	&-int {
+		width: @desktop; 
+		height: 100%;	
+		margin: 0 auto;
+		position: relative; 
+	}
+
+	&-logo {
+		top: 50%;
+		position: absolute;
+		//margin-top: -11.5px;  /* Mide 23px */
+	    left: 1.5em; 
+	    left: 0;
+	    .translate (0%, -50%);
+	    vertical-align: middle;
+	    margin-top: 0px;	// Ajustando pixeles imperfectos
+
+	    &-iso {
+	    	width: 19px;
+	    	height: 19px;
+	    	margin-top: 2px;
+	    	display: inline-block;
+	    	background: #3695ed;
+	    	background: url(../images/iso.png) 50% 50% no-repeat;
+	    	background-size: auto 100%; 
+	    	margin-right: 0;	   
+	    	 	// Ajustando pixeles imperfectos
+	    	float: left;
+	    }
+	    &-text {
+	    	display: inline-block;
+	    	float: left;
+	    	h1 {
+	    		margin: 0 10px; 
+	    		color: #3695ed;
+	    		font-size: 1.4em;
+
+	    		font-size: 22px;
+	    		line-height: 22px;
+
+	    		/*
+	    		font-size: 1.2em;
+	    		float: left;
+	    		color: #3695ed;
+	    		*/
+	    		span {
+	    			font-size: 0.7em;  
+	    			display: none;
+	    		}
+	    	}
+	    }
+	}
+	&-nav {
+		width: 590px;
+		height: 100%; 
+		padding: 0;
+		margin: 0 auto;
+		text-align: center;
+		border-right: 1px solid #f4f4f4;
+		border-left: 1px solid #f4f4f4;
+
+		// When someone enters on the nav.
+		// Dicrease menu li color instensity 
+		&:hover {
+			a {
+				color: rgba(34, 34, 34, 0.498039); // Poner el resto a un gris apagado.
+				&:hover {
+					color: rgba(34, 34, 34, 0.9); // iluminar el link pulsado
+				}
+			}
+		}
+
+		&-link {    
+			display: inline-block;
+			margin-right: -4px; 
+			position: relative;
+			top: 50%;
+	    	.translate (0%, -50%);
+
+			a {
+				padding: 15px 13px;  
+				display: block;
+				text-align: center;
+				font-size: 1em;
+				letter-spacing: 1.4px;
+				text-transform: uppercase;
+				color: #676767; 
+				font-weight: 300;
+				text-transform: uppercase; 
+				line-height: 1.2em;
+				font-style: normal; 
+				color: #222;
+				position: relative;
+			}
+
+			&.selected {
+				/* background: #f9f9f9; */
+				a:after {
+					width: 40px;
+					height: 3px;
+					background: #cecece;
+					content: '';
+					position: absolute;
+					left: 50%;
+	    			.translate (-50%, 0%);	// Centered horizontally
+
+					bottom: 0px;
+ 				}
+				a {
+
+				}
+			}
+		}
+	}
+	// Social networks
+	&-networks {
+		width: 180px;
+		height: 80px; 
+		top: 0;
+		right: 0;
+		text-align: right; 
+		position: absolute;
+		display: inline-block;
+		ul {
+			margin-top: 20px;
+			li {
+				display: inline-block;
+				margin-left: 2px;
+				&:first-child {
+					margin-left:0 !important;
+				}
+				a {
+					width: 40px;
+					height: 30px; 
+					display: block;
+					font-size: 1.2em;
+				    color: #676767;
+				    border-radius: 100%;
+				    text-align: center;
+				    padding-top: 10px;
+				    &:hover {
+				    	background: #f4f4f4;
+				    }
+				}
+			}
+		}
+	}
+
+}
+
+
+
+// Section
 .section {
 	// width: 100%;
 	margin-top: 0;
@@ -526,6 +719,10 @@ body {
 			margin-right: 8px;
 			position: relative;
 			
+			@media all and (min-width: @desktop) {
+				margin-right: 10px;
+			}
+
 			&:last-child {
 				margin-right: 0;
 			} 
@@ -592,7 +789,7 @@ body {
 						left: 50%;
 						-webkit-transform: translate(-50%,-50%);
 						-ms-transform: translate(-50%,-50%);
-						transform: translate(-50%,-50%);  
+						transform: translate(-50%,-50%); 
 					}
 				}
 				&:hover {
