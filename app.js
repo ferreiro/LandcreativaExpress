@@ -133,8 +133,8 @@ app.get('/contacta', function(req,res) {
     res.render('contact', {
         title: title, // Title of the section
         description: description,
-        contact: contact
-
+        contact: contact,
+        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
     });
 });
 
@@ -156,14 +156,14 @@ app.post('/contacta', function (req, res) {
 
     // Preparing email message
 
-    mailMSG =  '<html><body>';
-    mailMSG += '<h3>Mensaje ✔</h3>';
-    mailMSG += '<p>' + form.name +'</p>';
+    mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
+    mailMSG += '<h3>Mensaje</h3>';
+    mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
     mailMSG += '<h3>Información extra de contacto</h3>';
     mailMSG += '<p style="font-size:16px;">';
-    mailMSG += 'Nombre: ' + form.name +'<br /> ';
-    mailMSG += 'Email: ' + form.email +'<br />';
-    mailMSG += 'Teléfono: ' + form.phone;
+    mailMSG += 'Nombre: '   + form.name +'<br /> ';
+    mailMSG += 'Teléfono: ' + form.phone + '<br />';
+    mailMSG += 'Email: '    + form.email;
     mailMSG += '</p>'; 
     mailMSG += '</body></html>';
 
@@ -182,37 +182,29 @@ app.post('/contacta', function (req, res) {
     var mailOptions = {
         from: 'Jorge <landcreativa@gmail.com>', // sender address
         to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-        subject: 'Mensaje de ' + form.name + ' #' + form.subject, // Subject line
+        replyTo: form.email,
+        subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
         html: mailMSG // html body
     };
 
     // Send mail with defined transport object
 
-    transporter.sendMail(mailOptions, function(error, info){
-        
-        //Email not sent
+    transporter.sendMail(mailOptions, function(error, info) {
+        var viewTitle = 'Formulario enviado con éxito';
+        var err = false;
+ 
+        // Email sent correctly
         if (error) {
-
-            res.render('contact', { 
-                title: 'Raging Flame Laboratory - Contact', 
-                msg: 'Error occured, message not sent.', 
-                err: true, 
-                page: 'contact',
-                formSent: false,
-                form: form
-            })
+            err = true; // Yes. There's an error with the form.
+            title = 'Formulario no enviado, tiene errores'; // Title of the page.
         }
 
-        //Yay!! Email sent
-        else {
-            res.render('contact', { 
-                title: 'Contacta', 
-                msg: 'Message sent! Thank you.', 
-                err: false, page: 'contact',
-                formSent: true,
-                form: form
-            })
-        }
+        res.render('contact', {
+            title: viewTitle,   // Title of the page.
+            err: err,           // There wasn't any error
+            displayForm: false, // THe view uses this variable to show the contact "form" or "not"
+            form: form          // We pass the form object we created before
+        }); 
     }); 
 
     // Devolver JSON para cuando se haga un formulario ajax.
@@ -273,7 +265,8 @@ app.get('/quiero/:contactType', function(req, res){
         title: title, // Title of the section
         description: description,
         headerImage: headerImage,
-        contact: contact
+        contact: contact,
+        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
     })
 });
 
