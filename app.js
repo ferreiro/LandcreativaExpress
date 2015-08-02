@@ -33,8 +33,7 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.get('/users', users.list);
-app.get('/contacta', routes.contact);
- 
+  
 /*
 app.get('/', function(req, res){
   res.render('index', {
@@ -126,7 +125,7 @@ app.get('/casos_exito', function(req, res){
 
 // http://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer
 
-app.get('/contacta/procesar', function(req,res) {
+app.get('/contacta', function(req,res) {
     var title = 'Contacta';
     var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
     var contact = true; // The view use this to show contact or presupuesto
@@ -135,45 +134,81 @@ app.get('/contacta/procesar', function(req,res) {
         title: title, // Title of the section
         description: description,
         contact: contact
+
     });
 });
 
 app.post('/contacta', function (req, res) {
+    var userName, userEmail, userPhone, userSubject, userMessage; // Message variables.
+    var transporter, mailMSG; // mail variables. 
 
-    // create reusable transporter object using SMTP transport
-    var transporter = nodemailer.createTransport({
+    // Getting the post variables
+    userName    = req.body.name;
+    userEmail   = req.body.email;
+    userPhone   = req.body.phone;
+    userSubject = req.body.subject;
+    userMessage = req.body.message; // User message
+
+    console.log('subject ' + userSubject);
+    console.log('subject ' + userSubject);
+    console.log('subject ' + userSubject);
+    console.log('subject ' + userSubject);
+    console.log('subject ' + userSubject);
+
+    // Preparing email message
+    mailMSG =  '<html><body>';
+    mailMSG += '<h3>✔ Mensaje</h3>';
+    mailMSG += '<p>' + userMessage +'</p>';
+    mailMSG += '<h3>Información extra de contacto</h3>';
+    mailMSG += '<p style="font-size:16px;">';
+    mailMSG += 'Nombre: ' + userName +'<br /> ';
+    mailMSG += 'Email: ' + userEmail +'<br />';
+    mailMSG += 'Teléfono: ' + userPhone;
+    mailMSG += '</p>'; 
+    mailMSG += '</body></html>';
+
+    // Create reusable transporter object using SMTP transport
+    transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
             user: 'landcreativaContactForm@gmail.com',
             pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
         }
-    });
+    }); 
 
-    // NB! No need to recreate the transporter object. You can use
-    // the same transporter object for all e-mails
-
-    console.log('Name ' + req.body.name );
-    console.log('Subject ' + req.body.subject );
-    console.log('Message ' + req.body.message );
-    console.log('Email ' + req.body.email );
-
-
-    // setup e-mail data with unicode symbols
+    // Setup e-mail data with unicode symbols
     var mailOptions = {
         from: 'Jorge <landcreativa@gmail.com>', // sender address
         to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-        subject: 'Mensaje de ' + req.body.name + ' ✔ #' + req.body.subject, // Subject line
-        html: '<b>Hello world ✔</b>' // html body
+        subject: 'Mensaje de ' + userName + ' #' + userSubject, // Subject line
+        html: mailMSG // html body
     };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            return console.log(error);
-        }
-        console.log('Message sent: ' + info.response);
+    // Send mail with defined transport object
 
-    });
+    transporter.sendMail(mailOptions, function(error, info){
+        
+        //Email not sent
+        if (error) {
+
+            res.render('contact', { 
+                title: 'Raging Flame Laboratory - Contact', 
+                msg: 'Error occured, message not sent.', 
+                err: true, 
+                page: 'contact' 
+            })
+        }
+
+        //Yay!! Email sent
+        else {
+            res.render('contact', { 
+                title: 'Raging Flame Laboratory - Contact', 
+                msg: 'Message sent! Thank you.', 
+                err: false, page: 'contact' 
+            })
+        }
+    }); 
+
 
 });
 
