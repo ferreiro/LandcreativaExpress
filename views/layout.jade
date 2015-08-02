@@ -28,88 +28,65 @@ html(lang="es")
 		
 		// Mobile menu
 
-		.mobileMenu
-			.mobileMenu-int
-
-				.mobileMenu-logo
-					a(href='/')
-						.iso
-						.text
-							h1 Landcreativa 
-
-				button.mobileMenu-button
-					.icon-options 
-
-				.mobileMenu-navigation
-					ul
-						li 
-							a(href='/nosotros') Nosotros
-						li 
-							a(href='/servicios') Servicios
-						li 
-							a(href='/casos_exito') Casos de éxito
-						li 
-							a(href='/contacta') Contacta
-
-						li.mobileMenu-navigation-socialNetwork
-							a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
-
-						li.mobileMenu-navigation-socialNetwork
-							a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
-
-		// Desktop menu
-
 		header
-			nav.menu_desktop
-				.int
+			.mobileMenu
+				.mobileMenu-int
 
-					.logo
+					.mobileMenu-logo
 						a(href='/')
 							.iso
 							.text
 								h1 Landcreativa 
 
-					.links
+					button.mobileMenu-button
+						.icon-options 
+
+					.mobileMenu-navigation
 						ul
+							li 
+								a(href='/nosotros') Nosotros
+							li 
+								a(href='/servicios') Servicios
+							li 
+								a(href='/casos_exito') Casos de éxito
+							li 
+								a(href='/contacta') Contacta
 
-							// Nosotros
-							
-							if title == "Nosotros"
-								li.selected
-									a(href='/nosotros') Nosotros
-							else
-								li
-									a(href='/nosotros') Nosotros
+							li.mobileMenu-navigation-socialNetwork
+								a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
 
-							// Servicios
-							
-							if title == "Servicios"
-								li.selected
-									a(href='/servicios') Servicios
-							else
-								li
-									a(href='/servicios') Servicios
+							li.mobileMenu-navigation-socialNetwork
+								a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
 
-							// casos_exito
-							
-							if title == "Casos de éxito"
-								li.selected
-									a(href='/casos_exito') Casos de éxito
-							else
-								li
-									a(href='/casos_exito') Casos de éxito
+			// Desktop menu
+			.desktopMenu
+				.desktopMenu-int
 
-							// Contacta
-							
-							if title == "Contacta"
-								li.selected
-									a(href='/contacta') Contacta
-							else
-								li
-									a(href='/contacta') Contacta
-  
 
-					.socialNetworksTop
+					div(style='width:100%; display: none ; height:15px; background:red; position:absolute; top:50%; margin-top:-7.5px; background:red;')
+
+
+					.desktopMenu-logo
+						a(href='/')
+							.desktopMenu-logo-iso
+							.desktopMenu-logo-text
+								h1 Landcreativa<span>.com</span> 
+
+					nav.desktopMenu-nav
+
+						li.desktopMenu-nav-link(class=(title === 'Nosotros' ? 'selected' : ''))
+							a(href='/nosotros') Nosotros
+
+						li.desktopMenu-nav-link(class=(title === 'Servicios' ? 'selected' : ''))
+							a(href='/servicios') Servicios
+
+						li.desktopMenu-nav-link(class=(title === 'Casos de éxito' ? 'selected' : ''))
+							a(href='/casos_exito') Casos de éxito
+
+						li.desktopMenu-nav-link(class=(title === 'Contacta' ? 'selected' : ''))
+							a(href='/contacta') Contacta
+
+					.desktopMenu-networks
 						ul
 							li
 								a(href='http://www.facebook.com/landcreativa', target='_blank')
