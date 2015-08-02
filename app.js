@@ -126,7 +126,19 @@ app.get('/casos_exito', function(req, res){
 
 // http://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer
 
-app.post('/contacta', function (req, res) {
+app.get('/contacta/procesar', function(req,res) {
+    var title = 'Contacta';
+    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
+    var contact = true; // The view use this to show contact or presupuesto
+
+    res.render('contact', {
+        title: title, // Title of the section
+        description: description,
+        contact: contact
+    });
+});
+
+app.post('/contacta/procesar', function (req, res) {
 
     // create reusable transporter object using SMTP transport
     var transporter = nodemailer.createTransport({
