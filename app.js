@@ -116,6 +116,10 @@ app.get('/servicios/:routeURL', function(req, res) {
         // /services/particulares
         scriptName = 'tab_marketing';
     }
+    else {
+        // Not found. Show servicios by default
+        res.redirect('/servicios');
+    }
 
     res.render(
         viewName, {
@@ -155,14 +159,14 @@ app.get('/quiero/:contactType', function(req, res){
     else if (contactType == "premium") {
         headerImage = 'premiumContact.png';
     } // Empresas
-    else if (contactType == "executive") {
-        headerImage = 'goldContact.png';
+    else if (contactType == "economy") {
+        headerImage = 'economyContact.png';
     }
     else if (contactType == "business") {
-        headerImage = 'silverContact.png';
+        headerImage = 'businessContact.png';
     }
     else if (contactType == "first-class") {
-        headerImage = 'premiumContact.png';
+        headerImage = 'first-classContact.png';
     } // Marketing
     else if (contactType == "analitica") {
         headerImage = 'analiticaContact.png';
@@ -172,7 +176,7 @@ app.get('/quiero/:contactType', function(req, res){
     }
     else if (contactType == "marketing") {
         headerImage = 'marketingContact.png';
-    }
+    } 
     
     res.render('contact', {
         menu : 'servicios',
