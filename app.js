@@ -29,7 +29,22 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-// Routes
+
+
+
+
+//------------------------------
+//-- HTML OUTPUT NO MINIMIZADO.
+//------------------------------
+
+app.locals.pretty = true;
+
+
+ 
+//------------------------------
+//-- ROUTES
+//------------------------------
+ 
 
 app.get('/', routes.index);
 app.get('/users', users.list);
@@ -41,6 +56,7 @@ app.get('/', function(req, res){
   });
 }); 
 */
+
 
 app.get('/nosotros', function(req, res){
   res.render('nosotros', {
