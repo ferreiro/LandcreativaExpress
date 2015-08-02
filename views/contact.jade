@@ -5,21 +5,48 @@ block content
 	.section.aboutSection
 		.content
 			
-			h1.commun-title #{title}
-
 			if formSent
 
-				#{description}
+				//- This block of code is showen when we do a POST petition in order to show
+				//- The success/failure code instead of the form.
+				
+				//- Title of the page
+				h1.commun-title Gracias #{form.name} 
 
-				p "Form sent!!"
+				.contact
+					.contact-form
 
-				if(typeof msg !== 'undefined')
-					if(!!err)
-						div(class='msgbox err') #{msg}
-					else
-						div(class='msgbox success') #{msg}
+						if(!err)
+
+							//- If there wasn't any error during the process.
+
+							.contact-form-roundresponse.contact-form-roundresponse-green
+								span.icon-envelope
+
+							.contact-form-separator
+
+							p.contact-form-messagetitle ¡Mensaje enviado!
+							p.contact-form-message #{form.name}, hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección: <u> #{form.email}</u>
+							p.contact-form-message <i>Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a landcreativa@gmail.com notificandonos el hecho.</i>
+							p.contact-form-message También te hemos enviado un mail de confirmación a tu correo. Revisa la bandeja de <strong>spam</strong>.
+
+						else
+
+							//- If there was an error during the process.
+
+							.contact-form-roundresponse.contact-form-roundresponse-red
+								span.icon-envelope
+
+							.contact-form-separator
+
+							p.contact-form-messagetitle Mensaje no enviado
+							p.contact-form-message #{form.name}, no hemos podido recibir tu correo electrónico. ¿Podrías intentarlo de nuevo?. Si el error persiste, por favor, escribenos a <a href='mailto:info@landcreativa.com' style='color:#ed3636;'>info@landcreativa.com</a> y te atenderemos lo antes posible.
+							p(style="margin-bottom:0;").contact-form-message El equipo de Landcreativa 
 
 			else 
+
+				//- Title of the page
+				h1.commun-title #{title} 
 
 				if !contact
 					//- We use this for the budgeting contact form

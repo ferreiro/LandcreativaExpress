@@ -139,35 +139,36 @@ app.get('/contacta', function(req,res) {
 });
 
 app.post('/contacta', function (req, res) {
-    var userName, userEmail, userPhone, userSubject, userMessage; // Message variables.
+    var form; // keep the form data in one variable
     var transporter, mailMSG; // mail variables. 
 
-    // Getting the post variables
-    userName    = req.body.name;
-    userEmail   = req.body.email;
-    userPhone   = req.body.phone;
-    userSubject = req.body.subject;
-    userMessage = req.body.message; // User message
+    // Creating a form object and saving the &_POST data.
+    // req.body also is an object with the same data  var form = req.body.
+    // We use form object to pass the form data to the view and make "JSON" responses.
 
-    console.log('subject ' + userSubject);
-    console.log('subject ' + userSubject);
-    console.log('subject ' + userSubject);
-    console.log('subject ' + userSubject);
-    console.log('subject ' + userSubject);
+    form = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        subject: req.body.subject,
+        message: req.body.message // User message
+    } 
 
     // Preparing email message
+
     mailMSG =  '<html><body>';
-    mailMSG += '<h3>✔ Mensaje</h3>';
-    mailMSG += '<p>' + userMessage +'</p>';
+    mailMSG += '<h3>Mensaje ✔</h3>';
+    mailMSG += '<p>' + form.name +'</p>';
     mailMSG += '<h3>Información extra de contacto</h3>';
     mailMSG += '<p style="font-size:16px;">';
-    mailMSG += 'Nombre: ' + userName +'<br /> ';
-    mailMSG += 'Email: ' + userEmail +'<br />';
-    mailMSG += 'Teléfono: ' + userPhone;
+    mailMSG += 'Nombre: ' + form.name +'<br /> ';
+    mailMSG += 'Email: ' + form.email +'<br />';
+    mailMSG += 'Teléfono: ' + form.phone;
     mailMSG += '</p>'; 
     mailMSG += '</body></html>';
 
     // Create reusable transporter object using SMTP transport
+
     transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -177,10 +178,11 @@ app.post('/contacta', function (req, res) {
     }); 
 
     // Setup e-mail data with unicode symbols
+
     var mailOptions = {
         from: 'Jorge <landcreativa@gmail.com>', // sender address
         to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-        subject: 'Mensaje de ' + userName + ' #' + userSubject, // Subject line
+        subject: 'Mensaje de ' + form.name + ' #' + form.subject, // Subject line
         html: mailMSG // html body
     };
 
@@ -196,21 +198,25 @@ app.post('/contacta', function (req, res) {
                 msg: 'Error occured, message not sent.', 
                 err: true, 
                 page: 'contact',
-                formSent: false
+                formSent: false,
+                form: form
             })
         }
 
         //Yay!! Email sent
         else {
             res.render('contact', { 
-                title: 'Raging Flame Laboratory - Contact', 
+                title: 'Contacta', 
                 msg: 'Message sent! Thank you.', 
                 err: false, page: 'contact',
-                formSent: true
+                formSent: true,
+                form: form
             })
         }
     }); 
 
+    // Devolver JSON para cuando se haga un formulario ajax.
+    // res.json(userDataObject); 
 
 });
 
