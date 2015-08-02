@@ -195,7 +195,8 @@ app.post('/contacta', function (req, res) {
                 title: 'Raging Flame Laboratory - Contact', 
                 msg: 'Error occured, message not sent.', 
                 err: true, 
-                page: 'contact' 
+                page: 'contact',
+                formSent: false
             })
         }
 
@@ -204,7 +205,8 @@ app.post('/contacta', function (req, res) {
             res.render('contact', { 
                 title: 'Raging Flame Laboratory - Contact', 
                 msg: 'Message sent! Thank you.', 
-                err: false, page: 'contact' 
+                err: false, page: 'contact',
+                formSent: true
             })
         }
     }); 

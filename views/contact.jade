@@ -7,109 +7,114 @@ block content
 			
 			h1.commun-title #{title}
 
-			#{description}
+			if formSent
 
-			if(typeof msg !== 'undefined')
-				if(!!err)
-					div(class='msgbox err') #{msg}
-				else
-					div(class='msgbox success') #{msg}
+				#{description}
 
+				p "Form sent!!"
 
-			if !contact
-				//- We use this for the budgeting contact form
-				//- Show header for packs 
-				
-				img(src="#{headerImage}")
-				a(href="/servicios") < Seleccionar otro pack
+				if(typeof msg !== 'undefined')
+					if(!!err)
+						div(class='msgbox err') #{msg}
+					else
+						div(class='msgbox success') #{msg}
 
 			else 
 
-				//- Show header for contact
+				if !contact
+					//- We use this for the budgeting contact form
+					//- Show header for packs 
+					
+					img(src="#{headerImage}")
+					a(href="/servicios") < Seleccionar otro pack
 
-				.contact-banner.contact-cafe
-					.contact-banner-image
-						span.icon-coffee
-					.contact-banner-info
-						h4 Tomemos un café.
-						p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
+				else 
 
-				.contact-banner.contact-location
-					.contact-banner-image
-						span.icon-map
-					.contact-banner-info
-						h4 ¿Dónde puedes encontrarnos?
-						p Estamos en <strong>Madrid</strong>
-						p (Contáctanos para otras ciudades y países)
-			
+					//- Show header for contact
 
-			.contact
-				.contact-form
-					.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
+					.contact-banner.contact-cafe
+						.contact-banner-image
+							span.icon-coffee
+						.contact-banner-info
+							h4 Tomemos un café.
+							p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
 
-					form(action='/contacta', name='contactus', id='contactus', method='post')
+					.contact-banner.contact-location
+						.contact-banner-image
+							span.icon-map
+						.contact-banner-info
+							h4 ¿Dónde puedes encontrarnos?
+							p Estamos en <strong>Madrid</strong>
+							p (Contáctanos para otras ciudades y países)
+				
 
-						fieldset.contact-form-field
-							p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
+				.contact
+					.contact-form
+						.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
 
-							.contact-form-field-element
-								input(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
+						form(action='/contacta', name='contactus', id='contactus', method='post')
 
-						fieldset.contact-form-field
-							p.contact-form-field-text Email <span>* (obligatorio)</span>
+							fieldset.contact-form-field
+								p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
 
-							.contact-form-field-element
-								input(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input
+								.contact-form-field-element
+									input(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
 
-						fieldset.contact-form-field
-							p.contact-form-field-text Teléfono de contacto
+							fieldset.contact-form-field
+								p.contact-form-field-text Email <span>* (obligatorio)</span>
 
-							.contact-form-field-element
-								input(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input
+								.contact-form-field-element
+									input(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input
+
+							fieldset.contact-form-field
+								p.contact-form-field-text Teléfono de contacto
+
+								.contact-form-field-element
+									input(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input
 
 
-						fieldset.contact-form-field.contact-form-field-subject
-							p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
+							fieldset.contact-form-field.contact-form-field-subject
+								p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
 
-							.contact-form-field-element
+								.contact-form-field-element
 
-								//- If we're in contact
-								if contact
+									//- If we're in contact
+									if contact
 
-									span.contact-form-field-element-select-icon.icon-angle-down
+										span.contact-form-field-element-select-icon.icon-angle-down
 
-									select(name="subject", required).contact-form-field-element-select
- 
-										option(value="Premium") Personal - ¡Quiero pack Premium!
-										option(value="Gold") Personal - ¡Quiero pack Gold!
-										option(value="Silver") Personal - ¡Quiero pack Silver!
+										select(name="subject", required).contact-form-field-element-select
 
-										option(value="First Class") Empresa - ¡Quiero pack First class!
-										option(value="Business") Empresa - ¡Quiero pack Business!
-										option(value="Economy") Empresa - ¡Quiero pack Economy!
+											option(value="Premium") Personal - ¡Quiero pack Premium!
+											option(value="Gold") Personal - ¡Quiero pack Gold!
+											option(value="Silver") Personal - ¡Quiero pack Silver!
 
-										option(value="Analítica web") Otros - ¡Quiero pack Analítica web!
-										option(value="SEO & SEM") Otros - ¡Quiero pack SEO & SEM!
-										option(value="Marketing Digital") Otros - ¡Quiero pack Marketing Digital!
+											option(value="First Class") Empresa - ¡Quiero pack First class!
+											option(value="Business") Empresa - ¡Quiero pack Business!
+											option(value="Economy") Empresa - ¡Quiero pack Economy!
 
-										option(value="Asistencia tecnica") Asistencia técnica
-										option(value="Consulta") Consulta general
-										option(value="Prensa") Prensa / Medios
-								else
+											option(value="Analítica web") Otros - ¡Quiero pack Analítica web!
+											option(value="SEO & SEM") Otros - ¡Quiero pack SEO & SEM!
+											option(value="Marketing Digital") Otros - ¡Quiero pack Marketing Digital!
 
-									//- Estamos en presupuesto
+											option(value="Asistencia tecnica") Asistencia técnica
+											option(value="Consulta") Consulta general
+											option(value="Prensa") Prensa / Medios
+									else
 
-									select(name="subject", required).contact-form-field-element-select
-										option(value="#{title}") #{title}
+										//- Estamos en presupuesto
 
-						fieldset.contact-form-field.contact-form-field-message
-							p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
+										select(name="subject", required).contact-form-field-element-select
+											option(value="#{title}") #{title}
 
-							.contact-form-field-element
-								textarea(type='textarea', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
+							fieldset.contact-form-field.contact-form-field-message
+								p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
 
-						fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
-							input(type="submit", value="Enviar formulario").contact-form-field-element-button
+								.contact-form-field-element
+									textarea(type='textarea', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
+
+							fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
+								input(type="submit", value="Enviar formulario").contact-form-field-element-button
 
 
 // Includes the footer
