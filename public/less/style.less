@@ -1830,9 +1830,15 @@ body {
 		margin: 5em auto;
 		background: url(../images/loading.gif) 50% 50%;
 		background-size: 100%; 
-		display: none;
+		display: none; 
+	    .transition(3px); 
 	}
-
+	&-loading-appear { 
+		-ms-transform: scale(1); /* IE 9 */
+	    -webkit-transform: scale(1); /* Chrome, Safari, Opera */
+	    transform: scale(1);
+	    opacity: 1;  
+	}
 	// Sent message
 	&-sent {
 		display: none; 
@@ -1843,6 +1849,13 @@ body {
 			padding: 1em 0; 
 			padding-bottom: 0;
 		} 
+	}
+	// This is used when the contact form diasspear.
+	&-content-disappear {
+		-ms-transform: scale(0); /* IE 9 */
+	    -webkit-transform: scale(0); /* Chrome, Safari, Opera */
+	    transform: scale(0);
+	    opacity: 0; 
 	}
 
 	// Message when the form is sent

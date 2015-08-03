@@ -1847,6 +1847,21 @@ body-overflow {
   background: url(../images/loading.gif) 50% 50%;
   background-size: 100%;
   display: none;
+  -webkit-transition: all 3px;
+  -moz-transition: all 3px;
+  -o-transition: all 3px;
+  -ms-transition: all 3px;
+  transition: all 3px;
+}
+.contact-form-loading-appear {
+  -ms-transform: scale(1);
+  /* IE 9 */
+
+  -webkit-transform: scale(1);
+  /* Chrome, Safari, Opera */
+
+  transform: scale(1);
+  opacity: 1;
 }
 .contact-form-sent {
   display: none;
@@ -1859,6 +1874,16 @@ body-overflow {
     padding: 1em 0;
     padding-bottom: 0;
   }
+}
+.contact-form-content-disappear {
+  -ms-transform: scale(0);
+  /* IE 9 */
+
+  -webkit-transform: scale(0);
+  /* Chrome, Safari, Opera */
+
+  transform: scale(0);
+  opacity: 0;
 }
 .contact-form-messagetitle {
   font-size: 1.5em;

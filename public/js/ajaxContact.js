@@ -37,9 +37,9 @@
 
         if (validName && validMessage && validPhone && validMail) {
 
-        	$('.contact-form-loading').fadeIn(500);
+        	$('.contact-form-content').fadeOut(200);
+        	$('.contact-form-loading').delay(200).fadeIn(300);
         	$('.contact-form-sent').hide(0);
-        	$('.contact-form-content').hide(0);
 
 	        // We pass a POST petition to /contacta
 	        // with the data "formData"
