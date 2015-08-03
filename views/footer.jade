@@ -3,21 +3,12 @@
 		.footer-content
 			.footer-box
 				h2.footer-title Mapa web
+				- i = 0; 
 				ul.footer-hotlinks
-					li
-						a(href='/') Portada / Home
-					li
-						a(href='/nosotros') Sobre nosotros
-					li
-						a(href='/servicios') Servicios
-				
-				ul.footer-hotlinks 
-					li
-						a(href='/casos_exito') Casos de éxito
-					li
-						a(href='/blog', target='_blank') Blog Corporativo
-					li
-						a(href='/contacta') Contáctanos
+					each link, name in content.menu
+						li
+							a(href='#{link}') #{name}
+					//- i++
 
 			.footer-box 
 				h2.footer-title ¡Apúntante al newsletter!
