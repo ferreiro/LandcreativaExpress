@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var http = require('http');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -9,9 +10,14 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var users = require('./routes/user');
 
-// Nodemailer es un módulo externo de node que nos permite mandar correos.
-var nodemailer = require('nodemailer');
+//------------------------------
+//- Modulos instalados por mi --
+//------------------------------
 
+var contentData = require('./public/content/content.json');
+global.contentData = spanish; // Nodemailer es un módulo externo de node que nos permite mandar correos.
+var spanish = contentData.spanish;
+var nodemailer = require('nodemailer'); // Nodemailer es un módulo externo de node que nos permite mandar correos.
 
 var app = express();
 
@@ -45,8 +51,13 @@ app.locals.pretty = true;
 //-- ROUTES
 //------------------------------
  
+app.get('/', function(req, res) {
+    res.render('index', { 
+        menu : 'index',
+        content: contentData.spanish,
+    });
+});
 
-app.get('/', routes.index);
 app.get('/users', users.list);
   
 /*
@@ -57,12 +68,27 @@ app.get('/', function(req, res){
 }); 
 */
 
-app.get('/nosotros', function(req, res){
-  res.render('nosotros', {           
-    menu : 'nosotros',
-    title: 'Nosotros',
-    pageDescription : 'Somos expertos en diseño web'
-  });
+app.get('/nosotros', function(req, res) {
+
+    console.log(contentData.spanish);
+
+    console.log(JSON.stringify(contentData.spanish)); 
+
+    res.render('nosotros', { 
+        menu : 'nosotros',
+        content: contentData.spanish,
+    });
+
+
+    // var sectionTitle;
+    // try { 
+    //     var obj = fs.readFileSync('./public/content/spanish.json', 'utf8');
+
+    // } catch (ex) {
+    //     console.log("Imposible my friend");
+    // }
+    // text = JSON.stringify(obj); 
+ 
 });
 
 //------------------------------
@@ -82,7 +108,8 @@ app.get('/servicios', function(req, res) {
             menu : 'servicios',
             title: title, // Title of the section
             description: description,
-            scriptName: scriptName
+            scriptName: scriptName,
+            content: contentData.spanish
         }
     );
 });
@@ -126,7 +153,8 @@ app.get('/servicios/:routeURL', function(req, res) {
             menu : 'servicios',
             title: title, // Title of the section
             description: description,
-            scriptName: scriptName
+            scriptName: scriptName,
+            content: contentData.spanish,
         }
     );
 });
@@ -178,12 +206,12 @@ app.get('/quiero/:contactType', function(req, res){
         headerImage = 'marketingContact.png';
     } 
     
-    res.render('contact', {
+    res.render('contact', { 
         menu : 'servicios',
         title: title, // Title of the section
         description: description,
         headerImage: headerImage,
-        contact: contact,
+        contact: contentData.spanish,
         displayForm: true   // THe view uses this variable to show the contact "form" or "not"
     })
 });
@@ -200,7 +228,8 @@ app.get('/trabajos', function(req, res){
     res.render('trabajos', {
         menu : 'trabajos',
         title: title, // Title of the section
-        description: description
+        description: description,
+        content: contentData.spanish,
     })
 });
 
@@ -220,6 +249,7 @@ app.get('/contacta', function(req,res) {
         title: title, // Title of the section
         description: description,
         contact: contact,
+        content: contentData.spanish,
         displayForm: true   // THe view uses this variable to show the contact "form" or "not"
     });
 });
@@ -360,7 +390,8 @@ app.post('/contacta/procesar', function (req, res) {
             title: viewTitle,   // Title of the page.
             err: err,           // There wasn't any error
             displayForm: false, // THe view uses this variable to show the contact "form" or "not"
-            form: form          // We pass the form object we created before
+            form: form,          // We pass the form object we created before
+            content: contentData.spanish
         }); 
 
     }); 

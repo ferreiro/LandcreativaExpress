@@ -1,176 +1,82 @@
 
+- var services = content.sections.services;				// App.js pass a json with this link.
+- var products = content.sections.services.products;	// App.js pass a json with this link.
+
 .products
 	ul.products-tab
-
-		li.products-tab-item.notransition
-			a(href='/servicios/empresas', onclick="changeTab(0); return false;").notransition
-				span E
-				div
-					p(style='display:none') Diseño web
-					h3 Diseño web Empresas
-
-		li.products-tab-item.notransition
-			a(href='/servicios/particulares', onclick="changeTab(1); return false;").notransition
-				span P
-				div
-					p(style='display:none') Diseño web
-					h3 Diseño web Particulares
-
-		li.products-tab-item.notransition
-			a(href='/servicios/marketing', onclick="changeTab(2); return false;").notransition
-				span P
-				div
-					p(style='display:none') SEO &
-					h3 Marketing
+		each menu, index in services.menu
+			li.products-tab-item.notransition
+				a(href='#{menu.url}', onclick="changeTab(#{index}); return false;").notransition
+					span #{menu.letter}
+					div
+						p(style='display:none') #{menu.name}
+						h3 #{menu.name}
 
 	// Content of the products
 
-	.products-content 
-
-
+	.products-content
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box
+		.products-content-box 
+		
+			each product, name in products.companies 
+				// Single product
+				article.product
+					.productBox
+						.productBox-image(style='background-image:url("#{product.image}");')
+						h2.productBox-title #{product.title}
+						h3.productBox-subtitle #{product.subtitle}
+						p
+							a(href='#{product.url}').productBox-button.productBox-button-companies #{services.button}
 
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_economy.png");')
-					h2.productBox-title Paquete Economy
-					h3.productBox-subtitle Sitios corporativos, blogs...
-					p
-						a(href='/quiero/economy').productBox-button.productBox-button-companies ¡Quiero este pack!
+						p #{product.description}
 
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_business.png");')
-					h2.productBox-title Paquete business
-					h3.productBox-subtitle Sitios corporativos, blogs...
-					p
-						a(href='/quiero/business').productBox-button.productBox-button-companies ¡Quiero este pack!
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_firstClass.png");')
-					h2.productBox-title Paquete First Class
-					h3.productBox-subtitle Sitios corporativos, blogs...
-					p
-						a(href='/quiero/first-class').productBox-button.productBox-button-companies ¡Quiero este pack!
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
+						ul.productBox-featureList
+							each feature in product.features
+								li #{feature}
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box
+		.products-content-box 
+		
+			each product, name in products.personal 
+				// Single product
+				article.product
+					.productBox
+						.productBox-image(style='background-image:url("#{product.image}");')
+						h2.productBox-title #{product.title}
+						h3.productBox-subtitle #{product.subtitle}
+						p
+							a(href='#{product.url}').productBox-button.productBox-button-personal #{services.button}
 
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_silver.png");')
-					h2.productBox-title Paquete Silver
-					h3.productBox-subtitle Para los que empiezan
-					p
-						a(href='/quiero/silver').productBox-button.productBox-button-personal ¡Quiero este pack!
+						p #{product.description}
 
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_gold.png");')
-					h2.productBox-title Paquete Gold
-					h3.productBox-subtitle Lleva tu web al siguiente nivel
-					p
-						a(href='/quiero/gold').productBox-button.productBox-button-personal ¡Quiero este pack!
-
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					.productBox-image(style='background-image:url("/images/service_premium.png");')
-					h2.productBox-title Paquete Premium
-					h3.productBox-subtitle Para los más exigentes
-					p
-						a(href='/quiero/premium').productBox-button.productBox-button-personal ¡Quiero este pack!
-
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
+						ul.productBox-featureList
+							each feature in product.features
+								li #{feature} 
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box
+		.products-content-box 
+		
+			each product, name in products.marketing 
+				// Single product
+				article.product
+					.productBox
+						h2.productBox-title #{product.title}
+						h3.productBox-subtitle #{product.subtitle}
+						p
+							a(href='#{product.url}').productBox-button.productBox-button-marketing #{services.button}
 
-			// Single product
-			article.product
-				.productBox
-					h2.productBox-title Analítica web
-					h3.productBox-subtitle Para los que empiezan
-					p
-						a(href='/quiero/analitica').productBox-button.productBox-button-marketing ¡Quiero este pack!
+						p #{product.description}
 
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					h2.productBox-title SEO &amp; SEM
-					h3.productBox-subtitle Lleva tu web al siguiente nivel
-					p
-						a(href='/quiero/SEO').productBox-button.productBox-button-marketing ¡Quiero este pack!
-
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
-
-			// Single product
-			article.product
-				.productBox
-					h2.productBox-title Marketing digital
-					h3.productBox-subtitle Para los más exigentes
-					p
-						a(href='/quiero/marketing').productBox-button.productBox-button-marketing ¡Quiero este pack!
-
-					p We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.
-
-					ul.productBox-featureList
-						li Dominio gratis con un plan anual
-						li 300 temas comerciales y personales
+						ul.productBox-featureList
+							each feature in product.features
+								li #{feature}

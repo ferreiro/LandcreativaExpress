@@ -2,71 +2,24 @@ extends layout
 
 block content
 
+	- var portfolio = content.sections.portfolio; // App.js pass a json with this link.
 	.section.aboutSection
 		.content
-			
-			h1.commun-title #{title}
-
+			h1.commun-title #{portfolio.headline}
 			.portfolio
+				each product, index in portfolio.works
+					// Single portfolio
+					article.portfolioBox
+						.portfolioBox-image(style="background-image:url(#{product.image});")
+							.portfolioBox-link
+								a(href='#{product.url}', target='_blank')
+						.portfolioBox-options
+							.portfolioBox-options-title
+								a(href='#{product.url}', target='_blank')
+									h4 #{product.title}
+							ul.portfolioBox-options-buttons
+								li
+									a(href='#{product.url}', target="_blank")
+										span.icon-link
 
-				// Single portfolio
-				article.portfolioBox
-					.portfolioBox-image(style="background-image:url(/images/portfolio-m4d.png);")
-						.portfolioBox-link
-							a(href='http://www.farawayjourney.com', target='_blank')
-					.portfolioBox-options
-						.portfolioBox-options-title
-							a(href='http://www.farawayjourney.com', target='_blank')
-								h4 Music4deejays 2015
-						ul.portfolioBox-options-buttons
-							li
-								a(href='http://www.music4deejays.com', target="_blank")
-									span.icon-link
 
-				// Single portfolio
-				article.portfolioBox
-					.portfolioBox-image(style="background-image:url(/images/portfolio-m4d-mobile.png);")
-						.portfolioBox-link
-							a(href='http://www.farawayjourney.com', target='_blank')
-					.portfolioBox-options
-						.portfolioBox-options-title
-							a(href='http://www.farawayjourney.com', target='_blank')
-								h4 Music4deejays 2015 - Versión para móviles &amp; tabletas
-						ul.portfolioBox-options-buttons
-							li
-								a(href='http://www.farawayjourney.com', target="_blank")
-									span.icon-link
-
-				// Single portfolio
-				article.portfolioBox
-					.portfolioBox-image(style="background-image:url(/images/portfolio-daniel.png);")
-						.portfolioBox-link
-							a(href='http://www.farawayjourney.com', target='_blank')
-					.portfolioBox-options
-						.portfolioBox-options-title
-							a(href='http://www.farawayjourney.com', target='_blank')
-								h4 Far Away Journey
-						ul.portfolioBox-options-buttons
-							li
-								a(href='http://www.farawayjourney.com', target="_blank")
-									span.icon-link
-
-				// Single portfolio
-				article.portfolioBox
-					.portfolioBox-image(style="background-image:url(/images/portfolio-daniel-mobile.png);")
-						.portfolioBox-link
-							a(href='http://www.farawayjourney.com', target='_blank')
-					.portfolioBox-options
-						.portfolioBox-options-title
-							a(href='http://www.farawayjourney.com', target='_blank')
-								h4 Far Away Journey - Versión para móviles &amp; tabletas
-						ul.portfolioBox-options-buttons
-							li
-								a(href='http://www.farawayjourney.com', target="_blank")
-									span.icon-link
-
-				.about-separator
-
-				h2.commun-title ¿Te gustaría ser el próximo caso de éxito?
-				.about-link
-					a(href='/contacta', style="width:300px; text-align:center; display:block;, float:inherit;").productBox-button.productBox-button-companies ¡Sí!

@@ -2,41 +2,44 @@ extends layout
 
 block content
 
+	- about = content.sections.about;
+
 	.section.aboutSection
-		.content
-			
-			h1.commun-title #{title}
+		.content  
+
+			h1.commun-title #{about.headline} 
 
 			.about
 				.about-left
-					.about-image(style='background-image:url(/images/desk.jpg);')
+					.about-image(style='background-image:url(#{about.what.image});')
 
 				.about-right
-					h2.commun-subtitle.about-subtitle ¿Cómo nos definimos?
-
-					p.about-text Somos gente comprometida, dinámica y creativa. Siempre a la cabeza de la innovación y nuevas tecnologías, que implementamos en todos nuestros proyectos con resultados excepcionales.
-
-					p.about-text En Landcreativa escuchamos a nuestros clientes. Consideramos de vital importancia desarrollar un trabajo que adaptado a las necesidades específicas de cada proyecto, por lo que conseguimos la satisfacción de un trabajo bien hecho.
 					
-					p.about-text.about-text-nomargin Calidad, puntualidad y eficiencia, así es como trabajamos. De esta forma, siempre cumplimos con  las fechas acordadas, gracias al compromiso que adquirimos con nuestros clientes.
-					// Fin about right
+					h2.commun-subtitle.about-subtitle #{about.what.title}
 
+					each text, index in about.what.text
+						if index == about.what.text.length - 1
+							p.about-text.about-text-nomargin #{text}
+						else
+							p.about-text #{text}
+
+				//- Fin about right
 				.about-separator
 
 				.about-left
-					h2.commun-subtitle.about-subtitle ¿Por qué nosotros?
-					
-					p.about-text Disponemos de un excelente equipo de profesionales pertenecientes a diversos sectores que trabajan en equipo para lograr su completa satisfacción.
-					
-					p.about-text Además, nuestros clientes estarán informados constantemente del desarrollo de su trabajo y dispondrá en todo momento del mismo equipo que está desarrolando su proyecto. Por lo que nos aseguramos su máxima satisfacción.
 
-					p.about-text.about-text-nomargin Finalmente, gestionamos de la manera más eficiente los recursos disponibles de nuestros clientes para optimizar el retorno de la inversión.
+					h2.commun-subtitle.about-subtitle #{about.why.title}
 
+					each text, index in about.why.text
+						if index == about.why.text.length - 1
+							p.about-text.about-text-nomargin #{text}
+						else
+							p.about-text #{text}
+				
 				.about-right
-					.about-image.about-image-computer(style='background-image:url(images/info_ordenadores.png);')
+					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
 
 				.about-separator
 				.about-link
-					a(href='/servicios', style="width:300px; text-align:center; display:block;, float:inherit;").productBox-button.productBox-button-companies Ver nuestros servicios
+					a(href='/servicios', style="width:300px; text-align:center; display:block;, float:inherit;").productBox-button.productBox-button-companies #{about.button}
 
-				

@@ -2,7 +2,7 @@ doctype html
 html(lang="es")
 	head
 
-		title= title 
+		title #{content.title}
 
 		meta(charset='UTF-8') 
 		meta(name='HandheldFriendly', content='True') 
@@ -60,16 +60,11 @@ header
 				span.icon-options 
 
 			.mobileMenu-navigation
-				ul
-					li 
-						a(href='/nosotros') Nosotros
-					li 
-						a(href='/servicios') Servicios
-					li 
-						a(href='/trabajos') Trabajos realizados
-					li 
-						a(href='/contacta') Contacta
-
+				ul 
+					each url, name in content.menu
+						li.desktopMenu-nav-link(class=('/#{menu}' === '' ? 'selected' : ' '))
+							a(href='#{url}') #{name}
+							
 					li.mobileMenu-navigation-socialNetwork
 						a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
 
@@ -77,19 +72,9 @@ header
 						a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
 
 			nav.desktopMenu-nav
-
-				li.desktopMenu-nav-link(class=(menu === 'nosotros' ? 'selected' : ''))
-					a(href='/nosotros') Nosotros
-
-				li.desktopMenu-nav-link(class=(menu === 'servicios' ? 'selected' : ''))
-					a(href='/servicios') Servicios
-
-				li.desktopMenu-nav-link(class=(menu === 'trabajos' ? 'selected' : ''))
-					a(href='/trabajos') Trabajos realizados
-
-				li.desktopMenu-nav-link(class=(menu === 'contacta' ? 'selected' : ''))
-					a(href='/contacta') Contacta
-
+				each url, name in content.menu
+					li.desktopMenu-nav-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
+						a(href='#{url}') #{name}
 			.desktopMenu-networks
 				ul
 					li
@@ -107,4 +92,3 @@ header
 					li
 						a(href='mailto:info@landcreativa.com')
 							span.icon-paperplane
-

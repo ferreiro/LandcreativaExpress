@@ -2,6 +2,9 @@ extends layout
 
 block content
 
+
+	- var contact = content.sections.contact;		 
+
 	.section.aboutSection
 		.content
 			
@@ -46,7 +49,7 @@ block content
 			else 
 
 				//- Title of the page
-				h1.commun-title #{title} 
+				h1.commun-title #{contact.title} 
 
 				if !contact
 					//- We use this for the budgeting contact form
@@ -54,23 +57,14 @@ block content
 					a(href="/servicios", style="text-align:center; color:#222; opacity:0.4; margin-top:-1.5em; margin-bottom:2.5em; width:100%; display:block;") ¿Prefieres otro pack?
 				else 
 
-					//- Show header for contact
-
-					.contact-banner.contact-cafe
-						.contact-banner-image
-							span.icon-coffee
-						.contact-banner-info
-							h4 Tomemos un café.
-							p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
-
-					.contact-banner.contact-location
-						.contact-banner-image
-							span.icon-map
-						.contact-banner-info
-							h4 ¿Dónde puedes encontrarnos?
-							p Estamos en <strong>Madrid</strong>
-							p (Contáctanos para otras ciudades y países)
-				
+					each product, index in contact.banners
+						//- Show header for contact
+						.contact-banner(class=('contact-#{product.type}'))
+							.contact-banner-image
+								span(class=('#{product.icon}'))
+							.contact-banner-info
+								h4 #{product.title}
+								p Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!
 
 				.contact
 					.contact-form
@@ -84,9 +78,9 @@ block content
 
 							.contact-form-separator
 
-							p.contact-form-messagetitle Mensaje no enviado
-							p.contact-form-message <span class="userName-messageSent">Default</span>, no hemos podido recibir tu correo electrónico. ¿Podrías intentarlo de nuevo?. Si el error persiste, por favor, escribenos a <a href='mailto:info@landcreativa.com' style='color:#ed3636;'>info@landcreativa.com</a> y te atenderemos lo antes posible.
-							p(style="margin-bottom:0;").contact-form-message El equipo de Landcreativa 
+							p.contact-form-messagetitle #{contact.formSent.fail.title}
+							p.contact-form-message <span class="userName-messageSent">Default</span>, #{contact.formSent.fail.message[0]}
+							p(style="margin-bottom:0;").contact-form-message #{contact.formSent.fail.message[1]}
 
 						.contact-form-sent.messageSuccess
 							//- If there wasn't any error during the process.
@@ -95,9 +89,9 @@ block content
 
 							.contact-form-separator
 
-							p.contact-form-messagetitle ¡Mensaje enviado!
-							p.contact-form-message <span class="userName-messageSent">Default</span>, hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección: <u> <span class="userEmail-messageSent">@</span></u>
-							p.contact-form-message <i>Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a landcreativa@gmail.com notificandonos el hecho.</i>
+							p.contact-form-messagetitle #{contact.formSent.success.Title}
+							p.contact-form-message <span class="userName-messageSent">Default</span>, #{contact.formSent.success.message[0]}: <u> <span class="userEmail-messageSent">@</span></u>
+							p.contact-form-message <i>#{contact.formSent.success.message[1]}.</i>
 							//- p.contact-form-message También te hemos enviado un mail de confirmación a tu correo. Revisa la bandeja de <strong>spam</strong>.
 						
 						.contact-form-content
