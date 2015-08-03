@@ -37,7 +37,7 @@
 
         if (validName && validMessage && validPhone && validMail) {
 
-        	$('.loading').fadeIn(500);
+        	$('.contact-form-loading').fadeIn(500);
         	$('.contact-form-sent').hide(0);
         	$('.contact-form-content').hide(0);
 
@@ -55,7 +55,7 @@
 
         		if(returnedData.error) {
         			// no Se ha podido enviar el correo
-        			$('.messageError').hide(0); 
+        			$('.messageError').fadeIn(0); 
         		}
         		else {
         			// Se ha podido enviar el correo
@@ -67,7 +67,7 @@
         		// La url donde hemos hecho el post no exite o no ha devuelto el tipo de formato que esperabamos.
         	})
         	.always(function(returnedData) {
-        		$('.loading').hide(0);
+        		$('.contact-form-loading').hide(0);
         	});
 
 

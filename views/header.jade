@@ -1,0 +1,79 @@
+
+// Mobile menu
+
+header
+	.mobileMenu
+		.mobileMenu-int
+
+			.mobileMenu-logo
+				a(href='/')
+					.iso
+					.text
+						h1 Landcreativa 
+
+			button.mobileMenu-button
+				.icon-options 
+
+			.mobileMenu-navigation
+				ul
+					li 
+						a(href='/nosotros') Nosotros
+					li 
+						a(href='/servicios') Servicios
+					li 
+						a(href='/trabajos') Trabajos realizados
+					li 
+						a(href='/contacta') Contacta
+
+					li.mobileMenu-navigation-socialNetwork
+						a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
+
+					li.mobileMenu-navigation-socialNetwork
+						a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
+
+	// Desktop menu
+	.desktopMenu
+		.desktopMenu-int
+
+
+			div(style='width:100%; display: none ; height:15px; background:red; position:absolute; top:50%; margin-top:-7.5px; background:red;')
+
+
+			.desktopMenu-logo
+				a(href='/')
+					.desktopMenu-logo-iso
+					.desktopMenu-logo-text
+						h1 Landcreativa<span>.com</span> 
+
+			nav.desktopMenu-nav
+
+				li.desktopMenu-nav-link(class=(menu === 'nosotros' ? 'selected' : ''))
+					a(href='/nosotros') Nosotros
+
+				li.desktopMenu-nav-link(class=(menu === 'servicios' ? 'selected' : ''))
+					a(href='/servicios') Servicios
+
+				li.desktopMenu-nav-link(class=(menu === 'casos_exito' ? 'selected' : ''))
+					a(href='/trabajos') Trabajos realizados
+
+				li.desktopMenu-nav-link(class=(menu === 'contacta' ? 'selected' : ''))
+					a(href='/contacta') Contacta
+
+			.desktopMenu-networks
+				ul
+					li
+						a(href='http://www.facebook.com/landcreativa', target='_blank')
+							span.icon-facebook
+
+					li
+						a(href='http://www.twitter.com/landcreativa', target='_blank')
+							span.icon-twitter
+
+					li
+						a(href='http://blog.landcreativa.com/', target='_blank')
+							span.icon-blog
+
+					li
+						a(href='mailto:info@landcreativa.com')
+							span.icon-paperplane
+

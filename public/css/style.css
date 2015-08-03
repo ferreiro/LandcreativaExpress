@@ -395,7 +395,7 @@ body-overflow {
   display: none;
 }
 .desktopMenu-nav {
-  width: 590px;
+  width: 630px;
   height: 100%;
   padding: 0;
   margin: 0 auto;
@@ -461,7 +461,7 @@ body-overflow {
 }
 .desktopMenu-networks {
   top: 50%;
-  width: 180px;
+  width: 162px;
   -webkit-transform: translate(0%, -50%);
   -moz-transform: translate(0%, -50%);
   -ms-transform: translate(0%, -50%);
@@ -477,7 +477,7 @@ body-overflow {
   margin-left: 0 !important;
 }
 .desktopMenu-networks ul li a {
-  width: 40px;
+  width: 35px;
   height: 30px;
   display: block;
   font-size: 1.2em;
@@ -488,6 +488,9 @@ body-overflow {
 }
 .desktopMenu-networks ul li a:hover {
   background: #f4f4f4;
+}
+.desktopMenu-networks ul li a:before {
+  font-size: 1em;
 }
 .section {
   margin-top: 0;
@@ -1785,7 +1788,7 @@ body-overflow {
     margin: 0 auto;
     margin: 0 2.5em;
     padding: 2em 0;
-    display: inline-block;
+    display: block;
   }
 }
 .contact-form-subtitle {
@@ -1837,8 +1840,24 @@ body-overflow {
 .contact-form-roundresponse-red span {
   background: #ed3636;
 }
+.contact-form-loading {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) 50% 50%;
+  background-size: 0% 100%;
+}
 .contact-form-sent {
   display: none;
+}
+@media all and (min-width: 600px) {
+  .contact-form-sent {
+    width: 560px;
+    margin: 0 auto;
+    margin-top: 0;
+    padding: 1em 0;
+    padding-bottom: 0;
+  }
 }
 .contact-form-messagetitle {
   font-size: 1.5em;
@@ -1862,6 +1881,7 @@ body-overflow {
   margin-bottom: 1em;
   text-align: center;
   display: block;
+  height: auto;
 }
 @media all and (min-width: 1000px) {
   .contact-form-field {
@@ -1997,7 +2017,7 @@ body-overflow {
   line-height: 1;
   color: #ffffff;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   margin: 0 auto;
   text-align: center;
   border-radius: 3px;
@@ -2016,7 +2036,6 @@ body-overflow {
   .contact-form-field-element-button {
     padding: 18px 20px;
     margin-top: 1em;
-    margin-bottom: -2em;
   }
 }
 .contact-form-field-element-button:hover {

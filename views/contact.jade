@@ -75,20 +75,18 @@ block content
 				.contact
 					.contact-form
 
-						.loading(style='display:none;')
-							img(src='https://www.tmdn.org/tmdsview-web/resources/images/loading-gallery.gif')
+						.contact-form-loading
 
 						.contact-form-sent.messageError
 							//- If there wasn't any error during the process.
-							.contact-form-roundresponse.contact-form-roundresponse-green
+							.contact-form-roundresponse.contact-form-roundresponse-red
 								span.icon-envelope
 
 							.contact-form-separator
 
-							p.contact-form-messagetitle ¡Mensaje enviado!
-							p.contact-form-message Jorge, hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección: <u> email</u>
-							p.contact-form-message <i>Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a landcreativa@gmail.com notificandonos el hecho.</i>
-							//- p.contact-form-message También te hemos enviado un mail de confirmación a tu correo. Revisa la bandeja de <strong>spam</strong>.
+							p.contact-form-messagetitle Mensaje no enviado
+							p.contact-form-message form.name, no hemos podido recibir tu correo electrónico. ¿Podrías intentarlo de nuevo?. Si el error persiste, por favor, escribenos a <a href='mailto:info@landcreativa.com' style='color:#ed3636;'>info@landcreativa.com</a> y te atenderemos lo antes posible.
+							p(style="margin-bottom:0;").contact-form-message El equipo de Landcreativa 
 
 						.contact-form-sent.messageSuccess
 							//- If there wasn't any error during the process.

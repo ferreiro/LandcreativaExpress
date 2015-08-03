@@ -192,8 +192,9 @@ app.get('/quiero/:contactType', function(req, res){
 //-- CASOS DE ÉXITO
 //------------------------------
 
-app.get('/casos_exito', function(req, res){
+app.get('/trabajos', function(req, res){
     var title = 'Casos de éxito';
+    var title = 'Trabajos realizados';
     var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
 
     res.render('casos_exito', {
