@@ -83,20 +83,22 @@ block content
 								p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
 
 								.contact-form-field-element
-									input(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
+									//- keepInputValue class will keep the input value via javascript
+									input.keepInputValue(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
 
 							fieldset.contact-form-field
 								p.contact-form-field-text Email <span>* (obligatorio)</span>
 
 								.contact-form-field-element
-									input(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input
+									//- keepInputValue class will keep the input value via javascript
+									input.keepInputValue(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input 
 
 							fieldset.contact-form-field
 								p.contact-form-field-text Teléfono de contacto
 
 								.contact-form-field-element
-									input(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input
-
+									//- keepInputValue class will keep the input value via javascript
+									input.keepInputValue(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input 
 
 							fieldset.contact-form-field.contact-form-field-subject
 								p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
@@ -136,11 +138,11 @@ block content
 								p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
 
 								.contact-form-field-element
-									textarea(type='textarea', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
+									//- keepInputValue class will keep the input value via javascript
+									textarea.keepInputValue(type='textarea', value='', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
 
 							fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
 								input(type="submit", value="Enviar formulario").contact-form-field-element-button
-
 
 // Includes the footer
 include ./footer.jade 
