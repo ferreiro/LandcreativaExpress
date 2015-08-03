@@ -5,7 +5,6 @@ var saveTime = 1000;	// Time in miliseconds for saving user text input on sessio
 var sessionStorageName = 'contactForm_';
 var stopTracking = false;
 	
-	
 	loadUserText(); // Calling the function the first time we open the page
 	setInterval(saveUserText, saveTime); // Saving user inputs text each "saveTime" miliseconds
 	form.onsubmit = function() { 
@@ -40,7 +39,7 @@ var stopTracking = false;
 
 		for (i = 0; i < total; i++) {
 			stkey 	= sessionStorageName + i; 			// Setting the key name. Change this for a different name 
-			if(st.getItem(stkey) != "undefined") 
+			if(st.getItem(stkey) != undefined) 
 				keepValueFields[i].value = st.getItem(''+ stkey + '');	// getting the value from session storage and setting the input text with dat value
 		}
 	}
@@ -58,7 +57,8 @@ var stopTracking = false;
  			for (i = 0; i < total; i++) {
  				stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
  				stValue = keepValueFields[i].value;	// The value is getting for the element input value.
- 				st.setItem(stkey, stValue);			// Setting key and value to Session storage.
+ 				if(stValue != undefined) 
+					st.setItem(stkey, stValue);			// Setting key and value to Session storage.
  			}
 	 	} 
 	}

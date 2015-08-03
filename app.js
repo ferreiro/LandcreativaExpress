@@ -276,20 +276,17 @@ app.post('/contacta/JSON', function (req, res) {
     // Send mail with defined transport object
 
     transporter.sendMail(mailOptions, function(error, info) {
-        var viewTitle = 'Formulario enviado con éxito';
         var err = false;
  
         // Email sent correctly
         if (error) {
             err = true; // Yes. There's an error with the form.
-            title = 'Formulario no enviado, tiene errores'; // Title of the page.
         }
          
         // Devolver JSON para cuando se haga un formulario ajax.
-        res.json({
-            test : "Hola jorge, eres la pollaas",
+        res.json({ 
             error: err,           // There wasn't any error
-            sentData: form          // We pass the form object we created before
+            messageData: form          // We pass the form object we created before
         });  
 
     }); 

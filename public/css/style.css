@@ -211,7 +211,7 @@ body-overflow {
 }
 .mobileMenu {
   width: 100%;
-  height: 70px;
+  height: 80px;
   top: 0;
   z-index: 100;
   position: fixed;
@@ -222,6 +222,7 @@ body-overflow {
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+  display: none !important;
 }
 @media all and (min-width: 1000px) {
   .mobileMenu {
@@ -229,7 +230,7 @@ body-overflow {
   }
 }
 .mobileMenu-int {
-  padding: 25.925925925925924px 1em;
+  padding: 29.629629629629626px 1em;
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
   .mobileMenu-int {
@@ -260,48 +261,16 @@ body-overflow {
   line-height: 0.8em;
   color: #3695ed;
 }
-.mobileMenu-button {
-  height: 70px;
-  padding: 0 2em;
-  outline: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-  background: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-.mobileMenu-button-selected {
-  background: #f3f3f3;
-}
-.mobileMenu-button-selected:before {
-  position: absolute;
-  top: 100%;
-  left: 1px;
-  right: 1px;
-  width: 100%;
-  height: 12px;
-  margin-top: -10px;
-  background: #f3f3f3;
-  content: '';
-  z-index: 1;
-}
-.mobileMenu-button span:before {
-  font-size: 1.5em;
-  color: #222222;
-  margin-top: 10px;
-}
 .mobileMenu-navigation {
   width: 220px;
-  min-height: 270px;
+  min-height: 320px;
   max-height: 100%;
   padding: 0;
-  overflow-y: scroll;
   padding: 0;
-  position: absolute;
-  display: none;
   top: 100%;
   right: 0;
+  position: absolute;
+  display: none;
   text-align: right;
   background: #f3f3f3;
   border-top: 0;
@@ -328,7 +297,6 @@ body-overflow {
 .desktopMenu {
   width: 100%;
   height: 80px;
-  display: none;
   transition: 0.3s;
   position: fixed;
   background: #ffffff;
@@ -338,16 +306,25 @@ body-overflow {
   -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
 }
-@media all and (min-width: 1000px) {
-  .desktopMenu {
-    display: block;
+.desktopMenu-int {
+  height: 100%;
+  position: relative;
+}
+@media all and (min-width: 0) {
+  .desktopMenu-int {
+    margin: auto 1em;
   }
 }
-.desktopMenu-int {
-  width: 1000px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
+@media all and (min-width: 600px) {
+  .desktopMenu-int {
+    margin: auto 2em;
+  }
+}
+@media all and (min-width: 1000px) {
+  .desktopMenu-int {
+    width: 1000px;
+    margin: 0 auto;
+  }
 }
 .desktopMenu-logo {
   top: 50%;
@@ -394,14 +371,56 @@ body-overflow {
   font-size: 0.7em;
   display: none;
 }
+.desktopMenu-mobilebutton {
+  height: 80px;
+  padding: 0 2em;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+@media all and (min-width: 1000px) {
+  .desktopMenu-mobilebutton {
+    display: none !important;
+  }
+}
+.desktopMenu-mobilebutton-selected {
+  background: #f3f3f3;
+}
+.desktopMenu-mobilebutton-selected:before {
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  right: 1px;
+  width: 100%;
+  height: 12px;
+  margin-top: -10px;
+  background: #f3f3f3;
+  content: '';
+  z-index: 1;
+}
+.desktopMenu-mobilebutton span:before {
+  font-size: 1.5em;
+  color: #222222;
+  margin-top: 10px;
+}
 .desktopMenu-nav {
   width: 630px;
   height: 100%;
   padding: 0;
+  display: none;
   margin: 0 auto;
   text-align: center;
   border-right: 1px solid #f4f4f4;
   border-left: 1px solid #f4f4f4;
+}
+@media all and (min-width: 1000px) {
+  .desktopMenu-nav {
+    display: block;
+  }
 }
 .desktopMenu-nav:hover a {
   color: rgba(34, 34, 34, 0.498039);
@@ -469,6 +488,11 @@ body-overflow {
   position: absolute;
   right: 0;
 }
+@media all and (max-width: 1000px) {
+  .desktopMenu-networks {
+    display: none;
+  }
+}
 .desktopMenu-networks ul li {
   display: inline-block;
   margin-left: 2px;
@@ -497,7 +521,7 @@ body-overflow {
   position: relative;
 }
 .section .content {
-  margin-top: 70px;
+  margin-top: 80px;
   padding: 2.5em 1em;
   padding-bottom: 1.5em;
 }
@@ -1985,9 +2009,9 @@ body-overflow {
   }
 }
 .contact-form-field-element-wrongfield {
-  -webkit-box-shadow: 0 0 3px 1px #D24141;
-  -moz-box-shadow: 0 0 3px 1px #D24141;
-  box-shadow: 0 0 3px 1px #D24141;
+  -webkit-box-shadow: 0 0 6px 1px rgba(222, 92, 94, 0.7);
+  -moz-box-shadow: 0 0 6px 1px rgba(222, 92, 94, 0.7);
+  box-shadow: 0 0 6px 1px rgba(222, 92, 94, 0.7);
 }
 .contact-form-field-element-select {
   width: 100% !important;

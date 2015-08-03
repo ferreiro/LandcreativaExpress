@@ -32,7 +32,7 @@
 
         validName 	 = isValidField(formData.name, 3);	// Name text and minimun of characters
         validMail    = validateEmail(formData.email);
-        validPhone   = isValidField(formData.phone, 9); // Spanish phones has minimun 9 characters XXX-XXX-XXX
+        validPhone   = isValidField(formData.phone, 5); // Spanish phones has minimun 9 characters XXX-XXX-XXX
         validMessage = isValidField(formData.message, 5);
 
         if (validName && validMessage && validPhone && validMail) {
@@ -51,8 +51,11 @@
         	    encode      : true
         	})
         	.done(function(returnedData) {		
-
-        		// Petición ajax realizada con éxito
+                // Petición ajax realizada con éxito
+                 
+                $('.userName-messageSent').html(formName.val());  // Sustituir el nombre default por el del usuario
+                $('.userEmail-messageSent').html(formEmail.val()); // Sustituir el mail default por el del usuario
+ 
         		if(returnedData.error) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
@@ -64,51 +67,25 @@
         		}
         	})
         	.fail(function(returnedData) {
+                var mName, mEmail;
         		// Petición ajax realizada con fallo 
         		// La url donde hemos hecho el post no exite o no ha devuelto el tipo de formato que esperabamos.
-        	})
+        	   
+                mName = formName;
+                nEmail = formEmail;
+
+                $('.userName-messageSent').html(mName);
+                $('.userEmail-messageSent').html(mEmail);
+        
+                $('.messageError').fadeIn(0);  
+            })
         	.always(function(returnedData) {
         		$('.contact-form-loading').hide(0);
         	});
-
-
-
-
-
-	        // $.post('/contacta', function(formData) {
-	        // 	alert('Hola');
-	        // })
-	        // .done(function(data) {
-
-	        // 	console.log('Data test ' + $(data).test);
-	        // 	console.log('Data success ' + $(data));
-	        // })
-	        // .fail(function(data) {
-	        // 	console.log('Data fail ' + $(data))
-	        // });
-
-	        /*
-	        // process the form
-	        $.ajax({
-	            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-	            url         : '/contacta', // the url where we want to POST
-	            data        : formData, // our data object
-	            dataType    : 'json', // what type of data do we expect back from the server
-	            encode      : true
-	        })
-	        // using the done promise callback
-	        .done(function(data) {
-
-
-	            // log data to the console so we can see
-	            console.log(data); 
-
-
-	            // here we will handle errors and validation messages
-	        });
-			*/
         }
         else {
+            // Some of the fields weren't completed correctly.
+            
 	        if(!validName) {
 	        	formName.addClass('contact-form-field-element-wrongfield');
 	        }
