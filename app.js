@@ -35,7 +35,23 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+/---- Agregados de jorge. ---/
 
+// Handle 404
+app.use(function(req, res, err) {
+    res.status(400);
+    res.render('error', { 
+        menu : 'error.jade',
+        error: err,
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+    });
+});
+
+// Handle 500
+app.use(function(error, req, res, next) {
+    res.status(500);
+   res.render('500.jade', {title:'500: Internal Server Error', error: error});
+});
 
 
 
@@ -54,11 +70,11 @@ app.locals.pretty = true;
 app.get('/', function(req, res) {
     res.render('index', { 
         menu : 'index',
-        content: contentData.spanish,
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     });
 });
 
-app.get('/users', users.list);
+// app.get('/users', users.list);
   
 /*
 app.get('/', function(req, res){
@@ -76,7 +92,7 @@ app.get('/nosotros', function(req, res) {
 
     res.render('nosotros', { 
         menu : 'nosotros',
-        content: contentData.spanish,
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     });
 
 
@@ -109,7 +125,7 @@ app.get('/servicios', function(req, res) {
             title: title, // Title of the section
             description: description,
             scriptName: scriptName,
-            content: contentData.spanish
+            content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
         }
     );
 });
@@ -154,7 +170,7 @@ app.get('/servicios/:routeURL', function(req, res) {
             title: title, // Title of the section
             description: description,
             scriptName: scriptName,
-            content: contentData.spanish,
+            content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
         }
     );
 });
@@ -211,8 +227,8 @@ app.get('/quiero/:contactType', function(req, res){
         title: title, // Title of the section
         description: description,
         headerImage: headerImage,
-        contact: contentData.spanish,
-        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
+        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
+        contact: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     })
 });
   
@@ -229,7 +245,7 @@ app.get('/trabajos', function(req, res){
         menu : 'trabajos',
         title: title, // Title of the section
         description: description,
-        content: contentData.spanish,
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     })
 });
 
@@ -240,17 +256,13 @@ app.get('/trabajos', function(req, res){
 // http://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer
 
 app.get('/contacta', function(req,res) {
-    var title = 'Contacta';
-    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
     var contact = true; // The view use this to show contact or presupuesto
 
     res.render('contact', {        
         menu : 'contacta',
-        title: title, // Title of the section
-        description: description,
         contact: contact,
-        content: contentData.spanish,
-        displayForm: true   // THe view uses this variable to show the contact "form" or "not"
+        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     });
 });
 

@@ -7,9 +7,9 @@ var desktop = 1000;
 //-- MENU
 //----------------------------
 
-var menuButton = $('#mobileMenu');
-var menuButtonSelectedClass =  'desktopMenu-mobilebutton-selected';
-var menuNavigation = $('.mobileMenu-navigation');
+var menuButton = $('#mobileMenuButton');
+var menuButtonSelectedClass =  'selected';
+var menuNavigation = $('#mobileMenu ul');
 var body = $('body');
 var bodyOverflowClass = $('body-overflow');
 

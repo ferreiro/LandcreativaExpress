@@ -45,37 +45,37 @@ html(lang="es")
 header
 
 	// Desktop menu
-	.desktopMenu
-		.desktopMenu-int
+	.header
+		.header-int
 
 			div(style='width:100%; display: none ; height:15px; background:red; position:absolute; top:50%; margin-top:-7.5px; background:red;')
 
-			.desktopMenu-logo
+			.header-logo
 				a(href='/')
-					.desktopMenu-logo-iso
-					.desktopMenu-logo-text
+					.header-logo-iso
+					.header-logo-text
 						h1 Landcreativa<span>.com</span> 
 
-			button.desktopMenu-mobilebutton#mobileMenu
-				span.icon-options 
+			.header-mobilemenu#mobileMenu
+				button.header-mobilemenu-button#mobileMenuButton
+					span.icon-options 
 
-			.mobileMenu-navigation
-				ul 
+				ul.header-mobilemenu-dropdown 
 					each url, name in content.menu
-						li.desktopMenu-nav-link(class=('/#{menu}' === '' ? 'selected' : ' '))
+						li.header-mobilemenu-dropdown-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
 							a(href='#{url}') #{name}
-							
-					li.mobileMenu-navigation-socialNetwork
+
+					li.header-mobilemenu-dropdown-link.header-mobilemenu-dropdown-socialnetworks
 						a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
 
-					li.mobileMenu-navigation-socialNetwork
+					li.header-mobilemenu-dropdown-link.header-mobilemenu-dropdown-socialnetworks
 						a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
 
-			nav.desktopMenu-nav
+			nav.header-desktopmenu
 				each url, name in content.menu
-					li.desktopMenu-nav-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
+					li.header-desktopmenu-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
 						a(href='#{url}') #{name}
-			.desktopMenu-networks
+			.header-networks
 				ul
 					li
 						a(href='http://www.facebook.com/landcreativa', target='_blank')
