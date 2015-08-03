@@ -1,6 +1,6 @@
 
     // process the form
-    $('form').submit(function(event) {
+    $('form.contactForm').submit(function(event) {
     	var formData, validEmail, emptyField;
     	var name, email, phone, subject, message;
 
