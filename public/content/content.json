@@ -2,8 +2,9 @@
     "spanish" : {
     	"title": "Landcreativa - Expertos en páginas web, diseño gráfico, SEO y marketing digital",
     	"description" : "esto es una descripción",
+        "baseURL" : "/",
     	"menu" : {
-    		"nosotros" : "/nosotros",
+            "nosotros" : "/nosotros",
     		"servicios" : "/servicios",
     		"trabajos realizados" : "/trabajos", 
     		"contacta" : "/contacta"
@@ -12,6 +13,7 @@
 
     		"about" : {
     			"headline" : "Nosotros",
+                "button": "Ver nuestros servicios",
     			"what": {
     			    "title": "¿Cómo nos definimos?",
     			    "image": "/images/desk.jpg",
@@ -29,8 +31,7 @@
     			        "Además, nuestros clientes estarán informados constantemente del desarrollo de su trabajo y dispondrá en todo momento del mismo equipo que está desarrolando su proyecto. Por lo que nos aseguramos su máxima satisfacción.",
     			        "Finalmente, gestionamos de la manera más eficiente los recursos disponibles de nuestros clientes para optimizar el retorno de la inversión."
     			    ]
-    			},
-    			"button": "Ver nuestros servicios"
+    			}
     		},
     		"services" : {
     			"headline" : "Servicios",
@@ -203,7 +204,7 @@
                         "type" : "location",
                         "icon" : "icon-map",
                         "text" : [
-                            "Estamos en <strong>Madrid</strong>",
+                            "Estamos en Madrid",
                             "(Contáctanos para otras ciudades y países)"
                         ]
                     }
@@ -227,12 +228,12 @@
                 "form" : {
                     "headline" : "Por favor, usa el formulario de abajo para enviarnos un correo electrónico:",
                     "button" : "Enviar formulario",
-                    "inputs" : [
-                        "Name",
-                        "Correo electrónico",
-                        "Teléfono de contacto",
-                        "Tu comentario"
-                    ],
+                    "inputs" : {
+                        "name": "Nombre",
+                        "email": "Correo electrónico",
+                        "phone": "Teléfono de contacto",
+                        "message": "Tu comentario"
+                    },
                     "options" : [
                         "Personal - ¡Quiero pack Premium!",
                         "Personal - ¡Quiero pack Gold!",
@@ -254,7 +255,281 @@
             "otro": "otro2"
         }
     },
+
+
+
+
+
+
     "english" : {
+        "title": "Landcreativa - Experts in web pages, graphic design, SEO and digital marketing",
+        "description" : "esto es una descripción",
+        "baseURL" : "/en",
+        "menu" : {
+            "about" : "/about",
+            "services" : "/services",
+            "projects / portfolio" : "/portfolio", 
+            "contact us" : "/contact"
+        },
+        "sections" : {
+
+            "about" : {
+                "headline" : "About Landcreativa",
+                "button": "See our portfolio",
+                "what": {
+                    "title": "¿Cómo nos definimos?",
+                    "image": "/images/desk.jpg",
+                    "text": [
+                        "Somos gente comprometida, dinámica y creativa. Siempre a la cabeza de la innovación y nuevas tecnologías, que implementamos en todos nuestros proyectos con resultados excepcionales.",
+                        "En Landcreativa escuchamos a nuestros clientes. Consideramos de vital importancia desarrollar un trabajo que adaptado a las necesidades específicas de cada proyecto, por lo que conseguimos la satisfacción de un trabajo bien hecho.",
+                        "Calidad, puntualidad y eficiencia, así es como trabajamos. De esta forma, siempre cumplimos con las fechas acordadas, gracias al compromiso que adquirimos con nuestros clientes."
+                    ]
+                },
+                "why": {
+                    "title": "¿Por qué nosotros?",
+                    "image": "/images/info_ordenadores.png",
+                    "text": [
+                        "Disponemos de un excelente equipo de profesionales pertenecientes a diversos sectores que trabajan en equipo para lograr su completa satisfacción.",
+                        "Además, nuestros clientes estarán informados constantemente del desarrollo de su trabajo y dispondrá en todo momento del mismo equipo que está desarrolando su proyecto. Por lo que nos aseguramos su máxima satisfacción.",
+                        "Finalmente, gestionamos de la manera más eficiente los recursos disponibles de nuestros clientes para optimizar el retorno de la inversión."
+                    ]
+                }
+            },
+            "services" : {
+                "headline" : "Services",
+                "button" : "I want this pack!",
+                "menu" : {
+                    "0": {
+                        "name" : "Companies Web design",
+                        "letter" : "E",
+                        "url" : "/services/business"
+                    },
+                    "1": {
+                        "name" : "Personal Web design",
+                        "letter" : "P",
+                        "url" : "/services/personla"
+                    },
+                    "2": {
+                        "name" : "Marketing",
+                        "letter" : "M",
+                        "url" : "/services/marketing"
+                    }
+                },
+                "products" : {
+                    "companies" : { 
+                        "economy" : {
+                            "title" : "Paquete Economy",
+                            "subtitle" : "Perfecto para empresas de nueva creación",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_economy.png",
+                            "url" : "/quiero/economy",
+                            "features" : [
+                                "Puta gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },
+                        "business" : {
+                            "title" : "Paquete Business",
+                            "subtitle" : "Perfecto para empresas de nueva creación",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_business.png",
+                            "url" : "/quiero/economy",
+                            "features" : [
+                                "Puta gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },
+                        "firstClass" : {
+                            "title" : "Paquete First Class",
+                            "subtitle" : "Deja marca en la red",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_firstclass.png",
+                            "url" : "/quiero/economy",
+                            "features" : [
+                                "Nooooo gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        }
+                    },
+                    "personal" : {
+                        "silver" : {
+                            "title" : "Paquete Silver",
+                            "subtitle" : "Para los que empiezan",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_silver.png",
+                            "url" : "/quiero/economy",
+                            "features" : [
+                                "Nooooo gratis con un plan anual",
+                                "Yeeess gratis con un plan anual",
+                                "Nooooo gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },  
+                        "gold" : {
+                            "title" : "Paquete Gold",
+                            "subtitle" : "Lleva tu web al siguiente nivel",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_gold.png",
+                            "url" : "/quiero/gold",
+                            "features" : [
+                                "Dominio gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },
+                        "premium" : {
+                            "title" : "Paquete Gold",
+                            "subtitle" : "Para los más exigentes",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_premium.png",
+                            "url" : "/quiero/premium",
+                            "features" : [
+                                "Dominio gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        }
+                    },
+                    "marketing" : {
+                        "analitics" : {
+                            "title" : "Analítica web",
+                            "subtitle" : "Para los más exigentes",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_analiticas.png",
+                            "url" : "/quiero/premium",
+                            "features" : [
+                                "Dominio gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },
+                        "seo" : {
+                            "title" : "SEO & SEM",
+                            "subtitle" : "Para los más exigentes",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_seo.png",
+                            "url" : "/quiero/SEO",
+                            "features" : [
+                                "Dominio gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        },
+                        "marketing" : {
+                            "title" : "Marketing digital",
+                            "subtitle" : "Para los más exigentes",
+                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "image" : "/images/service_marketing.png",
+                            "url" : "/quiero/marketing",
+                            "features" : [
+                                "Dominio gratis con un plan anual",
+                                "300 temas comerciales y personales"
+                            ]
+                        }
+                    }
+                }
+            },
+            "portfolio" : {
+                "headline" : "Portfolio & showcase",
+                "works" : {
+                    "1" : {
+                        "title" : "Music4deejays 2015",
+                        "url" : "http://www.Music4deejays.com",
+                        "image" : "/images/portfolio-m4d.png"
+                    },
+                    "2" : {
+                        "title" : "Music4deejays 2015 - Mobile and tablets",
+                        "url" : "http://www.Music4deejays.com",
+                        "image" : "/images/portfolio-m4d-mobile.png"
+                    },
+                    "3" : {
+                        "title" : "Far Away Journey",
+                        "url" : "http://www.farawayjourney.com",
+                        "image" : "/images/portfolio-daniel.png"
+                    },
+                    "4" : {
+                        "title" : "Far Away Journey - Mobile and tablets",
+                        "url" : "http://www.farawayjourney.com",
+                        "image" : "/images/portfolio-daniel-mobile.png"
+                    }
+                }
+            },
+            "contact" : {
+                "title": "Contact us",
+                "banners" : {
+                    "1" : {
+                        "title" : "Let's grab a coffe",
+                        "type" : "cafe",
+                        "icon" : "icon-coffee",
+                        "text" : [
+                            "Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!"
+                        ]
+                    },
+                    "2" : {
+                        "title" : "¿Dónde puedes encontrarnos?",
+                        "type" : "location",
+                        "icon" : "icon-map",
+                        "text" : [
+                            "Estamos en Madrid",
+                            "(Contáctanos para otras ciudades y países)"
+                        ]
+                    }
+                },
+                "formSent" : {
+                    "success" : {
+                        "title" : "Message sent!",
+                        "message" : [
+                            "hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección",
+                            "Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a info@landcreativa.com notificandonos el hecho."
+                        ]
+                    },
+                    "fail" : {
+                        "title" : "Message not sent",
+                        "message" : [
+                            "no hemos podido recibir tu correo electrónico. ¿Podrías intentarlo de nuevo?. Si el error persiste, por favor, escribenos a <a href=\"mailto:info@landcreativa.com\" style=\"color:#ed3636;\">info@landcreativa.com<\/a> y te atenderemos lo antes posible.",
+                            "El equipo de Landcreativa"
+                        ]
+                    }
+                },
+                "form" : {
+                    "headline" : "Please use the form below to send us an email:",
+                    "button" : "Send form!",
+                    "inputs" : {
+                        "name": "Name",
+                        "email": "Email",
+                        "phone": "Phone number",
+                        "message": "Your comment"
+                    },
+                    "options" : [
+                        "Personal - I want Premium pack!",
+                        "Personal - I want Gold pack!",
+                        "Personal - I want Silver pack!",
+                        "Enterprise - I want First class pack!",
+                        "Enterprise - I want Business pack!",
+                        "Enterprise - I want Economy pack!",
+                        "Others - pack web analytics I want!",
+                        "Others - SEO & SEM want to pack!",
+                        "Others - Marketing Digital I want to pack!",
+                        "Technical assistance",
+                        "General inquiry",
+                        "Newspapers - Media"
+                    ]
+                }
+            }
+        },
+        "Próximamente..." : {
+            "otro": "otro2"
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    "french" : {
         "title": "Landcreativa - Experts in webpages, graphic design, SEO y marketing digital",
         "description" : "esto es una descripción",
         "menu" : {

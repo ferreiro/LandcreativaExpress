@@ -15,7 +15,7 @@ var users = require('./routes/user');
 //------------------------------
 
 var contentData = require('./public/content/content.json');
-global.contentData = spanish; // Nodemailer es un módulo externo de node que nos permite mandar correos.
+var english = contentData.english;
 var spanish = contentData.spanish;
 var nodemailer = require('nodemailer'); // Nodemailer es un módulo externo de node que nos permite mandar correos.
 
@@ -39,9 +39,10 @@ app.use(app.router);
 
 // Handle 404
 app.use(function(req, res, err) {
-    res.status(400);
+    res.status(400); 
+
     res.render('error', { 
-        menu : 'error.jade',
+        menu : 'error',
         error: err,
         content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     });
@@ -50,7 +51,12 @@ app.use(function(req, res, err) {
 // Handle 500
 app.use(function(error, req, res, next) {
     res.status(500);
-   res.render('500.jade', {title:'500: Internal Server Error', error: error});
+
+    res.render('error', { 
+        menu : 'error',
+        error: err,
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+    });
 });
 
 
@@ -74,37 +80,25 @@ app.get('/', function(req, res) {
     });
 });
 
-// app.get('/users', users.list);
-  
-/*
-app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home'
-  });
-}); 
-*/
+app.get( english.baseURL , function(req, res) {
+    res.render('index', { 
+        menu : 'index',
+        content: contentData.english // Passing a "JSON" to views with the data of the website. 
+    });
+});
 
-app.get('/nosotros', function(req, res) {
-
-    console.log(contentData.spanish);
-
-    console.log(JSON.stringify(contentData.spanish)); 
-
-    res.render('nosotros', { 
+app.get('/nosotros', function(req, res) { 
+    res.render('about', { 
         menu : 'nosotros',
         content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+    }); 
+});
+
+app.get( english.baseURL+ '/about', function(req, res) {
+    res.render('about', {
+        menu: 'about',
+        content:contentData.english
     });
-
-
-    // var sectionTitle;
-    // try { 
-    //     var obj = fs.readFileSync('./public/content/spanish.json', 'utf8');
-
-    // } catch (ex) {
-    //     console.log("Imposible my friend");
-    // }
-    // text = JSON.stringify(obj); 
- 
 });
 
 //------------------------------
@@ -112,68 +106,134 @@ app.get('/nosotros', function(req, res) {
 //------------------------------
 
 app.get('/servicios', function(req, res) {
-    var title, viewName, scriptName, description;  // View parameters
+    var scriptName;  // View parameters
 
-    title       = 'Servicios';    // default title
-    viewName    = 'services';     // 'services' is the default view template
     scriptName  = 'tab_personal'; // default script name
-    description = 'Expertos en Diseño web, diseño gráfico y marketing / SEO'; // default description
-
-    res.render(
-        viewName, {
+ 
+    res.render('services', {
             menu : 'servicios',
-            title: title, // Title of the section
-            description: description,
             scriptName: scriptName,
             content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
         }
     );
 });
 
-// :routeURL - Código explicado en http://expressjs.com/4x/api.html#res.send
+app.get( english.baseURL+'/services' , function(req, res) {
+    var scriptName;  // View parameters
 
-app.get('/servicios/:routeURL', function(req, res) {
-    var title, viewName, scriptName, description;  // View parameters
-    var routeURL; 
-
-    routeURL = (req.params.routeURL).toUpperCase(); // Get the service routeURL
-
-    // Default values for View parameters
-
-    title       = 'Servicios';    // default title
-    viewName    = 'services';     // 'services' is the default view template
     scriptName  = 'tab_personal'; // default script name
-    description = 'Expertos en Diseño web, diseño gráfico y marketing / SEO'; // default description
+ 
+    res.render('services', {
+            menu : 'services',
+            scriptName: scriptName,
+            content: contentData.english // Passing a "JSON" to views with the data of the website. 
+        }
+    );
+}); 
 
-    // Particular cases for specific routes
+// :type - Código explicado en http://expressjs.com/4x/api.html#res.send
+
+app.get('/servicios/:type', function(req, res) {
+    var title, viewName, scriptName, description;  // View parameters
+    var serviceType, services, found, i;
+    
+    serviceType = (req.params.type).toLowerCase();
+
+    i = 0;
+    found = false; 
+    services = ['empresas', 'particulares', 'marketing',
+                'SEO', 'SEM']; 
+    scriptName  = 'tab_personal'; // default script names;
+
+    while(i < services.length && (!found)) {
+        if(serviceType == services[i]) {
+            found = true;
+            scriptName = getScriptName( serviceType );
+        } 
+        i++;
+    }
+
+    // DEBUG
+    // console.log("Before while");
+    // console.log("i " + i);
+    // console.log("Found " + found);
+    // console.log("services " + services);
+    // console.log("services " + services.length);
+    // console.log("scriptName " + scriptName);
+ 
+    if (found) {
+        // If element found, render the service template
+        res.render('services', {
+                menu : 'servicios', 
+                scriptName: scriptName,
+                content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+            }
+        );
+    }
+    else {
+        // Else: the route is not "Empresas", particulares or marketing
+        // Redirect to servicios main page.
+
+        res.redirect('/servicios');
+    }
+});
+
+
+// :type - Código explicado en http://expressjs.com/4x/api.html#res.send
+
+app.get( english.baseURL+'/services/:type' , function(req, res) {
+    var title, viewName, scriptName, description;  // View parameters
+    var serviceType, services, found, i;
+    
+    serviceType = (req.params.type).toLowerCase();
+
+    i = 0;
+    found = false; 
+    services = ['business', 'personal', 'marketing', 'SEO', 'SEM']; 
+    scriptName  = 'tab_personal'; // default script names;
+
+    while(i < services.length && (!found)) {
+        if(serviceType == services[i]) {
+            found = true;
+            scriptName = getScriptName( serviceType );
+        } 
+        i++;
+    }
+ 
+    if (found) {
+        // If element found, render the service template
+        res.render('services', {
+                menu : 'services', 
+                scriptName: scriptName,
+                content: contentData.english // Passing a "JSON" to views with the data of the website. 
+            }
+        );
+    }
+    else {
+        // Else: the route is not "Empresas", particulares or marketing
+        // Redirect to servicios main page.
+
+        res.redirect( english.baseURL+'/services');
+    }
+});
+
+function getScriptName( serviceType ) {
+    var scriptName = 'tab_personal'; // Setting default script name
    
-    if (routeURL == 'EMPRESAS') {
+    if (serviceType == 'empresas' || serviceType == 'business') {
         // /services/empresas
         scriptName = 'tab_companies';
     }
-    else if (routeURL == 'PARTICULARES') {
+    else if (serviceType == 'particulares' || serviceType == 'personal') {
         // /services/particulares
         scriptName = 'tab_personal';
     }
-    else if (routeURL == 'MARKETING') {
+    else if (serviceType == 'marketing' || serviceType == 'seo' || serviceType == 'sem') {
         // /services/particulares
         scriptName = 'tab_marketing';
     }
-    else {
-        // Not found. Show servicios by default
-        res.redirect('/servicios');
-    }
-
-    res.render(
-        viewName, {
-            menu : 'servicios',
-            title: title, // Title of the section
-            description: description,
-            scriptName: scriptName,
-            content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
-        }
-    );
-});
+    return scriptName;
+}
 
 //------------------------------
 //-- QUIERO ROUTES
@@ -237,15 +297,16 @@ app.get('/quiero/:contactType', function(req, res){
 //------------------------------
 
 app.get('/trabajos', function(req, res){
-    var title = 'Casos de éxito';
-    var title = 'Trabajos realizados';
-    var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
-
-    res.render('trabajos', {
+    res.render('portfolio', {
         menu : 'trabajos',
-        title: title, // Title of the section
-        description: description,
         content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+    })
+});
+
+app.get( english.baseURL+'/portfolio' , function(req, res){
+    res.render('portfolio', {
+        menu : 'portfolio',
+        content: contentData.english // Passing a "JSON" to views with the data of the website. 
     })
 });
 
@@ -263,6 +324,16 @@ app.get('/contacta', function(req,res) {
         contact: contact,
         displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
         content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+    });
+});
+app.get( english.baseURL+'/contact', function(req,res) {
+    var contact = true; // The view use this to show contact or presupuesto
+
+    res.render('contact', {        
+        menu : 'contact',
+        contact: contact,
+        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
+        content: contentData.english // Passing a "JSON" to views with the data of the website. 
     });
 });
 
