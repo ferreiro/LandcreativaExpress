@@ -197,8 +197,8 @@ app.get('/trabajos', function(req, res){
     var title = 'Trabajos realizados';
     var description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
 
-    res.render('casos_exito', {
-        menu : 'casos_exito',
+    res.render('trabajos', {
+        menu : 'trabajos',
         title: title, // Title of the section
         description: description
     })
