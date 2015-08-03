@@ -3,17 +3,23 @@ var keepValueFields = document.getElementsByClassName('keepInputValue'); // Ever
 var form = document.getElementsByClassName('contactForm'); // Every element with the tag "keep value field" will be save/load.
 var saveTime = 1000;	// Time in miliseconds for saving user text input on session storage
 var sessionStorageName = 'contactForm_';
+var stopTracking = false;
 	
-
+	
 	loadUserText(); // Calling the function the first time we open the page
 	setInterval(saveUserText, saveTime); // Saving user inputs text each "saveTime" miliseconds
-	form.onsubmit = function() { clearFormData; };
+	form.onsubmit = function() { 
+		clearFormData; 
+	};
 
 	// Clear data when the user send a form
-
-	function clearFormData() {
+	// This variable is going to be global.
+	
+	window.clearFormData = function clearFormData() {
 		var stkey, stValue, total = keepValueFields.length; 
-		
+		 
+		stopTracking = true;
+
 		// Traversing all the session storage elements and 
 		// clearing the current value for our inputs files.
 
@@ -21,7 +27,6 @@ var sessionStorageName = 'contactForm_';
 			stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
 			st.setItem(stkey, '');					// Clearing session storage for that name
 		}
-
 	}
 
 	// Load values to the inputs field.
@@ -46,13 +51,15 @@ var sessionStorageName = 'contactForm_';
 	function saveUserText() {
 		var stkey, stValue, total = keepValueFields.length;
 	 	
-	 	// Traversing all the session storage elements and 
-	 	// keeping the current value for our inputs files.
+	 	if (!stopTracking) {
+ 		 	// Traversing all the session storage elements and 
+ 		 	// keeping the current value for our inputs files.
 
-		for (i = 0; i < total; i++) {
-			stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
-			stValue = keepValueFields[i].value;	// The value is getting for the element input value.
-			st.setItem(stkey, stValue);			// Setting key and value to Session storage.
-		}
+ 			for (i = 0; i < total; i++) {
+ 				stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
+ 				stValue = keepValueFields[i].value;	// The value is getting for the element input value.
+ 				st.setItem(stkey, stValue);			// Setting key and value to Session storage.
+ 			}
+	 	} 
 	}
 

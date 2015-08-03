@@ -50,15 +50,16 @@
         	    dataType    : 'json', 		// what type of data do we expect back from the server
         	    encode      : true
         	})
-        	.done(function(returnedData) {				
-        		// Petición ajax realizada con éxito
+        	.done(function(returnedData) {		
 
+        		// Petición ajax realizada con éxito
         		if(returnedData.error) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
         		}
         		else {
         			// Se ha podido enviar el correo
+        			window.clearFormData();
         			$('.messageSuccess').fadeIn(0); 
         		}
         	})
