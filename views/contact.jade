@@ -77,7 +77,7 @@ block content
 					.contact-form
 						.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
 
-						form(action='/contacta', name='contactus', id='contactus', method='post')
+						form(action='/contacta', name='contactus', id='contactus', method='post', onSubmit="return clearFormData()")
 
 							fieldset.contact-form-field
 								p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
