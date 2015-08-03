@@ -1,6 +1,6 @@
 
 // Responsive layout dimensions
-@mobile: 0px;
+@mobile: 0;
 @tablet: 600px;
 @desktop: 1000px;
  
@@ -37,14 +37,14 @@
           border-radius: @radius;
 }
 .box-shadow(@blur, @spread, @r, @g, @b, @opacity) {
-	-webkit-box-shadow: 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
-	-moz-box-shadow:    0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
-	box-shadow:         0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	-webkit-box-shadow: 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         0 0 @blur @spread rgba(@r, @g, @b, @opacity);
 }
 .box-shadow-inner(@blur, @spread, @r, @g, @b, @opacity) {
-	-webkit-box-shadow: inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
-	-moz-box-shadow:    inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
-	box-shadow:         inset 0px 0px @blur @spread rgba(@r, @g, @b, @opacity);
+	-webkit-box-shadow: inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
 }
 .transition(@time) { 
 	-webkit-transition: all @time;
@@ -105,7 +105,7 @@
 //------------------------------------//
 
 body { 
-	background: #fff;
+	background: #ffffff;
 	color: @textBlack;
 	font-size: @paragraphSize;
 	font-family: 'Lato', sans-serif;
@@ -141,11 +141,11 @@ body {
 	position: fixed; 
 	transition:0.3s; 
 	background: #f2f2f2;
-	background: #fff;
+	background: #ffffff;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
-	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
-	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	box-shadow:         0 1px 5px 0 rgba(0, 0, 0, 0.08);
 
 	@media all and (min-width:@desktop) {
 		display: none !important;	// Hide on desktop
@@ -238,7 +238,7 @@ body {
 
 		&-socialNetwork {
 			background:lighten(@textBlue, 50%);
-			border-top:1px solid #fff; 
+			border-top:1px solid #ffffff; 
 		}
 		ul {
 			li:nth-last-child(-n-2) a {
@@ -267,12 +267,12 @@ body {
 	display: none;
 	transition:0.3s;
 	position: fixed; 
-	background: #fff;
+	background: #ffffff;
 	z-index: 100;
 	top: 0;
-	-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.08);
-	-moz-box-shadow:    0px 1px 5px 0px rgba(0, 0, 0, 0.08);
-	box-shadow:         0px 1px 5px 0px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	box-shadow:         0 1px 5px 0 rgba(0, 0, 0, 0.08);
 
 	@media all and (min-width:@desktop) {
 		display: block;
@@ -377,13 +377,13 @@ body {
 				&:after {
 					width: 40px;
 					height: 3px;
-					background: #fff;
+					background: #ffffff;
 					content: '';
 					position: absolute;
 					left: 50%;
 	    			.translate (-50%, 0%);	// Centered horizontally
 	    			.transition(0.5s);
-					bottom: 0px;
+					bottom: 0;
  				}
 			}
 
@@ -661,9 +661,9 @@ body {
 			letter-spacing: 1px;
 			text-align: center;
 			border:1px dotted rgba(204, 204, 204, 1);
-			// -webkit-box-shadow: inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
-			// -moz-box-shadow:    inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
-			// box-shadow:         inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
+			// -webkit-box-shadow: inset 0 0 0 1px rgba(204, 204, 204, 1);
+			// -moz-box-shadow:    inset 0 0 0 1px rgba(204, 204, 204, 1);
+			// box-shadow:         inset 0 0 0 1px rgba(204, 204, 204, 1);
 		}
 		input[type="submit"] { 
 			border: 0;
@@ -683,9 +683,9 @@ body {
 			margin: 0 auto;
 			text-align: center;
 			border-radius: 3px;
-			-webkit-box-shadow: inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
-			-moz-box-shadow:    inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
-			box-shadow:         inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+			-webkit-box-shadow: inset 0 0 0 0 rgba(204, 204, 204, 1);
+			-moz-box-shadow:    inset 0 0 0 0 rgba(204, 204, 204, 1);
+			box-shadow:         inset 0 0 0 0 rgba(204, 204, 204, 1);
 			letter-spacing: 1.7px;
 			padding: 5px 0;
 
@@ -831,7 +831,7 @@ body {
 					// Prev/Next icon
 					&:before {
 						top: 50%;
-						color: #fff;
+						color: #ffffff;
 						font-size: 50px;
 						position: absolute;
 						margin-right: -4px; 
@@ -946,7 +946,7 @@ body {
 					display: inline-block;
 					margin-top: 1em;	
 					letter-spacing: .6px;
-					color: #fff;
+					color: #ffffff;
 					.border-radius(5px);
 					border-bottom:3px solid transparent;	
 
@@ -1000,7 +1000,7 @@ body {
 					.slider-slides-singleSlide-content-title,
 					.slider-slides-singleSlide-content-text,
 					.slider-slides-singleSlide-content-link {
-						color: #fff;
+						color: #ffffff;
 					}
 				}
 			}
@@ -1097,7 +1097,7 @@ body {
 		width: 100%;
 		margin: .5em 0;
 		margin-bottom: 1.2em;
-		letter-spacing: 0px;
+		letter-spacing: 0;
 		line-height: 24px;
 		font-size: 18px;
 		text-align: left;
@@ -1203,7 +1203,7 @@ body {
 				text-align: center;
 				font-size: 1.6em;
 				padding-top: 4px;
-				color: #fff;
+				color: #ffffff;
 				margin-bottom: 0.2em; 
 				@media all and (min-width: @desktop) {
 					margin-bottom: 0.3em; 
@@ -1286,7 +1286,7 @@ body {
 				height: 2px;
 				background: @lightGrayBorder;
 				top: 0;
-				margin-top: 0px;
+				margin-top: 0;
 				content: '';
 				z-index: 10;
 				// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
@@ -1297,7 +1297,7 @@ body {
 			&-selected:after {
 				position: absolute; 
 				height: 20px;
-				background: #fff;
+				background: #ffffff;
 				bottom: 0;
 				margin-bottom: -15px;
 				content: '';
@@ -1394,7 +1394,7 @@ body {
 			font-weight: 300;
 			font-style: normal;
 			text-align: left;
-			letter-spacing: 0px;
+			letter-spacing: 0;
 			line-height: 24px;
 		}
 		
@@ -1420,7 +1420,7 @@ body {
 			font-style: normal;
 			text-align: center;
 			text-transform: none;
-			letter-spacing: 0px;
+			letter-spacing: 0;
 			line-height: 32px;
 		}
 		&-subtitle {
@@ -1441,7 +1441,7 @@ body {
 			height: auto;
 			padding: 1.3em 0;
 			display: block;
-			color: #fff; 
+			color: #ffffff; 
 			background: #4A4A4A;
 			border-bottom: 5px solid @textBlack;
 			font-size: 1em;
@@ -1492,7 +1492,7 @@ body {
 				margin-bottom: 0.5em;
 				font-size: 18px;
 				line-height: 24px;
-				letter-spacing: 0px;
+				letter-spacing: 0;
 				font-weight: 300;
 				font-style: normal; 
 				text-align:left;
@@ -1596,13 +1596,13 @@ body {
    					padding-top: 1.27em;
    					padding-left: 1.27em;
 	   				@media all and (min-width:@desktop) {
-	   					color: #fff;  
+	   					color: #ffffff;  
 	   					padding: .8em 0;
 	   				}
    				}
    				@media all and (min-width:@desktop) {
    					width: 100%;
-   					color: #fff;
+   					color: #ffffff;
    					height: auto;
    					font-size: 1.5em;
    					text-align: center;
@@ -1647,7 +1647,7 @@ body {
    					}
    					@media all and (min-width:@desktop) { 
  
-						background: #fff;
+						background: #ffffff;
 						.border-radius(100%); 
 						margin-right: .5em;
    					}
@@ -1802,7 +1802,7 @@ body {
 			background: #f4f4f4;
 			font-size: 2.1em; 
 			display: inline-block; 
-			color: #fff;
+			color: #ffffff;
 			padding: .8em; 
 		}
 
@@ -1879,7 +1879,7 @@ body {
 	    	min-height: 50px;
 	    	position: relative;
 	    	display: block;
-	    	background: #fff;
+	    	background: #ffffff;
 
 	    	&-input,
 	    	&-textarea,
@@ -1898,9 +1898,9 @@ body {
  	    		background: transparent;
  	    		-webkit-appearance:none;
 
- 	    		-webkit-box-shadow: inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
- 	    		-moz-box-shadow:    inset 0px 0px 0px 1px rgba(204, 204, 204, 1);
- 	    		box-shadow:         inset 0px 0px 0px 1px rgba(204, 204, 204, 1);	
+ 	    		-webkit-box-shadow: inset 0 0 0 1px rgba(204, 204, 204, 1);
+ 	    		-moz-box-shadow:    inset 0 0 0 1px rgba(204, 204, 204, 1);
+ 	    		box-shadow:         inset 0 0 0 1px rgba(204, 204, 204, 1);	
 
     		 	@media all and (min-width:@desktop) {
     		 		width: 80%;
@@ -1965,15 +1965,15 @@ body {
 	    		font-weight: 400;
 	    		font-style: normal;
 	    		line-height: 1;
-	    		color: #fff;
+	    		color: #ffffff;
 	    		text-decoration: none;
 	    		display: inline-block;
 	    		margin: 0 auto;
 	    		text-align: center;
 	    		border-radius: 3px;
-	    		-webkit-box-shadow: inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
-	    		-moz-box-shadow:    inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
-	    		box-shadow:         inset 0px 0px 0px 0 rgba(204, 204, 204, 1);
+	    		-webkit-box-shadow: inset 0 0 0 0 rgba(204, 204, 204, 1);
+	    		-moz-box-shadow:    inset 0 0 0 0 rgba(204, 204, 204, 1);
+	    		box-shadow:         inset 0 0 0 0 rgba(204, 204, 204, 1);
 	    		letter-spacing: 1.7px;
 
 	    		margin-top: .5em;
