@@ -1877,7 +1877,6 @@ body {
 	    		font-style: italic;
 	    	}
 	    }
-
 	    // Inside element we have inputs and textarea
 	    &-element {
 
@@ -1886,6 +1885,11 @@ body {
 	    	position: relative;
 	    	display: block;
 	    	background: #ffffff;
+
+	    	&-input {
+	    		// The user introduced text will show on blue
+	    		color: @textBlue; 
+	    	}
 
 	    	&-input,
 	    	&-textarea,
@@ -1907,7 +1911,10 @@ body {
  	    		-webkit-box-shadow: inset 0 0 0 1px rgba(204, 204, 204, 1);
  	    		-moz-box-shadow:    inset 0 0 0 1px rgba(204, 204, 204, 1);
  	    		box-shadow:         inset 0 0 0 1px rgba(204, 204, 204, 1);	
-
+		   		&:active,
+		   		&:focus { 
+			    		background:#F9F9F9; 
+		   		}
     		 	@media all and (min-width:@desktop) {
     		 		width: 80%;
     		 		min-width: 80%;
@@ -1915,6 +1922,12 @@ body {
     		 		padding:0 10%;
     		 	} 
 
+	    	}
+	    	// Use for ajax validation
+	    	&-wrongfield {
+	    		-webkit-box-shadow: 0 0 3px 1px #D24141;
+	    		-moz-box-shadow:    0 0 3px 1px #D24141;
+	    		box-shadow:         0 0 3px 1px #D24141;
 	    	}
 	    	&-select {
 	    		width: 100% !important;

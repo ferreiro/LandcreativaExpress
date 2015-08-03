@@ -1895,6 +1895,9 @@ body-overflow {
   display: block;
   background: #ffffff;
 }
+.contact-form-field-element-input {
+  color: #3695ed;
+}
 .contact-form-field-element-input,
 .contact-form-field-element-textarea,
 .contact-form-field-element-select {
@@ -1914,6 +1917,14 @@ body-overflow {
   -moz-box-shadow: inset 0 0 0 1px #cccccc;
   box-shadow: inset 0 0 0 1px #cccccc;
 }
+.contact-form-field-element-input:active,
+.contact-form-field-element-textarea:active,
+.contact-form-field-element-select:active,
+.contact-form-field-element-input:focus,
+.contact-form-field-element-textarea:focus,
+.contact-form-field-element-select:focus {
+  background: #F9F9F9;
+}
 @media all and (min-width: 1000px) {
   .contact-form-field-element-input,
   .contact-form-field-element-textarea,
@@ -1923,6 +1934,11 @@ body-overflow {
     max-width: 80%;
     padding: 0 10%;
   }
+}
+.contact-form-field-element-wrongfield {
+  -webkit-box-shadow: 0 0 3px 1px #D24141;
+  -moz-box-shadow: 0 0 3px 1px #D24141;
+  box-shadow: 0 0 3px 1px #D24141;
 }
 .contact-form-field-element-select {
   width: 100% !important;
