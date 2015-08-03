@@ -6,7 +6,7 @@
 
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
-        
+
     	formName = 	$('input[name="name"]');
         formEmail = $('input[name="email"]');
         formPhone = $('input[name="phone"]');
@@ -38,6 +38,8 @@
         if (validName && validMessage && validPhone && validMail) {
 
         	$('.loading').fadeIn(500);
+        	$('.contact-form-sent').hide(0);
+        	$('.contact-form-content').hide(0);
 
 	        // We pass a POST petition to /contacta
 	        // with the data "formData"
@@ -49,16 +51,15 @@
         	    encode      : true
         	})
         	.done(function(returnedData) {				
-        		console.log('error' + returnedData.error);
- 
         		// Petición ajax realizada con éxito
+
         		if(returnedData.error) {
-        			alert("NO Se ha podido enviar el correo");
         			// no Se ha podido enviar el correo
+        			$('.messageError').hide(0); 
         		}
         		else {
-        			alert("Se ha podido enviar el correo");
         			// Se ha podido enviar el correo
+        			$('.messageSuccess').fadeIn(0); 
         		}
         	})
         	.fail(function(returnedData) {

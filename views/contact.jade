@@ -51,7 +51,6 @@ block content
 				if !contact
 					//- We use this for the budgeting contact form
 					//- Show header for packs 
-					
 					a(href="/servicios", style="text-align:center; color:#222; opacity:0.4; margin-top:-1.5em; margin-bottom:2.5em; width:100%; display:block;") ¿Prefieres otro pack?
 				else 
 
@@ -75,78 +74,103 @@ block content
 
 				.contact
 					.contact-form
-						.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
 
-						<div class='loading' style='display:none;'>
-						<img src='https://www.tmdn.org/tmdsview-web/resources/images/loading-gallery.gif' />
-						</div>
+						.loading(style='display:none;')
+							img(src='https://www.tmdn.org/tmdsview-web/resources/images/loading-gallery.gif')
 
-						form(action='/contacta', name='contactus', id='contactus', method='post', novalidate)
+						.contact-form-sent.messageError
+							//- If there wasn't any error during the process.
+							.contact-form-roundresponse.contact-form-roundresponse-green
+								span.icon-envelope
 
-							fieldset.contact-form-field
-								p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
+							.contact-form-separator
 
-								.contact-form-field-element
-									//- keepInputValue class will keep the input value via javascript
-									input.keepInputValue(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
+							p.contact-form-messagetitle ¡Mensaje enviado!
+							p.contact-form-message Jorge, hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección: <u> email</u>
+							p.contact-form-message <i>Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a landcreativa@gmail.com notificandonos el hecho.</i>
+							//- p.contact-form-message También te hemos enviado un mail de confirmación a tu correo. Revisa la bandeja de <strong>spam</strong>.
 
-							fieldset.contact-form-field
-								p.contact-form-field-text Email <span>* (obligatorio)</span>
+						.contact-form-sent.messageSuccess
+							//- If there wasn't any error during the process.
+							.contact-form-roundresponse.contact-form-roundresponse-green
+								span.icon-envelope
 
-								.contact-form-field-element
-									//- keepInputValue class will keep the input value via javascript
-									input.keepInputValue(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input 
+							.contact-form-separator
 
-							fieldset.contact-form-field
-								p.contact-form-field-text Teléfono de contacto
+							p.contact-form-messagetitle ¡Mensaje enviado!
+							p.contact-form-message Jorge, hemos recibido satisfactoriamente tu mensaje. Te responderemos en la siguiente dirección: <u> email</u>
+							p.contact-form-message <i>Si ha introducido incorrectamente su mail, por favor, escribenos un mensaje cuanto antes a landcreativa@gmail.com notificandonos el hecho.</i>
+							//- p.contact-form-message También te hemos enviado un mail de confirmación a tu correo. Revisa la bandeja de <strong>spam</strong>.
+						
+						.contact-form-content
+							.contact-form-subtitle Por favor, usa el formulario de abajo para enviarnos un correo electrónico:
 
-								.contact-form-field-element
-									//- keepInputValue class will keep the input value via javascript
-									input.keepInputValue(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input 
+							form(action='/contacta', name='contactus', id='contactus', method='post', novalidate)
 
-							fieldset.contact-form-field.contact-form-field-subject
-								p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
+								fieldset.contact-form-field
+									p.contact-form-field-text Nombre <span>* (obligatorio, al menos 2 caracteres)</span>
 
-								.contact-form-field-element
+									.contact-form-field-element
+										//- keepInputValue class will keep the input value via javascript
+										input.keepInputValue(type='name', name='name', placeholder='Nombre' required).contact-form-field-element-input.contact-form-field-element-name
 
-									//- If we're in contact
-									if contact
+								fieldset.contact-form-field
+									p.contact-form-field-text Email <span>* (obligatorio)</span>
 
-										span.contact-form-field-element-select-icon.icon-angle-down
+									.contact-form-field-element
+										//- keepInputValue class will keep the input value via javascript
+										input.keepInputValue(type='email', name='email', placeholder='Correo electrónico' required).contact-form-field-element-input 
 
-										select(name="subject", required).contact-form-field-element-select
+								fieldset.contact-form-field
+									p.contact-form-field-text Teléfono de contacto
 
-											option(value="Premium") Personal - ¡Quiero pack Premium!
-											option(value="Gold") Personal - ¡Quiero pack Gold!
-											option(value="Silver") Personal - ¡Quiero pack Silver!
+									.contact-form-field-element
+										//- keepInputValue class will keep the input value via javascript
+										input.keepInputValue(type='tel', name='phone', placeholder='Teléfono de contacto' required).contact-form-field-element-input 
 
-											option(value="First Class") Empresa - ¡Quiero pack First class!
-											option(value="Business") Empresa - ¡Quiero pack Business!
-											option(value="Economy") Empresa - ¡Quiero pack Economy!
+								fieldset.contact-form-field.contact-form-field-subject
+									p.contact-form-field-text Asunto del mensaje <span>(*obligatorio)</span>
 
-											option(value="Analítica web") Otros - ¡Quiero pack Analítica web!
-											option(value="SEO & SEM") Otros - ¡Quiero pack SEO & SEM!
-											option(value="Marketing Digital") Otros - ¡Quiero pack Marketing Digital!
+									.contact-form-field-element
 
-											option(value="Asistencia tecnica") Asistencia técnica
-											option(value="Consulta") Consulta general
-											option(value="Prensa") Prensa / Medios
-									else
+										//- If we're in contact
+										if contact
 
-										//- Estamos en presupuesto
+											span.contact-form-field-element-select-icon.icon-angle-down
 
-										select(name="subject", required).contact-form-field-element-select
-											option(value="#{title}") #{title}
+											select(name="subject", required).contact-form-field-element-select
 
-							fieldset.contact-form-field.contact-form-field-message
-								p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
+												option(value="Premium") Personal - ¡Quiero pack Premium!
+												option(value="Gold") Personal - ¡Quiero pack Gold!
+												option(value="Silver") Personal - ¡Quiero pack Silver!
 
-								.contact-form-field-element
-									//- keepInputValue class will keep the input value via javascript
-									textarea.keepInputValue(type='textarea', value='', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
+												option(value="First Class") Empresa - ¡Quiero pack First class!
+												option(value="Business") Empresa - ¡Quiero pack Business!
+												option(value="Economy") Empresa - ¡Quiero pack Economy!
 
-							fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
-								input(type="submit", value="Enviar formulario").contact-form-field-element-button
+												option(value="Analítica web") Otros - ¡Quiero pack Analítica web!
+												option(value="SEO & SEM") Otros - ¡Quiero pack SEO & SEM!
+												option(value="Marketing Digital") Otros - ¡Quiero pack Marketing Digital!
+
+												option(value="Asistencia tecnica") Asistencia técnica
+												option(value="Consulta") Consulta general
+												option(value="Prensa") Prensa / Medios
+										else
+
+											//- Estamos en presupuesto
+
+											select(name="subject", required).contact-form-field-element-select
+												option(value="#{title}") #{title}
+
+								fieldset.contact-form-field.contact-form-field-message
+									p.contact-form-field-text Tu comentario <span>(*obligatorio)</span>
+
+									.contact-form-field-element
+										//- keepInputValue class will keep the input value via javascript
+										textarea.keepInputValue(type='textarea', value='', placeholder='Tu comentario', name='message', required).contact-form-field-element-textarea
+
+								fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
+									input(type="submit", value="Enviar formulario").contact-form-field-element-button
 
 // Includes the footer
 include ./footer.jade 

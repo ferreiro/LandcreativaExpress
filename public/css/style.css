@@ -1837,6 +1837,9 @@ body-overflow {
 .contact-form-roundresponse-red span {
   background: #ed3636;
 }
+.contact-form-sent {
+  display: none;
+}
 .contact-form-messagetitle {
   font-size: 1.5em;
   margin-bottom: 1em;
