@@ -12,7 +12,7 @@ var sessionStorageName = 'contactForm_';
 	// Clear data when the user send a form
 
 	function clearFormData() {
-		var stkey, stValue, total = keepValueFields.length;
+		var stkey, stValue, total = keepValueFields.length; 
 		
 		// Traversing all the session storage elements and 
 		// clearing the current value for our inputs files.
@@ -21,7 +21,8 @@ var sessionStorageName = 'contactForm_';
 			stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
 			st.setItem(stkey, '');					// Clearing session storage for that name
 		}
- 
+
+ 		loadUserText();		// Setting empty texts again
 	}
 
 	// Load values to the inputs field.
