@@ -4,6 +4,9 @@
     	var formData, validEmail, emptyField;
     	var name, email, phone, subject, message;
 
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+        
     	formName = 	$('input[name="name"]');
         formEmail = $('input[name="email"]');
         formPhone = $('input[name="phone"]');
