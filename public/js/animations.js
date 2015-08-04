@@ -3,6 +3,7 @@ var mobile = 600;
 var tablet = 999;
 var desktop = 1000;
  
+ 
 //----------------------------
 //-- MENU
 //----------------------------
@@ -60,15 +61,15 @@ var aboutImages = $('.about-image');
 //----------------------------
 
 var tabSelectedOption = -1; // -1 when initialize. Not change this!
-var tabElements = $('.products-tab-item');
-var tabContent  = $('.products-content-box');
+var tabElements = $('.services-tab-item');
+var tabContent  = $('.services-content-box');
 
 var changeTab = function changeTab(newOption) {
 	if ((newOption == -1) || (newOption == tabSelectedOption)) {
 		return;
 	}
 	else {
-		tabElements.attr('class', 'products-tab-item'); // remove all classes except the base one...
+		tabElements.attr('class', 'services-tab-item'); // remove all classes except the base one...
 		tabContent.hide(0);			// Hide the tab content
 		selectsMenu(newOption);		// Add selected class
 		displayContent(newOption);	// Add selected class
@@ -82,15 +83,15 @@ function selectsMenu(number) {
 	if ((number < 0 || number > 2) || (name == tabSelectedOption))
 		return; // imposible.
 	
-	var item = $('.products-tab-item:eq('+number+')');
-	item.addClass('products-tab-item-selected'); 	// Add selected to menu
+	var item = $('.services-tab-item:eq('+number+')');
+	item.addClass('services-tab-item-selected'); 	// Add selected to menu
  }
 
 function displayContent(number) {
 	if ((number < 0 || number > 2) || (name == tabSelectedOption))
 		return; // imposible.
 	
-	var content = $('.products-content-box:eq('+number+')');	// Seletcs the content
+	var content = $('.services-content-box:eq('+number+')');	// Seletcs the content
 	content.fadeIn("slow");					// Show content
 }
 
@@ -103,22 +104,21 @@ function changeTabsColor(number) {
 		return;
 	} 
 
-
     $('.productBox-image').addClass("productBox-image-noscale").delay(550).queue(function(){
     	$(this).removeClass("productBox-image-noscale").dequeue();
 	});
 
-	item = $('.products-tab-item:eq('+number+')');
+	item = $('.services-tab-item:eq('+number+')');
 
 	switch (number) {
 		case 0:
-			newClassName = 'products-tab-item-companies';
+			newClassName = 'services-tab-item-companies';
 		break; 
 		case 1:
-			newClassName = 'products-tab-item-personal';
+			newClassName = 'services-tab-item-personal';
 		break; 
 		case 2:
-			newClassName = 'products-tab-item-marketing';
+			newClassName = 'services-tab-item-marketing';
 		break; 
 	}
  	
@@ -143,7 +143,7 @@ $('a[href^="#"]').on('click',function (e) {
  
 
 //------------------------------------
-// Products
+// services
 //------------------------------------
 
 // Set the products height as the bigger one. 

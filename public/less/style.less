@@ -428,6 +428,7 @@ body {
 		}
 	} 
 }
+
 .commun {
 	&-guide {
 		// div id="" is assigned to guide in order to jump through different parts of the website.
@@ -475,6 +476,30 @@ body {
 		font-style: normal; 
 		text-align: center; 
 		letter-spacing: 1px;  
+	}
+	&-button {
+		width: 100%;
+		height: auto;
+		padding: 1.3em 0;
+		display: block;
+		color: #ffffff; 
+		background:@companies;
+
+		border-bottom: 5px solid @companies-Hover;
+		font-size: 1em;
+		font-style: bold;
+		font-weight: 400;
+		text-align: center;
+		line-height: 16px;  
+		letter-spacing: 1px; 
+		text-transform: uppercase;	
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		.border-radius(5px);
+ 
+		&:hover {
+			background: @companies-Hover;
+		} 
 	}
 }
 
@@ -1147,12 +1172,12 @@ body {
 //------------------------------------
 //------------------------------------
 
-.products {
+.services {
 	min-height: 500px;
 	&-tab {
 		display: block;
-		// border:1px solid @lightGrayBorder; 
 		border-bottom:0;  
+		// border:1px solid @lightGrayBorder; 
 
 		&-item {
 			width: 33.333%;
@@ -1216,6 +1241,13 @@ body {
 				h3 {
 					font-size: 1em;
 					font-style: bold;
+					display: block;
+					margin: 0 1em;
+
+
+					@media(max-width: @tablet) { 
+						height: 38px;
+					} 
 					@media(min-width: @desktop) { 
 						font-size: 1.3em;
 					} 
@@ -1234,7 +1266,6 @@ body {
 				background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
 
-
 				background: #f6f6f6;
 				background: -moz-linear-gradient(top,  #f6f6f6 0%, #ffffff 100%);
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#ffffff));
@@ -1243,8 +1274,6 @@ body {
 				background: -ms-linear-gradient(top,  #f6f6f6 0%,#ffffff 100%);
 				background: linear-gradient(to bottom,  #f6f6f6 0%,#ffffff 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 );
-				
-
 			}
 			&-selected:hover,
 			&-selected {
@@ -1259,6 +1288,16 @@ body {
 			    border-color: #dfdfdf;  
 			} 
 			&-selected:before {
+				border: 1px solid @lightGrayBorder;
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+			}
+			/*
+			&-selected:before {
 				position: absolute;
 				width: 100%;
 				height: 2px;
@@ -1271,213 +1310,269 @@ body {
 				.border-radiuses (5px, 0, 0, 5px);
 				.border-radius(100px);
 				margin-top: 1px;
-			}
+			}*/
 			&-selected:after {
-				position: absolute; 
-				height: 20px;
-				background: #ffffff;
-				bottom: 0;
-				margin-bottom: -15px;
-				content: '';
+				height: 4px; 
 				z-index: 10;
+				bottom: 0;
 				left: 1px;
 				right: 1px;
+				content: '';
+				background: #ffffff;
+				margin-bottom: -2px;
+				position: absolute; 
 			}
 			 
 		}
 	}	
 	&-content {
-		display:block;
-		position: relative;
+ 		position: relative;
 		text-align: center;
 		border:1px solid @lightGrayBorder;
+		overflow: hidden;	// IMPORTANTE, NO QUITAR!! Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
 
 		&-box {
 			display: none;
 		}
+		@media(min-width: @desktop) { 
+			&-azul {
+				.product:hover {
+					background: #f4fcff;
+					background: -moz-linear-gradient(top,  #ffffff 0%, #f4fcff 30%);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4fcff));
+					background: -webkit-linear-gradient(top,  #ffffff 0%, #f4fcff 30%);
+					background: -o-linear-gradient(top,  #ffffff 0%, #f4fcff 30%);
+					background: -ms-linear-gradient(top,  #ffffff 0%, #f4fcff 30%);
+					background: linear-gradient(to bottom, #ffffff 0%, #f4fcff 30%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4fcff',GradientType=0 );
+				} 
+			} 
+			&-orange {
+				.productBox:hover {
+					background: #FFF7F4;
+					background: -moz-linear-gradient(top,  #ffffff 0%, #FFF7F4 30%);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#FFF7F4));
+					background: -webkit-linear-gradient(top,  #ffffff 0%, #FFF7F4 30%);
+					background: -o-linear-gradient(top,  #ffffff 0%, #FFF7F4 30%);
+					background: -ms-linear-gradient(top,  #ffffff 0%, #FFF7F4 30%);
+					background: linear-gradient(to bottom, #ffffff 0%, #FFF7F4 30%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#FFF7F4',GradientType=0 );
+				} 
+			} 
+			&-yellow {
+				.product:hover { 
+					background: -moz-linear-gradient(top,  #ffffff 0%, #fffef4 30%);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#fffef4));
+					background: -webkit-linear-gradient(top,  #ffffff 0%, #fffef4 30%);
+					background: -o-linear-gradient(top,  #ffffff 0%, #fffef4 30%);
+					background: -ms-linear-gradient(top,  #ffffff 0%, #fffef4 30%);
+					background: linear-gradient(to bottom, #ffffff 0%, #fffef4 30%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fffef4',GradientType=0 );
+				} 
+			}
+		}
+	}
+
+	&-separator { 
+		width:100%; 
+		height: 2px;    
+		background: #EFEDED;
+
+		@media(min-width: @tablet) and (max-width: @desktop) { 
+			display: none !important;
+		}
+		@media(max-width: @desktop) { 
+			display: none !important;
+		}
+	}
+
+	.product {
+		width:33.33%;
+		display:inline-block;
+		padding-bottom: 1em;
+		margin-right: -4px; 
+		vertical-align: top; 
+		position: relative; 
+
+		@media all and (max-width: @tablet) {
+			width: 100%;
+		}
+		@media all and (min-width: @tablet) and (max-width:@desktop) {
+			width:50%;
+			&:nth-child(odd) .productBox {
+				padding-left:  @productMargin; 
+				padding-right: @productMargin / 2;
+			} 
+			&:nth-child(even) .productBox {
+				padding-left:  @productMargin / 2; 
+				padding-right: @productMargin;
+			} 
+		} 
+		@media(min-width: @desktop) { 
+			&:nth-child(1) .productBox:before {
+				display: none; 		// Hide left line on first module  
+			}
+		}
+
+		&Box {
+	 
+			position:relative; 
+			padding:@productMargin; // Padding for the inner layer  
+ 			display: block;
+			padding-bottom: 400px;	// Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
+			margin-bottom: -400px; // Esto es un hack para hacer que los 3 divs tengan la misma altura
+	 	
+			@media(max-width: @desktop) { 
+				&:before {
+					display: none;
+				}
+			}
+
+
+			&:before {
+				width:2px;
+				margin-right:-1px;
+				height:100%; 
+				content: '';
+				position:absolute;
+				left:0;
+				top:0;
+				bottom: 0;
+
+				background: #ffffff;
+				background: -moz-linear-gradient(top,  #ffffff 0%, rgba(236, 236, 236, 0.76) 30%, #ffffff 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), rgba(236, 236, 236, 0.76) 30%, color-stop(100%,#ffffff));
+				background: -webkit-linear-gradient(top,  #ffffff 0%, rgba(236, 236, 236, 0.76) 30%, #ffffff 100%);
+				background: -o-linear-gradient(top,  #ffffff 0%, rgba(236, 236, 236, 0.76) 30%, #ffffff 100%);
+				background: -ms-linear-gradient(top,  #ffffff 0%, rgba(236, 236, 236, 0.76) 30%, #ffffff 100%);
+				background: linear-gradient(to bottom, #ffffff 0%, rgba(236, 236, 236, 0.76) 30%, #ffffff 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+
+			}
+
+			p {
+				width: 100%;  
+				margin: .5em 0 1.2em 0; 
+				font-size: 18px;
+				font-weight: 300;
+				font-style: normal;
+				text-align: left;
+				letter-spacing: 0;
+				line-height: 24px;
+			}
+			
+			// Elements for service Item
+
+			&-image {
+				width: 100%; 
+				height: 150px;
+				margin-bottom: @productMargin;
+				background: 50% 50% no-repeat;
+				background-size: auto 100%; 
+				 
+				&-noscale {
+					transform: scale(0);
+				}
+			} 
+			&-title {
+				width: 100%;  
+				margin: .5em 0;
+				margin-bottom: 0;
+				font-size: 32px;
+				font-weight: 300;
+				font-style: normal;
+				text-align: center;
+				text-transform: none;
+				letter-spacing: 0;
+				line-height: 32px;
+			}
+			&-subtitle {
+				width: 100%;  
+				margin-bottom: 1em; 
+				font-size: 14px;
+				line-height: 16px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-weight: 300;
+				font-style: normal;
+				margin: 1.2em 0;
+				text-align: center;
+			}
+			// Big button to buy a plan
+			&-button {
+				width: 100%;
+				height: auto;
+				padding: 1.3em 0;
+				display: block;
+				color: #ffffff; 
+				background: #4A4A4A;
+				border-bottom: 5px solid @textBlack;
+				font-size: 1em;
+				font-style: bold;
+				font-weight: 400;
+				text-align: center;
+				line-height: 16px;  
+				letter-spacing: 1px; 
+				text-transform: uppercase;	
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+				.border-radius(5px);
+
+				&-personal {
+					// Button for personal websites
+					background:@personal;
+					border-bottom-color:@personal-Hover;
+					&:hover {
+						background: @personal-Hover;
+					}
+				}
+				&-companies {
+					// Button for Companies
+					background:@companies;
+					border-bottom-color:@companies-Hover;
+					&:hover {
+						background: @companies-Hover;
+					}
+				}
+				&-marketing {
+					// Button for Marketing and SEO
+					background:@marketing;
+					border-bottom-color:@marketing-Hover;
+					&:hover {
+						background: @marketing-Hover;
+					}
+				}
+			}
+
+	  		// Show all the features for a given plan
+			&-featureList {
+				display: block;
+				margin-top: -0.5em;
+
+				li {
+					width: 100%;
+					display: inline-block;
+					list-style: none; 
+					margin-bottom: 0.6em; 
+					padding-bottom: 0.6em; 
+					border-bottom: 1px dashed #f0f0f0;
+					font-size: 18px;
+					line-height: 20px;
+					letter-spacing: 0.3px;
+					font-size: 15px;
+					line-height: 20px;
+					letter-spacing: 0;
+					font-weight: 300;
+					font-style: normal; 
+					text-align:left;
+					span {
+						margin-right: 0.7em;
+					}
+				}
+			}
+		}
 	}
 }  
-.product {
-	width:33.33%;
-	display:inline-block;
-	margin-right: -4px; 
-	vertical-align: top;
-	height: 100%;
-	position: relative;
-
-	@media all and (max-width: @tablet) {
-		width: 100%;
-	}
-	@media all and (min-width: @tablet) and (max-width:@desktop) {
-		width:50%;
-		&:nth-child(odd) .productBox {
-			padding-left:  @productMargin; 
-			padding-right: @productMargin / 2;
-		} 
-		&:nth-child(even) .productBox {
-			padding-left:  @productMargin / 2; 
-			padding-right: @productMargin;
-		} 
-	} 
-	@media(min-width: @desktop) { 
-		&:nth-child(1) .productBox:before {
-			display: none; 		// Hide left line on first module  
-		}
-	}
-
-	&Box {
- 
-		position:relative; 
-		padding:@productMargin; // Padding for the inner layer  
- 
-		@media(max-width: @desktop) { 
-			&:before {
-				display: none;
-			}
-		}
-
-		&:before {
-			width:2px;
-			margin-right:-1px;
-			height:100%; 
-			content: '';
-			position:absolute;
-			left:0;
-			top:0;
-
-			background: #dedede;
-			background: -moz-linear-gradient(top,  #ffffff 0%, #dedede 100%);
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dedede));
-			background: -webkit-linear-gradient(top,  #ffffff 0%,#dedede 100%);
-			background: -o-linear-gradient(top,  #ffffff 0%,#dedede 100%);
-			background: -ms-linear-gradient(top,  #ffffff 0%,#dedede 100%);
-			background: linear-gradient(to bottom,  #ffffff 0%,#dedede 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede',GradientType=0 );
-		
-			background: #ffffff;
-			background: -moz-linear-gradient(top,  #ffffff 0%, #dedede 59%, #ffffff 100%);
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(59%,#dedede), color-stop(100%,#ffffff));
-			background: -webkit-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
-			background: -o-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
-			background: -ms-linear-gradient(top,  #ffffff 0%,#dedede 59%,#ffffff 100%);
-			background: linear-gradient(to bottom,  #ffffff 0%,#dedede 59%,#ffffff 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
-
-		}
-
-		p {
-			width: 100%;  
-			margin: .5em 0 1.2em 0; 
-			font-size: 18px;
-			font-weight: 300;
-			font-style: normal;
-			text-align: left;
-			letter-spacing: 0;
-			line-height: 24px;
-		}
-		
-		// Elements for service Item
-
-		&-image {
-			width: 100%; 
-			height: 150px;
-			margin-bottom: @productMargin;
-			background: 50% 50% no-repeat;
-			background-size: auto 100%; 
-			 
-			&-noscale {
-				transform: scale(0);
-			}
-		} 
-		&-title {
-			width: 100%;  
-			margin: .5em 0;
-			margin-bottom: 0;
-			font-size: 32px;
-			font-weight: 300;
-			font-style: normal;
-			text-align: center;
-			text-transform: none;
-			letter-spacing: 0;
-			line-height: 32px;
-		}
-		&-subtitle {
-			width: 100%;  
-			margin-bottom: 1em; 
-			font-size: 14px;
-			line-height: 16px;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			font-weight: 300;
-			font-style: normal;
-			margin: 1.2em 0;
-			text-align: center;
-		}
-		// Big button to buy a plan
-		&-button {
-			width: 100%;
-			height: auto;
-			padding: 1.3em 0;
-			display: block;
-			color: #ffffff; 
-			background: #4A4A4A;
-			border-bottom: 5px solid @textBlack;
-			font-size: 1em;
-			font-style: bold;
-			font-weight: 400;
-			text-align: center;
-			line-height: 16px;  
-			letter-spacing: 1px; 
-			text-transform: uppercase;	
-			margin-top: 1.5em;
-			margin-bottom: 1.5em;
-			.border-radius(5px);
-
-			&-personal {
-				// Button for personal websites
-				background:@personal;
-				border-bottom-color:@personal-Hover;
-				&:hover {
-					background: @personal-Hover;
-				}
-			}
-			&-companies {
-				// Button for Companies
-				background:@companies;
-				border-bottom-color:@companies-Hover;
-				&:hover {
-					background: @companies-Hover;
-				}
-			}
-			&-marketing {
-				// Button for Marketing and SEO
-				background:@marketing;
-				border-bottom-color:@marketing-Hover;
-				&:hover {
-					background: @marketing-Hover;
-				}
-			}
-		}
-
-  		// Show all the features for a given plan
-		&-featureList {
-			display: block;
-
-			li {
-				width: 100%;
-				display: inline-block;
-				list-style: none; 
-				margin-bottom: 0.5em;
-				font-size: 18px;
-				line-height: 24px;
-				letter-spacing: 0;
-				font-weight: 300;
-				font-style: normal; 
-				text-align:left;
-			}
-		}
-	}
-}
 
 //------------------------------------
 //------------------------------------ 

@@ -62,7 +62,7 @@ header
 
 				ul.header-mobilemenu-dropdown 
 					each url, name in content.menu
-						li.header-mobilemenu-dropdown-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
+						li.header-mobilemenu-dropdown-link(class=('#{menu}' === '#{url}' ? 'selected' : ''))
 							a(href='#{content.baseURL}#{url}') #{name}
 
 					li.header-mobilemenu-dropdown-link.header-mobilemenu-dropdown-socialnetworks
@@ -73,7 +73,7 @@ header
 
 			nav.header-desktopmenu
 				each url, name in content.menu
-					li.header-desktopmenu-link(class=('/#{menu}' === '#{url}' ? 'selected' : ''))
+					li.header-desktopmenu-link(class=('#{menu}' === '#{url}' ? 'selected' : ''))
 						a(href='#{content.baseURL}#{url}') #{name}
 			.header-networks
 				ul

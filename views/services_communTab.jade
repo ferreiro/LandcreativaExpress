@@ -2,10 +2,10 @@
 - var services = content.sections.services;				// App.js pass a json with this link.
 - var products = content.sections.services.products;	// App.js pass a json with this link.
 
-.products
-	ul.products-tab
+.services
+	ul.services-tab
 		each menu, index in services.menu
-			li.products-tab-item.notransition
+			li.services-tab-item.notransition
 				a(href='#{menu.url}', onclick="changeTab(#{index}); return false;").notransition
 					span #{menu.letter}
 					div
@@ -14,13 +14,13 @@
 
 	// Content of the products
 
-	.products-content
+	.services-content
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box 
+		.services-content-box.services-content-azul
 		
 			each product, name in products.companies 
 				// Single product
@@ -32,17 +32,18 @@
 						p
 							a(href='#{product.url}').productBox-button.productBox-button-companies #{services.button}
 
-						p #{product.description}
+						p #{services.includes}
 
 						ul.productBox-featureList
 							each feature in product.features
 								li #{feature}
+								#{feature}
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box 
+		.services-content-box.services-content-orange 
 		
 			each product, name in products.personal 
 				// Single product
@@ -54,19 +55,28 @@
 						p
 							a(href='#{product.url}').productBox-button.productBox-button-personal #{services.button}
 
-						p #{product.description}
+						p #{services.includes}
 
 						ul.productBox-featureList
 							each feature in product.features
-								li #{feature} 
+								li 
+									span.icon-angle-right
+									!{feature}
 
 		////////////////////////////
-		// PAQUETE DE 3 PRODUCTOS //
+		// PAQUETE DE 6 PRODUCTOS //
 		////////////////////////////
 
-		.products-content-box 
-		
-			each product, name in products.marketing 
+		.services-content-box.services-content-yellow  
+			
+			- i = 0;
+			each product, name in products.otros
+
+				if (i == 3)
+					.services-separator 
+
+				- i++;
+				
 				// Single product
 				article.product
 					.productBox
@@ -75,7 +85,7 @@
 						p
 							a(href='#{product.url}').productBox-button.productBox-button-marketing #{services.button}
 
-						p #{product.description}
+						p #{services.includes}
 
 						ul.productBox-featureList
 							each feature in product.features

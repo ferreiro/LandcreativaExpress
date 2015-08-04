@@ -141,7 +141,7 @@ app.get('/servicios/:type', function(req, res) {
 
     i = 0;
     found = false; 
-    services = ['empresas', 'particulares', 'marketing',
+    services = ['empresas', 'particulares', 'otros', 'marketing',
                 'SEO', 'SEM']; 
     scriptName  = 'tab_personal'; // default script names;
 
@@ -189,7 +189,7 @@ app.get( english.baseURL+'/services/:type' , function(req, res) {
 
     i = 0;
     found = false; 
-    services = ['business', 'personal', 'marketing', 'SEO', 'SEM']; 
+    services = ['business', 'personal', 'others', 'marketing', 'SEO', 'SEM']; 
     scriptName  = 'tab_personal'; // default script names;
 
     while(i < services.length && (!found)) {
@@ -228,7 +228,7 @@ function getScriptName( serviceType ) {
         // /services/particulares
         scriptName = 'tab_personal';
     }
-    else if (serviceType == 'marketing' || serviceType == 'seo' || serviceType == 'sem') {
+    else if (serviceType == 'otros' ||serviceType == 'marketing' || serviceType == 'seo' || serviceType == 'sem') {
         // /services/particulares
         scriptName = 'tab_marketing';
     }
@@ -287,8 +287,8 @@ app.get('/quiero/:contactType', function(req, res){
         title: title, // Title of the section
         description: description,
         headerImage: headerImage,
-        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
-        contact: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+        contact: true,   // THe view uses this variable to show the contact "form" or "not"
+        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     })
 });
   

@@ -1,15 +1,26 @@
 var st = sessionStorage;
-var keepValueFields = document.getElementsByClassName('keepInputValue'); // Every element with the tag "keep value field" will be save/load.
+var keepValueFields = $('.keepInputValue'); // Every element with the tag "keep value field" will be save/load.
 var form = document.getElementsByClassName('contactForm'); // Every element with the tag "keep value field" will be save/load.
-var saveTime = 1000;	// Time in miliseconds for saving user text input on session storage
+var saveTime = 400;	// Time in miliseconds for saving user text input on session storage
 var sessionStorageName = 'contactForm_';
 var stopTracking = false;
 	
 	loadUserText(); // Calling the function the first time we open the page
-	setInterval(saveUserText, saveTime); // Saving user inputs text each "saveTime" miliseconds
 	form.onsubmit = function() { 
 		clearFormData; 
 	};
+
+	keepValueFields.focusin(function() {
+		stopTracking = false;
+		setInterval(saveUserText, saveTime); // Saving user inputs text each "saveTime" miliseconds
+	});
+	keepValueFields.focusout(function() {
+		stopTracking = true;
+	});
+	/*keepValueFields.mouseleave(function() {
+		stopTracking = true;
+	});
+	*/
 
 	// Clear data when the user send a form
 	// This variable is going to be global.
@@ -53,7 +64,6 @@ var stopTracking = false;
 	 	if (!stopTracking) {
  		 	// Traversing all the session storage elements and 
  		 	// keeping the current value for our inputs files.
-
  			for (i = 0; i < total; i++) {
  				stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
  				stValue = keepValueFields[i].value;	// The value is getting for the element input value.
