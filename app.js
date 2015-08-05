@@ -106,26 +106,20 @@ app.get( english.baseURL+ '/about', function(req, res) {
 //------------------------------
 
 app.get('/servicios', function(req, res) {
-    var scriptName;  // View parameters
-
-    scriptName  = 'tab_personal'; // default script name
- 
+    var serviceType = 'particulares'; // View parameter
     res.render('services', {
             menu : 'servicios',
-            scriptName: scriptName,
+            serviceType: serviceType,
             content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
         }
     );
 });
 
 app.get( english.baseURL+'/services' , function(req, res) {
-    var scriptName;  // View parameters
-
-    scriptName  = 'tab_personal'; // default script name
- 
+    var serviceType = 'particulares'; // View parameter
     res.render('services', {
             menu : 'services',
-            scriptName: scriptName,
+            serviceType: serviceType,
             content: contentData.english // Passing a "JSON" to views with the data of the website. 
         }
     );
@@ -134,38 +128,16 @@ app.get( english.baseURL+'/services' , function(req, res) {
 // :type - Código explicado en http://expressjs.com/4x/api.html#res.send
 
 app.get('/servicios/:type', function(req, res) {
-    var title, viewName, scriptName, description;  // View parameters
-    var serviceType, services, found, i;
+    var serviceType, validType;
     
     serviceType = (req.params.type).toLowerCase();
+    validType = doesServiceExist( serviceType );
 
-    i = 0;
-    found = false; 
-    services = ['empresas', 'particulares', 'otros', 'marketing',
-                'SEO', 'SEM']; 
-    scriptName  = 'tab_personal'; // default script names;
-
-    while(i < services.length && (!found)) {
-        if(serviceType == services[i]) {
-            found = true;
-            scriptName = getScriptName( serviceType );
-        } 
-        i++;
-    }
-
-    // DEBUG
-    // console.log("Before while");
-    // console.log("i " + i);
-    // console.log("Found " + found);
-    // console.log("services " + services);
-    // console.log("services " + services.length);
-    // console.log("scriptName " + scriptName);
- 
-    if (found) {
+    if (validType) {
         // If element found, render the service template
         res.render('services', {
-                menu : 'servicios', 
-                scriptName: scriptName,
+                menu : 'servicios',
+                serviceType: serviceType,
                 content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
             }
         );
@@ -173,11 +145,25 @@ app.get('/servicios/:type', function(req, res) {
     else {
         // Else: the route is not "Empresas", particulares or marketing
         // Redirect to servicios main page.
-
         res.redirect('/servicios');
     }
 });
 
+
+function doesServiceExist( name ) {
+    var found = false, i = 0;
+    var services = ['empresas', 'particulares', 'otros', 'marketing', 'SEO', 'SEM',
+                    'business', 'personal', 'others', 'marketing' ];  // valid names
+
+    while((i < services.length) && (!found)) {
+        if (name == services[i]) {
+            found = true;
+        }
+        i++;
+    }
+
+    return found;
+}
 
 // :type - Código explicado en http://expressjs.com/4x/api.html#res.send
 
@@ -322,7 +308,7 @@ app.get('/contacta', function(req,res) {
     res.render('contact', {        
         menu : 'contacta',
         contact: contact,
-        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
+        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
         content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
     });
 });
@@ -332,7 +318,7 @@ app.get( english.baseURL+'/contact', function(req,res) {
     res.render('contact', {        
         menu : 'contact',
         contact: contact,
-        displayForm: true,   // THe view uses this variable to show the contact "form" or "not"
+        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
         content: contentData.english // Passing a "JSON" to views with the data of the website. 
     });
 });

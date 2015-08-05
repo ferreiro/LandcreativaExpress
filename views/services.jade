@@ -2,13 +2,35 @@ extends layout
 
 block content
 
+	- var services = content.sections.services;				// App.js pass a json with this link.
+
 	section.section.serviciosSection
 		.content
 
 			h1.commun-title #{content.sections.services.headline} 
 
+			//- - productsLength = 0;
+			//- - productsMenu = [];
+			//- - index = 0;
+
+			//- //- each product, name in services.products
+			//- 	- productsMenu[productsLength] = name; 
+			//- 	- productsLength++;
+
 			// Loading script depending the page we are.
-			script(type='text/javascript', src='/js/#{scriptName}.js')
+			script(type='text/javascript').
+				window.onload = function(){
+
+					if ('#{serviceType}' == 'empresas') {
+						changeTab(0);
+					}
+					else if ('#{serviceType}' == 'particulares') {
+						changeTab(1);
+					}
+					else if ('#{serviceType}' == 'otros') {
+						changeTab(2);
+					} 
+				};
 
 			include ./services_communTab.jade
 

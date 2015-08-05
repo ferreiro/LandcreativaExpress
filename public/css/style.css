@@ -551,7 +551,7 @@ body-overflow {
 .commun-button {
   width: 100%;
   height: auto;
-  padding: 1.3em 0;
+  padding: 1.4em 0;
   display: block;
   color: #ffffff;
   background: #2a79c2;
@@ -564,7 +564,7 @@ body-overflow {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 0em;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -1372,8 +1372,11 @@ body-overflow {
 .services-content-box {
   display: none;
 }
+.services-content-box-showbox {
+  display: block;
+}
 @media (min-width: 1000px) {
-  .services-content-azul .product:hover {
+  .services-content-azul .productBox:hover {
     background: #f4fcff;
     background: -moz-linear-gradient(top, #ffffff 0%, #f4fcff 30%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f4fcff));
@@ -1453,8 +1456,8 @@ body-overflow {
   position: relative;
   padding: 1.5em;
   display: block;
-  padding-bottom: 400px;
-  margin-bottom: -400px;
+  padding-bottom: 500px;
+  margin-bottom: -500px;
 }
 @media (max-width: 1000px) {
   .services .productBox:before {
@@ -1523,6 +1526,12 @@ body-overflow {
   margin: 1.2em 0;
   text-align: center;
 }
+@media all and (min-width: 1000px) {
+  .services .productBox-othersdescription {
+    height: 200px;
+    overflow: auto;
+  }
+}
 .services .productBox-button {
   width: 100%;
   height: auto;
@@ -1549,21 +1558,21 @@ body-overflow {
   border-bottom-color: #8a3911;
 }
 .services .productBox-button-personal:hover {
-  background: #8a3911;
+  background: #d56934;
 }
 .services .productBox-button-companies {
   background: #2a79c2;
   border-bottom-color: #11508a;
 }
 .services .productBox-button-companies:hover {
-  background: #11508a;
+  background: #3386d3;
 }
 .services .productBox-button-marketing {
   background: #bc9e26;
   border-bottom-color: #8a7211;
 }
 .services .productBox-button-marketing:hover {
-  background: #8a7211;
+  background: #d1b02a;
 }
 .services .productBox-featureList {
   display: block;

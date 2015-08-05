@@ -60,6 +60,7 @@ var aboutImages = $('.about-image');
 //-- PRODUCTS TAB
 //----------------------------
 
+
 var tabSelectedOption = -1; // -1 when initialize. Not change this!
 var tabElements = $('.services-tab-item');
 var tabContent  = $('.services-content-box');
@@ -141,6 +142,27 @@ $('a[href^="#"]').on('click',function (e) {
 
 });
  
+
+ 
+//----------------------------
+//-- SERVICIOS
+//----------------------------
+// Esto tiene que estar al final del todo...
+
+var buyProduct = $('.productBox-button');
+document.currentServiceContent = $(body).find('.services-content-box-showbox'); // Get the div that is showing to the user...
+
+$(window).scroll(function (event) {
+	// what the y position of the scroll is
+	var scroll = $(this).scrollTop();
+	var test = buyProduct.offset().top;
+	console.log('Scroll height' + scroll ) 
+	console.log('BUY' + test ) 
+
+
+});
+ 
+
 
 //------------------------------------
 // services

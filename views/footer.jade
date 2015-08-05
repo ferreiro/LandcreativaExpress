@@ -3,12 +3,28 @@
 		.footer-content
 			.footer-box
 				h2.footer-title Mapa web
-				- i = 0; 
+
 				ul.footer-hotlinks
-					each link, name in content.menu
-						li
-							a(href='#{link}') #{name}
-					//- i++
+					li
+						a(href='/') Portada / Home
+					li
+						a(href='/nosotros') Sobre nosotros
+					li
+						a(href='/services') Servicios
+				ul.footer-hotlinks
+					li
+						a(href='/casos_exito') Casos de éxito
+					li
+						a(href='/blog') Blog Corporativo
+					li
+						a(href='/contacta') Contáctanos
+
+				//- - i = 0; 
+				//- ul.footer-hotlinks
+				//- 	each link, name in content.menu
+				//- 		li
+				//- 			a(href='#{link}') #{name}
+				//- 	//- i++
 
 			.footer-box 
 				h2.footer-title ¡Apúntante al newsletter!
@@ -56,15 +72,16 @@ script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery
 script(type='text/javascript', src='/js/jquery.easing.1.3.js')
 script(type='text/javascript', src='/js/slider.js')
 script(type='text/javascript', src='/js/animations.js')
-script(type='text/javascript', src='/js/analytics.js')
 script(type='text/javascript', src='/js/ajaxContact.js')
+	
+	script(type='text/javascript').
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-65884635-1', 'auto');
+		ga('send', 'pageview');
 
 script(type='text/javascript', src='/js/contactFormTracker.js')
-
-if (menu === "contacta")
-	//- Script that saves every time the value of the contact form
-	
-
-if (menu === "servicios")
-	//- Script that saves every time the value of the contact form
 

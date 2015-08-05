@@ -1,4 +1,4 @@
-var st = sessionStorage;
+var ls = localStorage;
 var keepValueFields = $('.keepInputValue'); // Every element with the tag "keep value field" will be save/load.
 var form = document.getElementsByClassName('contactForm'); // Every element with the tag "keep value field" will be save/load.
 var saveTime = 400;	// Time in miliseconds for saving user text input on session storage
@@ -35,7 +35,7 @@ var stopTracking = false;
 
 		for (i = 0; i < total; i++) {
 			stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
-			st.setItem(stkey, '');					// Clearing session storage for that name
+			ls.setItem(stkey, '');					// Clearing session storage for that name
 		}
 	}
 
@@ -50,8 +50,8 @@ var stopTracking = false;
 
 		for (i = 0; i < total; i++) {
 			stkey 	= sessionStorageName + i; 			// Setting the key name. Change this for a different name 
-			if(st.getItem(stkey) != undefined) 
-				keepValueFields[i].value = st.getItem(''+ stkey + '');	// getting the value from session storage and setting the input text with dat value
+			if(ls.getItem(stkey) != undefined) 
+				keepValueFields[i].value = ls.getItem(''+ stkey + '');	// getting the value from session storage and setting the input text with dat value
 		}
 	}
 
@@ -68,7 +68,7 @@ var stopTracking = false;
  				stkey 	= sessionStorageName + i; 		// Setting the key name. Change this for a different name 
  				stValue = keepValueFields[i].value;	// The value is getting for the element input value.
  				if(stValue != undefined) 
-					st.setItem(stkey, stValue);			// Setting key and value to Session storage.
+					ls.setItem(stkey, stValue);			// Setting key and value to Session storage.
  			}
 	 	} 
 	}

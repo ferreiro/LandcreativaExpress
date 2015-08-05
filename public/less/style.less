@@ -465,7 +465,7 @@ body {
 		text-align: left; 
 		letter-spacing: 3px; 
 		text-transform: uppercase;
-	}
+	} 
 	&-text {
 		width: 100%;		
 		padding: 0; 
@@ -480,7 +480,7 @@ body {
 	&-button {
 		width: 100%;
 		height: auto;
-		padding: 1.3em 0;
+		padding: 1.4em 0;
 		display: block;
 		color: #ffffff; 
 		background:@companies;
@@ -494,7 +494,7 @@ body {
 		letter-spacing: 1px; 
 		text-transform: uppercase;	
 		margin-top: 1.5em;
-		margin-bottom: 1.5em;
+		margin-bottom: 0em;
 		.border-radius(5px);
  
 		&:hover {
@@ -1330,13 +1330,16 @@ body {
 		text-align: center;
 		border:1px solid @lightGrayBorder;
 		overflow: hidden;	// IMPORTANTE, NO QUITAR!! Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
-
+ 
 		&-box {
-			display: none;
+			display: none; 
+			&-showbox {
+				display: block; 
+			}
 		}
 		@media(min-width: @desktop) { 
 			&-azul {
-				.product:hover {
+				.productBox:hover {
 					background: #f4fcff;
 					background: -moz-linear-gradient(top,  #ffffff 0%, #f4fcff 30%);
 					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4fcff));
@@ -1360,6 +1363,8 @@ body {
 				} 
 			} 
 			&-yellow {
+				// Para el amarillo, como se dividen en varias columnas
+				// poner de amarillo el product, no el product box.
 				.product:hover { 
 					background: -moz-linear-gradient(top,  #ffffff 0%, #fffef4 30%);
 					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#fffef4));
@@ -1419,8 +1424,8 @@ body {
 			position:relative; 
 			padding:@productMargin; // Padding for the inner layer  
  			display: block;
-			padding-bottom: 400px;	// Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
-			margin-bottom: -400px; // Esto es un hack para hacer que los 3 divs tengan la misma altura
+			padding-bottom: 500px;	// Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
+			margin-bottom: -500px; // Esto es un hack para hacer que los 3 divs tengan la misma altura
 	 	
 			@media(max-width: @desktop) { 
 				&:before {
@@ -1498,6 +1503,12 @@ body {
 				margin: 1.2em 0;
 				text-align: center;
 			}
+			&-othersdescription {
+				@media all and (min-width:@desktop) {
+					height: 200px;
+					overflow: auto;
+				}
+			}
 			// Big button to buy a plan
 			&-button {
 				width: 100%;
@@ -1523,7 +1534,7 @@ body {
 					background:@personal;
 					border-bottom-color:@personal-Hover;
 					&:hover {
-						background: @personal-Hover;
+						background: lighten(@personal, 5%);
 					}
 				}
 				&-companies {
@@ -1531,7 +1542,7 @@ body {
 					background:@companies;
 					border-bottom-color:@companies-Hover;
 					&:hover {
-						background: @companies-Hover;
+						background: lighten(@companies, 5%);
 					}
 				}
 				&-marketing {
@@ -1539,7 +1550,7 @@ body {
 					background:@marketing;
 					border-bottom-color:@marketing-Hover;
 					&:hover {
-						background: @marketing-Hover;
+						background: lighten(@marketing, 5%);
 					}
 				}
 			}
