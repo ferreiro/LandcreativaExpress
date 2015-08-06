@@ -37,6 +37,12 @@ app.use(app.router);
 
 /---- Agregados de jorge. ---/
 
+// Middleware to remove header of express
+app.use(function (req, res, next) {
+      res.removeHeader("X-Powered-By");
+      next();
+});
+
 // Handle 404
 app.use(function(req, res, err) {
     res.status(400); 

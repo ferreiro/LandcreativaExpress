@@ -149,19 +149,29 @@ $('a[href^="#"]').on('click',function (e) {
 //----------------------------
 // Esto tiene que estar al final del todo...
 
-var buyProduct = $('.productBox-button');
-document.currentServiceContent = $(body).find('.services-content-box-showbox'); // Get the div that is showing to the user...
+var elementPosition = $('.productBox-button').offset();
 
-$(window).scroll(function (event) {
-	// what the y position of the scroll is
-	var scroll = $(this).scrollTop();
-	var test = buyProduct.offset().top;
-	console.log('Scroll height' + scroll ) 
-	console.log('BUY' + test ) 
+$(window).scroll(function(){
+	total = elementPosition.top - $(window).scrollTop();
+	
+	// console.log('Button top ' + elementPosition.top);
+	// console.log('Scroll top ' + $(window).scrollTop());
+	// console.log(total);
 
+    if(total <= 0){
+    	// Display element
 
+    	$('.services-fixedbuypannel').fadeIn({
+    		duration: 300,
+    		easing: 'easeInOutCirc'
+    	});
+    	console.log("entra"); 
+
+    } else {
+    	$('.services-fixedbuypannel').hide(300);
+    	console.log("sal"); 
+    }    
 });
- 
 
 
 //------------------------------------

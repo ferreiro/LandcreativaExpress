@@ -1196,6 +1196,15 @@ body-overflow {
 .services {
   min-height: 500px;
 }
+.services-fixedbuypannel {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  padding: 0.5em 0;
+  width: 1000px;
+  z-index: 10;
+  display: none;
+}
 .services-tab {
   display: block;
   border-bottom: 0;
