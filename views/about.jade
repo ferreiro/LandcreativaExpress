@@ -19,9 +19,9 @@ block content
 
 					each text, index in about.what.text
 						if index == about.what.text.length - 1
-							p.about-text.about-text-nomargin #{text}
+							p.about-text.about-text-nomargin !{text}
 						else
-							p.about-text #{text}
+							p.about-text !{text}
 
 				//- Fin about right
 				.about-separator
@@ -30,11 +30,8 @@ block content
 
 					h2.commun-subtitle.about-subtitle #{about.why.title}
 
-					each text, index in about.why.text
-						if index == about.why.text.length - 1
-							p.about-text.about-text-nomargin #{text}
-						else
-							p.about-text #{text}
+					each list, index in about.why.list
+						li.about-list !{list}
 				
 				.about-right
 					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
