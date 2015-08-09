@@ -3,6 +3,7 @@
 		.footer-content
 			.footer-box
 				h2.footer-title Mapa web
+				p.footer-text(style='margin-bottom:1em;') Landcreativa - Expertos en páginas web, diseño gráfico, SEO y marketing digital
 
 				ul.footer-hotlinks
 					li
@@ -29,30 +30,39 @@
 			.footer-box 
 				h2.footer-title ¡Apúntante al newsletter!
 				.footer-text ¿Quieres enterarte de las últimas novedades y recibir descuentos y promociones exclusivas? ¡Únete a nuestro newsletter y empieza a beneficiarte!.
+					.footer-form
+
+						// Begin MailChimp Signup Form 
+						#mc_embed_signup
+							form(action='//landcreativa.us8.list-manage.com/subscribe/post?u=e36c74a488cae8a92e7872fb3&amp;id=6baea7a6c9', method='post', name='mc-embedded-subscribe-form',target='__blank', novalidate)#mc-embedded-subscribe-form.validate
+
+								#mc_embed_signup_scroll
+									.mc-field-group
+										label(style='display:none', for='mce-EMAIL') Email Address
+										input(type='email', value='', placeholder='Introduce tu email', name='EMAIL').required.email#mce-EMAIL
+									#mce-responses.clear
+										.response(style="display:none;")#mce-error-response
+										.response(style="display:none;")#mce-success-response
+										// real people should not fill this in and expect good things - do not remove this or risk form bot signups
+
+									div(style='position: absolute; left: -5000px;')
+										input(type="text", name="b_e36c74a488cae8a92e7872fb3_6baea7a6c9", tabindex="-1", value="")
+
+									.clear
+										input(type="submit", value="Subscribe", name="subscribe")#mc-embedded-subscribe.button
+
+						// End mc_embed_signup 
 
 			.footer-box.footer-nomargin 
-				.footer-form
+				h2.footer-title Contacto
 
-					// Begin MailChimp Signup Form 
-					#mc_embed_signup
-						form(action='//landcreativa.us8.list-manage.com/subscribe/post?u=e36c74a488cae8a92e7872fb3&amp;id=6baea7a6c9', method='post', name='mc-embedded-subscribe-form',target='__blank', novalidate)#mc-embedded-subscribe-form.validate
-
-							#mc_embed_signup_scroll
-								.mc-field-group
-									label(style='display:none', for='mce-EMAIL') Email Address
-									input(type='email', value='', placeholder='Introduce tu email', name='EMAIL').required.email#mce-EMAIL
-								#mce-responses.clear
-									.response(style="display:none;")#mce-error-response
-									.response(style="display:none;")#mce-success-response
-									// real people should not fill this in and expect good things - do not remove this or risk form bot signups
-
-								div(style='position: absolute; left: -5000px;')
-									input(type="text", name="b_e36c74a488cae8a92e7872fb3_6baea7a6c9", tabindex="-1", value="")
-
-								.clear
-									input(type="submit", value="Subscribe", name="subscribe")#mc-embedded-subscribe.button
-
-					// End mc_embed_signup 
+				ul.footer-hotlinks
+					li
+						a info@landcreativa.com
+					li
+						a asistencia@landcreativa.com
+					li
+						a prensa@landcreativa.com 
 
 	.footer-bottom 
 		.footer-content 
