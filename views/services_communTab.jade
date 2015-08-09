@@ -37,17 +37,19 @@
 						h3.productBox-subtitle 
 							span #{product.subtitle}
 
-						p #{services.includes}
+						p.productBox-include
+							span !{services.includes}
+
 						p.productBox-buy
 							a(href='#{product.url}').productBox-button.productBox-button-companies
 								!{services.button} #{product.title}!
-
 
 						ul.productBox-featureList
 							each feature in product.features
 								li
 									span.icon-angle-right
 									!{feature}
+
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
 		////////////////////////////
@@ -66,7 +68,8 @@
 							a(href='#{product.url}').productBox-button.productBox-button-personal 
 								!{services.button} #{product.title}!
 
-						p #{services.includes}
+						p.productBox-include
+							span !{services.includes}
 
 						ul.productBox-featureList
 							each feature in product.features
@@ -99,7 +102,6 @@
 							a(href='#{product.url}').productBox-button.productBox-button-marketing 
 								!{services.otherServicesButton}
 						
-
 						ul.productBox-featureList
 							each feature in product.features
 								li

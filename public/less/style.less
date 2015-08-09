@@ -1510,7 +1510,6 @@ body {
 				}
 			}
 
-
 			&:before {
 				width:2px;
 				margin-right:-1px;
@@ -1590,6 +1589,58 @@ body {
 					.translate(0, -50%);
 				}
 			}
+			&-include { 
+				position: relative;
+				text-align: center;
+				display: block; 
+				span {
+					background: #F3F3F3;
+					background: rgba(236, 236, 236, 0.5);
+					display: inline-block;
+					text-align: center;
+					position: relative;
+					padding: 1px 10px;
+					.border-radius(3px);
+					left: 50%;
+					.translate(-50%, 0);
+					font-size: 12px;
+				}
+				&:before {
+					width: 100%;
+					height: 1px;
+					position: absolute;
+					top: 50%;
+					float: left;
+					content: '';
+					.translate(0, -50%);
+					background: #F3F3F3;
+					background: rgba(236, 236, 236, 0.5);
+				}
+				&.blue {
+					span {
+						background:#D1E5F9;
+					}
+					&:before {
+						background:#D1E5F9;
+					}
+				}
+				&.orange {
+					span {
+						background:#FFE7DA;
+					}
+					&:before {
+						background:#FFE7DA;
+					}
+				}
+				&.yellow {
+					span {
+						background:#D1E5F9;
+					}
+					&:before {
+						background:#D1E5F9;
+					}
+				}
+			}
 			&-buy {
 				@media(min-width: @desktop) { 
 					display: none;
@@ -1649,8 +1700,7 @@ body {
 
 	  		// Show all the features for a given plan
 			&-featureList {
-				display: block;
-				margin-top: -0.5em;
+				display: block; 
 
 				li {
 					width: 100%;

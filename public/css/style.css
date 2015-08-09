@@ -1617,6 +1617,60 @@ body-overflow {
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
 }
+.services .productBox-include {
+  position: relative;
+  text-align: center;
+  display: block;
+}
+.services .productBox-include span {
+  background: #F3F3F3;
+  background: rgba(236, 236, 236, 0.5);
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 1px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  font-size: 12px;
+}
+.services .productBox-include:before {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  float: left;
+  content: '';
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  background: #F3F3F3;
+  background: rgba(236, 236, 236, 0.5);
+}
+.services .productBox-include.blue span {
+  background: #D1E5F9;
+}
+.services .productBox-include.blue:before {
+  background: #D1E5F9;
+}
+.services .productBox-include.orange span {
+  background: #FFE7DA;
+}
+.services .productBox-include.orange:before {
+  background: #FFE7DA;
+}
+.services .productBox-include.yellow span {
+  background: #D1E5F9;
+}
+.services .productBox-include.yellow:before {
+  background: #D1E5F9;
+}
 @media (min-width: 1000px) {
   .services .productBox-buy {
     display: none;
@@ -1672,7 +1726,6 @@ body-overflow {
 }
 .services .productBox-featureList {
   display: block;
-  margin-top: -0.5em;
 }
 .services .productBox-featureList li {
   width: 100%;
