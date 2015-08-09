@@ -19,8 +19,8 @@
     			    "image": "/images/desk.jpg",
     			    "text": [
                         "Landcreativa, es un agencia digital fundada en 2012 por Jorge Ferreiro. Somos especializas en <u>páginas web</u>, <u>diseño gráfico</u> y <u>marketing digital</u>.",
-                        "Jorge Ferreiro, actual CEO de Landcreativa, es un joven Ingenierio Informático con más de 8 años de experiencia en desarrollo web. Jorge y su equipo, formado por profesionales altamente cualificados, son una garantía de resultados.",
-                        "En Landcreativa trabajamos bajo 3 principios: calidad, agilidad y resultados. Nuestro principal objetivo es conseguir la máxima satisfacción de nuestros clientes, optimizando al máximo los tiempos de ejecución."
+                        "Jorge Ferreiro, actual CEO de Landcreativa, es un joven Ingenierio Informático con más de 8 años de <b>experiencia</b> en desarrollo web. Jorge y su equipo, formado por profesionales altamente cualificados, son una garantía de éxito.",
+                        "En Landcreativa trabajamos bajo <b>3 principios</b>: calidad, agilidad y resultados. Nuestro principal objetivo es conseguir la máxima satisfacción de nuestros clientes, optimizando al máximo los tiempos de ejecución."
     			    ]
     			},
     			"why": {

@@ -31,7 +31,16 @@ block content
 					h2.commun-subtitle.about-subtitle #{about.why.title}
 
 					each list, index in about.why.list
-						li.about-list !{list}
+						if index == about.why.text.length - 1
+							li.about-list.about-text-nomargin !{list}
+						else
+							li.about-list !{list}
+
+					each text, index in about.why.text
+						if index == about.why.text.length - 1
+							p.about-text.about-text-nomargin !{text}
+						else
+							p.about-text !{text}
 				
 				.about-right
 					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
@@ -39,4 +48,7 @@ block content
 				.about-separator
 				.about-link
 					a(href='/servicios', style="width:300px; text-align:center; display:block;, float:inherit;").commun-button #{about.button}
+
+
+
 
