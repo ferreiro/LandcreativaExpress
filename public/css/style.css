@@ -973,6 +973,11 @@ body-overflow {
   background: url(../images/iso.png) 50% 50% no-repeat;
   background-size: auto 100%;
 }
+@media all and (max-width: 600px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content-minilogo div {
+    display: none;
+  }
+}
 .slider ul.slider-slides .slider-slides-singleSlide-content-title {
   font-size: 2em;
   line-height: 1em;
@@ -1262,14 +1267,50 @@ body-overflow {
 .services {
   min-height: 500px;
 }
-.services-fixedbuypannel {
-  background: #fff;
-  position: fixed;
+.services-buypannel {
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
   bottom: 0;
-  padding: 0.5em 0;
-  width: 1000px;
+  width: 998px;
   z-index: 10;
   display: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.services-buypannel.stuck {
+  position: fixed;
+  bottom: 0;
+}
+.services-buypannel.endpin {
+  position: absolute;
+  bottom: 0;
+}
+.services-buypannel-buy {
+  width: 33.333%;
+  display: inline-block;
+  margin-right: -4px;
+  padding: 1em 0;
+  position: relative;
+}
+.services-buypannel-buy span {
+  margin: 0 1em;
+  display: block;
+}
+.services-buypannel-buy span a {
+  margin: 0;
+}
+.services-buypannel-buy:first-child:before {
+  display: none;
+}
+.services-buypannel-buy:before {
+  width: 2px;
+  margin-right: -1px;
+  height: 100%;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(236, 236, 236, 0.5);
 }
 .services-tab {
   display: block;
@@ -1456,6 +1497,11 @@ body-overflow {
   display: block;
 }
 @media (min-width: 1000px) {
+  .services-content-box {
+    padding-bottom: 85px;
+  }
+}
+@media (min-width: 1000px) {
   .services-content-azul .productBox:hover {
     background: #f4fcff;
     background: -moz-linear-gradient(top, #ffffff 0%, #f4fcff 30%);
@@ -1500,6 +1546,9 @@ body-overflow {
   .services-separator {
     display: none !important;
   }
+}
+.services .product:first-child .productBox:before {
+  background: red !important;
 }
 .services .product {
   width: 33.33%;
@@ -1859,6 +1908,7 @@ body-overflow {
   .portfolioBox-options-title h4 {
     color: #ffffff;
     margin: .8em 0;
+    padding-left: 0;
   }
 }
 @media all and (min-width: 1000px) {

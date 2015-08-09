@@ -12,12 +12,6 @@
 						p(style='display:none') #{menu.name}
 						h3 #{menu.name}
 
-	div(style='display:none;')
-		.services-fixedbuypannel
-			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack economy!
-			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack business!
-			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack First class! 
-
 	// Content of the products
 
 	.services-content
@@ -27,7 +21,18 @@
 		////////////////////////////
 
 		.services-content-box.services-content-azul
-		
+			
+			.services-buypannel
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button ¡Quiero el pack economy!
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button ¡Quiero el pack business!
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button ¡Quiero el pack First class! 
+
 			each product, name in products.companies 
 				// Single product
 				article.product
@@ -55,7 +60,18 @@
 		////////////////////////////
 
 		.services-content-box.services-content-orange 
-		
+			
+			.services-buypannel
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button.productBox-button-personal  ¡Quiero el pack Silver!
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button.productBox-button-personal  ¡Quiero el pack Gold!
+				.services-buypannel-buy
+					span
+						a(href='#').commun-button.productBox-button-personal  ¡Quiero el pack Premium! 
+
 			each product, name in products.personal 
 				// Single product
 				article.product
