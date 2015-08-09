@@ -97,8 +97,12 @@
 						h2.productBox-title #{product.title}
 						h3.productBox-subtitle
 							span #{product.subtitle}
+
+						p.productBox-include
+							span Informacion
+
 						p.productBox-othersdescription #{product.description}
-						p.productBox-buy
+						p.productBox-buy-marketing
 							a(href='#{product.url}').productBox-button.productBox-button-marketing 
 								!{services.otherServicesButton}
 						

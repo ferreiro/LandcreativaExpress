@@ -1159,6 +1159,7 @@ body {
 			top: 8px;  
 			background: rgba(244, 255, 255, 1);
 			background: rgba(54, 149, 238, 0.05);
+			background: none;
 			// .translate (0, -50%);
 			.border-radius(5px);
 			.box-shadow-inner(0, 0, 2px, 0px, 0, 0, 0, .6);
@@ -1644,6 +1645,11 @@ body {
 			&-buy {
 				@media(min-width: @desktop) { 
 					display: none;
+				} 
+				&-marketing {
+					@media(min-width: @desktop) { 
+						display: block !important;
+					}
 				}
 			}
 			&-othersdescription {
