@@ -30,17 +30,24 @@ block content
 
 					h2.commun-subtitle.about-subtitle #{about.why.title}
 
-					each list, index in about.why.list
-						if index == about.why.text.length - 1
-							li.about-list.about-text-nomargin !{list}
-						else
-							li.about-list !{list}
+					div(style='display:none;')
+						each list, index in about.why.text
+							if index == about.why.text.length
+								.about-text.about-text-nomargin !{list}
+							else
+								.about-text !{list}
 
-					each text, index in about.why.text
-						if index == about.why.text.length - 1
-							p.about-text.about-text-nomargin !{text}
+					- i = 0;
+					each list, index in about.why.list
+						- i += 1;
+						if index == about.why.text.length + 2000
+							li.about-list.about-text-nomargin
+								span !{list}
 						else
-							p.about-text !{text}
+							li.about-list
+								.about-list-icon 
+									span !{i}
+								.about-list-text !{list}
 				
 				.about-right
 					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
@@ -48,7 +55,3 @@ block content
 				.about-separator
 				.about-link
 					a(href='/servicios', style="width:300px; text-align:center; display:block;, float:inherit;").commun-button #{about.button}
-
-
-
-

@@ -15,8 +15,7 @@
 // Heights.
 @headerHeight: 80px;
 @productMargin : 1.5em;
-
-
+ 
 // ServicesColors
 @personal: #c75d29;
 @personal-Hover: #8a3911;
@@ -36,15 +35,15 @@
      -moz-border-radius: @radius;
           border-radius: @radius;
 }
-.box-shadow(@blur, @spread, @r, @g, @b, @opacity) {
-	-webkit-box-shadow: 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
-	-moz-box-shadow:    0 0 @blur @spread rgba(@r, @g, @b, @opacity);
-	box-shadow:         0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+.box-shadow(@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
 }
-.box-shadow-inner(@blur, @spread, @r, @g, @b, @opacity) {
-	-webkit-box-shadow: inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
-	-moz-box-shadow:    inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
-	box-shadow:         inset 0 0 @blur @spread rgba(@r, @g, @b, @opacity);
+.box-shadow-inner(@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: inset @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow:    inset @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
+	box-shadow:         inset @horizontal @vertical @blur @spread rgba(@r, @g, @b, @opacity);
 }
 .transition(@time) { 
 	-webkit-transition: all @time;
@@ -222,7 +221,8 @@ body {
 
 			@media all and (min-width:@desktop) { 
 				display: none !important;
-				.box-shadow(5px, 3px, 0, 0, 0, 0.1);
+				// (@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) 
+				.box-shadow(0, 0, 5px, 3px, 0, 0, 0, 0.1);
 			}
 
 			&.selected {
@@ -263,9 +263,9 @@ body {
 			// border: 1px solid @lightGrayBorder;
 			border-top:0;
 			border-right: 0;
-					// @blur, @spread, @r, @g, @b, @opacity
-			.box-shadow(5px, 3px, 0, 0, 0, 0.1);
-			// .border-radius(4px); 
+
+			// (@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) 
+			.box-shadow(0, 0, 5px, 3px, 0, 0, 0, 0.1);
 
 			// <li> Menu
 			&-link {
@@ -499,7 +499,7 @@ body {
 		.border-radius(5px);
  
 		&:hover {
-			background: @companies-Hover;
+			background: lighten( @companies, 7%);
 		} 
 	}
 }
@@ -1080,7 +1080,7 @@ body {
 		width: 100%;
 	}
 	&-separator {
-		margin-top:2.2em; 
+		margin-top:3em;  
 	}
 	&-subtitle {
 		letter-spacing: 0;
@@ -1115,13 +1115,62 @@ body {
 	&-list {
 		width: 100%;
 		margin: .5em 0; 
-		letter-spacing: 0;
-		line-height: 24px;
-		font-size: 18px;
-		text-align: left;
-		font-style: normal;
-		font-weight: 300;
+		list-style: none;
+		position: relative; 
+		min-height: 30px;
 
+		a {
+			margin: 0;  
+			float: left;
+			margin-top: 0.4em; 
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline; 
+			}
+		}
+
+		&-text {
+			letter-spacing: 0;
+			line-height: 24px;
+			font-size: 18px;
+			text-align: left;
+			font-style: normal;
+			font-weight: 300; 
+			display: inline-block; 
+			position: relative;
+			margin-left: 45px;
+			vertical-align: middle;
+			margin-top: .3em;
+			// Emoji
+			span {
+				margin-right: 0.3em;
+			}
+		}
+		&-icon {
+			width: 30px;
+			min-height: 30px;
+			display: inline-block; 
+			vertical-align: middle;
+			margin-right: 1em; 
+			position: absolute;
+			left: 0;
+			right: 0; 
+			top: 8px;  
+			background: rgba(244, 255, 255, 1);
+			background: rgba(54, 149, 238, 0.05);
+			// .translate (0, -50%);
+			.border-radius(5px);
+			.box-shadow-inner(0, 0, 2px, 0px, 0, 0, 0, .6);
+
+			span {
+				left: 50%;
+				top: 50%;
+				.translate (-50%, -52%);
+				color: rgba(0, 0, 0, .6); 
+				position: absolute;
+			}
+		}
 		&-nomargin {
 			margin-bottom: 0;
 		}
@@ -1213,6 +1262,7 @@ body {
 			position: relative;
 							// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
 			.border-radiuses (5px, 0, 0, 5px);
+			.transition(200ms);
 
 			a {
 				display: block;
@@ -1300,6 +1350,7 @@ body {
 				background: -ms-linear-gradient(top,  #f6f6f6 0%,#ffffff 100%);
 				background: linear-gradient(to bottom,  #f6f6f6 0%,#ffffff 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 );
+			 
 			}
 			&-selected:hover,
 			&-selected {
@@ -1623,9 +1674,10 @@ body {
 		width: 100%;
 		position: relative;
 		margin-bottom: 1.5em;
-				 // @blur, @spread, @r, @g, @b, @opacity
-		.box-shadow-inner(30px, 5px, 50, 50, 50, 0.28);
 
+		// (@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) {
+		.box-shadow-inner(0, 0, 30px, 5px, 50, 50, 50, 0.28);
+ 
 		&:hover .portfolioBox-options {
 			display: block; 
 		}
@@ -1639,7 +1691,6 @@ body {
 			background: @lightGray;
 			background-size:cover; 
 			position: relative;
-
 
 			@media all and (max-width: @tablet) {
 				background-position: 50% 0%;

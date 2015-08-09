@@ -12,10 +12,11 @@
 						p(style='display:none') #{menu.name}
 						h3 #{menu.name}
 
-	.services-fixedbuypannel
-		a(href='#', style="width:33%; display:inline-block;").commun-button Empezar
-		a(href='#', style="width:33%; display:inline-block;").commun-button Empezar
-		a(href='#', style="width:33%; display:inline-block;").commun-button Empezar 
+	div(style='display:none;')
+		.services-fixedbuypannel
+			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack economy!
+			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack business!
+			a(href='#', style="width:33%; display:inline-block;").commun-button ¡Quiero el pack First class! 
 
 	// Content of the products
 
@@ -34,8 +35,6 @@
 						.productBox-image(style='background-image:url("#{product.image}");')
 						h2.productBox-title #{product.title}
 						h3.productBox-subtitle #{product.subtitle}
-						p
-							a(href='#{product.url}').productBox-button.productBox-button-companies #{services.button}
 
 						p #{services.includes}
 
@@ -44,6 +43,8 @@
 								li
 									span.icon-angle-right
 									!{feature}
+						p
+							a(href='#{product.url}').productBox-button.productBox-button-companies #{services.button}
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
