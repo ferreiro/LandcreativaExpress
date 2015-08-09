@@ -237,15 +237,6 @@
                             "url" : "/quiero/marketing",
                             "features" : [
                             ]
-                        },
-                        "domains" : {
-                            "title" : "Dominios hosting",
-                            "subtitle" : "Para los más exigentes",
-                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
-                            "image" : "/images/service_analiticas.png",
-                            "url" : "/quiero/premium",
-                            "features" : [
-                            ]
                         }
                     }
     			}

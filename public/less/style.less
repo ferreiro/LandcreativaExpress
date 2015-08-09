@@ -1250,16 +1250,25 @@ body {
 		width: 998px;
 		z-index: 10;
 		display: none; 
-		border-top:1px solid rgba(0, 0, 0, 0.1);
+		border-top:1px solid rgba(0, 0, 0, 0.1); 
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
  
-		&.stuck {
-			position: fixed;
-			bottom: 0;
-		}
-		&.endpin {
-			position: absolute;
-			bottom: 0;
-		}
+ 		@media all and (min-width: @desktop) { 
+ 			&.stuck {
+ 				position: fixed;
+ 				bottom: 0;
+				display: block;
+ 			}
+ 			&.endpin {
+ 				position: absolute;
+ 				bottom: 0;
+				display: block;
+ 			}
+ 		}
+		
 		&-buy {
 			width: 33.333%;
 			display: inline-block;

@@ -1275,14 +1275,22 @@ body-overflow {
   z-index: 10;
   display: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-.services-buypannel.stuck {
-  position: fixed;
-  bottom: 0;
-}
-.services-buypannel.endpin {
-  position: absolute;
-  bottom: 0;
+@media all and (min-width: 1000px) {
+  .services-buypannel.stuck {
+    position: fixed;
+    bottom: 0;
+    display: block;
+  }
+  .services-buypannel.endpin {
+    position: absolute;
+    bottom: 0;
+    display: block;
+  }
 }
 .services-buypannel-buy {
   width: 33.333%;

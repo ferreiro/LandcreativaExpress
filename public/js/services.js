@@ -1,80 +1,81 @@
 // Stuck my element
 
+if($(window).width() >= 1000) { 
+	$(window).scroll(function(){
+		var boxes = $('.services-content-box');
+		var currentBox, currentFixedPannel;
+		var e = $(this); // window
+		// console.log(window.scrollY);
 
-$(window).scroll(function(){
-	var boxes = $('.services-content-box');
-	var currentBox, currentFixedPannel;
-	var e = $(this); // window
-	// console.log(window.scrollY);
-
-	// Get the current box that is being shown
-	for (i = 0; i < boxes.length; i++) {
-		element = $('.services-content-box:eq('+ i +')');
-		if (element.hasClass('services-content-box-showbox')) {
-			currentBox = element;
+		// Get the current box that is being shown
+		for (i = 0; i < boxes.length; i++) {
+			element = $('.services-content-box:eq('+ i +')');
+			if (element.hasClass('services-content-box-showbox')) {
+				currentBox = element;
+			}
 		}
-	}
 
-	// Saber si el currentbox ha tocado la cabecera de la web.
+		// Saber si el currentbox ha tocado la cabecera de la web.
 
-	var elementOffsetTop = currentBox.offset().top;
-	var header = 80;
-	var pannel = currentBox.find('.services-buypannel');
-	pannel.removeClass('endpin');
+		var elementOffsetTop = currentBox.find('.productBox-subtitle').offset().top;
+		var header = 80;
+		var pannel = currentBox.find('.services-buypannel');
+		pannel.removeClass('endpin');
 
-	if ($(window).scrollTop() >= elementOffsetTop - header) {
-		// The current box has reached screen top
-		var insideTotalScroll = (currentBox.height() + currentBox.offset().top + pannel.height()) - $(window).scrollTop() - $(window).height();
+		if ($(window).scrollTop() >= elementOffsetTop - header) {
+			// The current box has reached screen top
+			var insideTotalScroll = (currentBox.height() + currentBox.offset().top + pannel.height() - 10) - $(window).scrollTop() - $(window).height();
 
-		pannel.fadeIn(100);
-		pannel.addClass('stuck');
-
-		if (insideTotalScroll > 0) {
-			// Fijar el panel
+			pannel.fadeIn(200, "easeOutBounce");
 			pannel.addClass('stuck');
-		}
-		else {
-			// Poner el panel como absolute
-			pannel.removeClass('stuck');
-			pannel.addClass('endpin');
-		}
-	} 
 
-});
+			if (insideTotalScroll > 0) {
+				// Fijar el panel
+				pannel.addClass('stuck');
+			}
+			else {
+				// Poner el panel como absolute
+				pannel.removeClass('stuck');
+				pannel.addClass('endpin');
+			}
+		} 
+
+	});
 
 
+	// //----------------------------
+	// //-- SERVICIOS
+	// //----------------------------
+	// // Esto tiene que estar al final del todo...
+
+	// var elementPosition = $('.productBox-button').offset();
+
+	// $(window).scroll(function(){
+	// 	total = elementPosition.top - $(window).scrollTop();
+		
+	// 	// console.log('Button top ' + elementPosition.top);
+	// 	// console.log('Scroll top ' + $(window).scrollTop());
+	// 	// console.log(total);
+
+	//     if(total <= 0){
+	//     	// Display element
+
+	//     	$('.services-buypannel').fadeIn({
+	//     		duration: 0,
+	//     		easing: 'easeInOutCirc'
+	//     	});
+	//     	console.log("entra"); 
+
+	//     } else {
+	//     	$('.services-buypannel').hide(0);
+	//     	console.log("sal"); 
+	//     }    
+	//     $('.services-buypannel').show(0);
+	// });
+
+}
 
 
-
-// //----------------------------
-// //-- SERVICIOS
-// //----------------------------
-// // Esto tiene que estar al final del todo...
-
-// var elementPosition = $('.productBox-button').offset();
-
-// $(window).scroll(function(){
-// 	total = elementPosition.top - $(window).scrollTop();
-	
-// 	// console.log('Button top ' + elementPosition.top);
-// 	// console.log('Scroll top ' + $(window).scrollTop());
-// 	// console.log(total);
-
-//     if(total <= 0){
-//     	// Display element
-
-//     	$('.services-buypannel').fadeIn({
-//     		duration: 0,
-//     		easing: 'easeInOutCirc'
-//     	});
-//     	console.log("entra"); 
-
-//     } else {
-//     	$('.services-buypannel').hide(0);
-//     	console.log("sal"); 
-//     }    
-//     $('.services-buypannel').show(0);
-// });
 
 
 //----------------------------
