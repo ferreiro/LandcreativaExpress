@@ -1595,6 +1595,7 @@ body-overflow {
 }
 .services .productBox-subtitle {
   width: 100%;
+  height: 32px;
   margin-bottom: 1em;
   font-size: 14px;
   line-height: 16px;
@@ -1604,6 +1605,22 @@ body-overflow {
   font-style: normal;
   margin: 1.2em 0;
   text-align: center;
+  position: relative;
+}
+.services .productBox-subtitle span {
+  top: 50%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+@media (min-width: 1000px) {
+  .services .productBox-buy {
+    display: none;
+  }
 }
 @media all and (min-width: 1000px) {
   .services .productBox-othersdescription {
@@ -1770,13 +1787,19 @@ body-overflow {
   vertical-align: top;
 }
 .portfolioBox-options-title h4 {
-  padding-top: 1.27em;
+  margin-top: 1.27em;
   padding-left: 1.27em;
+  overflow: hidden;
+}
+@media all and (max-width: 600px) {
+  .portfolioBox-options-title h4 {
+    height: 19px;
+  }
 }
 @media all and (min-width: 1000px) {
   .portfolioBox-options-title h4 {
     color: #ffffff;
-    padding: .8em 0;
+    margin: .8em 0;
   }
 }
 @media all and (min-width: 1000px) {

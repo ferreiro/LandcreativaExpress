@@ -20,7 +20,7 @@
     			    "text": [
                         "Landcreativa, es un agencia digital fundada en 2012 por Jorge Ferreiro. Somos especializas en <u>páginas web</u>, <u>diseño gráfico</u> y <u>marketing digital</u>.",
                         "Jorge Ferreiro, actual CEO de Landcreativa, es un joven Ingenierio Informático con más de 8 años de <b>experiencia</b> en desarrollo web. Jorge y su equipo, formado por profesionales altamente cualificados, son una garantía de éxito.",
-                        "En Landcreativa trabajamos bajo <b>3 principios</b>: calidad, agilidad y resultados. Nuestro principal objetivo es conseguir la máxima satisfacción de nuestros clientes, optimizando al máximo los tiempos de ejecución."
+                        "En Landcreativa trabajamos bajo <b>3 principios</b>: calidad, agilidad y resultados. Nuestro principal objetivo es conseguir la máxima satisfacción de nuestros clientes, optimizando los tiempos de ejecución y entrega."
     			    ]
     			},
     			"why": {
@@ -29,7 +29,7 @@
                     "list": [
                         "Tenemos años de <b>experiencia</b> en el sector y sabemos cómo hacer muy bien nuestro trabajo.",
                         "Cumplimos con las fechas de <b>entrega</b> y aseguramos tu máxima satisfacción.",
-                        "Nos <u>adaptamos a tu presupuesto</u>. Tenemos servicios para todo tipo de bolsillo y necesidades. Unicamente tendrás que elegir el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
+                        "Nos <b>adaptamos</b> a tu presupuesto. Tenemos servicios para todo tipo de bolsillo y necesidades. Unicamente tendrás que elegir el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
                     ],
                     "text": [
                         "Creemos firmemente por muchas razones que somos una apuesta de seguro para sus proyecto:",
@@ -42,7 +42,7 @@
     		"services" : {
     			"headline" : "Servicios",
                 "includes" : "Este pack incluye:",
-                "button" : "¡Quiero este pack!",
+                "button" : "¡Quiero",
                 "otherServicesButton" : "¡Quiero este servicio!",
                 "menu" : {
                     "0": {
@@ -71,13 +71,12 @@
                             "url" : "/quiero/economy",
                             "features" : [
                                 "Página <b>web</b> en wordpress.",
+                                "Configuración de hasta <strong>5 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
+                                "Elige tu diseño entre <strong>9 plantillas</strong> creadas exclusivamente por Landcreativa.",
+                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
                                 "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
                                 "Responsive: <b>adaptada</b> a dispositivos móviles.",
-                                "Configuración de hasta <strong>5 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
-                                "<b>Blog corporativo:</b> para compartir tus noticias, actividades, información.",
-                                "Elige tu diseño entre <strong>12 plantillas</strong> creadas exclusivamente por Landcreativa.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
-                                "Alta en buscadores.",
                                 "Formulario de Contacto de 4 campos (nombre, mail, telefono y mensaje)."
                             ]
                         },
@@ -89,17 +88,15 @@
                             "url" : "/quiero/economy",
                             "features" : [
                                 "Página <b>web</b> en wordpress.",
+                                "Configuración de hasta <strong>7 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
+                                "Elige tu diseño entre <strong>15 plantillas</strong> creadas exclusivamente por Landcreativa.",
+                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
                                 "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
                                 "Responsive: <b>adaptada</b> a dispositivos móviles.",
-                                "Configuración de hasta <strong>8 páginas</strong> (Inicio,Contacto,Blog+5) y barras laterales.",
-                                "<b>Blog corporativo:</b> para compartir tus noticias, actividades, información.",
-                                "Elige tu diseño entre <strong>24 plantillas</strong> creadas exclusivamente por Landcreativa.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
-                                "Formulario de Contacto de campos <b>ilimitados</b> (nombre, mail, mensaje, etc).",
+                                "Formulario de Contacto de hasta <strong>8 campos</strong> (nombre, mail, telefono y mensaje).",
                                 "Incluye <b>1 cambio</b> en el diseño de plantilla (cabecera, pie de página y barra lateral).",
-                                "Instalación <b>Formulario de Suscripción</b> y creación cuenta Mailchimp",
-                                "Posicionamiento en buscadores con técnicas SEO.",
-                                "Tutorial para gestionar el contenido de tu web."
+                                "Tutorial para gestionar el contenido de tu web." 
                             ]
                         },
                         "firstClass" : {
@@ -109,18 +106,15 @@
                             "image" : "/images/service_firstclass.png",
                             "url" : "/quiero/economy",
                             "features" : [
-                                "Página <b>web</b> en wordpress.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
+                                "<u><strong>Diseño exclusivo</strong></u> de tu página web.",
                                 "<b>Responsive</b>: adaptada a dispositivos móviles.",
-                                "Configuración de hasta <strong>16 páginas</strong> (Inicio,Contacto,Blog corporativo+5) y barras laterales.",
-                                "<b>Blog corporativo:</b> para compartir tus noticias, actividades, información.",
-                                "Creamos un <u><strong>Diseño exclusivo</strong></u> para tu página web.",
+                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
+                                "Configuración de hasta <strong>9 páginas</strong> (Inicio,Contacto,Blog+5) y barras laterales.",
+                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
                                 "Formulario de Contacto de campos <b>ilimitados</b> (nombre, mail, mensaje, etc).",
                                 "Incluye <b>2 revisiones</b> en la propuesta de diseño que te presentemos.",
                                 "Tutorial para gestionar el contenido de tu web.",
-                                "Tutorial para gestionar el contenido de tu web.",
-                                "Posicionamiento en buscadores con técnicas SEO.",
                                 "Instalación <b>Formulario de Suscripción</b> y creación cuenta Mailchimp",
                                 "Botón de venta <b>PayPal</b>",
                                 "Alta y configuración de Google Analytics: estadísticas de las visitas que recibes"
@@ -190,8 +184,8 @@
                     "others" : {
                         "marketing" : {
                             "title" : "Marketing digital",
-                            "subtitle" : "Para los más exigentes",
-                            "description" : "Diseñamos estrategias eficientes para mejorar tus objetivos de comunicación, ventas, captación de clientes... Nuestros servicios de marketing son flexibles, diseñados y dimensionados a sus necesidades; desde pequeñas campañas puntuales a grandes campañas de marketing a largo plazo.",
+                            "subtitle" : "Posiciona tu marca personal o empresa en internet",
+                            "description" : "Diseñamos estrategias eficientes para mejorar tus objetivos de ventas, comunicación o captación de clientes. Nuestros servicios son flexibles y dimensionados a sus necesidades; desde pequeñas campañas puntuales a grandes campañas a largo plazo.",
                             "image" : "/images/service_seo.png",
                             "url" : "/quiero/SEO",
                             "features" : [
@@ -200,7 +194,7 @@
                         "mobile" : {
                             "title" : "Diseño móvil",
                             "subtitle" : "Adaptamos tu página web a dispotivos moviles",
-                            "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
+                            "description" : "Si tienes una página web, pero no se adapta a dispositivos móviles y tabletas, estás perdiendo clientes. En Landcreativa, adaptaremos tu diseño para que se vea en cualquier dispotivo electrónico y que tus usuarios tengan la mejor experiencia posible.",
                             "image" : "/images/service_analiticas.png",
                             "url" : "/quiero/premium",
                             "features" : [
@@ -209,8 +203,8 @@
                         },
                         "paypal" : {
                             "title" : "Pagos paypal",
-                            "subtitle" : "Para los más exigentes",
-                            "description" : "Diseñamos estrategias eficientes para mejorar tus objetivos de comunicación, ventas, captación de clientes... Nuestros servicios de marketing son flexibles, diseñados y dimensionados a sus necesidades; desde pequeñas campañas puntuales a grandes campañas de marketing a largo plazo.",
+                            "subtitle" : "Recibe pagos a través de paypal en tu página web ",
+                            "description" : "Añadimos a tu web la funcionalidad de recibir pagos a tu cuenta paypal en tu propia web. Es perfecta si quieres vender tus servicios en tu página web o cualquier producto. Este es un servicio adicional al Diseño web para particulares y empresas.",
                             "image" : "/images/service_seo.png",
                             "url" : "/quiero/SEO",
                             "features" : [
@@ -219,7 +213,7 @@
                         "newsletter" : {
                             "title" : "Newsletter",
                             "subtitle" : "Para los más exigentes",
-                            "description" : "Instalación <b>Formulario de Suscripción</b> y creación cuenta Mailchimp",
+                            "description" : "Envía novedades y noticias a tus clientes y seguidores de una manera cómoda y rápida. Crearemos una cuenta en mailchimp, incluiremos un formulario de alta en tu página web o blog y configuraremos la cuenta para que puedas crear campañas.",
                             "image" : "/images/service_seo.png",
                             "url" : "/quiero/SEO",
                             "features" : [
@@ -235,8 +229,8 @@
 
                             ]
                         },
-                        "analitics" : {
-                            "title" : "Analítica web",
+                        "banners" : {
+                            "title" : "Diseño de banners",
                             "subtitle" : "Para los más exigentes",
                             "description" : "We build beautiful, modern websites that meet the goals of our clients and the needs of their customers. All of our sites are mobile and tablet friendly.",
                             "image" : "/images/service_marketing.png",
