@@ -1287,12 +1287,12 @@ body-overflow {
   }
   .about-left,
   .about-right {
-    width: 48.5%;
+    width: 48%;
     display: inline-block;
     vertical-align: middle;
   }
   .about-left {
-    margin-right: 2.5%;
+    margin-right: 3%;
   }
   .about-link {
     margin-top: 5em;
