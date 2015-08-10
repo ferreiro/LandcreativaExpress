@@ -1385,11 +1385,6 @@ body-overflow {
 			}*/
 
 }
-@media all and (min-width: 0) {
-  .services-tab-item {
-    width: 33.56%;
-  }
-}
 .services-tab-item a {
   display: block;
   text-align: center;
@@ -1438,6 +1433,12 @@ body-overflow {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  position: relative;
+}
+@media all and (min-width: 0) {
+  .services-tab-item div {
+    height: 40px;
+  }
 }
 .services-tab-item div p {
   line-height: 10px;
@@ -1461,7 +1462,10 @@ body-overflow {
 @media (max-width: 600px) {
   .services-tab-item div h3 {
     margin: 0 0em;
-    height: 38px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
   }
 }
 @media (min-width: 1000px) {

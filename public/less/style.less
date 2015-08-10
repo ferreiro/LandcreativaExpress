@@ -501,10 +501,6 @@ body {
 			.border-radiuses (5px, 0, 0, 5px);
 			.transition(200ms);
 
-			@media all and (min-width:@mobile) {
-				width: 33.56%;
-			}
-
 			a {
 				display: block;
     			text-align: center;
@@ -544,6 +540,11 @@ body {
 				display: inline-block;
 				vertical-align: middle;
 				text-align: center;
+				position: relative;
+
+				@media all and (min-width:@mobile) {
+					height:40px;
+				}
 
 				p {
 					line-height: 10px;
@@ -562,10 +563,9 @@ body {
 					display: block;
 					margin: 0 1em;
 
-
 					@media(max-width: @tablet) { 
 						margin: 0 0em;
-						height: 38px;
+						.translate(-50%, -50%);
 					} 
 					@media(min-width: @desktop) { 
 						font-size: 1.3em;
