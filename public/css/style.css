@@ -300,6 +300,9 @@ body-overflow {
   border: 0;
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */
+
 }
 @media all and (min-width: 1000px) {
   .header-mobilemenu-button {
@@ -1385,6 +1388,10 @@ body-overflow {
   display: block;
   text-align: center;
   padding: 0.75em 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */
+
 }
 @media all and (min-width: 1000px) {
   .services-tab-item a {

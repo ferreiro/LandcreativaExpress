@@ -95,6 +95,11 @@
 	-webkit-background-clip: padding-box; 
 	background-clip:         padding-box; 
 }
+
+.transparentLink() {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
 //------------------------------------
 // Fonts
 //------------------------------------
@@ -499,6 +504,7 @@ body {
 				display: block;
     			text-align: center;
 				padding: @productMargin/2 0;
+				.transparentLink(); // For mobile phones
 				@media all and (min-width: @desktop) {
     				padding: @productMargin/2 @productMargin;
 				}
