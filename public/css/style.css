@@ -1311,7 +1311,7 @@ body-overflow {
   }
 }
 .services-buypannel-buy {
-  width: 33.333%;
+  width: 33.333333333%;
   display: inline-block;
   margin-right: -4px;
   padding: 1em 0;
@@ -1343,7 +1343,8 @@ body-overflow {
   border-bottom: 0;
 }
 .services-tab-item {
-  width: 33.333%;
+  width: 33.55%;
+  width: 33.333333333%;
   margin-right: -4px;
   display: inline-block;
   position: relative;
@@ -1383,6 +1384,11 @@ body-overflow {
 				margin-top: 1px;
 			}*/
 
+}
+@media all and (min-width: 0) {
+  .services-tab-item {
+    width: 33.56%;
+  }
 }
 .services-tab-item a {
   display: block;
@@ -1582,7 +1588,7 @@ body-overflow {
   background: red !important;
 }
 .services .product {
-  width: 33.33%;
+  width: 33.333333333%;
   display: inline-block;
   padding-bottom: 1em;
   margin-right: -4px;

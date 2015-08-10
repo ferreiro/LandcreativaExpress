@@ -456,7 +456,7 @@ body {
  		}
 		
 		&-buy {
-			width: 33.333%;
+			width: 33.333333333%;
 			display: inline-block;
 			margin-right: -4px; 
 			padding: 1em 0;
@@ -491,7 +491,8 @@ body {
 		// border:1px solid @lightGrayBorder; 
 
 		&-item {
-			width: 33.333%;
+			width: 33.55%;
+			width: 33.333333333%;
 			margin-right: -4px;
 			// background: #f3f3f3;
 			display: inline-block; 
@@ -499,6 +500,10 @@ body {
 							// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
 			.border-radiuses (5px, 0, 0, 5px);
 			.transition(200ms);
+
+			@media all and (min-width:@mobile) {
+				width: 33.56%;
+			}
 
 			a {
 				display: block;
@@ -713,7 +718,7 @@ body {
 	}
 
 	.product {
-		width:33.33%;
+		width: 33.333333333%;
 		display:inline-block;
 		padding-bottom: 1em;
 		margin-right: -4px; 
