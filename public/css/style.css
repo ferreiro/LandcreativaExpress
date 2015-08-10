@@ -227,7 +227,7 @@ body-overflow {
 }
 @media all and (min-width: 0) {
   .header-int {
-    margin: auto 1em;
+    margin: auto 1.5em;
   }
 }
 @media all and (min-width: 600px) {
@@ -259,7 +259,7 @@ body-overflow {
   margin-top: -0.7px;
   display: inline-block;
   background: #3695ed;
-  background: url(../images/iso.png) 50% 50% no-repeat;
+  background: url(././../images/iso.png) 50% 50% no-repeat;
   background-size: auto 100%;
   margin-right: 0;
   float: left;
@@ -284,7 +284,7 @@ body-overflow {
   right: 0;
   border: 0;
   position: absolute;
-  margin-right: -1em;
+  margin-right: -1.5em;
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
   .header-mobilemenu {
@@ -354,7 +354,7 @@ body-overflow {
 .header-mobilemenu-dropdown-link a {
   font-size: 1.3em;
   display: block;
-  padding: .8em 1.5em;
+  padding: .8em 1.3em;
   color: #222222;
   border-top: 1px solid #dfdfdf;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -481,8 +481,7 @@ body-overflow {
 }
 .section .content {
   margin-top: 80px;
-  padding: 2.5em 1em;
-  padding-bottom: 1.5em;
+  padding: 2.5em 1.5em;
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
   .section .content {
@@ -496,6 +495,7 @@ body-overflow {
     margin: 0 auto;
     margin-top: 80px;
     padding: 3em 0;
+    padding-bottom: 5em;
   }
 }
 .commun-guide {
@@ -576,7 +576,7 @@ body-overflow {
 .footer {
   width: 100%;
   display: inline-block;
-  margin-top: 2em;
+  margin-top: 0;
 }
 .footer-top {
   background: #f4f4f4;
@@ -589,7 +589,7 @@ body-overflow {
   }
 }
 .footer-bottom {
-  padding: 1em 0;
+  padding: 1.5em 0;
   background: #efefef;
   background: #F3F3F3;
   border-top: 2px solid #ededed;
@@ -624,7 +624,7 @@ body-overflow {
 }
 @media all and (max-width: 600px) {
   .footer-content {
-    padding: 0 2em;
+    padding: 0 1.5em;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
@@ -774,7 +774,6 @@ body-overflow {
   width: 100%;
   height: 300px;
   margin-top: 70px;
-  margin-bottom: -2em;
   background: #f4f4f4;
   position: relative;
 }
@@ -863,6 +862,11 @@ body-overflow {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+@media all and (max-width: 600px) {
+  .slider ul.slider-navigation {
+    display: none;
+  }
+}
 .slider ul.slider-navigation li {
   width: 60px;
   background: transparent;
@@ -902,19 +906,30 @@ body-overflow {
   transform: translate(-50%, -50%);
 }
 .slider ul.slider-navigation li a:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
 }
 .slider ul.slider-navigation .slider-navigation-left {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.1+0,0+100 */
+
   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#1a000000', endColorstr='#00000000', GradientType=1);
   left: 0;
 }
 .slider ul.slider-navigation .slider-navigation-right {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.1+100 */
+
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=1);
   right: 0;
 }
 .slider ul.slider-slides {
@@ -953,8 +968,8 @@ body-overflow {
   z-index: 1 !important;
 }
 .slider ul.slider-slides .slider-slides-singleSlide-content {
-  left: 60px;
-  right: 60px;
+  left: 2em;
+  right: 2em;
   bottom: 2em;
   z-index: 3;
   position: absolute;
@@ -970,7 +985,7 @@ body-overflow {
   height: 70px;
   margin: 0 auto;
   background: #3695ed;
-  background: url(../images/iso.png) 50% 50% no-repeat;
+  background: url(././../images/iso.png) 50% 50% no-repeat;
   background-size: auto 100%;
 }
 @media all and (max-width: 600px) {

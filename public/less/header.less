@@ -1,0 +1,272 @@
+
+.header {
+	width: 100%;
+	height: 80px;
+	transition:0.3s;
+	position: fixed; 
+	background: #ffffff;
+	z-index: 100;
+	top: 0;
+	-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow:    0 1px 5px 0 rgba(0, 0, 0, 0.08);
+	box-shadow:         0 1px 5px 0 rgba(0, 0, 0, 0.08);
+ 
+	&-int {
+		height: 100%;	
+		position: relative;
+
+		@media all and (min-width:@mobile) { 
+			margin:auto @marginmobile; 
+		}
+		@media all and (min-width:@tablet) { 
+			margin:auto @margintablet; 
+		}
+		@media all and (min-width:@desktop) {
+			width: @desktop; 
+			margin: 0 auto; 
+		} 
+	}
+
+	&-logo {
+		top: 50%;
+	    .translate (0%, -50%);
+		position: absolute;
+		//margin-top: -11.5px;  /* Mide 23px */
+	    left: 1.5em; 
+	    left: 0;
+	    vertical-align: middle;
+	    margin-top: 1px;	// Ajustando pixeles imperfectos
+
+	    &-iso {
+	    	width: 19px;
+	    	height: 19px;
+	    	margin-top: -0.7px;
+	    	display: inline-block;
+	    	background: #3695ed;
+	    	background: url(../images/iso.png) 50% 50% no-repeat;
+	    	background-size: auto 100%; 
+	    	margin-right: 0;	   
+	    	float: left;
+	    }
+	    &-text {
+	    	display: inline-block;
+	    	float: left;
+	    	h1 {
+	    		margin: 0 10px; 
+	    		color: #3695ed;
+	    		font-size: 22px;
+	    		line-height: 22px;
+	    		margin-top: -2px; 
+	    		span {
+	    			font-size: 0.7em;  
+	    			display: none;
+	    		}
+	    	}
+	    }
+	}
+	&-mobilemenu {
+
+		top: 0;
+		right: 0;
+		border: 0;
+		position: absolute;
+		margin-right: -@marginmobile; 
+
+		@media all and (min-width:@tablet) and (max-width:@desktop) { 
+			margin-right: -@margintablet; 
+		}
+
+		&-button { 
+			width: @headerHeight; 
+			height: @headerHeight;  
+			outline: 0;
+			top: 0;
+			right: 0;
+			border: 0;
+			background: transparent; 			
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+			@media all and (min-width:@desktop) { 
+				display: none !important;
+				// (@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) 
+				.box-shadow(0, 0, 5px, 3px, 0, 0, 0, 0.1);
+			}
+
+			&.selected {
+				background: @lightGray;
+				&:before {
+					position: absolute;
+					top: 100%;
+					left: 1px;
+					right: 1px;
+					width: 100%;
+					height: 12px;
+					margin-top: -10px;
+					background: @lightGray;  
+					content: '';
+					z-index: 1;
+				}
+			}
+			span:before {
+				font-size: 1.5em;
+				color: @textBlack;
+				margin-top: 5px;
+				display: block; 
+			}
+		}
+		// <ul> Menu dropdown
+		&-dropdown  {
+			width: 220px;
+			min-height: 380px;
+			max-height: 100%;
+			padding: 0; 
+			padding: 0;
+			top: 100%;
+			right: 0;
+			position: absolute;
+			display: none;
+			text-align: right;
+			background: @lightGray; 
+			// border: 1px solid @lightGrayBorder;
+			border-top:0;
+			border-right: 0;
+
+			// (@horizontal, @vertical, @blur, @spread, @r, @g, @b, @opacity) 
+			.box-shadow(0, 0, 5px, 3px, 0, 0, 0, 0.1);
+
+			// <li> Menu
+			&-link {
+				&.selected {
+					background: rgba(255, 255, 255, 0.3);
+				}
+				a {
+					font-size: 1.3em;
+					display: block;
+					padding: .8em 1.3em;
+					color: @textBlack;
+					border-top: 1px solid @lightGrayBorder;
+					-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				}
+			}
+
+			&-socialnetworks {
+				background:lighten(@textBlue, 50%);
+				border-top:1px solid #ffffff;
+				&:nth-last-child(1) {
+					border:0; 
+				} 
+			}
+		}
+	}
+
+	&-desktopmenu {
+		width: 630px;
+		height: 100%; 
+		padding: 0;
+		display: none;
+		margin: 0 auto;
+		text-align: center;
+		border-right: 1px solid #f4f4f4;
+		border-left: 1px solid #f4f4f4;
+ 
+		@media all and (min-width:@desktop) {
+			display: block;
+		} 
+		// When someone enters on the nav.
+		// Dicrease menu li color instensity 
+		&:hover {
+			a {
+				color: rgba(34, 34, 34, 0.498039); // Poner el resto a un gris apagado.
+				&:hover {
+					color: rgba(34, 34, 34, 0.9); // iluminar el link pulsado
+				}
+			}
+		}
+
+		&-link {    
+			display: inline-block;
+			margin-right: -4px; 
+			position: relative;
+			top: 50%;
+	    	.translate (0%, -50%); 
+	    	margin-top: 1px;
+
+			a {
+				padding: 15px 13px;  
+				display: block;
+				text-align: center;
+				font-size: 1em;
+				letter-spacing: 1.4px;
+				text-transform: uppercase;
+				color: #676767; 
+				font-weight: 300;
+				text-transform: uppercase; 
+				line-height: 1.2em;
+				font-style: normal; 
+				color: #222;
+				position: relative;
+
+				&:after {
+					width: 40px;
+					height: 3px;
+					background: #ffffff;
+					content: '';
+					position: absolute;
+					left: 50%;
+	    			.translate (-50%, 0%);	// Centered horizontally
+	    			.transition(0.5s);
+					bottom: 0;
+ 				}
+			}
+
+			&.selected {
+				/* background: #f9f9f9; */ 
+				a:after { 
+					background: #cecece; 
+ 				}
+				a {
+
+				}
+			}
+		}
+	}
+	// Social networks
+	&-networks {
+		top: 50%;
+		width: 162px; 
+	    .translate (0%, -50%);
+		position: absolute;
+		right: 0;
+
+		@media all and (max-width:@desktop) {
+			display: none;
+		} 
+
+		ul { 
+			li {
+				display: inline-block;
+				margin-left: 2px;
+				&:first-child {
+					margin-left:0 !important;
+				}
+				a {
+					width: 35px;
+					height: 30px; 
+					display: block;
+					font-size: 1.2em;
+				    color: #676767;
+				    border-radius: 100%;
+				    text-align: center;
+				    padding-top: 10px;
+				    &:hover {
+				    	background: #f4f4f4;
+				    }
+				    &:before {
+				    	font-size: 1em;
+				    }
+				}
+			}
+		}
+	}
+
+}
