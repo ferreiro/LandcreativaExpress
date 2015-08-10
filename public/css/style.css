@@ -980,6 +980,31 @@ body-overflow {
   z-index: 3;
   position: absolute;
 }
+@media all and (min-width: 600px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content {
+    bottom: 50%;
+    left: 50%;
+    right: inherit;
+    text-align: center;
+    -webkit-transform: translate(-50%, 50%);
+    -moz-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    -o-transform: translate(-50%, 50%);
+  }
+}
+@media all and (min-width: 800px) and (max-width: 1000px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content {
+    width: 700px;
+    height: 200px;
+  }
+}
+@media all and (min-width: 1000px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content {
+    width: 700px;
+    height: auto;
+    padding-top: 80px;
+  }
+}
 .slider ul.slider-slides .slider-slides-singleSlide-content-minilogo {
   width: 100%;
   height: 70px;
@@ -1004,11 +1029,25 @@ body-overflow {
   line-height: 1em;
   font-weight: 400;
 }
+@media all and (min-width: 1000px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content-title {
+    font-weight: 300;
+    font-size: 3em;
+  }
+}
 .slider ul.slider-slides .slider-slides-singleSlide-content-text {
   font-size: 1em;
   margin-top: 1em;
   font-weight: 300;
   letter-spacing: 1px;
+}
+@media all and (min-width: 1000px) {
+  .slider ul.slider-slides .slider-slides-singleSlide-content-text {
+    width: 430px;
+    font-size: 1.4em;
+    margin: 0 auto;
+    margin-top: 0.8em;
+  }
 }
 .slider ul.slider-slides .slider-slides-singleSlide-content-link {
   background: #3695ed;
@@ -1020,56 +1059,23 @@ body-overflow {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border-bottom: 3px solid transparent;
-}
-.slider ul.slider-slides .slider-slides-singleSlide-content-link:hover {
-  border-bottom: 5px solid #226aad;
-}
-@media all and (min-width: 600px) {
-  .slider ul.slider-slides .slider-slides-singleSlide-content {
-    top: 50%;
-    left: 50%;
-    right: inherit;
-    bottom: inherit;
-    text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-  }
-}
-@media all and (min-width: 800px) {
-  .slider ul.slider-slides .slider-slides-singleSlide-content {
-    width: 700px;
-    height: 200px;
-  }
 }
 @media all and (min-width: 1000px) {
-  .slider ul.slider-slides .slider-slides-singleSlide-content {
-    width: 700px;
-    height: auto;
-    padding-top: 80px;
-  }
-  .slider ul.slider-slides .slider-slides-singleSlide-content-title {
-    font-weight: 300;
-    font-size: 3em;
-  }
-  .slider ul.slider-slides .slider-slides-singleSlide-content-text {
-    width: 430px;
-    font-size: 1.4em;
-    margin: 0 auto;
-    margin-top: 0.8em;
-  }
   .slider ul.slider-slides .slider-slides-singleSlide-content-link {
-    margin-top: 3em;
-    padding: 1em 1.5em;
+    margin-top: 2em;
+    padding: 0.9em 1.5em;
     font-size: 1.3em;
   }
 }
+.slider ul.slider-slides .slider-slides-singleSlide-content-link:hover {
+  background: #449cee;
+}
 .slider ul.slider-slides .slider-slides-singleSlide-content .blackContent .slider-slides-singleSlide-content-title,
-.slider ul.slider-slides .slider-slides-singleSlide-content .blackContent .slider-slides-singleSlide-content-text,
-.slider ul.slider-slides .slider-slides-singleSlide-content .blackContent .slider-slides-singleSlide-content-link {
+.slider ul.slider-slides .slider-slides-singleSlide-content .blackContent .slider-slides-singleSlide-content-text {
   color: #000;
+}
+.slider ul.slider-slides .slider-slides-singleSlide-content .blackContent .slider-slides-singleSlide-content-link {
+  color: #ffffff;
 }
 .slider ul.slider-slides .slider-slides-singleSlide-content .whiteContent .slider-slides-singleSlide-content-title,
 .slider ul.slider-slides .slider-slides-singleSlide-content .whiteContent .slider-slides-singleSlide-content-text,
@@ -1092,7 +1098,7 @@ body-overflow {
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
 }
 .slider ul.slider-slides .slider-slides-singleSlide-whitemaskIntense {
   position: absolute;

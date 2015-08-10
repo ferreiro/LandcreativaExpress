@@ -27,9 +27,27 @@ block content
 				h1.commun-title 
 					<center> #{title} 
 
-				//- We use this for the budgeting contact form
-				//- Show header for packs 
-				a(href="/servicios", style="text-align:center; color:#222; opacity:0.4; margin-top:-1.5em; margin-bottom:2.5em; width:100%; display:block;") ¿Prefieres otro pack?
+				if (quiero)
+					//- We use this for the budgeting contact form
+					//- Show header for packs 
+					a(href="/servicios", style="text-align:center; color:#222; opacity:0.4; margin-top:-1.5em; margin-bottom:2.5em; width:100%; display:block;") ¿Prefieres otro pack?
+				else
+					div(style='width:100%; display:none; height:200px; background:url(#{promoHeader}); background-size:cover;')
+
+				style.
+					body {
+						background:url(#{promoHeader}); 
+						background-size:cover;
+					}
+					body:before {
+						width:100%;
+						height:100%;
+						content:'';
+						background:rgba(255,255,255,0.5);
+						position:absolute;
+						top:0;
+						left:0; 
+					}
 
 			.contact#form
 				.contact-form
@@ -91,10 +109,9 @@ block content
 								.contact-form-field-element
 
 									//- If we're in contact
-									if contact
+									if (options)
 
 										span.contact-form-field-element-select-icon.icon-angle-down
-
 										select(name="subject", required).contact-form-field-element-select
 
 											for option in contact.form.options

@@ -156,48 +156,45 @@ module.exports = function(app, contentData, nodemailer) {
 	    description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
 	    headerImage = ''; 
 	    contact = false;    // The view use this to show contact or presupuesto 
-
-	    // Particular cases for the URL
-	    // Particulares
-
-	    if (contactType == "gold") {
-	        headerImage = 'goldContact.png';
-	    }
-	    else if (contactType == "silver") {
-	        headerImage = 'silverContact.png';
-	    }
-	    else if (contactType == "premium") {
-	        headerImage = 'premiumContact.png';
-	    } // Empresas
-	    else if (contactType == "economy") {
-	        headerImage = 'economyContact.png';
-	    }
-	    else if (contactType == "business") {
-	        headerImage = 'businessContact.png';
-	    }
-	    else if (contactType == "first-class") {
-	        headerImage = 'first-classContact.png';
-	    } // Marketing
-	    else if (contactType == "analitica") {
-	        headerImage = 'analiticaContact.png';
-	    }
-	    else if (contactType == "seo") {
-	        headerImage = 'seoContact.png';
-	    }
-	    else if (contactType == "marketing") {
-	        headerImage = 'marketingContact.png';
-	    } 
+ 
+	    // if (contactType == "gold") {
+	    //     headerImage = 'goldContact.png';
+	    // }
+	    // else if (contactType == "silver") {
+	    //     headerImage = 'silverContact.png';
+	    // }
+	    // else if (contactType == "premium") {
+	    //     headerImage = 'premiumContact.png';
+	    // } // Empresas
+	    // else if (contactType == "economy") {
+	    //     headerImage = 'economyContact.png';
+	    // }
+	    // else if (contactType == "business") {
+	    //     headerImage = 'businessContact.png';
+	    // }
+	    // else if (contactType == "first-class") {
+	    //     headerImage = 'first-classContact.png';
+	    // } // Marketing
+	    // else if (contactType == "analitica") {
+	    //     headerImage = 'analiticaContact.png';
+	    // }
+	    // else if (contactType == "seo") {
+	    //     headerImage = 'seoContact.png';
+	    // }
+	    // else if (contactType == "marketing") {
+	    //     headerImage = 'marketingContact.png';
+	    // } 
 	    
 	    res.render('contact', { 
 	        menu : 'servicios',
+	        //headerImage: headerImage,
 	        title: title, // Title of the section
-	        description: description,
-	        headerImage: headerImage,
-	        contact: true,   // THe view uses this variable to show the contact "form" or "not"
+	        quiero: true,   // THe view uses this variable to show the contact "form" or "not"
+	        options: false, // Show the options for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
 	    })
 	});
-	  
+
 	//------------------------------
 	//-- CASOS DE ÉXITO
 	//------------------------------
@@ -217,6 +214,23 @@ module.exports = function(app, contentData, nodemailer) {
 	});
 
 	//------------------------------
+	//-- Promociones
+	//------------------------------
+
+	app.get('/promociones/:type', function(req, res) {
+		var promoName = req.params.type;
+
+		res.render('contact', {
+			menu: 'promo',
+			title: 'Promo ' + promoName,
+			displayBanners : false,
+			promoHeader: '/images/summer.jpg',
+	        options: false, // Show the options for the select box
+	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
+		});
+	});
+
+	//------------------------------
 	//-- CONTACT ROUTES
 	//------------------------------
 
@@ -229,9 +243,11 @@ module.exports = function(app, contentData, nodemailer) {
 	        menu : 'contacta',
 	        contact: contact,
 	        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
+	        options: true, // Show the options by default for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
 	    });
 	});
+
 	app.get( english.baseURL+'/contact', function(req,res) {
 	    var contact = true; // The view use this to show contact or presupuesto
 
