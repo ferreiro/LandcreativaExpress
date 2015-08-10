@@ -117,5 +117,6 @@ block content
 							fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
 								input(type="submit", value="#{contact.form.button}").contact-form-field-element-button
 
-// Includes the footer
-include ./footer.jade 
+block extraScripts
+	script(type='text/javascript', src='/js/ajaxContact.js')
+	script(type='text/javascript', src='/js/contactFormTracker.js')

@@ -1,10 +1,11 @@
-var ls = localStorage;
-var keepValueFields = $('.keepInputValue'); // Every element with the tag "keep value field" will be save/load.
-var form = document.getElementsByClassName('contactForm'); // Every element with the tag "keep value field" will be save/load.
-var saveTime = 400;	// Time in miliseconds for saving user text input on session storage
-var sessionStorageName = 'contactForm_';
-var stopTracking = false;
-	
+ 
+	var ls = localStorage;
+	var keepValueFields = $('.keepInputValue'); // Every element with the tag "keep value field" will be save/load.
+	var form = document.getElementsByClassName('contactForm'); // Every element with the tag "keep value field" will be save/load.
+	var saveTime = 400;	// Time in miliseconds for saving user text input on session storage
+	var sessionStorageName = 'contactForm_';
+	var stopTracking = false;
+		
 	loadUserText(); // Calling the function the first time we open the page
 	form.onsubmit = function() { 
 		clearFormData; 
@@ -72,4 +73,4 @@ var stopTracking = false;
  			}
 	 	} 
 	}
-
+ 

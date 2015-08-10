@@ -1,4 +1,4 @@
-
+ 
     // process the form
     $('form.contactForm').submit(function(event) {
     	var formData, validEmail, emptyField;
@@ -120,4 +120,3 @@
 		}
 		return (text.length >= minimunCharacters);
 	} 
-

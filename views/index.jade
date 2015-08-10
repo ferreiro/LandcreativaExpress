@@ -87,3 +87,14 @@ block content
 
 				.slider-slides-singleSlide-wallpaper
 					div(style='background-image:url(/images/desktop3.jpg);')
+
+
+block extraScripts
+	script(type='text/javascript').
+		$('.slider-slides').DDSlider({
+
+			prevSlide: '.slider-navigation-left',
+			nextSlide: '.slider-navigation-right',
+			selector: '.slider-selector'
+
+		});

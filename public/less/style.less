@@ -1037,7 +1037,8 @@ body {
 		}
 		&:hover .portfolioBox-link a {
 			background: rgba(0, 0, 0, 0.5);
-			background: rgba(54, 149, 237, 0.6);
+			background: rgba(54, 149, 237, 0.7);
+			background: rgba(255,255,255, 0.7);
 		}
 		&-link {
 			a {
@@ -1061,11 +1062,11 @@ body {
    				top: 50%;
    				left: 50%;
    				border: 0;
-   				width: 350px;
-   				height: 80px;
+   				max-width: 350px;
+   				height: auto;
    				position: absolute;
    				background: transparent;
-   				margin: -40px 0 0 -175px; 
+   				.translate(-50%, -50%); 
    				display: none;
    			}
 
@@ -1092,8 +1093,10 @@ body {
 	   				}
 	   				@media all and (min-width:@desktop) {
 	   					color: #ffffff;  
-	   					margin: .8em 0;
-   						padding-left: 0; 
+   						color: #222222;
+   						opacity: .8;
+	   					margin: .8em 0; 
+   						padding: 0 1em;
 	   				}
    				}
    				@media all and (min-width:@desktop) {
@@ -1103,8 +1106,8 @@ body {
    					font-size: 1.5em;
    					text-align: center;
    					position: relative;
-   					background: rgba(0, 0, 0, 0.6);
-   					margin-bottom: 1em;
+   					background: rgba(255, 255, 255, 0.9); 
+   					margin-bottom: 0;
    					.border-radius(5px);
    				}
    				
@@ -1123,6 +1126,7 @@ body {
    					position: relative;
    					margin: 0;
    					text-align: center;
+   					display: none;
    				}
    				li {
    					width: 60px;
