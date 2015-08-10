@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(app.router);
 
 // routes ======================================================================
-require('./routes/index.js')(app, contentData); // load our routes and pass in our app and fully configured passport
+require('./routes/index.js')(app, contentData, nodemailer); // load our routes and pass in our app and fully configured passport
 
 
 

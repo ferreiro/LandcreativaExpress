@@ -1,4 +1,4 @@
-module.exports = function(app, contentData) {
+module.exports = function(app, contentData, nodemailer) {
 
 	var english = contentData.english;
 	var spanish = contentData.spanish;
