@@ -75,7 +75,8 @@ script(type='text/javascript', src='/js/animations.js')
 script(type='application/javascript', src='/js/fastclick.js')
 
 script(type='text/javascript').
-	$(function() { FastClick.attach(document.body); });
+	$('#mobileMenuButton').fastclick();
+	$('.services-tab-item a').fastclick();
 
 if (menu == 'servicios' || menu == 'services')
 	script(type='text/javascript', src='/js/services.js')
