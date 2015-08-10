@@ -370,10 +370,12 @@ body {
 		}
 	}
 	&-link {
-		width:300px; 
 		text-align:center; 
 		margin:0 auto; 
 		margin-top:4em;
+		@media all and (min-width: @tablet) {
+			width:300px; 
+		}
 	}
 	@media all and (max-width: @tablet) {
 
