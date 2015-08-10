@@ -274,7 +274,8 @@
                         "type" : "cafe",
                         "icon" : "icon-coffee",
                         "text" : [
-                            "Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono... ¡Estamos encantados de atenderte!"
+                            "Si tienes cualquier duda, ponte en contacto con nosotros por mail, teléfono...",
+                            "¡Estamos encantados de atenderte!"
                         ]
                     },
                     "2" : {
@@ -282,8 +283,7 @@
                         "type" : "location",
                         "icon" : "icon-map",
                         "text" : [
-                            "Estamos en Madrid",
-                            "(Contáctanos para otras ciudades y países)",
+                            "Estamos en Madrid. (Contáctanos para otras ciudades y países)",
                             "info@landcreativa.com"
                         ]
                     }

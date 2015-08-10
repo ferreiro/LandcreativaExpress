@@ -2050,7 +2050,6 @@ body-overflow {
   padding: 1em 0;
   margin-top: 1.5em;
   border: 1px solid #dfdfdf;
-  display: inline-block;
   vertical-align: top;
   position: relative;
 }
@@ -2088,7 +2087,6 @@ body-overflow {
   color: rgba(34, 34, 34, 0.5);
 }
 .contact-banner-info {
-  display: inline-block;
   vertical-align: middle;
   margin-left: 125px;
   margin-right: 1em;
@@ -2103,15 +2101,13 @@ body-overflow {
 .contact-banner-info p {
   margin-bottom: 0.2em;
   color: rgba(34, 34, 34, 0.5);
+  text-overflow: ellipsis;
 }
 .contact-banner img {
   width: 100%;
 }
 .contact-location {
   margin-right: 0% !important;
-}
-.contact-location .contact-banner-info {
-  margin-top: 0.3em;
 }
 .contact-form {
   padding: 1em;

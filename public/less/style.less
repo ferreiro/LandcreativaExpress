@@ -1186,7 +1186,7 @@ body {
     	padding: 1em 0;
     	margin-top: 1.5em;
     	border:1px solid @lightGrayBorder; 
-    	display: inline-block;
+    	// display: inline-block;
     	vertical-align: top;
     	position: relative;
 
@@ -1222,8 +1222,7 @@ body {
     		color: @textBlue; 
    			color: rgba(34,34,34,.5);
     	}
-    	&-info {
-    		display: inline-block;
+    	&-info { 
     		vertical-align: middle;
     		// position: absolute;
     		// left: 100px;
@@ -1242,6 +1241,7 @@ body {
     	&-info p {
     		margin-bottom: 0.2em; 
     		color: rgba(34, 34, 34, 0.5);
+    		text-overflow: ellipsis;
     	}
     	img {
     		width: 100%;
@@ -1249,9 +1249,6 @@ body {
     } 
     &-location {
     	margin-right: 0% !important;   
-    	.contact-banner-info {
-    		margin-top: 0.3em;
-    	}
     }
 }
 .contact-form { 
