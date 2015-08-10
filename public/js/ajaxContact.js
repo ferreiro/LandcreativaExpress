@@ -86,6 +86,12 @@
         else {
             // Some of the fields weren't completed correctly.
             
+            $('html, body').stop().animate({
+                'scrollTop': $('#form').offset().top
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+
 	        if(!validName) {
 	        	formName.addClass('contact-form-field-element-wrongfield');
 	        }
