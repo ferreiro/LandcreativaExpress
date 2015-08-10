@@ -72,6 +72,10 @@ script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery
 script(type='text/javascript', src='/js/jquery.easing.1.3.js')
 script(type='text/javascript', src='/js/slider.js')
 script(type='text/javascript', src='/js/animations.js')
+script(type='application/javascript', src='/js/fastclick.js')
+
+script(type='text/javascript').
+	$(function() { FastClick.attach(document.body); });
 
 if (menu == 'servicios' || menu == 'services')
 	script(type='text/javascript', src='/js/services.js')
@@ -89,5 +93,3 @@ if (menu == 'contacta')
 
 		ga('create', 'UA-65884635-1', 'auto');
 		ga('send', 'pageview');
-
-
