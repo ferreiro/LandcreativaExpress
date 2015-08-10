@@ -283,7 +283,8 @@
                         "icon" : "icon-map",
                         "text" : [
                             "Estamos en Madrid",
-                            "(Contáctanos para otras ciudades y países)"
+                            "(Contáctanos para otras ciudades y países)",
+                            "info@landcreativa.com"
                         ]
                     }
                 },
