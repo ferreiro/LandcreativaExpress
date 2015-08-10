@@ -35,13 +35,13 @@
         validPhone   = isValidField(formData.phone, 5); // Spanish phones has minimun 9 characters XXX-XXX-XXX
         validMessage = isValidField(formData.message, 5);
 
-        $('html, body').stop().animate({
-            'scrollTop': $('#form').offset().top
-        }, 900, 'swing', function () {
-            window.location.hash = target;
-        });
-
         if (validName && validMessage && validPhone && validMail) {
+
+            $('html, body').stop().animate({
+                'scrollTop': ($('#form').offset().top - 100)
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
 
         	$('.contact-form-content').fadeOut(200);
         	$('.contact-form-loading').delay(200).fadeIn(300);
@@ -92,6 +92,12 @@
         else {
             // Some of the fields weren't completed correctly.
             
+            $('html, body').stop().animate({
+                'scrollTop': $('#form').offset().top
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+
 	        if(!validName) {
 	        	formName.addClass('contact-form-field-element-wrongfield');
 	        }
