@@ -1447,6 +1447,7 @@ body-overflow {
 }
 @media (max-width: 600px) {
   .services-tab-item div h3 {
+    margin: 0 0em;
     height: 38px;
   }
 }
@@ -1907,7 +1908,7 @@ body-overflow {
 .portfolioBox-options-title {
   top: 0;
   left: 0;
-  right: 120px;
+  right: 0;
   height: 100%;
   position: absolute;
   display: inline-block;
@@ -1954,6 +1955,11 @@ body-overflow {
   right: 0;
   position: absolute;
   display: inline-block;
+}
+@media all and (max-width: 1000px) {
+  .portfolioBox-options-buttons {
+    display: none;
+  }
 }
 @media all and (min-width: 1000px) {
   .portfolioBox-options-buttons {

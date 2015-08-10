@@ -553,6 +553,7 @@ body {
 
 
 					@media(max-width: @tablet) { 
+						margin: 0 0em;
 						height: 38px;
 					} 
 					@media(min-width: @desktop) { 
@@ -1035,7 +1036,7 @@ body {
    			background: @lightGray;
    			border: 1px solid @lightGrayBorder; 
 			.transition(0.3s); 
- 
+
    			@media all and (min-width:@desktop) {
    				top: 50%;
    				left: 50%;
@@ -1051,7 +1052,7 @@ body {
    			&-title {
    				top: 0;
    				left: 0;
-   				right: 120px;
+   				right: 0;
    				height: 100%; 
    				position: absolute;
    				display: inline-block; 
@@ -1092,6 +1093,10 @@ body {
    				right: 0;
    				position: absolute;
    				display: inline-block;
+
+   				@media all and (max-width:@desktop) { 
+   					display: none;
+   				}
    				@media all and (min-width:@desktop) { 
    					width: 100%;
    					left: 0;

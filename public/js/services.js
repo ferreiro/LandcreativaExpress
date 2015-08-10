@@ -17,7 +17,7 @@ if($(window).width() >= 1000) {
 
 		// Saber si el currentbox ha tocado la cabecera de la web.
 
-		var elementOffsetTop = currentBox.find('.productBox-subtitle').offset().top;
+		var elementOffsetTop = currentBox.find('.productBox-title').offset().top;
 		var header = 80;
 		var pannel = currentBox.find('.services-buypannel');
 		pannel.removeClass('endpin');
