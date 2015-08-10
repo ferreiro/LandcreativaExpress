@@ -1435,7 +1435,7 @@ body-overflow {
   text-align: center;
   position: relative;
 }
-@media all and (min-width: 0) {
+@media all and (max-width: 600px) {
   .services-tab-item div {
     height: 40px;
   }
@@ -1458,6 +1458,7 @@ body-overflow {
   font-style: bold;
   display: block;
   margin: 0 1em;
+  position: relative;
 }
 @media (max-width: 600px) {
   .services-tab-item div h3 {
