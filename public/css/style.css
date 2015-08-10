@@ -1094,6 +1094,15 @@ body-overflow {
   z-index: 2;
   background: rgba(255, 255, 255, 0.85);
 }
+.slider ul.slider-slides .slider-slides-singleSlide-whitemaskIntense {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+}
 .slider ul.slider-slides .slider-slides-singleSlide-wallpaper {
   width: 100%;
   height: 100%;
@@ -1278,12 +1287,12 @@ body-overflow {
   }
   .about-left,
   .about-right {
-    width: 48%;
+    width: 48.5%;
     display: inline-block;
     vertical-align: middle;
   }
   .about-left {
-    margin-right: 3.5%;
+    margin-right: 2.5%;
   }
   .about-link {
     margin-top: 5em;

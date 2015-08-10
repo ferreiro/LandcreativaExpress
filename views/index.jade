@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-	.slider
+	.slider#slider
 		// Buttons for select the slide number
 		ul.slider-selector
 
@@ -21,7 +21,7 @@ block content
 			//-- <li> last class is the effect (fading, barTop, square)
 
 			//-- Single Slide
-			li.slider-slides-singleSlide.fading
+			li.fading.slider-slides-singleSlide
 				//- Content of one slide
 				.slider-slides-singleSlide-content
 					.slider-slides-singleSlide-content-minilogo
@@ -31,25 +31,14 @@ block content
 					a(href="/nosotros").slider-slides-singleSlide-content-link Descúbrenos
 
 				//- White mask
-				.slider-slides-singleSlide-whitemask
+				.slider-slides-singleSlide-whitemaskIntense
+
+				//- Wallpaper mask
 				.slider-slides-singleSlide-wallpaper
 					div.blurred(style='background-image:url(/images/desk.jpg);')
-
+			
 			//-- Single Slide
-			li.slider-slides-singleSlide.fading
-				//- Content of one slide
-				.slider-slides-singleSlide-content
-					.slider-slides-singleSlide-content-minilogo
-						div
-					h2.slider-slides-singleSlide-content-title Bienvenido a Landcreativa
-					p.slider-slides-singleSlide-content-text Expertos en Diseño web, diseño gráfico y marketing digital.
-					a(href="/nosotros").slider-slides-singleSlide-content-link Descúbrenos
-
-				//- White mask
-				.slider-slides-singleSlide-whitemask
-					
-			//-- Single Slide
-			li.slider-slides-singleSlide.fading
+			li.fading.slider-slides-singleSlide
 				//- Content of one slide
 				.slider-slides-singleSlide-content
 					.whiteContent
@@ -61,7 +50,7 @@ block content
 					div.blurred(style='background-image:url(/images/wordpress.jpg);')
 			
 			//-- Single Slide
-			li.slider-slides-singleSlide.fading
+			li.fading.slider-slides-singleSlide
 				//- Content of one slide
 				.slider-slides-singleSlide-content
 					.whiteContent
@@ -73,25 +62,24 @@ block content
 					div(style='background-image:url(/images/wordpress.jpg);')
 			
 			//-- Single Slide
-			li.slider-slides-singleSlide.fading
+			li.fading.slider-slides-singleSlide
 				//- Content of one slide
 				.slider-slides-singleSlide-content
 					.whiteContent
-						h2.slider-slides-singleSlide-content-title ¿Quieres ahorrarte en tu diseño web?
+						h2.slider-slides-singleSlide-content-title ¿Quieres ahorrarte en <br />tu diseño web?
 						p.slider-slides-singleSlide-content-text Newsletter by Landcreativa
 						p.slider-slides-singleSlide-content-text Apúntate a nuestro newsletter y recibe las mejores promociones y ofertas en tu correo.
-						a(href="/nosotros").slider-slides-singleSlide-content-link ¡Quiero más información!
+						a(href='http://landcreativa.us8.list-manage.com/subscribe/post?u=e36c74a488cae8a92e7872fb3&amp;id=6baea7a6c9', target='_blank').slider-slides-singleSlide-content-link ¡Subscribirme!
 	
 				//- Black mask
 				.slider-slides-singleSlide-blackmask
 
 				.slider-slides-singleSlide-wallpaper
 					div(style='background-image:url(/images/desktop3.jpg);')
-
-
+ 
 block extraScripts
 	script(type='text/javascript').
-		$('.slider-slides').DDSlider({
+		$('#slider .slider-slides').DDSlider({
 
 			prevSlide: '.slider-navigation-left',
 			nextSlide: '.slider-navigation-right',
