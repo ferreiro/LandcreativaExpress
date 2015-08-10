@@ -53,10 +53,7 @@ $('.slider-slides').DDSlider({
 //----------------------------
 //-- ABOUT US
 //----------------------------
-
-var aboutImages = $('.about-image');
- 
-
+  
 $('a[href^="#"]').on('click',function (e) {
     e.preventDefault();
 
@@ -69,7 +66,6 @@ $('a[href^="#"]').on('click',function (e) {
         window.location.hash = target;
     });
     return false;
-
 });
  
 
