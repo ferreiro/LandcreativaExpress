@@ -576,6 +576,9 @@ body-overflow {
 .commun-button:hover {
   background: #3b8bd5;
 }
+@media (max-width: 600px) {
+  
+}
 .footer {
   width: 100%;
   display: inline-block;
