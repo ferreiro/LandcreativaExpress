@@ -45,15 +45,15 @@
 						p.productBox-include
 							span !{services.includes}
 
-						p.productBox-buy
-							a(href='#{product.url}').productBox-button.productBox-button-companies
-								!{services.button} #{product.title}!
-
 						ul.productBox-featureList
 							each feature in product.features
 								li
 									span.icon-angle-right
 									!{feature}
+
+						p.productBox-buy
+							a(href='#{product.url}').productBox-button.productBox-button-companies
+								!{services.button} #{product.title}!
 
 		////////////////////////////
 		// PAQUETE DE 3 PRODUCTOS //
@@ -80,9 +80,6 @@
 						h2.productBox-title #{product.title}
 						h3.productBox-subtitle 
 							span #{product.subtitle}
-						p.productBox-buy
-							a(href='#{product.url}').productBox-button.productBox-button-personal 
-								!{services.button} #{product.title}!
 
 						p.productBox-include
 							span !{services.includes}
@@ -92,6 +89,10 @@
 								li 
 									span.icon-angle-right
 									!{feature}
+						p.productBox-buy
+							a(href='#{product.url}').productBox-button.productBox-button-personal 
+								!{services.button} #{product.title}!
+
 
 		////////////////////////////
 		// PAQUETE DE 6 PRODUCTOS //
@@ -118,12 +119,12 @@
 							span Informacion
 
 						p.productBox-othersdescription #{product.description}
-						p.productBox-buy-marketing
-							a(href='#{product.url}').productBox-button.productBox-button-marketing 
-								!{services.otherServicesButton}
-						
+
 						ul.productBox-featureList
 							each feature in product.features
 								li
 									span.icon-angle-right
 									!{feature}
+						p.productBox-buy-marketing
+							a(href='#{product.url}').productBox-button.productBox-button-marketing 
+								!{services.otherServicesButton}

@@ -26,8 +26,7 @@ if($(window).width() >= 1000) {
 			// The current box has reached screen top
 			var insideTotalScroll = (currentBox.height() + currentBox.offset().top + pannel.height() - 10) - $(window).scrollTop() - $(window).height();
 
-			pannel.fadeIn(200, "easeOutBounce");
-			pannel.addClass('stuck');
+			pannel.fadeIn(200);
 
 			if (insideTotalScroll > 0) {
 				// Fijar el panel

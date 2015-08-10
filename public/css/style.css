@@ -1323,6 +1323,7 @@ body-overflow {
 }
 .services-buypannel-buy span a {
   margin: 0;
+  border-bottom: 0;
 }
 .services-buypannel-buy:first-child:before {
   display: none;
