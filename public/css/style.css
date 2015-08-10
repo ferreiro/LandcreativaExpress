@@ -2046,6 +2046,7 @@ body-overflow {
 }
 .contact-banner {
   width: 99%;
+  min-height: 92px;
   padding: 1em 0;
   margin-top: 1.5em;
   border: 1px solid #dfdfdf;
@@ -2074,6 +2075,8 @@ body-overflow {
   vertical-align: middle;
   margin-left: 1em;
   text-align: center;
+  float: left;
+  position: absolute;
 }
 .contact-banner-image span:before {
   padding-top: 23px;
@@ -2086,12 +2089,9 @@ body-overflow {
 }
 .contact-banner-info {
   display: inline-block;
-  margin-left: 1.5em;
   vertical-align: middle;
-  position: absolute;
-  left: 100px;
-  right: 1em;
-  margin-top: 0.7em;
+  margin-left: 125px;
+  margin-right: 1em;
 }
 .contact-banner-info h4 {
   font-size: 1.2em;
@@ -2118,7 +2118,12 @@ body-overflow {
   display: block;
   margin-bottom: 2em !important;
 }
-@media all and (min-width: 600px) {
+@media all and (max-width: 600px) {
+  .contact-form {
+    padding: 2em 1em;
+  }
+}
+@media all and (min-width: 670px) {
   .contact-form {
     width: 560px;
     margin: 0 auto;
