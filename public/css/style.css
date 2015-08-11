@@ -582,12 +582,36 @@ body-overflow {
 .footer {
   width: 100%;
   display: inline-block;
-  margin-top: 0;
+  margin-top: 2em;
+  position: relative;
+  overflow: hidden;
+}
+.footer-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(/images/desk.jpg);
+  background-size: cover;
+  background-position: 50% 20%;
+  z-index: -1;
+}
+.footer-background:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  z-index: 0;
 }
 .footer-top {
-  background: #f4f4f4;
-  border-top: 3px solid #ededed;
-  padding: 1.5em 0;
+  padding: 4em 0;
+  z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 @media all and (max-width: 1000px) {
   .footer-top .footer-emptytitle {
@@ -595,11 +619,11 @@ body-overflow {
   }
 }
 .footer-bottom {
-  padding: 1.5em 0;
-  background: #efefef;
-  background: #F3F3F3;
-  border-top: 2px solid #ededed;
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.5);
+  background: rgba(59, 59, 59, 0.3);
   text-align: right;
+  z-index: 10;
 }
 .footer-bottom-left {
   float: left;
@@ -630,7 +654,7 @@ body-overflow {
 }
 @media all and (max-width: 600px) {
   .footer-content {
-    padding: 0 1.5em;
+    padding: 0 2em;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
@@ -651,6 +675,7 @@ body-overflow {
   display: inline-block;
   vertical-align: top;
   margin-bottom: 2em;
+  z-index: 10;
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
   .footer-box {
@@ -689,26 +714,46 @@ body-overflow {
   margin-bottom: 1em;
   padding: 0;
   color: #0C59A0;
-  opacity: .6;
+  color: #fff;
+  opacity: .9;
 }
 .footer-text {
   color: #222;
-  opacity: .5;
+  color: #fff;
+  opacity: .6;
 }
 .footer-text a {
   color: #222;
   color: #0C59A0;
+  color: #fff;
+}
+.footer-map {
+  width: 50%;
+  display: inline-block;
+  margin-right: -4px;
+}
+.footer-map li a {
+  padding: .3em 0;
+  opacity: .6;
+  color: #222;
+  color: #fff;
+  display: block;
 }
 .footer-hotlinks {
   width: 50%;
   display: inline-block;
   margin-right: -4px;
+  margin-top: -0.3em;
 }
 .footer-hotlinks li a {
-  padding: .15em 0;
+  padding: .3em 0;
   opacity: .6;
   color: #222;
+  color: #fff;
   display: block;
+}
+.footer-form {
+  margin-top: 1.5em;
 }
 .footer-form fieldset {
   width: 100%;
@@ -737,11 +782,11 @@ body-overflow {
   outline: 0;
   letter-spacing: 1px;
   text-align: center;
-  border: 1px dotted #cccccc;
+  border: 1px dotted #ffffff;
 }
 .footer-form input[type="submit"] {
   border: 0;
-  width: 100%;
+  width: 130px;
   background-color: #0061c3;
   background-color: #ECECEC;
   border-radius: 3px;
@@ -762,11 +807,21 @@ body-overflow {
   box-shadow: inset 0 0 0 0 #cccccc;
   letter-spacing: 1.7px;
   padding: 5px 0;
+  left: 50%;
+  position: relative;
   margin-top: 1em;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
 }
 .footer-form input[type="submit"]:hover {
   color: rgba(34, 34, 34, 0.8);
   background: #EAEAEA;
+  background: #fff;
 }
 .footer-form fieldset textarea {
   padding: 1em 0;

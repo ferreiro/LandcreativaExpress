@@ -95,7 +95,13 @@
 	-webkit-background-clip: padding-box; 
 	background-clip:         padding-box; 
 }
-
+.blur(@size) {
+	-webkit-filter: blur(@size);
+	-moz-filter: blur(@size);
+	-o-filter: blur(@size);
+	-ms-filter: blur(@size);
+	filter: blur(@size); 
+}
 .transparentLink() {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent; /* For some Androids */
