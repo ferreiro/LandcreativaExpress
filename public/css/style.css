@@ -826,8 +826,7 @@ body-overflow {
 .slider ul.slider-selector li {
   width: 15px;
   height: 15px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #cecece;
+  background: rgba(234, 234, 234, 0.7);
   display: inline-block;
   margin-bottom: 2px;
   margin-right: 8px;
@@ -854,7 +853,7 @@ body-overflow {
   margin-bottom: 0;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(234, 234, 234, 0.7);
 }
 .slider ul.slider-selector li.current:before {
   width: 8px;

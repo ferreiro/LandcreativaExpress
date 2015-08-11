@@ -224,7 +224,7 @@ module.exports = function(app, contentData, nodemailer) {
 			menu: 'promo',
 			title: 'Promo ' + promoName,
 			displayBanners : false,
-			promoHeader: '/images/summer.jpg',
+			promoHeader: '/images/wordpress.jpg',
 	        options: false, // Show the options for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
 		});
