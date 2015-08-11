@@ -24,7 +24,7 @@
 			left: 0;
 			top: 0;
 			background: rgba(0, 0, 0, 0.5);
-			// background: rgba(255, 255, 255, 0.4);
+			background: rgba(255, 255, 255, 0.7);
 			content: '';
 			z-index:0;
 		}
@@ -139,11 +139,13 @@
 	    padding: 0;
     	color: #0C59A0;
     	color: #fff;
+    	color: #000;
     	opacity: .9;
 	}
 	&-text {
 		color: #222;
 		color: #fff;
+    	color: #000;
     	opacity: .6;
 		a {
 			color: #222;
@@ -160,6 +162,8 @@
 			opacity: .6;
 			color: #222;
     		color: #fff;
+
+    		color: #000;
     		// border-bottom: 1px dashed #fff;
 			display: block;
 		}
@@ -174,6 +178,8 @@
 			opacity: .6;
 			color: #222;
     		color: #fff;
+
+    		color: #000;
 			display: block;
 		}
 	}
@@ -207,23 +213,45 @@
 			letter-spacing: 1px;
 			text-align: center;
 			border:1px dotted rgba(255, 255, 255, 1);
+			border:2px solid rgba(0, 0, 0, 1);
+			.border-radius(5px);
 			// -webkit-box-shadow: inset 0 0 0 1px rgba(204, 204, 204, 1);
 			// -moz-box-shadow:    inset 0 0 0 1px rgba(204, 204, 204, 1);
 			// box-shadow:         inset 0 0 0 1px rgba(204, 204, 204, 1);
 		}
+
+		input::-webkit-input-placeholder {
+		   color: #000;
+		}
+
+		input:-moz-placeholder { /* Firefox 18- */
+		   color: #000;  
+		}
+
+		input::-moz-placeholder {  /* Firefox 19+ */
+		   color: #000;  
+		}
+
+		input:-ms-input-placeholder {  
+		   color: #000;  
+		}
+
+
 		input[type="submit"] { 
 			border: 0;
 			width:130px;
 			background-color: #0061c3;
 			background-color: #ECECEC;
+			background: #567e00;
 			border-radius: 3px; 
 			font-size: 14px;
 			text-transform: uppercase;
 			letter-spacing: 3px;
-			font-weight: 400;
+			font-weight: 600;
 			font-style: normal;
 			line-height: 1;
 			color: rgba(34, 34, 34, 0.6);
+			color: #fff;
 			text-decoration: none;
 			display: inline-block;
 			margin: 0 auto;
@@ -239,7 +267,7 @@
 			position: relative;
 			margin-top: 1em;
 			.translate(-50%, 0);
-
+			.transition(400ms);
 			.border-radius(40px);
 
 			&:hover {
