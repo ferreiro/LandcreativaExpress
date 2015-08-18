@@ -1,43 +1,19 @@
 doctype html
-html(lang="es")
+html(lang="es_ES")
 	head
 
-		title= content.title
-
 		meta(charset='UTF-8') 
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no)
 		meta(name='HandheldFriendly', content='True') 
 		meta(name='apple-mobile-web-app-capable', content='yes')  
-
-		meta(name='viewport', content='width=device-width')  
-		meta(name='viewport', content='user-scalable=no')  
-		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0') 
 		
-		if('#{menu}' === 'index')
-			p Es el indice
-			meta(name='description', content='#{content.description.home}')
-		else if('#{menu}' === 'nosotros')
-			p Es nosotros
-			meta(name='description', content='#{content.description.about}')
-		else if('#{menu}' === 'servicios')
-			meta(name='description', content='#{content.description.companies} #{content.description.personal} #{content.description.other}')
-		else if('#{menu}' === 'trabajos')
-			meta(name='description', content='#{content.description.portfolio}')
-		else if('#{menu}' === 'contacta')
-			meta(name='description', content='#{content.description.contact}')
-		else
-			p Es el else
-			meta(name='description', content='#{content.description.home}')
-			
-		meta(property='og:title' content='Landcreativa - Materializing your ideas')
-		meta(property='og:site_name' content='Landcreativa')
-		meta(property='og:url' content='http://www.landcreativa.com/')
-		meta(property='og:image' content='')
-
-		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css') 		
-		link(href='/css/normalize.css', rel='stylesheet', type='text/css' )
-		link(rel='stylesheet', type='text/css', href='/css/style.css')
-
+		title= content.title
+		link(rel="alternate", type="application/rss+xml", title="RSS 2.0", href="")
+		
 		// favicon
+		//link(rel="shortcut icon", href="/images/favicon/android-icon-192x192.png")
+		//link(rel="icon", sizes="192x192", href="/images/favicon/android-icon-192x192.png")
+		
 		<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -55,6 +31,36 @@ html(lang="es")
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+		
+		if(#{menu} == 'index')
+			p hola
+		
+		// Description
+		if('#{menu}' === 'index')
+			p Es el indice
+			meta(name='description', content='#{content.description.home}')
+		else if('#{menu}' === 'nosotros')
+			p Es nosotros
+			meta(name='description', content='#{content.description.about}')
+		else if('#{menu}' === 'servicios')
+			p Es servicios
+			meta(name='description', content='#{content.description.companies} #{content.description.personal} #{content.description.other}')
+		else if('#{menu}' === 'trabajos')
+			meta(name='description', content='#{content.description.portfolio}')
+		else if('#{menu}' === 'contacta')
+			meta(name='description', content='#{content.description.contact}')
+		else
+			p Es el else
+			meta(name='description', content='#{content.description.home}')
+			
+		meta(property='og:title' content='Landcreativa - Materializing your ideas')
+		meta(property='og:site_name' content='Landcreativa')
+		meta(property='og:url' content='http://www.landcreativa.com/')
+		meta(property='og:image' content='')
+
+		link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css') 		
+		link(href='/css/normalize.css', rel='stylesheet', type='text/css' )
+		link(rel='stylesheet', type='text/css', href='/css/style.css')
 
 header
 
