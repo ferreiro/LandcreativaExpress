@@ -28,26 +28,20 @@ html(lang='es')
 		<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 		
-		if (menu == 'index')
-			alert('es el inicio!!!')
-		else
-			alert('no es el inicio :(')
 		// Description
-		if('#{menu}' === 'index')
-			p Es el indice
+		if(menu === 'index')
 			meta(name='description', content='#{content.description.home}')
-		else if('#{menu}' === 'nosotros')
+		else if(menu === 'nosotros')
 			p Es nosotros
 			meta(name='description', content='#{content.description.about}')
-		else if('#{menu}' === 'servicios')
+		else if(menu === 'servicios')
 			p Es servicios
 			meta(name='description', content='#{content.description.companies} #{content.description.personal} #{content.description.other}')
-		else if('#{menu}' === 'trabajos')
+		else if(menu === 'trabajos')
 			meta(name='description', content='#{content.description.portfolio}')
-		else if('#{menu}' === 'contacta')
+		else if(menu === 'contacta')
 			meta(name='description', content='#{content.description.contact}')
 		else
-			p Es el else
 			meta(name='description', content='#{content.description.home}')
 			
 		meta(property='og:title' content='Landcreativa - Materializing your ideas')
