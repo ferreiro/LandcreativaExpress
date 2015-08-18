@@ -12,17 +12,20 @@ html(lang="es")
 		meta(name='viewport', content='user-scalable=no')  
 		meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0') 
 		
-		if('#{content.menu}' === 'index')
+		if('#{menu}' === 'index')
+			p Es el indice
 			meta(name='description', content='#{content.description.home}')
-		else if('#{content.menu}' === 'nosotros')
+		else if('#{menu}' === 'nosotros')
+			p Es nosotros
 			meta(name='description', content='#{content.description.about}')
-		else if('#{content.menu}' === 'servicios')
+		else if('#{menu}' === 'servicios')
 			meta(name='description', content='#{content.description.companies} #{content.description.personal} #{content.description.other}')
-		else if('#{content.menu}' === 'trabajos')
+		else if('#{menu}' === 'trabajos')
 			meta(name='description', content='#{content.description.portfolio}')
-		else if('#{content.menu}' === 'contacta')
+		else if('#{menu}' === 'contacta')
 			meta(name='description', content='#{content.description.contact}')
 		else
+			p Es el else
 			meta(name='description', content='#{content.description.home}')
 			
 		meta(property='og:title' content='Landcreativa - Materializing your ideas')
