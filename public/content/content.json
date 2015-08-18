@@ -1,14 +1,13 @@
 {
     "spanish" : {
-    	"titleEndText": "Landcreativa - Expertos en páginas web, diseño gráfico, SEO y marketing digital",
     	"title" : {
-    	    "home": "Landcreativa",
-    	    "about": "Sobre nosotros",
-    	    "companies": "Empresas",
-    	    "personal": "Particulares",
-    	    "other": "Otros",
-    	    "portfolio": "Portfolio",
-    	    "contact": "Contacta"
+    	    "home": "Landcreativa: Páginas web, diseño gráfico, SEO y marketing digital",
+    	    "about": "Sobre nosotros: Qué es Landcreativa",
+    	    "companies": "Empresas: Diseño de páginas corporativas, blog o tienda online",
+    	    "personal": "Particulares: Diseño de páginas web para particulares",
+    	    "other": "Otros: marketing digital, SEO y SEM",
+    	    "portfolio": "Portfolio: trabajos en diseño web, diseño gráfico, seo y marketing digital",
+    	    "contact": "Contacta con landcreativa"
     	},
     	"description" : {
     	    "home": "Empresa de diseño web, diseño gráfico, posicionamiento en buscadores SEO, SEM y marketing digital. Queremos ayudarte a lanzar tu negocio online con nosotros.",
