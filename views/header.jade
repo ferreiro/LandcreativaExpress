@@ -28,8 +28,10 @@ html(lang='es')
 		<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 		
-		if ("#{menu}" === "index" ? "meta(name='description', content='#{content.description.home}')" : "No es homeeeee")
-		
+		if (menu == 'index')
+			alert('es el inicio!!!')
+		else
+			alert('no es el inicio :(')
 		// Description
 		if('#{menu}' === 'index')
 			p Es el indice
