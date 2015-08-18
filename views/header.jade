@@ -6,7 +6,6 @@ html(lang='es')
 		meta(name='HandheldFriendly', content='True')
 		meta(name='apple-mobile-web-app-capable', content='yes')
 		
-		title= content.title
 		// favicon
 		//link(rel="shortcut icon", href="/images/favicon/android-icon-192x192.png")
 		//link(rel="icon", sizes="192x192", href="/images/favicon/android-icon-192x192.png")
@@ -30,18 +29,22 @@ html(lang='es')
 		
 		// Description
 		if(menu === 'index')
+			title= content.title.home
 			meta(name='description', content='#{content.description.home}')
 		else if(menu === 'nosotros')
-			p Es nosotros
+			title= content.title.about
 			meta(name='description', content='#{content.description.about}')
 		else if(menu === 'servicios')
-			p Es servicios
+			title= content.title.companies
 			meta(name='description', content='#{content.description.companies} #{content.description.personal} #{content.description.other}')
 		else if(menu === 'trabajos')
+			title= content.title.portfolio
 			meta(name='description', content='#{content.description.portfolio}')
 		else if(menu === 'contacta')
+			title= content.title.contact
 			meta(name='description', content='#{content.description.contact}')
 		else
+			title= content.title.home
 			meta(name='description', content='#{content.description.home}')
 			
 		meta(property='og:title' content='Landcreativa - Materializing your ideas')
