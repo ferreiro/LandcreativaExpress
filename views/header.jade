@@ -38,7 +38,13 @@ html(lang='es')
 		else if(menu === 'servicios')
 			title= content.title.companies
 			
-			if (serviceType === 'particulares')
+			if (serviceType === 'empresas')
+				meta(name='description', content='#{content.description.companies}')
+			else if (serviceType === 'particulares')
+				meta(name='description', content='#{content.description.personal}')
+			else if (serviceType === 'otros')
+				meta(name='description', content='#{content.description.other}')
+			else
 				meta(name='description', content='#{content.description.personal}')
 			// if (serviceType === 'particulares')
 			//	meta(name='description', content='content.description.personal')
