@@ -61,11 +61,11 @@
 					li
 						a(href='/contacta') Formulario de contacto
 					li
-						a#m1correo use the form
+						a#m1sec
 					li
-						a#m2correo uste the form
+						a#m2sec 
 					li
-						a prensa@landcreativa.com
+						a#m3sec
 					li
 						a(href='http://www.facebook.com/landcreativa', target='_blank') Página de Facebook
 					li
@@ -78,9 +78,11 @@ script(type='text/javascript', src='/js/animations.js')
  
 script(type='text/javascript').
 	var parts = ["fo", "in", 64, "cretiva.com", "land"];
-	document.getElementById("m1correo").textContent = parts[1] + parts[0] + String.fromCharCode(parts[2]) + parts[4] + parts[3];
+	document.getElementById("m1sec").textContent = parts[1] + parts[0] + String.fromCharCode(parts[2]) + parts[4] + parts[3];
 	var parts2 = ["tencia", "asis", 64, "cretiva.com", "land"];
-	document.getElementById("m2correo").textContent = parts2[1] + parts2[0] + String.fromCharCode(parts2[2]) + parts2[4] + parts2[3];
+	document.getElementById("m2sec").textContent = parts2[1] + parts2[0] + String.fromCharCode(parts2[2]) + parts2[4] + parts2[3];
+	var parts3 = ["sa", "pren", 64, "cretiva.com", "land"];
+	document.getElementById("m3sec").textContent = parts3[1] + parts3[0] + String.fromCharCode(parts3[2]) + parts3[4] + parts3[3];
 script(type='text/javascript').
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
