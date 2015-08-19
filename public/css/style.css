@@ -750,6 +750,9 @@ body-overflow {
   margin-right: -4px;
   margin-top: -0.3em;
 }
+.footer-hotlinks li.importantBtn {
+ text-decoration:underline;
+}
 .footer-hotlinks li a {
   padding: .3em 0;
   opacity: .6;
@@ -852,7 +855,7 @@ body-overflow {
   border-radius: 40px;
 }
 .footer-form input[type="submit"]:hover {
-  color: rgba(34, 34, 34, 0.8);
+  color: #fff;
   background: #72A209;
 }
 .footer-form fieldset textarea {
