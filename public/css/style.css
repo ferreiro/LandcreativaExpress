@@ -1377,6 +1377,9 @@ body-overflow {
   }
 }
 @media (min-width: 1000px) {
+.about {
+	text-align:center;
+}
   .about-image {
     height: 350px;
   }
