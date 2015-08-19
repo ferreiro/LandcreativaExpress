@@ -90,7 +90,7 @@ module.exports = function(app, contentData, nodemailer) {
 	//------------------------------
 
 	app.get('/servicios', function(req, res) {
-	    var serviceType = 'particulares'; // View parameter
+	    var serviceType = 'index'; // View parameter
 	    res.render('services', {
 	            menu : 'servicios',
 	            serviceType: serviceType,
