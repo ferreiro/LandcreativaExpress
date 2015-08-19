@@ -2,7 +2,14 @@ module.exports = function(app, contentData, nodemailer) {
 
 	var english = contentData.english;
 	var spanish = contentData.spanish;
-
+	
+	app.get('/sitemap.xml', function(req, res) {
+		// var xml = require('xml');
+		// response.set('Content-Type', 'text/xml');
+		// response.send(xml(../sitemap.xml));	
+		res.sendfile(../sitemap.xml);
+	});
+	
 	app.get('/', function(req, res) {
 	    res.render('index', { 
 	        menu : 'index',
