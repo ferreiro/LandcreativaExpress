@@ -61,7 +61,8 @@
 					li
 						a(href='/contacta') Formulario de contacto
 					li
-						a#m1sec
+						a
+							.m1sec
 					li
 						a#m2sec 
 					li
@@ -78,7 +79,7 @@ script(type='text/javascript', src='/js/animations.js')
  
 script(type='text/javascript').
 	var parts = ["fo", "in", 64, "cretiva.com", "land"];
-	document.getElementById("m1sec").textContent = parts[1] + parts[0] + String.fromCharCode(parts[2]) + parts[4] + parts[3];
+	document.getElementsByClassName("m1sec").textContent = parts[1] + parts[0] + String.fromCharCode(parts[2]) + parts[4] + parts[3];
 	var parts2 = ["tencia", "asis", 64, "cretiva.com", "land"];
 	document.getElementById("m2sec").textContent = parts2[1] + parts2[0] + String.fromCharCode(parts2[2]) + parts2[4] + parts2[3];
 	var parts3 = ["sa", "pren", 64, "cretiva.com", "land"];
