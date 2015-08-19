@@ -853,8 +853,7 @@ body-overflow {
 }
 .footer-form input[type="submit"]:hover {
   color: rgba(34, 34, 34, 0.8);
-  background: #EAEAEA;
-  background: #fff;
+  background: #72A209;
 }
 .footer-form fieldset textarea {
   padding: 1em 0;
