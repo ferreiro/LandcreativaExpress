@@ -33,7 +33,7 @@ module.exports = function(app, contentData, nodemailer) {
 				priority = 0.3; // less priority for less important sections
 				freq = 'monthly';
 			}
-			else if (url.indexOf('servicios') >= 0) {
+			else if (url.indexOf('servicios/') >= 0) {
 				priority = 0.9; // medium priority for the services.
 				freq = 'monthly';
 			}
