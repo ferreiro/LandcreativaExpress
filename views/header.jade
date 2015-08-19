@@ -36,8 +36,7 @@ html(lang='es')
 			title= content.title.about
 			meta(name='description', content='#{content.description.about}')
 		else if(menu === 'servicios')
-			
-			//- Content and type for services
+			// Content and type for services
 			if (serviceType === 'empresas')
 				title= content.title.companies
 				meta(name='description', content='#{content.description.companies}')
@@ -48,10 +47,10 @@ html(lang='es')
 				title= content.title.other
 				meta(name='description', content='#{content.description.other}')
 			else
-				title= content.title.personal
-				meta(name='description', content='#{content.description.personal}')
+				title= content.title.services
+				meta(name='description', content='#{content.description.services}')
 			// End content and services
-			
+
 		else if(menu === 'trabajos')
 			title= content.title.portfolio
 			meta(name='description', content='#{content.description.portfolio}')
