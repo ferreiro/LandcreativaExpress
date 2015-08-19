@@ -4,11 +4,52 @@ module.exports = function(app, contentData, nodemailer) {
 	var spanish = contentData.spanish;
 	
 	app.get('/sitemap.xml', function(req, res) {
-		// var xml = require('xml');
-		// response.set('Content-Type', 'text/xml');
-		// response.send(xml(../sitemap.xml));	
-		res.header('Content-Type','text/xml').send('../public/sitemap.xml');
+		var sitemap = generate_xml_sitemap();	
+		res.header('Content-Type', 'text/xml');
+	    	res.send(sitemap);
 	});
+	function generate_xml_sitemap() {
+		// the root of your website - the protocol and the domain name with a trailing slash
+		var root_path = 'http://www.landcreativa.com/';
+		
+		// this is the source of the URLs on your site, in this case we use a simple array, actually it could come from the database
+		var urls = ['', 'nosotros', 'servicios', 'servicios/empresas', 'servicios/particulares', 'servicios/otros',
+				'contacta', 'trabajos',
+			        'quiero/economy', 'quiero/business', 'quiero/first-class', 
+			        'quiero/gold', 'quiero/siver', 'quiero/premium', 
+			        'quiero/seo', 'quiero/paypal', 'quiero/responsive',
+			        'quiero/newsletter', 'quiero/tarjetas_visita', 'quiero/diseno_banners'];
+			        
+		// XML sitemap generation starts here
+		var priority = 1; // Maximum priority by default
+		var freq = 'monthly';
+		var xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+		for (var i in urls) {
+			var url = urls[i];
+			
+			if (url.indexOf('quiero') >= 0) {
+				priority = 0.3; // less priority for less important sections
+				freq = 'monthly';
+			}
+			else if (url.indexOf('servicios') >= 0) {
+				priority = 0.9; // medium priority for the services.
+				freq = 'monthly';
+			}
+			else {
+				priority = 1;
+				freq = 'weekly';
+			}
+			
+			xml += '<url>';
+			xml += '<loc>'+ root_path + url + '</loc>';
+			xml += '<changefreq>'+ freq +'</changefreq>';
+			xml += '<priority>'+ priority +'</priority>';
+			xml += '</url>';
+			i++;
+		}
+		xml += '</urlset>';
+		return xml;
+	}
 	
 	app.get('/', function(req, res) {
 	    res.render('index', { 
