@@ -306,7 +306,7 @@
                         "icon" : "icon-map",
                         "text" : [
                             "Estamos en Madrid. (Contáctanos para otras ciudades y países)",
-                            "<div class="m1sec"></div>"
+                            "<div class='m1sec'></div>"
                         ]
                     }
                 },
