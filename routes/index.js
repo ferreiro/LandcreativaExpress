@@ -7,7 +7,8 @@ module.exports = function(app, contentData, nodemailer) {
 		// var xml = require('xml');
 		// response.set('Content-Type', 'text/xml');
 		// response.send(xml(../sitemap.xml));	
-		res.sendfile('../sitemap.xml');
+		var xml = '../sitemap.xml';
+		res.header('Content-Type','text/xml').send(xml);
 	});
 	
 	app.get('/', function(req, res) {
