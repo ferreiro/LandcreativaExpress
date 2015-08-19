@@ -94,7 +94,7 @@ module.exports = function(app, contentData, nodemailer) {
 	    res.render('services', {
 	            menu : 'servicios',
 	            serviceType: serviceType,
-	            serviceIndex: true,
+	            serviceIndex: true, // Only for the services index
 	            content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
 	        }
 	    );
