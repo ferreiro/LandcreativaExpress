@@ -1241,6 +1241,7 @@ body-overflow {
   text-transform: inherit;
   margin: 0;
   padding: 0;
+  text-align:center;
 }
 .about-image {
   width: 100%;
@@ -1387,7 +1388,7 @@ body-overflow {
   .about-right {
     width: 48%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
   }
   .about-left {
     margin-right: 3%;
