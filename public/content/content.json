@@ -29,24 +29,24 @@
      	"sections" : {
 
     		"about" : {
-    			"headline" : "Bienvenido a Landcreativa",
+    			"headline" : "¡Bienvenido a Landcreativa!",
                 "button": "Ver nuestros servicios",
     			"what": {
     			    "title": "¿Quienes somos?",
     			    "image": "/images/desk.jpg",
     			    "text": [
-    			        "Somos una agencia de diseño web &amp; marketing digital. Nuestra misión es ayudarte a contruir un negocio online de éxito.",
-    			        "Jorge, ingenierio informático y programador web con más de 8 años de experiencia, es quien dirige Landcreativa. Pero Jorge está muy bien acompañado: programadores, diseñadores, marketinianos... Un equipo de gente joven, experimentada y con ganas de ayudarte en tu negocio.",
-    			        "Trabajamos para pymes, autónomos, clientes particulares, startups y empresas que quieren iniciar su negocio en internet o que desean incrementar exponencialmente sus ventas rediseñando su página web o creando estrategías de marketing y posicionamiento."
+    			        "Somos una agencia de <b>diseño web</b> &amp; <b>marketing</b> digital. Nuestra <b>misión</b> es ayudarte a contruir un negocio online de <b>éxito</b>.",
+    			        "Jorge, ingenierio informático y programador web con más de 8 años de <b>experiencia</b>, es quien dirige Landcreativa. Jorge está muy bien acompañado: programadores, diseñadores, marketinianos... Un equipo de gente joven, experimentada y con ganas de <b>ayudarte</b> en tu negocio.",
+    			        "Trabajamos para pymes, autónomos, clientes particulares, startups y empresas que quieren <b>iniciar</b> su negocio en internet o que desean <b>incrementar</b> exponencialmente sus ventas rediseñando su página web o creando estrategías de marketing y posicionamiento."
     			    ]
     			},
     			"why": {
     			    "title": "¿Por qué elegirnos?",
     			    "image": "/images/info_ordenadores.png",
                     "list": [
-                        "Experiencia en negocios de internet: Llevamos años desarrollando páginas web efectivas, que te ayudarán a aumentar exponencialmente tus ventas.",
-                        "Resultados de calidad, clientes encantados con nuestros servicios y tiempos de entrega cumplidos avalan nuestro trabajo.",
-                        "Personalización: pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado varios packs según el tipo de negocio que quieres montar. Únicamente tendrás que elegir el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
+                        "<b>Experiencia</b> en negocios de internet: Llevamos años desarrollando páginas web efectivas, que te ayudarán a aumentar exponencialmente tus ventas.",
+                        "<b>Resultados</b> de calidad, <b>clientes encantados</b> con nuestros servicios y tiempos de entrega cumplidos, avalan nuestro trabajo.",
+                        "<b>Personalización</b>: pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado varios packs según el tipo de negocio que quieres montar. Únicamente tendrás que <b>elegir</b> el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
                     ],
                     "text": [
                         "Creemos firmemente por muchas razones que somos una apuesta de seguro para sus proyecto:",
