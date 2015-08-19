@@ -37,7 +37,8 @@ html(lang='es')
 			meta(name='description', content='#{content.description.about}')
 		else if(menu === 'servicios')
 			title= content.title.companies
-			meta(name='description', content='#{content.description.services}')
+			- serviceDescription = 'content.description.' + serviceType;
+			meta(name='description', content='#{serviceDescription}')
 		else if(menu === 'trabajos')
 			title= content.title.portfolio
 			meta(name='description', content='#{content.description.portfolio}')
