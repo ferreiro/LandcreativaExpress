@@ -8,6 +8,7 @@ module.exports = function(app, contentData, nodemailer) {
 		res.header('Content-Type', 'text/xml');
 	    	res.send(sitemap);
 	});
+	
 	function generate_xml_sitemap() {
 		// the root of your website - the protocol and the domain name with a trailing slash
 		var root_path = 'http://www.landcreativa.com/';
@@ -21,6 +22,7 @@ module.exports = function(app, contentData, nodemailer) {
 			        'quiero/newsletter', 'quiero/tarjetas_visita', 'quiero/diseno_banners'];
 			        
 		// XML sitemap generation starts here
+		
 		var priority = 1; // Maximum priority by default
 		var freq = 'monthly';
 		var xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
