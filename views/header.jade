@@ -36,26 +36,21 @@ html(lang='es')
 			title= content.title.about
 			meta(name='description', content='#{content.description.about}')
 		else if(menu === 'servicios')
-			title= content.title.companies
 			
+			//- Content and type for services
 			if (serviceType === 'empresas')
+				title= content.title.companies
 				meta(name='description', content='#{content.description.companies}')
 			else if (serviceType === 'particulares')
+				title= content.title.personal
 				meta(name='description', content='#{content.description.personal}')
 			else if (serviceType === 'otros')
+				title= content.title.other
 				meta(name='description', content='#{content.description.other}')
 			else
+				title= content.title.personal
 				meta(name='description', content='#{content.description.personal}')
-			// if (serviceType === 'particulares')
-			//	meta(name='description', content='content.description.personal')
-			// else if (serviceType === 'empresas')
-			//	meta(name='description', content='content.description.companies')
-			//else if (serviceType === 'otros')
-			//	meta(name='description', content='content.description.other')
-			//else
-			//	meta(name='description', content='content.description.personal')
-			// - serviceDescription = 'content.description.' + serviceType;
-			// meta(name='description', content='serviceDescription')
+			// End content and services
 			
 		else if(menu === 'trabajos')
 			title= content.title.portfolio
