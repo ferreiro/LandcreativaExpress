@@ -13,6 +13,7 @@ var users = require('./routes/user');
 //- Modulos instalados por mi --
 //------------------------------
 
+var captcha = require('captcha');
 var contentData = require('./public/content/content.json');
 var nodemailer = require('nodemailer'); // Nodemailer es un módulo externo de node que nos permite mandar correos.
 
@@ -24,7 +25,6 @@ app.use(function (req, res, next) {
       res.removeHeader("X-Powered-By");
       next();
 });
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,6 +42,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes ======================================================================
 require('./routes/index.js')(app, contentData, nodemailer); // load our routes and pass in our app and fully configured passport
 
+// Adding captcha middleware.
+// Generates a captcha image everytime we load a page.
+
+app.use(captcha({ 
+      url: '/captcha.jpg', 
+      color:'#0064cd', 
+      background: 'rgb(20,30,200)'
+})); // captcha params
 
 
 //------------------------------
