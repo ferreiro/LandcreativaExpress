@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "body-parser": "~1.0.0",
-    "captcha": "~0.0.4",
     "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",
     "express": "~3.4.8",
@@ -15,6 +14,7 @@
     "morgan": "~1.0.0",
     "nodemailer": "^1.4.0",
     "static-favicon": "~1.0.0",
-    "stylus": "0.42.3"
+    "stylus": "0.42.3",
+    "easy-captcha": "~0.1.5"
   }
 }
