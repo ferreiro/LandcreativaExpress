@@ -15,7 +15,7 @@ var users = require('./routes/user');
 
 var contentData = require('./public/content/content.json');
 var nodemailer = require('nodemailer'); // Nodemailer es un módulo externo de node que nos permite mandar correos.
-var captcha = require('easy-captcha');
+// var captcha = require('easy-captcha');
 
 var app = express();
 
@@ -45,12 +45,13 @@ require('./routes/index.js')(app, contentData, nodemailer); // load our routes a
 // Adding captcha middleware.
 // Generates a captcha image everytime we load a page.
 
+/*
 app.use(captcha({ 
       url: '/images/captcha.jpg', 
       color:'#0064cd', 
       background: 'rgb(20,30,200)'
 })); // captcha params
-
+*/
 
 //------------------------------
 //-- HTML OUTPUT NO MINIMIZADO.
@@ -58,8 +59,6 @@ app.use(captcha({
 
 app.locals.pretty = true;
 
-
- 
 //------------------------------
 //-- ERRORS
 //------------------------------
