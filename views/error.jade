@@ -4,13 +4,11 @@ block content
 	.section
 		.content
 			h1.commun-title 404: Página no encontrada
-			p.commun-text Esta página: no está disponible. Lo sentimos.
+			p.commun-text Esta página no está disponible. Lo sentimos.
 			p.commun-text 
 				a(href='/') Volver al inicio
-				<span> | </span>
-				a(href='mailto:info@landcreativa.com?&subject=Página no encontrada&body=Por favor, pega el enlace de la página que no has podido acceder;') Reportar error
 			//- Hide when deployment
-			#{error.stack}
+			//- #{error.stack}
 block footer
 	//- Overrides footer
 	//- Don't show the footer on 404 error
