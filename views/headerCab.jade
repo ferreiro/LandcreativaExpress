@@ -1,0 +1,48 @@
+// Landcreativa Header
+header.header
+	.header-int
+
+		div(style='width:100%; display: none ; height:15px; background:red; position:absolute; top:50%; margin-top:-7.5px; background:red;')
+
+		.header-logo
+			a(href='#{content.baseURL}')
+				.header-logo-iso
+				.header-logo-text
+					h1 Landcreativa<span>.com</span> 
+
+		.header-mobilemenu#mobileMenu
+			button.header-mobilemenu-button#mobileMenuButton
+				span.icon-options 
+
+			ul.header-mobilemenu-dropdown 
+				each url, name in content.menu
+					li.header-mobilemenu-dropdown-link(class=('#{menu}' === '#{url}' ? 'selected' : ''))
+						a(href='#{content.baseURL}#{url}') #{name}
+
+				li.header-mobilemenu-dropdown-link.header-mobilemenu-dropdown-socialnetworks
+					a(href='http://www.facebook.com/landcreativa', target='_blank') Facebook
+
+				li.header-mobilemenu-dropdown-link.header-mobilemenu-dropdown-socialnetworks
+					a(href='http://www.twitter.com/landcreativa', target='_blank') Twitter
+
+		nav.header-desktopmenu
+			each url, name in content.menu
+				li.header-desktopmenu-link(class=('#{menu}' === '#{url}' ? 'selected' : ''))
+					a(href='#{content.baseURL}#{url}') #{name}
+		.header-networks
+			ul
+				li
+					a(href='http://www.facebook.com/landcreativa', target='_blank')
+						span.icon-facebook
+
+				li
+					a(href='http://www.twitter.com/landcreativa', target='_blank')
+						span.icon-twitter
+
+				li
+					a(href='http://blog.landcreativa.com/', target='_blank')
+						span.icon-blog
+
+				li
+					a(href='mailto:info@landcreativa.com')
+						span.icon-paperplane
