@@ -63,10 +63,25 @@ head
 	else
 		title= content.title.home
 		meta(name='description', content='#{content.description.home}')
-		
+	
+	// Facebook
 	meta(property='og:site_name' content='Landcreativa')
-	meta(property='og:url' content='http://www.landcreativa.com/')
 	meta(property='og:image' content='http://landcreativa.com/images/iso.png')
+	meta(property="og:type", content="website")
+	meta(property="og:url", content="https://landcreativa.com")
+	meta(property="og:site_name", content="platzi.com")
+	// Google
+	meta(itemprop="description", content="#{content.description.home}")
+	
+	// Twitter
+	// meta(property="twitter:account_id" content="4503599630205252")
+	meta(name="twitter:card" content="summary_large_image")
+	meta(name="twitter:site" content="@landcreativa")
+	meta(name="twitter:title" content="#{content.title.home}")
+	meta(name="twitter:description" content="#{content.description.home}")
+	meta(name="twitter:creator" content="@landcreativa")
+	meta(name="twitter:image:src" content="http://landcreativa.com/images/iso.png")
+	meta(name="twitter:domain" content="landcreativa.com")
 
 	link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css') 		
 	link(href='/css/normalize.css', rel='stylesheet', type='text/css' )
