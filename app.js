@@ -44,7 +44,6 @@ require('./routes/index.js')(app, contentData, nodemailer); // load our routes a
 
 
 
-
 //------------------------------
 //-- HTML OUTPUT NO MINIMIZADO.
 //------------------------------
@@ -61,7 +60,7 @@ app.locals.pretty = true;
 
 // Handle 404
 app.use(function(req, res, err) {
-  res.status(400); 
+  res.status(404); 
 
   res.render('error', { 
       menu : 'error',
