@@ -618,6 +618,11 @@ body-overflow {
   position: relative;
   z-index: 10;
 }
+@media all and (max-width: 600px) {
+  .footer-top {
+    padding: 1.5em 0;
+  }
+}
 @media all and (max-width: 1000px) {
   .footer-top .footer-emptytitle {
     display: none;
@@ -659,7 +664,7 @@ body-overflow {
 }
 @media all and (max-width: 600px) {
   .footer-content {
-    padding: 0 1em;
+    padding: 0 1.5em;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
@@ -1066,8 +1071,8 @@ body-overflow {
   z-index: 1 !important;
 }
 .slider ul.slider-slides .slider-slides-singleSlide-content {
-  left: 1em;
-  right: 1em;
+  left: 1.5em;
+  right: 1.5em;
   bottom: 2em;
   z-index: 3;
   position: absolute;
