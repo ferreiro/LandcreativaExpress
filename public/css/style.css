@@ -314,7 +314,6 @@ body-overflow {
 }
 .header-mobilemenu-button.selected {
   background: #f3f3f3;
-  background:#E0E0E0;
 }
 .header-mobilemenu-button.selected:before {
   position: absolute;
@@ -354,6 +353,7 @@ body-overflow {
 }
 .header-mobilemenu-dropdown-link.selected {
   background: rgba(255, 255, 255, 0.3);
+    background:#E0E0E0;
 }
 .header-mobilemenu-dropdown-link a {
   font-size: 1.3em;
