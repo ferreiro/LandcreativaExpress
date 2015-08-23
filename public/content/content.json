@@ -82,11 +82,11 @@
     			"products" : {
                     "companies" : { 
                         "economy" : {
-                            "title" : "Paquete Economy",
+                            "title" : "Paquete Starter",
                             "subtitle" : "Pon a tu empresa en el mapa de internet",
                             "description" : "Este pack incluye:",
                             "image" : "/images/service_economy.png",
-                            "url" : "/quiero/economy",
+                            "url" : "/quiero/starter",
                             "features" : [
                                 "Página <b>web</b> en wordpress.",
                                 "Configuración de hasta <strong>5 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
