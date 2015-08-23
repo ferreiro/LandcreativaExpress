@@ -1657,6 +1657,9 @@ body-overflow {
   text-align: center;
   border: 1px solid #dfdfdf;
   overflow: hidden;
+  @media (max-width: 600px) {
+  	border:0;
+  }
 }
 .services-content-box {
   display: none;
@@ -1755,6 +1758,10 @@ body-overflow {
   display: block;
   padding-bottom: 500px;
   margin-bottom: -500px;
+  @media (max-width: 600px) {
+  	padding-left:0;
+  	padding-right:0;
+  }
 }
 @media (max-width: 1000px) {
   .services .productBox:before {
