@@ -1494,22 +1494,12 @@ body-overflow {
   -ms-transition: all 200ms;
   transition: all 200ms;
   background:#F1F1F1;
-  /*
-			&-selected:before {
-				position: absolute;
-				width: 100%;
-				height: 2px;
-				background: @lightGrayBorder;
-				top: 0;
-				margin-top: 0;
-				content: '';
-				z-index: 10;
-				// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
-				.border-radiuses (5px, 0, 0, 5px);
-				.border-radius(100px);
-				margin-top: 1px;
-			}*/
-
+ 
+}
+@media all and (max-width: 600px) {
+  .services-tab-item {
+    backgrond:#fff;
+  }
 }
 .services-tab li:nth-child(1) {
 	-webkit-border-top-left-radius: 5px;
@@ -1524,7 +1514,7 @@ body-overflow {
 .services-tab-item a {
   display: block;
   text-align: center;
-  padding: 0.75em 0;
+  padding: 1.5em 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   /* For some Androids */
@@ -1532,7 +1522,7 @@ body-overflow {
 }
 @media all and (min-width: 1000px) {
   .services-tab-item a {
-    padding: 0.75em 1.5em;
+    padding: 1.5em 1.5em;
   }
 }
 .services-tab-item span {
@@ -1549,6 +1539,7 @@ body-overflow {
   padding-top: 4px;
   color: #ffffff;
   margin-bottom: 0.2em;
+  display:none;
 }
 @media all and (min-width: 1000px) {
   .services-tab-item span {
