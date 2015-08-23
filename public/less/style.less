@@ -505,8 +505,18 @@ body {
 	&-tab {
 		display: block;
 		border-bottom:0;  
-		// border:1px solid @lightGrayBorder; 
-
+		// border:1px solid @lightGrayBorder;
+		// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
+		//.border-radiuses (5px, 0, 0, 5px);
+		
+		li:nth-child(1) {
+			// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
+			.border-radiuses (0, 0, 0, 5px);
+		}
+		li:nth-child(3) {
+			// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
+			.border-radiuses (5px, 0, 0, 0);
+		}
 		&-item {
 			width: 33.55%;
 			width: 33.333333333%;
@@ -514,17 +524,22 @@ body {
 			// background: #f3f3f3;
 			display: inline-block; 
 			position: relative;
-							// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
-			.border-radiuses (5px, 0, 0, 5px);
+			// @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0
+			// .border-radiuses (5px, 0, 0, 5px);
 			.transition(200ms);
+			background:#fff;
+			
+			@media all and (min-width: @tablet) {
+				bakground:#E8E8E8;
+			}
 
 			a {
 				display: block;
-    			text-align: center;
-				padding: @productMargin/2 0;
+    				text-align: center;
+				padding: @productMargin 0;
 				.transparentLink(); // For mobile phones
 				@media all and (min-width: @desktop) {
-    				padding: @productMargin/2 @productMargin;
+    					padding: @productMargin @productMargin;
 				}
 			}
 			span {
@@ -539,6 +554,7 @@ body {
 				padding-top: 4px;
 				color: #ffffff;
 				margin-bottom: 0.2em; 
+				display:none;
 				@media all and (min-width: @desktop) {
 					margin-bottom: 0.3em; 
 				}
@@ -627,7 +643,8 @@ body {
 			    border-color: #dfdfdf;  
 			} 
 			&-selected:before {
-				border: 1px solid @lightGrayBorder;
+				border: 1px solid #E8E8E8;
+				border-top-width: 4px;
 				content: '';
 				position: absolute;
 				top: 0;
@@ -669,7 +686,11 @@ body {
 		text-align: center;
 		border:1px solid @lightGrayBorder;
 		overflow: hidden;	// IMPORTANTE, NO QUITAR!! Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
- 
+ 	
+ 		@media(max-width: @tablet) { 
+ 			border:0;
+ 		}
+ 		
 		&-box {
 			display: none; 
 			&-showbox {
@@ -772,6 +793,10 @@ body {
 			padding-bottom: 500px;	// Esto es un hack para hacer que los 3 divs tengan la misma altura (http://stackoverflow.com/questions/2997767/how-do-i-keep-two-divs-that-are-side-by-side-the-same-height)
 			margin-bottom: -500px; // Esto es un hack para hacer que los 3 divs tengan la misma altura
 	 	
+			@media(max-width: @tablet) { 
+			  	padding-left:0;
+			  	padding-right:0;
+			}
 			@media(max-width: @desktop) { 
 				&:before {
 					display: none;
