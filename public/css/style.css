@@ -1494,7 +1494,6 @@ body-overflow {
   -ms-transition: all 200ms;
   transition: all 200ms;
   background:#F1F1F1;
-  overflow:hidden;
   /*
 			&-selected:before {
 				position: absolute;
