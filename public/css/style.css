@@ -362,6 +362,7 @@ body-overflow {
   color: #222222;
   border-top: 1px solid #dfdfdf;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-transform:capitalize;
 }
 .header-mobilemenu-dropdown-socialnetworks {
   background: #ffffff;
