@@ -659,7 +659,7 @@ body-overflow {
 }
 @media all and (max-width: 600px) {
   .footer-content {
-    padding: 0 2em;
+    padding: 0 1em;
   }
 }
 @media all and (min-width: 600px) and (max-width: 1000px) {
@@ -1066,8 +1066,8 @@ body-overflow {
   z-index: 1 !important;
 }
 .slider ul.slider-slides .slider-slides-singleSlide-content {
-  left: 2em;
-  right: 2em;
+  left: 1em;
+  right: 1em;
   bottom: 2em;
   z-index: 3;
   position: absolute;
