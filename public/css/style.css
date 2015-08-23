@@ -314,6 +314,7 @@ body-overflow {
 }
 .header-mobilemenu-button.selected {
   background: #f3f3f3;
+  background:#E0E0E0;
 }
 .header-mobilemenu-button.selected:before {
   position: absolute;
