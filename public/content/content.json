@@ -83,7 +83,7 @@
                     "companies" : { 
                         "economy" : {
                             "title" : "Paquete Starter",
-                            "subtitle" : "Pon a tu empresa en el mapa de internet",
+                            "subtitle" : "Pon tu empresa en el mapa de internet",
                             "description" : "Este pack incluye:",
                             "image" : "/images/service_economy.png",
                             "url" : "/quiero/starter",
