@@ -1657,8 +1657,8 @@ body-overflow {
   text-align: center;
   border: 1px solid #dfdfdf;
   overflow: hidden;
-  @media (max-width: 600px) {
-  	border:0;
+  @media all and (max-width: 600px) { 
+  	border:0 !important;
   }
 }
 .services-content-box {
@@ -1758,7 +1758,7 @@ body-overflow {
   display: block;
   padding-bottom: 500px;
   margin-bottom: -500px;
-  @media (max-width: 600px) {
+  @media all (max-width: 600px) {
   	padding-left:0;
   	padding-right:0;
   }
