@@ -801,6 +801,7 @@ body-overflow {
   text-align: center;
   border: 1px dotted #ffffff;
   border: 2px solid #000000;
+  border:2px solid #5E7B1B;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
