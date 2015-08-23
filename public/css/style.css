@@ -1478,7 +1478,6 @@ body-overflow {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 5px;
-  overflow:hidden;
 }
 .services-tab-item {
   width: 33.55%;
@@ -1495,6 +1494,7 @@ body-overflow {
   -ms-transition: all 200ms;
   transition: all 200ms;
   background:#F1F1F1;
+  overflow:hidden;
   /*
 			&-selected:before {
 				position: absolute;
@@ -1511,6 +1511,16 @@ body-overflow {
 				margin-top: 1px;
 			}*/
 
+}
+.services-tab li:nth-child(1) {
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	border-top-left-radius: 5px;
+}
+.services-tab li:nth-child(3) {
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	border-top-left-radius: 5px;
 }
 .services-tab-item a {
   display: block;
