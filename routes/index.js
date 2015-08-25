@@ -293,6 +293,7 @@ module.exports = function(app, contentData, nodemailer) {
 	    res.render('contact', {        
 	        menu : 'contacta',
 	        contact: contact,
+	        captcha:req.recaptcha,
 	        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
 	        options: true, // Show the options by default for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
