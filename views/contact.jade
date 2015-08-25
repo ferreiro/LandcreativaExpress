@@ -135,6 +135,9 @@ block content
 									//- keepInputValue class will keep the input value via javascript
 									textarea.keepInputValue(type='textarea', value='', placeholder='#{contact.form.inputs.message}', name='message', required).contact-form-field-element-textarea
 
+
+							fieldset.contact-form-field
+								#{captcha}
 							fieldset.contact-form-field.contact-form-field-button(style="margin-bottom:0;")
 								input(type="submit", value="#{contact.form.button}").contact-form-field-element-button
 

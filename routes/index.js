@@ -293,7 +293,7 @@ module.exports = function(app, contentData, nodemailer) {
 	    var contact = true; // The view use this to show contact or presupuesto
 
 	    res.render('contact', {
-	    captcha:recaptcha.render(),        
+	    	captcha:recaptcha.render(),        
 	        menu : 'contacta',
 	        contact: contact,
 	        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
