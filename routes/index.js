@@ -385,7 +385,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
 	    var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
-	    var validCaptcha;
+	    var captchaError;
 
 	    // Creating a form object and saving the &_POST data.
 	    // req.body also is an object with the same data  var form = req.body.
@@ -401,13 +401,14 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 	    // Checks if the captcha is valid or not
 
-	    if (req.recaptcha.error) {
-	    	validCaptcha = false;
+	    captchaError = req.recaptcha.error;
+
+	    if (captchaError) {
+	    	// captchaError = false;
 	    	err = true;
 	    }
 	    else {
-
-	    	validCaptcha = true;
+	    	// Captcha solved
 
 	    	// Create reusable transporter object using SMTP transport
 	    	transporter = nodemailer.createTransport({
@@ -447,8 +448,8 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	     
 	    // Devolver JSON para cuando se haga un formulario ajax.
 	    res.json({ 
-	    	validCaptcha: validCaptcha,
-	        mailSent: err,           // There wasn't any error
+	    	captchaError: captchaError,
+	        mailError: err,           // There wasn't any error
 	        messageData: form          // We pass the form object we created before
 	    });  
 	    
