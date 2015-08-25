@@ -287,7 +287,7 @@ module.exports = function(app, contentData, nodemailer) {
 
 	// http://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer
 
-	app.get('/contacta', function(req,res) {
+	app.get('/contacta', recaptcha.middleware.render, function(req,res) {
 	    var contact = true; // The view use this to show contact or presupuesto
 
 	    res.render('contact', {        
