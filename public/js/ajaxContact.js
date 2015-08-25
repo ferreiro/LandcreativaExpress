@@ -62,7 +62,7 @@
                 $('.userName-messageSent').html(formName.val());  // Sustituir el nombre default por el del usuario
                 $('.userEmail-messageSent').html(formEmail.val()); // Sustituir el mail default por el del usuario
  
-                if (returnedData.validCaptcha) {
+                if (!returnedData.validCaptcha) {
                     alert('Tu captcha no es valido');
                     $('.contact-form-content').fadeIn(200);
                 }
