@@ -375,7 +375,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 		// Return a JSON response
 		res.JSON({
 		    formData: form, // We pass the form object we created before
-		    mailSent: sent, // Notify if the email was sent with transporter system
+		    mailSent: mailSent, // Notify if the email was sent with transporter system
 			validCaptcha: validCaptcha // Notify if the captcha was solved.
 		});
 
