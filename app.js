@@ -15,12 +15,12 @@ var users = require('./routes/user');
 
 var contentData = require('./public/content/content.json');
 var nodemailer = require('nodemailer'); // Nodemailer es un módulo externo de node que nos permite mandar correos.
-var recaptcha = require('express-recaptcha');
-
-recaptcha.init('6LfPzgsTAAAAAD36oBqLs3izEHxJHOxAsn5gEN9n', '6LfPzgsTAAAAAFtpU2j2VWtw0RagisNWBQ6wfxWC');
 
 var app = express();
 
+// Modulos para el recaptcha
+var recaptcha = require('express-recaptcha');
+recaptcha.init('6LfPzgsTAAAAAD36oBqLs3izEHxJHOxAsn5gEN9n', '6LfPzgsTAAAAAFtpU2j2VWtw0RagisNWBQ6wfxWC');
 
 // Middleware to remove header of express
 app.use(function (req, res, next) {

@@ -344,56 +344,54 @@ module.exports = function(app, contentData, nodemailer) {
                 }); 
 			}
 	        else {
-	            
-	                // Create reusable transporter object using SMTP transport
-	                transporter = nodemailer.createTransport({
-	                    service: 'Gmail',
-	                    auth: {
-	                        user: 'landcreativaContactForm@gmail.com',
-	                        pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
-	                    }
-	                }); 
+                // Create reusable transporter object using SMTP transport
+                transporter = nodemailer.createTransport({
+                    service: 'Gmail',
+                    auth: {
+                        user: 'landcreativaContactForm@gmail.com',
+                        pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
+                    }
+                }); 
 
-	                // Preparing email message
-	                mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
-	                mailMSG += '<h3>Mensaje</h3>';
-	                mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
-	                mailMSG += '<h3>Información extra de contacto</h3>';
-	                mailMSG += '<p style="font-size:16px;">';
-	                mailMSG += 'Nombre: '   + form.name +'<br /> ';
-	                mailMSG += 'Teléfono: ' + form.phone + '<br />';
-	                mailMSG += 'Email: '    + form.email;
-	                mailMSG += '</p>'; 
-	                mailMSG += '</body></html>';
+                // Preparing email message
+                mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
+                mailMSG += '<h3>Mensaje</h3>';
+                mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
+                mailMSG += '<h3>Información extra de contacto</h3>';
+                mailMSG += '<p style="font-size:16px;">';
+                mailMSG += 'Nombre: '   + form.name +'<br /> ';
+                mailMSG += 'Teléfono: ' + form.phone + '<br />';
+                mailMSG += 'Email: '    + form.email;
+                mailMSG += '</p>'; 
+                mailMSG += '</body></html>';
 
-	                // Setup e-mail data with unicode symbols
-	                var mailOptions = {
-	                    from: 'Jorge <landcreativa@gmail.com>', // sender address
-	                    to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-	                    replyTo: form.email,
-	                    subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
-	                    html: mailMSG // html body
-	                };
+                // Setup e-mail data with unicode symbols
+                var mailOptions = {
+                    from: 'Jorge <landcreativa@gmail.com>', // sender address
+                    to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
+                    replyTo: form.email,
+                    subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
+                    html: mailMSG // html body
+                };
 
-	                // Send mail with defined transport object
+                // Send mail with defined transport object
 
-	                transporter.sendMail(mailOptions, function(error, info) {
-	                    var err = false;
-	             
-	                    // Email sent correctly
-	                    if (error) {
-	                        err = true; // Yes. There's an error with the form.
-	                    }
-	                     
-	                    // Devolver JSON para cuando se haga un formulario ajax.
-	                    res.json({ 
-	                    	validCaptcha: true,
-	                        error: err,           // There wasn't any error
-	                        messageData: form          // We pass the form object we created before
-	                    });  
+                transporter.sendMail(mailOptions, function(error, info) {
+                    var err = false;
+             
+                    // Email sent correctly
+                    if (error) {
+                        err = true; // Yes. There's an error with the form.
+                    }
+                     
+                    // Devolver JSON para cuando se haga un formulario ajax.
+                    res.json({ 
+                    	validCaptcha: true,
+                        error: err,           // There wasn't any error
+                        messageData: form          // We pass the form object we created before
+                    });  
 
-	                }); 
-	            });  
+                }); 
 	        }
 	    });
 
