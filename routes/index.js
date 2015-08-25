@@ -319,6 +319,11 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	    var transporter, mailMSG; // mail variables. 
 
 	    if (req.recaptcha.error) {
+	    	// Devolver JSON para cuando se haga un formulario ajax.
+	        res.json({ 
+	            validCaptcha: false,
+	            messageData: form          // We pass the form object we created before
+	        }); 
 	    	alert('Error en el captcha');
 	    	return;
 	    }
