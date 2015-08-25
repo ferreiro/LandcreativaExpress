@@ -368,7 +368,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 			// Send mail with defined transport object
 			transporter.sendMail(mailOptions, function(error, info) {
-				mailSent = error; // False: email sent. True: error on sending email
+				mailSent = !error; // False: email sent. True: error on sending email
 			}); 
 		}
 
