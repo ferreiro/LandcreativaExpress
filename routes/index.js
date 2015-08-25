@@ -236,7 +236,8 @@ module.exports = function(app, contentData, nodemailer) {
 	    //     headerImage = 'marketingContact.png';
 	    // } 
 	    
-	    res.render('contact', { 
+	    res.render('contact', {
+	    	captcha:recaptcha.render(), 
 	        menu : 'servicios',
 	        //headerImage: headerImage,
 	        title: title, // Title of the section
@@ -272,6 +273,7 @@ module.exports = function(app, contentData, nodemailer) {
 		var promoName = req.params.type;
 
 		res.render('contact', {
+			captcha:recaptcha.render(),
 			menu: 'promo',
 			title: 'Promo ' + promoName,
 			displayBanners : false,
@@ -290,7 +292,8 @@ module.exports = function(app, contentData, nodemailer) {
 	app.get('/contacta', function(req,res) {
 	    var contact = true; // The view use this to show contact or presupuesto
 
-	    res.render('contact', {        
+	    res.render('contact', {
+	    captcha:recaptcha.render(),        
 	        menu : 'contacta',
 	        contact: contact,
 	        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
@@ -302,7 +305,8 @@ module.exports = function(app, contentData, nodemailer) {
 	app.get( english.baseURL+'/contact', function(req,res) {
 	    var contact = true; // The view use this to show contact or presupuesto
 
-	    res.render('contact', {        
+	    res.render('contact', {
+	    captcha:recaptcha.render(),        
 	        menu : 'contact',
 	        contact: contact,
 	        displayBanners: true,   // THe view uses this variable to show the contact "form" or "not"
@@ -314,7 +318,7 @@ module.exports = function(app, contentData, nodemailer) {
 	// Due our contact form will have ass
 
 	app.post('/contacta/JSON', function (req, res) {
-	    var form; // keep the form data in one variable
+		var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
 
 	    // Creating a form object and saving the &_POST data.
@@ -329,54 +333,70 @@ module.exports = function(app, contentData, nodemailer) {
 	        message: req.body.message // User message
 	    } 
 
-	    // Create reusable transporter object using SMTP transport
-	    transporter = nodemailer.createTransport({
-	        service: 'Gmail',
-	        auth: {
-	            user: 'landcreativaContactForm@gmail.com',
-	            pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
+	    // Recaptcha
+
+		recaptcha.verify(req, function(error){
+			if (error) {
+			    res.json({
+			    	validCaptcha: false,
+                    error: true,           // There wasn't any error
+                    messageData: form          // We pass the form object we created before
+                }); 
+			}
+	        else {
+	            
+	                // Create reusable transporter object using SMTP transport
+	                transporter = nodemailer.createTransport({
+	                    service: 'Gmail',
+	                    auth: {
+	                        user: 'landcreativaContactForm@gmail.com',
+	                        pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
+	                    }
+	                }); 
+
+	                // Preparing email message
+	                mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
+	                mailMSG += '<h3>Mensaje</h3>';
+	                mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
+	                mailMSG += '<h3>Información extra de contacto</h3>';
+	                mailMSG += '<p style="font-size:16px;">';
+	                mailMSG += 'Nombre: '   + form.name +'<br /> ';
+	                mailMSG += 'Teléfono: ' + form.phone + '<br />';
+	                mailMSG += 'Email: '    + form.email;
+	                mailMSG += '</p>'; 
+	                mailMSG += '</body></html>';
+
+	                // Setup e-mail data with unicode symbols
+	                var mailOptions = {
+	                    from: 'Jorge <landcreativa@gmail.com>', // sender address
+	                    to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
+	                    replyTo: form.email,
+	                    subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
+	                    html: mailMSG // html body
+	                };
+
+	                // Send mail with defined transport object
+
+	                transporter.sendMail(mailOptions, function(error, info) {
+	                    var err = false;
+	             
+	                    // Email sent correctly
+	                    if (error) {
+	                        err = true; // Yes. There's an error with the form.
+	                    }
+	                     
+	                    // Devolver JSON para cuando se haga un formulario ajax.
+	                    res.json({ 
+	                    	validCaptcha: true,
+	                        error: err,           // There wasn't any error
+	                        messageData: form          // We pass the form object we created before
+	                    });  
+
+	                }); 
+	            });  
 	        }
-	    }); 
+	    });
 
-	    // Preparing email message
-	    mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
-	    mailMSG += '<h3>Mensaje</h3>';
-	    mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
-	    mailMSG += '<h3>Información extra de contacto</h3>';
-	    mailMSG += '<p style="font-size:16px;">';
-	    mailMSG += 'Nombre: '   + form.name +'<br /> ';
-	    mailMSG += 'Teléfono: ' + form.phone + '<br />';
-	    mailMSG += 'Email: '    + form.email;
-	    mailMSG += '</p>'; 
-	    mailMSG += '</body></html>';
-
-	    // Setup e-mail data with unicode symbols
-	    var mailOptions = {
-	        from: 'Jorge <landcreativa@gmail.com>', // sender address
-	        to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-	        replyTo: form.email,
-	        subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
-	        html: mailMSG // html body
-	    };
-
-	    // Send mail with defined transport object
-
-	    transporter.sendMail(mailOptions, function(error, info) {
-	        var err = false;
-	 
-	        // Email sent correctly
-	        if (error) {
-	            err = true; // Yes. There's an error with the form.
-	        }
-	         
-	        // Devolver JSON para cuando se haga un formulario ajax.
-	        res.json({ 
-	            error: err,           // There wasn't any error
-	            messageData: form          // We pass the form object we created before
-	        });  
-
-	    }); 
-	});  
 
 	// Si no queremos usar JSON y devolvemos una vista
 	/*
@@ -442,6 +462,7 @@ module.exports = function(app, contentData, nodemailer) {
 	        }
 	        
 	        res.render('contact', {
+	        	captcha:recaptcha.render(),
 	            menu : 'contacta',
 	            title: viewTitle,   // Title of the page.
 	            err: err,           // There wasn't any error
