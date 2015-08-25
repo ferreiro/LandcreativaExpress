@@ -403,13 +403,15 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 	    captchaError = req.recaptcha.error;
 
+	    /*
 	    if (captchaError) {
 	    	// captchaError = false;
 	    	err = true;
 	    }
 	    else {
-	    	// Captcha solved
+	    */
 
+	    	// Captcha solved
 	    	// Create reusable transporter object using SMTP transport
 	    	transporter = nodemailer.createTransport({
 	    	    service: 'Gmail',
@@ -443,8 +445,9 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	    	// Send mail with defined transport object
 	    	transporter.sendMail(mailOptions, function(error, info) {
 	    		err = error; // False: email sent. True: error on sending email
-	    	}); 
-	    }
+	    	});
+	    	 
+	    /*}*/
 	     
 	    // Devolver JSON para cuando se haga un formulario ajax.
 	    res.json({ 

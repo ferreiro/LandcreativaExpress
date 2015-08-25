@@ -59,14 +59,16 @@
                 $('.userName-messageSent').html(formName.val());  // Sustituir el nombre default por el del usuario
                 $('.userEmail-messageSent').html(formEmail.val()); // Sustituir el mail default por el del usuario
  
-                console.log('captcha ' + returnedData.captchaError);
+                // console.log('captcha ' + returnedData.captchaError);
 
+                /*
                 if (returnedData.captchaError) {
                     console.log('captcha no valido');
                     alert('Por favor, completa el captcha');
                     $('.contact-form-content').fadeIn(200);
                 }
-        		else if(returnedData.mailError) {
+                */
+        		if(returnedData.mailError) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
                     // console.log('error en el mensaje');
