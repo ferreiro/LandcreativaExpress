@@ -60,29 +60,26 @@
                 $('.userEmail-messageSent').html(formEmail.val()); // Sustituir el mail default por el del usuario
  
                 if (!returnedData.validCaptcha) {
-                    alert('Tu captcha no es valido');
                     console.log('captcha no valido');
                     $('.contact-form-content').fadeIn(200);
                 }
-        		else if(returnedData.mailError) {
+        		else if(returnedData.mailSent) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
                     console.log('error en el mensaje');
-
         		}
         		else {
         			// Se ha podido enviar el correo
         			window.clearFormData();
         			$('.messageSuccess').fadeIn(0); 
                     console.log('mensaje enviado');
-
         		}
         	})
         	.fail(function(returnedData) {
                 var mName, mEmail;
         		// Petición ajax realizada con fallo 
         		// La url donde hemos hecho el post no exite o no ha devuelto el tipo de formato que esperabamos.
-        	   
+        	   console.log('fracaso');
                 mName = formName;
                 nEmail = formEmail;
 
