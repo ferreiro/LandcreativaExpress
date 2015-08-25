@@ -313,7 +313,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 	// This function is done for returning a JSON with the data and success.
 	// Due our contact form will have ass
-
+/*
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
 		var formData, validCaptcha;
 		var transporter, mailMSG; // Variables for email form.
@@ -380,8 +380,8 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 		});
 
 	});	
+*/
 
-/*
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
 	    var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
@@ -448,13 +448,12 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	    // Devolver JSON para cuando se haga un formulario ajax.
 	    res.json({ 
 	    	validCaptcha: validCaptcha,
-	        error: err,           // There wasn't any error
+	        mailSent: err,           // There wasn't any error
 	        messageData: form          // We pass the form object we created before
 	    });  
 	    
 	});  
 
-*/
 
 
 
