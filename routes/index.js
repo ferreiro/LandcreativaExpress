@@ -379,7 +379,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 		    mailSent: sent, // Notify if the email was sent with transporter system
 			validCaptcha: validCaptcha // Notify if the captcha was solved.
 		});
-	}
+	});
 
 /*
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
