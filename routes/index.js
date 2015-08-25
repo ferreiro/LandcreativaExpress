@@ -314,9 +314,13 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	// This function is done for returning a JSON with the data and success.
 	// Due our contact form will have ass
 
-	app.post('/contacta/JSON', function (req, res) {
+	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
 	    var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
+
+	    if (!req.recaptcha.error) {
+	    	alert('Error en el captcha');
+	    }
 
 	    // Creating a form object and saving the &_POST data.
 	    // req.body also is an object with the same data  var form = req.body.
