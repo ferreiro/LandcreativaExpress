@@ -318,8 +318,9 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	    var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
 
-	    if (!req.recaptcha.error) {
+	    if (req.recaptcha.error) {
 	    	alert('Error en el captcha');
+	    	return;
 	    }
 
 	    // Creating a form object and saving the &_POST data.
@@ -382,73 +383,6 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 	    }); 
 	});  
-
-	// Si no queremos usar JSON y devolvemos una vista
-	/*
-	app.post('/contacta/procesar', function (req, res) {
-	    var form; // keep the form data in one variable
-	    var transporter, mailMSG; // mail variables. 
-	    // Creating a form object and saving the &_POST data.
-	    // req.body also is an object with the same data  var form = req.body.
-	    // We use form object to pass the form data to the view and make "JSON" responses.
-	    form = {
-	        name: req.body.name,
-	        email: req.body.email,
-	        phone: req.body.phone,
-	        subject: req.body.subject,
-	        message: req.body.message // User message
-	    } 
-	    // Preparing email message
-	    mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
-	    mailMSG += '<h3>Mensaje</h3>';
-	    mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
-	    mailMSG += '<h3>Información extra de contacto</h3>';
-	    mailMSG += '<p style="font-size:16px;">';
-	    mailMSG += 'Nombre: '   + form.name +'<br /> ';
-	    mailMSG += 'Teléfono: ' + form.phone + '<br />';
-	    mailMSG += 'Email: '    + form.email;
-	    mailMSG += '</p>'; 
-	    mailMSG += '</body></html>';
-	    // Create reusable transporter object using SMTP transport
-	    transporter = nodemailer.createTransport({
-	        service: 'Gmail',
-	        auth: {
-	            user: 'landcreativaContactForm@gmail.com',
-	            pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
-	        }
-	    }); 
-	    // Setup e-mail data with unicode symbols
-	    var mailOptions = {
-	        from: 'Jorge <landcreativa@gmail.com>', // sender address
-	        to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
-	        replyTo: form.email,
-	        subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
-	        html: mailMSG // html body
-	    };
-	    // Send mail with defined transport object
-	    transporter.sendMail(mailOptions, function(error, info) {
-	        var viewTitle = 'Formulario enviado con éxito';
-	        var err = false;
-	 
-	        // Email sent correctly
-	        if (error) {
-	            err = true; // Yes. There's an error with the form.
-	            title = 'Formulario no enviado, tiene errores'; // Title of the page.
-	        }
-	        
-	        res.render('contact', {
-	            menu : 'contacta',
-	            title: viewTitle,   // Title of the page.
-	            err: err,           // There wasn't any error
-	            displayForm: false, // THe view uses this variable to show the contact "form" or "not"
-	            form: form,          // We pass the form object we created before
-	            content: contentData.spanish
-	        }); 
-	    }); 
-	 
-	}); 
-	*/
-
 
 }
 
