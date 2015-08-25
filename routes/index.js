@@ -1,4 +1,4 @@
-module.exports = function(app, contentData, nodemailer) {
+module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 	var english = contentData.english;
 	var spanish = contentData.spanish;
