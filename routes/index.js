@@ -315,6 +315,74 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	// Due our contact form will have ass
 
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
+		var formData, validCaptcha;
+		var transporter, mailMSG; // Variables for email form.
+
+		// Getting contact information through form
+		var formData = {
+			name: req.body.name,
+			email: req.body.email,
+			phone: req.body.phone,
+			subject: req.body.subject,
+			message: req.body.message // User message
+		}
+
+		validCaptcha = req.recaptcha.error; // True if the captcha was solved
+
+		if (validCaptcha) {
+			validCaptcha = false; // Notifiying request that captcha wasn't solved
+			mailSent = false;
+		}
+		else {
+			validCaptcha = true;
+	
+			// Create reusable transporter object using SMTP transport
+			transporter = nodemailer.createTransport({
+			    service: 'Gmail',
+			    auth: {
+			        user: 'landcreativaContactForm@gmail.com',
+			        pass: 'landcreativad5Gk6VLpfvmLeGc24HYg'
+			    }
+			}); 
+
+			// Preparing email message
+			mailMSG =  '<html><body style="background: #F8F8F8; margin:0; padding:1em 2em;">';
+			mailMSG += '<h3>Mensaje</h3>';
+			mailMSG += '<p style="font-size:16px;">' + form.name +'</p>';
+			mailMSG += '<h3>Información extra de contacto</h3>';
+			mailMSG += '<p style="font-size:16px;">';
+			mailMSG += 'Nombre: '   + form.name +'<br /> ';
+			mailMSG += 'Teléfono: ' + form.phone + '<br />';
+			mailMSG += 'Email: '    + form.email;
+			mailMSG += '</p>'; 
+			mailMSG += '</body></html>';
+
+			// Setup e-mail data with unicode symbols
+			var mailOptions = {
+			    from: 'Jorge <landcreativa@gmail.com>', // sender address
+			    to: 'landcreativa@gmail.com, jgferreiro.me@gmail.com', // list of receivers
+			    replyTo: form.email,
+			    subject: 'Mensaje de ' + form.name + ' - ' + form.subject, // Subject line
+			    html: mailMSG // html body
+			};
+
+			// Send mail with defined transport object
+			transporter.sendMail(mailOptions, function(error, info) {
+				mailSent = error; // False: email sent. True: error on sending email
+			}); 
+
+		}
+
+		// Return a JSON response
+		res.JSON({
+		    formData: form, // We pass the form object we created before
+		    mailSent: sent, // Notify if the email was sent with transporter system
+			validCaptcha: validCaptcha // Notify if the captcha was solved.
+		});
+	}
+
+/*
+	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
 	    var form; // keep the form data in one variable
 	    var transporter, mailMSG; // mail variables. 
 	    var validCaptcha;
@@ -387,7 +455,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	});  
 
 }
-
+*/
   
 function doesServiceExist( name ) {
     var found = false, i = 0;

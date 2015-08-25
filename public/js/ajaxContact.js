@@ -66,7 +66,7 @@
                     alert('Tu captcha no es valido');
                     $('.contact-form-content').fadeIn(200);
                 }
-        		else if(returnedData.error) {
+        		else if(!returnedData.mailSent) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
         		}
