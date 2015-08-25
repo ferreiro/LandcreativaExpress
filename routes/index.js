@@ -335,7 +335,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 		}
 		else {
 			validCaptcha = true;
-	
+
 			// Create reusable transporter object using SMTP transport
 			transporter = nodemailer.createTransport({
 			    service: 'Gmail',
@@ -370,7 +370,6 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 			transporter.sendMail(mailOptions, function(error, info) {
 				mailSent = error; // False: email sent. True: error on sending email
 			}); 
-
 		}
 
 		// Return a JSON response
@@ -379,7 +378,8 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 		    mailSent: sent, // Notify if the email was sent with transporter system
 			validCaptcha: validCaptcha // Notify if the captcha was solved.
 		});
-	});
+
+	});	
 
 /*
 	app.post('/contacta/JSON', recaptcha.middleware.verify, function (req, res) {
@@ -454,8 +454,12 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	    
 	});  
 
-}
 */
+
+
+
+
+}
   
 function doesServiceExist( name ) {
     var found = false, i = 0;
