@@ -61,18 +61,19 @@
  
                 if (!returnedData.validCaptcha) {
                     console.log('captcha no valido');
+                    alert('Por favor, completa el captcha');
                     $('.contact-form-content').fadeIn(200);
                 }
         		else if(returnedData.mailSent) {
         			// no Se ha podido enviar el correo
         			$('.messageError').fadeIn(0); 
-                    console.log('error en el mensaje');
+                    // console.log('error en el mensaje');
         		}
         		else {
         			// Se ha podido enviar el correo
         			window.clearFormData();
         			$('.messageSuccess').fadeIn(0); 
-                    console.log('mensaje enviado');
+                    // console.log('mensaje enviado');
         		}
         	})
         	.fail(function(returnedData) {
