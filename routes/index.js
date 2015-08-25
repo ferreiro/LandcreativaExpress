@@ -331,7 +331,7 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 		if (validCaptcha) {
 			validCaptcha = false; // Notifiying request that captcha wasn't solved
-			mailSent = false;
+			mailError = true;
 		}
 		else {
 			validCaptcha = true;
@@ -368,14 +368,14 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 
 			// Send mail with defined transport object
 			transporter.sendMail(mailOptions, function(error, info) {
-				mailSent = !error; // False: email sent. True: error on sending email
+				mailError = !rror; // False: email sent. True: error on sending email
 			}); 
 		}
 
 		// Return a JSON response
 		res.JSON({
 		    formData: form, // We pass the form object we created before
-		    mailSent: mailSent, // Notify if the email was sent with transporter system
+		    mailSent: mailError, // Notify if the email was sent with transporter system
 			validCaptcha: validCaptcha // Notify if the captcha was solved.
 		});
 
