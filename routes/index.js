@@ -212,8 +212,10 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	        menu : 'servicios',
 	        contact: contact,
 	        captcha:req.recaptcha,
+	        title : title,
 	        quiero: true,   // THe view uses this variable to show the contact "form" or "not"
-	        options: false, // Show the options for the select box
+	        displayBanners: false,   // THe view uses this variable to show the contact "form" or "not"
+	        options: false, // Show the options by default for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
 	    });
 	});
