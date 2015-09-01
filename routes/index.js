@@ -196,54 +196,26 @@ module.exports = function(app, contentData, nodemailer, recaptcha) {
 	//-- QUIERO ROUTES
 	//------------------------------
 
-	app.get('/quiero/:contactType', function(req, res){
-	    var title, description, contactType;
-	    var headerImage, contact; // View parameters
 
+	app.get('/quiero/:contactType', recaptcha.middleware.render, function(req,res) {
+	    var title, description, contact; 
+	    
+	    // Getting url parameterrs
 	    contactType = (req.params.contactType).toLowerCase();   // Take the URL parameter in this variable
-
+	    
 	    // Default content for the page
 	    title = '¡Quiero el pack ' + contactType + '!';
 	    description = 'Expertos en páginas web, diseño gráfico, SEO y marketing digital'
-	    headerImage = ''; 
-	    contact = false;    // The view use this to show contact or presupuesto 
- 
-	    // if (contactType == "gold") {
-	    //     headerImage = 'goldContact.png';
-	    // }
-	    // else if (contactType == "silver") {
-	    //     headerImage = 'silverContact.png';
-	    // }
-	    // else if (contactType == "premium") {
-	    //     headerImage = 'premiumContact.png';
-	    // } // Empresas
-	    // else if (contactType == "economy") {
-	    //     headerImage = 'economyContact.png';
-	    // }
-	    // else if (contactType == "business") {
-	    //     headerImage = 'businessContact.png';
-	    // }
-	    // else if (contactType == "first-class") {
-	    //     headerImage = 'first-classContact.png';
-	    // } // Marketing
-	    // else if (contactType == "analitica") {
-	    //     headerImage = 'analiticaContact.png';
-	    // }
-	    // else if (contactType == "seo") {
-	    //     headerImage = 'seoContact.png';
-	    // }
-	    // else if (contactType == "marketing") {
-	    //     headerImage = 'marketingContact.png';
-	    // } 
-	    
-	    res.render('contact', { 
+	    contact = false;   // Only shows form (remove banners and stuff from contact)
+	
+	    res.render('contact', {        
 	        menu : 'servicios',
-	        //headerImage: headerImage,
-	        title: title, // Title of the section
+	        contact: contact,
+	        captcha:req.recaptcha,
 	        quiero: true,   // THe view uses this variable to show the contact "form" or "not"
 	        options: false, // Show the options for the select box
 	        content: contentData.spanish // Passing a "JSON" to views with the data of the website. 
-	    })
+	    });
 	});
 
 	//------------------------------
