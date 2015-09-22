@@ -36,18 +36,18 @@
     			    "title": "¿Quienes somos?",
     			    "image": "/images/desk.jpg",
     			    "text": [
-    			        "Somos una agencia de <b>diseño web</b> &amp; <b>marketing</b> digital. Nuestra <b>misión</b> es ayudarte a construir un negocio online de <b>éxito</b>.",
-    			        "Jorge, Ingenierio Informático y desarrollador web con más de 6 años de <b>experiencia</b>, dirige Landcreativa. Jorge, está muy bien acompañado: programadores, diseñadores, marketinianos... Un equipo de gente joven, experimentada y creativa, que llevarán tu negocio a lo más alto.",
-    			        "Trabajamos para clientes particulares, startups, autónomos y empresas que quieren <b>poner en marcha</b> su negocio en internet o que desean <b>aumentar</b> exponencialmente sus <b>ventas</b> creando estrategías de marketing y posicionamiento o rediseñando su plataforma web online."
+    			        "Somos una agencia de <strong>diseño web</strong> &amp; <strong>marketing</strong> digital. Nuestra <strong>misión</strong> es ayudarte a construir un negocio online de <strong>éxito</strong>.",
+    			        "Jorge, Ingenierio Informático y desarrollador web con más de 6 años de <strong>experiencia</strong>, dirige Landcreativa. Jorge, está muy bien acompañado: programadores, diseñadores, marketinianos... Un equipo de gente joven, experimentada y creativa, que llevarán tu negocio a lo más alto.",
+    			        "Trabajamos para clientes particulares, startups, autónomos y empresas que quieren <strong>poner en marcha</strong> su negocio en internet o que desean <strong>aumentar</strong> exponencialmente sus <strong>ventas</strong> creando estrategías de marketing y posicionamiento o rediseñando su plataforma web online."
     			    ]
     			},
     			"why": {
     			    "title": "¿Por qué elegirnos?",
     			    "image": "/images/info_ordenadores.png",
                     "list": [
-                        "<b>Experiencia</b> en negocios de internet: Llevamos años desarrollando páginas web efectivas, que te ayudarán a aumentar tus ventas.",
-                        "<b>Resultados</b> de calidad, <b>clientes encantados</b> con nuestros servicios y tiempos de entrega cumplidos.",
-                        "<b>Personalización</b>: pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado varios packs según el tipo de negocio que quieres montar. Únicamente tendrás que <b>elegir</b> el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
+                        "<strong>Experiencia</strong> en negocios de internet: Llevamos años desarrollando páginas web efectivas, que te ayudarán a aumentar tus ventas.",
+                        "<strong>Resultados</strong> de calidad, <strong>clientes encantados</strong> con nuestros servicios y tiempos de entrega cumplidos.",
+                        "<strong>Personalización</strong>: pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado varios packs según el tipo de negocio que quieres montar. Únicamente tendrás que <strong>elegir</strong> el que mejor se adapta a ti.<div style='width:100%; display:block; margin-top:0.5em;'></div> <a href='/servicios/particulares'><span>👫</span> Diseño web para particulares</a><br /><a href='servicios/empresas'><span>👔</span> Diseño web para empresas</a><br /> <a href='/servicios/marketing'><span>🎨</span> Marketing y diseño gráfico</a>."
                     ],
                     "text": [
                         "Creemos firmemente por muchas razones que somos una apuesta de seguro para sus proyecto:",
@@ -88,12 +88,12 @@
                             "image" : "/images/service_economy.png",
                             "url" : "/quiero/starter",
                             "features" : [
-                                "Página <b>web</b> en wordpress.",
+                                "Página <strong>web</strong> en wordpress.",
                                 "Configuración de hasta <strong>5 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
                                 "Elige tu diseño entre <strong>9 plantillas</strong> creadas exclusivamente por Landcreativa.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
-                                "Responsive: <b>adaptada</b> a dispositivos móviles.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
+                                "Responsive: <strong>adaptada</strong> a dispositivos móviles.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
                                 "Formulario de Contacto de 4 campos (nombre, mail, telefono y mensaje)."
                             ]
@@ -105,15 +105,15 @@
                             "image" : "/images/service_business.png",
                             "url" : "/quiero/economy",
                             "features" : [
-                                "Página <b>web</b> en wordpress.",
+                                "Página <strong>web</strong> en wordpress.",
                                 "Configuración de hasta <strong>7 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
                                 "Elige tu diseño entre <strong>15 plantillas</strong> creadas exclusivamente por Landcreativa.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
-                                "Responsive: <b>adaptada</b> a dispositivos móviles.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
+                                "Responsive: <strong>adaptada</strong> a dispositivos móviles.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
                                 "Formulario de Contacto de hasta <strong>8 campos</strong> (nombre, mail, telefono y mensaje).",
-                                "Incluye <b>1 cambio</b> en el diseño de plantilla (cabecera, pie de página y barra lateral).",
+                                "Incluye <strong>1 cambio</strong> en el diseño de plantilla (cabecera, pie de página y barra lateral).",
                                 "Tutorial para gestionar el contenido de tu web." 
                             ]
                         },
@@ -125,16 +125,16 @@
                             "url" : "/quiero/economy",
                             "features" : [
                                 "<u><strong>Diseño exclusivo</strong></u> de tu página web.",
-                                "<b>Responsive</b>: adaptada a dispositivos móviles.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
+                                "<strong>Responsive</strong>: adaptada a dispositivos móviles.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
                                 "Configuración de hasta <strong>9 páginas</strong> (Inicio,Contacto,Blog+5) y barras laterales.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
-                                "Formulario de Contacto de campos <b>ilimitados</b> (nombre, mail, mensaje, etc).",
-                                "Incluye <b>2 revisiones</b> en la propuesta de diseño que te presentemos.",
+                                "Formulario de Contacto de campos <strong>ilimitados</strong> (nombre, mail, mensaje, etc).",
+                                "Incluye <strong>2 revisiones</strong> en la propuesta de diseño que te presentemos.",
                                 "Tutorial para gestionar el contenido de tu web.",
-                                "Instalación <b>Formulario de Suscripción</b> y creación cuenta Mailchimp",
-                                "Botón de venta <b>PayPal</b>",
+                                "Instalación <strong>Formulario de Suscripción</strong> y creación cuenta Mailchimp",
+                                "Botón de venta <strong>PayPal</strong>",
                                 "Alta y configuración de Google Analytics: estadísticas de las visitas que recibes"
                             ]
                         }
@@ -147,12 +147,12 @@
                             "image" : "/images/service_silver.png",
                             "url" : "/quiero/economy",
                             "features" : [
-                                "Página <b>web</b> en wordpress.",
+                                "Página <strong>web</strong> en wordpress.",
                                 "Configuración de hasta <strong>5 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
                                 "Elige tu diseño entre <strong>9 plantillas</strong> creadas exclusivamente por Landcreativa.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
-                                "Responsive: <b>adaptada</b> a dispositivos móviles.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
+                                "Responsive: <strong>adaptada</strong> a dispositivos móviles.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
                                 "Formulario de Contacto de 4 campos (nombre, mail, telefono y mensaje)."
                             ]
@@ -164,15 +164,15 @@
         					"image" : "/images/service_gold.png",
                             "url" : "/quiero/gold",
                             "features" : [
-                                "Página <b>web</b> en wordpress.",
+                                "Página <strong>web</strong> en wordpress.",
                                 "Configuración de hasta <strong>7 páginas</strong> (Inicio,Contacto,Blog+2) y barras laterales.",
                                 "Elige tu diseño entre <strong>15 plantillas</strong> creadas exclusivamente por Landcreativa.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
-                                "Responsive: <b>adaptada</b> a dispositivos móviles.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
+                                "Responsive: <strong>adaptada</strong> a dispositivos móviles.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
                                 "Formulario de Contacto de hasta <strong>8 campos</strong> (nombre, mail, telefono y mensaje).",
-                                "Incluye <b>1 cambio</b> en el diseño de plantilla (cabecera, pie de página y barra lateral).",
+                                "Incluye <strong>1 cambio</strong> en el diseño de plantilla (cabecera, pie de página y barra lateral).",
                                 "Tutorial para gestionar el contenido de tu web."
                             ]
         				},
@@ -184,16 +184,16 @@
                             "url" : "/quiero/premium",
                             "features" : [
                                 "<u><strong>Diseño exclusivo</strong></u> de tu página web.",
-                                "<b>Responsive</b>: adaptada a dispositivos móviles.",
-                                "Auto gestionable: <b>fácil</b> de manejar a nivel usuario",
+                                "<strong>Responsive</strong>: adaptada a dispositivos móviles.",
+                                "Auto gestionable: <strong>fácil</strong> de manejar a nivel usuario",
                                 "Configuración de hasta <strong>9 páginas</strong> (Inicio,Contacto,Blog+5) y barras laterales.",
-                                "<b>Blog:</b> para compartir tus noticias, actividades, información.",
+                                "<strong>Blog:</strong> para compartir tus noticias, actividades, información.",
                                 "Social Sharing: botones de Redes Sociales para que tu contenido se comparta",
-                                "Formulario de Contacto de campos <b>ilimitados</b> (nombre, mail, mensaje, etc).",
-                                "Incluye <b>2 revisiones</b> en la propuesta de diseño que te presentemos.",
+                                "Formulario de Contacto de campos <strong>ilimitados</strong> (nombre, mail, mensaje, etc).",
+                                "Incluye <strong>2 revisiones</strong> en la propuesta de diseño que te presentemos.",
                                 "Tutorial para gestionar el contenido de tu web.",
-                                "Instalación <b>Formulario de Suscripción</b> y creación cuenta Mailchimp",
-                                "Botón de venta <b>PayPal</b>",
+                                "Instalación <strong>Formulario de Suscripción</strong> y creación cuenta Mailchimp",
+                                "Botón de venta <strong>PayPal</strong>",
                                 "Alta y configuración de Google Analytics: estadísticas de las visitas que recibes"
 
                             ]
@@ -623,10 +623,7 @@
 
 
 
-
-
-
-
+ 
     "french" : {
         "title": "Landcreativa - Experts in webpages, graphic design, SEO y marketing digital",
         "description" : "esto es una descripción",
