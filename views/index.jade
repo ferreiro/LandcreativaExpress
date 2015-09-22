@@ -2,75 +2,74 @@ extends layout
 
 block content
 
-	.slider#slider
-		// Buttons for select the slide number
-		ul.slider-selector
+    .slider#slider
+        // Buttons for select the slide number
+        ul.slider-selector
 
-		// Buttons to go previous and right on slide
-		ul.slider-navigation
+        // Buttons to go previous and right on slide
+        ul.slider-navigation
 
-			li.slider-navigation-left
-				a
-					span.icon-angle-left
-			li.slider-navigation-right
-				a
-					span.icon-angle-right
+            li.slider-navigation-left
+                a
+                    span.icon-angle-left
+            li.slider-navigation-right
+                a
+                    span.icon-angle-right
 
-		// Slides of the slider	
-		ul.slider-slides
-			//-- <li> last class is the effect (fading, barTop, square)
-			
-			//-- Single Slide
-			li.fading.slider-slides-singleSlide
-				//- Content of one slide
-				.slider-slides-singleSlide-content
-					.blackContent
-						.slider-slides-singleSlide-content-minilogo
-							div
-						h2.slider-slides-singleSlide-content-title Agencia de <b>diseño web</b>,<br /><b>marketing</b> digital &amp; <b>SEO</b>
-						p.slider-slides-singleSlide-content-text Trabajamos con autónomos, empresas y particulares, que quieren construir negocios online de éxito.
-						a(href="/nosotros").slider-slides-singleSlide-content-link ¡Descúbrenos!
+        // Slides of the slider 
+        ul.slider-slides
+            //-- <li> last class is the effect (fading, barTop, square)
+            
+            //-- Single Slide
+            li.fading.slider-slides-singleSlide
+                //- Content of one slide
+                .slider-slides-singleSlide-content
+                    .blackContent
+                        .slider-slides-singleSlide-content-minilogo
+                            div
+                        p.slider-slides-singleSlide-content-text Trabajamos con autónomos, empresas y particulares, que quieren construir negocios online de éxito.
+                        a(href="/nosotros").slider-slides-singleSlide-content-link ¡Descúbrenos!
 
-				//- White mask
-				.slider-slides-singleSlide-whitemaskIntense
+                //- White mask
+                .slider-slides-singleSlide-whitemaskIntense
 
-				//- Wallpaper mask
-				.slider-slides-singleSlide-wallpaper
-					div.blurred(style='background-image:url(/images/desk.jpg);')
-			
-			//-- Single Slide
-			li.fading.slider-slides-singleSlide
-				//- Content of one slide
-				.slider-slides-singleSlide-content
-					.whiteContent
-						h2.slider-slides-singleSlide-content-title Diseñamos <b>páginas web</b><br /> que funcionan
-						p.slider-slides-singleSlide-content-text Pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado <b>packs especificos</b> según el tipo de <b>página web</b> que quieres construir. ¡Elige el que mejor se adapta a ti!
-						a(href="/servicios").slider-slides-singleSlide-content-link ¡Quiero ver los servicios!
-			
-				.slider-slides-singleSlide-wallpaper
-					div(style='background-image:url(/images/wordpress.jpg);')
-			
-			//-- Single Slide
-			li.fading.slider-slides-singleSlide
-				//- Content of one slide
-				.slider-slides-singleSlide-content
-					.whiteContent
-						h2.slider-slides-singleSlide-content-title ¿Quieres hacer crecer tu negocio?
-						p.slider-slides-singleSlide-content-text Subscríbete y te enseñaremos a <b>posicionar</b> tu marca, mejorar tu <b>página web</b> y desarrollar <b>estrategias de marketing</b> efectivas.
-						a(href='http://eepurl.com/buMVqr', target='_blank').slider-slides-singleSlide-content-link ¡Sí! Apúntame
-			
-				//- Black mask
-				.slider-slides-singleSlide-blackmask
+                //- Wallpaper mask
+                .slider-slides-singleSlide-wallpaper
+                    div.blurred(style='background-image:url(/images/desk.jpg);')
+            
+            //-- Single Slide
+            li.fading.slider-slides-singleSlide
+                //- Content of one slide
+                .slider-slides-singleSlide-content
+                    .whiteContent
+                        h2.slider-slides-singleSlide-content-title Diseñamos <strong>páginas web</strong><br /> que funcionan
+                        p.slider-slides-singleSlide-content-text Pensamos en ti y cubrimos cualquier necesidad que puedas tener. Hemos creado <strong>packs especificos</strong> según el tipo de <strong>página web</strong> que quieres construir. ¡Elige el que mejor se adapta a ti!
+                        a(href="/servicios").slider-slides-singleSlide-content-link ¡Quiero ver los servicios!
+            
+                .slider-slides-singleSlide-wallpaper
+                    div(style='background-image:url(/images/wordpress.jpg);')
+            
+            //-- Single Slide
+            li.fading.slider-slides-singleSlide
+                //- Content of one slide
+                .slider-slides-singleSlide-content
+                    .whiteContent
+                        h2.slider-slides-singleSlide-content-title ¿Quieres hacer crecer tu negocio?
+                        p.slider-slides-singleSlide-content-text Subscríbete y te enseñaremos a <strong>posicionar</strong> tu marca, mejorar tu <strong>página web</strong> y desarrollar <strong>estrategias de marketing</strong> efectivas.
+                        a(href='http://eepurl.com/buMVqr', target='_blank').slider-slides-singleSlide-content-link ¡Sí! Apúntame
+            
+                //- Black mask
+                .slider-slides-singleSlide-blackmask
 
-				.slider-slides-singleSlide-wallpaper
-					div(style='background-image:url(/images/desktop3.jpg);')
-			
+                .slider-slides-singleSlide-wallpaper
+                    div(style='background-image:url(/images/desktop3.jpg);')
+            
 block extraScripts
-	script(type='text/javascript').
-		$('#slider .slider-slides').DDSlider({
+    script(type='text/javascript').
+        $('#slider .slider-slides').DDSlider({
 
-			prevSlide: '.slider-navigation-left',
-			nextSlide: '.slider-navigation-right',
-			selector: '.slider-selector'
+            prevSlide: '.slider-navigation-left',
+            nextSlide: '.slider-navigation-right',
+            selector: '.slider-selector'
 
-		});
+        });
