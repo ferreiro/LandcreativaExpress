@@ -10,9 +10,7 @@ block content
 			h1.commun-title(style='letter-spacing: 3px;') #{about.headline} 
 
 			.about
-				// .about-left
-				//	.about-image(style='background-image:url(#{about.what.image});')
-
+			
 				.about-left
 					
 					h2.commun-subtitle.about-subtitle #{about.what.title}
@@ -23,11 +21,14 @@ block content
 						else
 							p.about-text !{text}
 
+				.about-right
+					.about-image(style='background-image:url(#{about.what.image});')
+
 				//- Fin about right
 				// .about-separator
 				
-				//.about-left(style='width:100%;')
-				//	.about-image(style='background-image:url(#{about.what.image});')
+				.about-left
+					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
 
 				.about-right
 
@@ -52,9 +53,6 @@ block content
 									span !{i}
 								.about-list-text !{list}
 				
-				//.about-right
-				//	.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
-
 				.about-separator
 				.about-link
 					a(href='/servicios').commun-button #{about.button}
