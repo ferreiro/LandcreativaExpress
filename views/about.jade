@@ -12,6 +12,9 @@ block content
 			.about
 			
 				.about-left
+					.about-image(style='background-image:url(#{about.what.image});')
+					
+				.about-right
 					
 					h2.commun-subtitle.about-subtitle #{about.what.title}
 
@@ -21,16 +24,10 @@ block content
 						else
 							p.about-text !{text}
 
-				.about-right
-					.about-image(style='background-image:url(#{about.what.image});')
-
 				//- Fin about right
 				// .about-separator
 				
 				.about-left
-					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
-
-				.about-right
 
 					h2.commun-subtitle.about-subtitle(style='text-align:center;') #{about.why.title}
 
@@ -53,6 +50,9 @@ block content
 									span !{i}
 								.about-list-text !{list}
 				
+				.about-right
+					.about-image.about-image-computer(style='background-image:url(#{about.why.image});')
+
 				.about-separator
 				.about-link
 					a(href='/servicios').commun-button #{about.button}
